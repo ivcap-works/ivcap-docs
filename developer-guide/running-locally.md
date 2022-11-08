@@ -2,14 +2,14 @@
 
 ## Service description
 
-Users use the service desicription metadata to search and discover the services.
-The Service information should describe what the service does, the context in which it works, any paramaters it needs, and the artifacts it creates.
+Users use the service description metadata to search and discover the services.
+The Service information should describe what the service does, the context in which it works, any parameters it needs, and the artifacts it creates.
 
 [Examples of artifacts and output include: ...]: #
 
 ## Local Environment Requirements
 
-Local development reqiurements include suggested programming laguages, and the supporting software to be build and sustain a local development environment.
+Local development requirements include suggested programming languages, and the supporting software to be build and sustain a local development environment.
 
 Tip:  Containerised applications do not have access to your local build environment, nor its environment variables.  Use of the XXXX development environment mimics the server environment, minimising the risk of errors.
 
