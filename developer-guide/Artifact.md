@@ -8,7 +8,7 @@ An `Artifact` is an individual image record, along with its associated MetaData 
 | ----- | ----- | ----- |
 | List | GET /1/artifacts | Returns a collection of zero or more `ArtifactListItem` that match the request criteria.  An individual artifact is accessed by the `Read` artifact method. |
 | Upload | POST /1/artifacts | Uploads an artifact and its associated metadata. |
-| Read | GET /1/artifacts/{id} | Retrieves the details for an artifact that mateches the supplied `id` parameter. |
+| Read | GET /1/artifacts/{id} | Retrieves the details for the artifact that matches the supplied `id` parameter. |
 
 ## Methods
 
@@ -16,7 +16,7 @@ An `Artifact` is an individual image record, along with its associated MetaData 
 
 #### Common use cases
 
-This method is used to retrieve a collection of zero or more `ArtifactListItem` records that match the search criteria given via the parameters.  You can access the detail for an individual artifact with the `ArtefactStatusRT` object returned by the `Read` method.
+This method is used to retrieve a collection of zero or more `ArtifactListItem` records that match the search criteria given via the parameters.  You can access the detail for an individual artifact with the `ArtifactStatusRT` object returned by the `Read` method.
 
 #### List artifacts HTTP request
 
@@ -29,14 +29,14 @@ GET https://site.uri/1/artifacts
 | 200 | OK | `ArtifactListRT` JSON resource |
 | 400 | Bad Request response | |
 | 401 | Unauthorised response | |
-| 403 | Forbidden response | |
-| 501 | Not Implemented response | |
+| 403 | Forbidden response | `InvalidScopesT` json resource with the id of the resource in error and the error message. |
+| 501 | Not Implemented response | `NotImplementedT` json resource is returned which contains the an information message. |
 
 #### Parameters
 
 | Parameter | Type | Use | Details |
 | ----- | ----- | ----- | ----- |
-| $filter | string | ```$fitler=FirstName eq 'Scott'``` | The search term or string used to limit the result set |
+| $filter | string | ```$filter=FirstName eq 'Scott'``` | The search term or string used to limit the result set |
 | $orderby | string | ```$orderby=EndsAt desc``` | The order of the artifacts in the result set |
 | $top | string |  |  |
 | $skip | integer |  |  |
@@ -73,7 +73,7 @@ The ArtifactListRT structure is returned by the [List Artifact]{#ListArtifact} m
 
 | Property | |
 | ---- | --- |
-| artifacts | Is an array of the [ArtifactListItem]{#ArtifactListItem} json objecst. |
+| artifacts | Is an array of the [ArtifactListItem]{#ArtifactListItem} json objects. |
 | artifacts.id | `string` which is the ID for the artifact in the system. |
 | artifacts.links | contains the `describedBy` structure containing the resource `uri` and `type` and the `self` string element. |
 | artifacts.links.describedBy| |
@@ -82,7 +82,7 @@ The ArtifactListRT structure is returned by the [List Artifact]{#ListArtifact} m
 | artifacts.links.self | `string`  |
 | artifacts.name | `string`  |
 | artifacts.status | `enum` can be one of `pending`, `building`, `ready`, or `error` |
-| links |  |
+| links | An optional element which contains the `NavT` json structure of the first, next, and self URIs. |
 | links.first | `uri` the uri for the first ... |
 | links.next | `uri`  |
 | links.self | `uri`  |
@@ -141,7 +141,7 @@ POST https://site.uri/1/artifacts
 
 | Error code | response type | response resource |
 | --- | --- | --- |
-| Loacation | string | link record |
+| Location | string | link record |
 | Tus-Resumable | string | version of TUS supported |
 | Upload-Offset | int64 | TUS offset for partially uploaded content |
 
