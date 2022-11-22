@@ -2,13 +2,21 @@
 
 ## Overview
 
-The Intelligent Visual Collaboration Analytics Platform __IVCAP__ enables researchers and analytics providers to use or implement analytics serverices (collecting, processing, and analysing) for visual datasets.
+The Intelligent Visual Collaboration Analytics Platform __IVCAP__ enables researchers and analytics providers to use or implement analytics services (collecting, processing, and analysing) for visual datasets.
 
 The intended audience for this guide are the Researchers and Developers who intend to develop and publish services using __IVCAP__.
 
 The API lets you build, and load services into the IVCAP platform which platform users may use for data analysis.
 
 This reference guide provides the information you need to use the API to build and deploy your service.
+
+### Developing __IVCAP__ services
+
+#### Discovering a service
+
+#### Executing a service 
+
+#### Context for service execution
 
 ## Integration options
 
@@ -29,17 +37,17 @@ The Software Development Kit is a python service that makes the __IVCAP__ data o
 
 ### REST API
 
-Integrate your application with __IVCAP__ using the REST API and [JSON]{https://jsonapi.org/} data objects.  The methods and JSON schemas are documented in this docmentaion.
+Integrate your application with __IVCAP__ using the REST API and [JSON]{https://jsonapi.org/} data objects.  The methods and JSON schemas are documented in this documentation.
 
 #### Calling the Rest API
 
 The API can be used to upload data or modify data, list services, book a service on the data, and retrieve the results.
 
-API requests to interact with __AVCAP__ data and meta-data must have the JWT authorisation bearer token set, see [Sessions]{#Sessions} for more detail.
+API requests to interact with __IVCAP__ data and meta-data must have the JWT authorisation bearer token set, see [Sessions]{#Sessions} for more detail.
 
 ## Getting started
 
-Services built for IVCAP are built using  that may contain one or more workflows.  Each workflow may contain one or more task.  The artifacts generated (output of the service) may be a report, file, data set as is reqiured by the needs at the time.
+Services built for IVCAP are built using  that may contain one or more workflows.  Each workflow may contain one or more task.  The artifacts generated (output of the service) may be a report, file, data set as is required by the needs at the time.
 
 ## Sessions
 
