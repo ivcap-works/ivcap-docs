@@ -12,7 +12,7 @@ Request analytics services on collections of artifacts with the `Order` methods.
 
 ## Methods
 
-### List orders {#ListOrder}
+### List orders
 
 #### Common use cases
 
@@ -45,7 +45,7 @@ GET https://site.uri/1/orders
 | limit | integer |  |  |
 | pageToken | string |  |  |
 
-#### OrderListRT JSON Resource {#OrderListRT}
+#### OrderListRT JSON Resource
 
 Use the OrderListRT structure to discover the Orders and their status.
 
@@ -81,7 +81,7 @@ Use the OrderListRT structure to discover the Orders and their status.
 | links.first | `uri` the uri for the first order in the collection. |
 | links.next | `uri`  |
 | links.self | `uri`  |
-| orders | Is an array of the [OrderListItem]{#OrderListItem} json objects. |
+| orders | Is an array of the [OrderListItem](#orderlistitem-json-resource) json objects. |
 | orders.account_id | `string` The account ID for the order. |
 | orders.finished_at | `string` The date that the order finished. |
 | orders.id | `string` The ID for the order. |
@@ -95,7 +95,7 @@ Use the OrderListRT structure to discover the Orders and their status.
 | orders.service_id | `string` The ID for the service for the order. |
 | orders.status | `enum` can be one of `pending`, `executing`, `finished`, or `error`. |
 
-#### OrderListItem JSON Resource {#OrderListItem}
+#### OrderListItem JSON Resource
 
 The JSON structure used in a result set to provide the information for an individual order.
 
@@ -134,7 +134,7 @@ The JSON structure used in a result set to provide the information for an indivi
 | service_id | `string` The ID for the service. |
 | status | `enum` can be one of `pending`, `executing`, `finished`, or `error` |
 
-### Create order {#CreateOrder}
+### Create order
 
 #### Common use cases
 
@@ -158,7 +158,7 @@ POST https://site.uri/1/orders
 | 501 | Not Implemented response | `NotImplementedT` json resource is returned which contains the an information message. |
 | 503 | Service Unavailable response. |  |
 
-#### OrderRequestT JSON Resource {#OrderRequestT}
+#### OrderRequestT JSON Resource
 
 Order a new analytics service workflow with the `OrderRequestT` json object.
 
@@ -190,7 +190,7 @@ Order a new analytics service workflow with the `OrderRequestT` json object.
 | parameters.value | `string` The value of the parameter. |
 | serviceID | `string` The optional, customer supplied name. |
 
-#### OrderStatusRT JSON Resource {#OrderStatusRT}
+#### OrderStatusRT JSON Resource
 
 ```json
 {
@@ -295,7 +295,7 @@ Order a new analytics service workflow with the `OrderRequestT` json object.
 | service.links.self | `string`  |
 | status | `enum` Can be one of `pending`, `executing`, `finished`, or `error`. |
 
-### Read order {#ReadOrder}
+### Read order
 
 #### Common use cases
 
@@ -324,4 +324,5 @@ GET https://site.uri/1/orders/{id}
 
 #### OrderStatusRT JSON Resource
 
-The [`OrderStatusRT`]{#OrderStatusRT} resource that contains the details for the service which matches the `{id}` parameter is given in the __OK__ response.
+The [`OrderStatusRT`](#orderstatusrt-json-resource) resource that contains the details for the service which matches the `{id}` parameter is given in the __OK__ response.
+

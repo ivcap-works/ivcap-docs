@@ -18,7 +18,7 @@ The `listOrders service` method returns a collection of the orders for a nominat
 
 ## Methods
 
-### List services {#ListServices}
+### List services
 
 #### Common use cases
 
@@ -51,7 +51,7 @@ GET https://site.uri/1/services
 | limit | integer |  |  |
 | pageToken | string |  |  |
 
-#### ServiceListRT JSON Resource {#ServiceListRT}
+#### ServiceListRT JSON Resource
 
  ```json
 {
@@ -108,7 +108,7 @@ GET https://site.uri/1/services
 | services.provider.links.describedBy.type | `string`  |
 | services.provider.links.self | `string`  |
 
-#### ServiceListItem JSON Resource {#ServiceListItem}
+#### ServiceListItem JSON Resource
 
 ```json
 {
@@ -153,7 +153,7 @@ GET https://site.uri/1/services
 | provider.links.describedBy.type | `string`  |
 | provider.links.self | `string`  |
 
-### Create services {#CreateServices}
+### Create services
 
 #### Common use cases
 
@@ -176,7 +176,7 @@ POST https://site.uri/1/services
 | 422 | Request contained semantically wrong parameter value response | the `InvalidParameterValue` json object containing the `message` for the error, `name` of the parameter, and the `value` of the parameter with the bad value. |
 | 501 | Not Implemented response | a json object containing the message for the error. |
 
-#### ServiceDescriptionT JSON Resource {#ServiceDescriptionT}
+#### ServiceDescriptionT JSON Resource
 
 Specify or update the service workflow using the `ServiceDescriptionT` json object.  Service users will search for and use the service using the information provided with this object.
 
@@ -263,17 +263,17 @@ Specify or update the service workflow using the `ServiceDescriptionT` json obje
 | workflow.argo | `binary` the argo workflow definition using the argo WF schema |
 | workflow.basic |  |
 | workflow.basic.command | `[string]` The command needed to start the container, which is necessary in some container runtimes. |
-| workflow.basic.cpu | the [kubernetes Quantity documentation]{https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/} provides more information on the units. |
+| workflow.basic.cpu | the [kubernetes Quantity documentation](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/) provides more information on the units. |
 | workflow.basic.cpu.limit | `string` minimal requirements [system limit] |
 | workflow.basic.cpu.request | `string` minimal requirements [0] |
 | workflow.basic.image | `string` the container image name |
-| workflow.basic.memory | the [kubernetes Quantity documentation]{https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/} provides more information on the units. |
+| workflow.basic.memory | the [kubernetes Quantity documentation](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/) provides more information on the units. |
 | workflow.basic.memory.limit | `string` minimal requirements [system limit] |
 | workflow.basic.memory.request | `string` minimal requirements [0] |
 | workflow.opts | `string` Type specific options __Deprecated__: left for backward compatibility, if possible use type specific elements. |
 | workflow.type | `string` Type of workflow |
 
-#### ServiceStatusRT JSON Resource {#ServiceStatusRT}
+#### ServiceStatusRT JSON Resource
 
 ```json
 {
@@ -374,7 +374,7 @@ Specify or update the service workflow using the `ServiceDescriptionT` json obje
 | status | `enum` can be one of `pending`, `building`, `ready`, or `error` |
 | tags | `[string]` optional tags provided in the ServiceDescriptionT for the service. |
 
-### Read services {#ReadService}
+### Read services
 
 #### Common use cases
 
@@ -402,13 +402,13 @@ GET https://site.uri/1/services/{id}
 
 #### ServiceStatusRT JSON Resource
 
-The [`ServiceStatusRT`]{#ServiceStatusRT} resource that contains the details for the service which matches the `{id}` parameter is given in the __OK__ response.
+The [`ServiceStatusRT`](#servicestatusrt-json-resource) resource that contains the details for the service which matches the `{id}` parameter is given in the __OK__ response.
 
-### Update services {#UpdateService}
+### Update services
 
 #### Common use cases
 
-Update an existing service with the details supplied in the `ServiceDescriptionT` json object.  Similar to the [Create Service method]{#CreateService}, the success response body contains the `ServiceStatusRT` json object.  
+Update an existing service with the details supplied in the `ServiceDescriptionT` json object.  Similar to the [Create Service method](#create-services), the success response body contains the `ServiceStatusRT` json object.  
 In some instances, the `CreateResponseBodyTiny2` object may be returned.
 
 > Note: Force the service to be created with the `force-create` query-string parameter.
@@ -439,13 +439,13 @@ PUT https://site.uri/1/services/{id}
 
 #### ServiceDescriptionT JSON Resource
 
-The [`ServiceDescriptionT`]{#ServiceDescriptionT} resource that contains the details to be used to update the service that matches the `{id}` parameter is given in the __OK__ response.
+The [`ServiceDescriptionT`](#servicedescriptiont-json-resource) resource that contains the details to be used to update the service that matches the `{id}` parameter is given in the __OK__ response.
 
 #### ServiceStatusRT JSON Resource
 
-The [`ServiceStatusRT`]{#ServiceStatusRT} resource contains the returned details for the service.
+The [`ServiceStatusRT`](#servicestatusrt-json-resource) resource contains the returned details for the service.
 
-### Delete service {#DeleteService}
+### Delete service
 
 #### Common use cases
 
@@ -472,7 +472,7 @@ DELETE https://site.uri/1/services/{id}
 | ----- | ----- | ----- | ----- |
 | id | string | | The id for the existing service to be deleted. |
 
-### List Orders service {#ListOrdersService}
+### List Orders service
 
 #### Common use cases
 
