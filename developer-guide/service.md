@@ -138,7 +138,7 @@ GET https://site.uri/1/services
 | Property | |
 | ---- | --- |
 | description | `string` a (optional) description of the service as supplied by the service provider. |
-| id | `string` the service ID within __AVCAP__. |
+| id | `string` the service ID within __IVCAP__. |
 | links | which contains a `SelfT` style json object (which contains the `DescribedByT` and `self` objects) |
 | links.describedBy | the `DescribedByT` json object |
 | links.describedBy.href | `uri`  |
