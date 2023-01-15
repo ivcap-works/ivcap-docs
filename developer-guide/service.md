@@ -202,7 +202,8 @@ Specify or update the service workflow using the `ServiceDescriptionT` json obje
             "value": "string"
         }],
         "type": "string",
-        "unit": "string"
+        "unit": "string",
+        "help": "string"
     }],
     "provider-id"*: "uri",
     "provider-ref": "string",

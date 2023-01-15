@@ -7,20 +7,22 @@ The Intelligent Visual Collaboration Analytics Platform __IVCAP__ operates as a 
 The intended audience for this guide are the Researchers and Developers who intend to develop and publish services using __IVCAP__.
 
 Use the API to build, and load services onto the IVCAP platform, which are then discovered and used by platform users for data analysis.
-You can build services using the API, a software development kit (SDK), and the command line interface (CLI).
+You can build services using the API, a Python software development kit (SDK), and the command line interface (CLI).
 
 This reference guide provides the information you need to use the API to build and deploy your service.
 
 ### Developing __IVCAP__ services
 
-At the heart of __IVCAP__ is a kubernetes (K8s) cluster that holds the internal and related external services for the analytics services (argo workflows), storage for the visual image collections (artifacts), their meta-data, data for the requested analytics services (parameters, meta-data etc), and the products generated from the services (reports, data sets). 
+At the heart of __IVCAP__ is a kubernetes (K8s) cluster that holds the internal and related external services for the analytics services (argo workflows/containers), storage for the visual image collections (artifacts), their metadata, data for the requested analytics services (order parameters, metadata, etc.), and the products generated from the services (reports, new artifacts). 
 
-Implement a service as an __Argo__ workflow templates and register it within __IVCAP__ with a detailed description for what the service does and how to use it.
+Implement a service as an __Argo__ workflow template and register it within __IVCAP__ with a detailed description for why the service exists, what it service does, and how to use it.
 
-Ordering a service creates and executes an argo workflow using the parameters, metadata, and artifacts for the workflow template for the service.
+Ordering a service creates and executes an argo workflow using the parameters, metadata, artifacts, and the workflow template specified for the service.
 
-Services are executed in a sandbox environment, and do not interact with other services, workflows, or external data sources other than via the REST API methods.
-Access to input artifacts, or any output generated is provided via the REST API methods.  
+Services are executed in a sandbox environment, with their own context.  
+Services do not interact with other services, workflows, or external data sources other than via the REST API methods.
+Access to input artifacts, data, or generated output is provided via the REST API methods.
+The complexity of using the API is abstracted with the Python SDK, and the CLI.
 
 #### Discovering a service
 
@@ -37,14 +39,13 @@ The service description information will need to contain detailed information ab
 * Optional and required metadata
 * A brief description of the workflow and its analytics tasks
 
-The Service ID is assigned to the service when the service is created.
 Supply the service description for the service when it is created.
-Update the service description as necessary using the `update service` API method.
+Update the service description as necessary using the `update service` API method and the Service ID that is assigned to the service when the service is created.
 
 #### Executing a service 
 
-Start a service using the Create_order method listing the Service ID, service parameters, metadata and any other artifacts indicated by the service description.
-The service initiates as an [argo workflow](https://argoproj.github.io/workflows/), using the workflow template for the service using the input values supplied with the create_order method.
+Start a service with the Create_order method, Service ID, service parameters, metadata and anything else specified in the service description.
+The service initiates the docker container registered for the service.  Complex services which have more than a single analytics task will typically run an [argo workflow](https://argoproj.github.io/workflows/).
 
 Each service workflow order run in its own sandboxed container, isolating the service from all other applications.
 Messaging and external data access is provided by, and must use, the API.
@@ -59,10 +60,12 @@ The IVCAP platform makes use of best of breed, open source tools to minimise eng
 
 ### IVCAP components
 
-IVCAP consists of loosely coupled, independent containerised technology components that support its flexibility, agility and adaptability.  The technology components include:
-* [Magda](https://magda.io/) to hold, catalogue and manage the IVCAP data and meta-data.
+IVCAP consists of loosely coupled, independent containerised technology components that support its flexibility, agility and adaptability.  
+The underlying platform may be Google Cloud, Azure, or [minikube]() for local services development.
+
+Core External services and components include:
 * [Kubernetes](https://kubernetes.io/) to containerise and deploy services that provide analytics on IVCAP
-  * [minikube]() is used for local services development
+* [Magda](https://magda.io/) to hold, catalogue and manage the IVCAP data and meta-data.
 * [Argo Workflows](https://argoproj.github.io/argo-workflows/) for sequencing analytics activities (tasks, parts of workflows, etc.) in workflow templates that provide the service.  Argo is used to execute all orders.
 * [Minio](https://min.io/) for object and data storage.
 * [Postgres]() that acts as an underlying database.
@@ -70,10 +73,12 @@ IVCAP consists of loosely coupled, independent containerised technology componen
 * [Loki](https://github.com/grafana/loki) a monitoring and logging stack for storing logs and processing queries
   * [Promtail]() for gathering and sending logs to Loki
   * [Grafana]() for querying and displaying logs
-* [Application Gateway] an internal service which acts as the REST API endpoint.
-* [Order Dispatcher] an internal service used to marshal service requests and initiate the workflows.
-* [Storage Gateway]
-* [Container registry]
+
+Internal Services included in [IVCAP-core](https://github.com/reinventingscience/ivcap-core) include:
+* Api_gateway: acts as the REST API endpoint, authorises requests, and directs requests to the appropriate service.
+* Order_dispatcher: actions order requests and initiate service workflows.  
+* Data_proxy: Provides access to, caching, and related logging of artifacts for services.
+* Exit_handler: Reports the exit state of orders to update the order records in Magda.
 ...TODO
 
 ### Docker Containers
@@ -84,10 +89,27 @@ containerise platform which contains the services which constitutes the IVCAP pl
 #### Docker Provisioning
 
 TODO
+Name your service using camel case, replacing any dashes with underscores.
+Use the Dockerfile Allocate to build the docker image structure, add, and define resource settings, such as:
+
+* files and folders
+* listen ports
+* idle timeout
+* header size limits
+* https 
+* connection policies
+* paths for services
+* method type
+* default response types 
+
+Build the docker image using the `docker build` command within __Make__.
+Use the Makefile for IVCAP services as an examples showing how docker images are built
+
 
 #### Docker Registering
 
-TODO
+Register your services docker image within __Make__ using the `docker tag` and `docker push` commands.
+Running your registered docker service in the cloud environment within __Make__ with the `docker -it --rm run` command.  Running locally in your dev env with mini-kube is simply a case of calling the container using its full path within __Make__.
 
 ### Tools
 
