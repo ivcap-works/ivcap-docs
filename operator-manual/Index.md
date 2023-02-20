@@ -4,16 +4,19 @@
 
 The Intelligent Visual Collaboration Analytics Platform __IVCAP__ operates as a Software as a Service that enables researchers and analytics providers to use and implement services to collect, process, or analyse visual datasets.
 
-The intended audience for this guide are the Systems Engineers and Admin staff who will deploy, support and maintain the __IVCAP__ systems configuration (configuration management).
-
 IVCAP is a complex software systems using a microservices architecture that enables flexibility, portability, component re-use, and service providers to add custom bespoke services tailored for their specific user needs.
 The configuration management is captured and managed in the [IVCAP-core](https://github.com/reinventingscience/ivcap-core) Repo along with the code.
+
+### Intended audience
+
+The intended audience for this guide are the Systems Engineers and Admin staff who provision cloud services and will deploy, support, and maintain the __IVCAP__ systems.
 
 ## Architecture
 
 IVCAP uses cloud infrastructure such as Azure, Amazon Web Services (AWS) to host its constituent services and software components.  
 [Terraform](https://www.terraform.io/) is used to provision and manage the infrastructure.
 
+### External applications & services
 Core External services and components include:
 * [Kubernetes](https://kubernetes.io/) to containerise and deploy discrete services that provide analytics on IVCAP.  Use [Minikube](https://minikube.sigs.k8s.io/docs/start/) for a local install.
 * [Magda](https://magda.io/) to hold, catalogue and manage the IVCAP data and meta-data.
@@ -25,6 +28,7 @@ Core External services and components include:
   * [Promtail]() for gathering and sending logs to Loki
   * [Grafana](https://grafana.com/docs/loki/latest/api/) an endpoint for querying and displaying logs
 
+### Internal services
 The internal services are built with the IVCAP deployment and include:
 * Api_gateway: acts as the REST API endpoint, authorises requests, and directs requests to the appropriate service.
 * Order_dispatcher: actions order requests and initiate service workflows.  
@@ -178,13 +182,28 @@ TODO how to approach/plan for upgrades
 
 ## Security
 
-TODO - Should this be it's own sub-page?  - Or perhaps a checklist of the security specific points which should already be covered?
+### Authentication 
+
+IVCAP implements the [oauth2](https://oauth.net/2/) authentication model.
+Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/reinventingscience/ivcap-cli) command line interface.
+
+The [cli login command](https://github.com/reinventingscience/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using golang.
+Service providers may choose to implement the authentication and token management within their service.
+
+Update the details for the oauth provider you use for your deployment in the `/api-gateway/public/authinfo.yaml` yaml.  These details will be used for user authentication with the specified oauth provider.  
+While the data structure suggests multiple providers may be allowed, only the single provider is currently supported.
+
+### Authorisation
+
+Authorisation is controlled using the OPA rules set by the `.rego` files in the IVCAP-core `api_gateway/opa/default/` directory.
+
+The rules files define if the caller is allowed to call a particular service, define the results the user may see, and define the actions a user may take.
 
 ### General
 
 User activities should be logged, and those logs moved to long term-storage for interrogation when needed.
 
-### APIs 
+### APIs
 
 ### Encryption
 
