@@ -24,6 +24,20 @@ Services do not interact with other services, workflows, or external data source
 Access to input artifacts, data, or generated output is provided via the REST API methods.
 The complexity of using the API is abstracted with the Python SDK, and the CLI.
 
+*_Is / will there be a QA check / code review & approval or similar for services built by the service providers?  If so, How does a service provider submit their service for review and subsequent approval?_*
+
+#### Service provider
+
+Onboard as a service provider to build and register analytics services for the IVCAP platform.
+*How does a service provider onboard?*
+User your provider ID that is assigned to you when you onboard to register your services with IVCAP.
+
+Services providers can use the SDK and CLI to simplify and accelerate building and registering services.
+
+*_What resources are made available to the service providers?  Will they get the source code for the SDK?, CLI?, Sample service?_*
+
+Service providers are responsible for their own build and test environments
+
 #### Discovering a service
 
 Discover services using the service description information and the SDK, CLI, or the API.  (The SDK and the CLI abstract and simplify the complexity of the API calls)
@@ -52,11 +66,19 @@ Messaging and external data access is provided by, and must use, the API.
 
 #### Context for service execution
 
-TODO
+Services are executed within the context of their container in Argo and do not directly interact with any other service.
+
+All data, communication, and instructions are provided by either the arguments and parameters used at startup, or via the SDK and API methods.
+
+All output and results from the service must be persisted by the SDK or API calls.
+
+Once the service has completed its execution, any localised or cached data will be released as the execution container is released.
 
 ## Architecture from a developers perspective
 
-The IVCAP platform makes use of best of breed, open source tools to minimise engineering complexity while maximising capability and flexibility.  
+The IVCAP platform makes use of best of breed, open source tools to minimise engineering complexity while maximising capability and flexibility.
+While IVCAP employs internal and external services, the developer does not need to interact with them.
+The complexity of the underlying service and architecture is simplified via the use of the SDK, which also abstracts and simplifies the API calls.
 
 ### IVCAP components
 
@@ -79,7 +101,7 @@ Internal Services included in [IVCAP-core](https://github.com/reinventingscience
 * Order_dispatcher: actions order requests and initiate service workflows.  
 * Data_proxy: Provides access to, caching, and related logging of artifacts for services.
 * Exit_handler: Reports the exit state of orders to update the order records in Magda.
-...TODO
+*_...TODO_*
 
 ### Containers
 
@@ -88,9 +110,8 @@ containerise platform which contains the services which constitutes the IVCAP pl
 
 #### Docker Provisioning
 
-TODO
-Name your service using camel case, replacing any dashes with underscores.
-Use the Dockerfile Allocate to build the docker image structure, add, and define resource settings, such as:
+Name your service with a meaningful name.  Use camel case, replacing any dashes with underscores.
+Use the Dockerfile Allocate to build the docker image structure, add, and define resource settings that may include:
 
 * files and folders
 * listen ports
@@ -113,7 +134,7 @@ Running your registered docker service in the cloud environment within __Make__ 
 
 ### Tools
 
-Software used to install, develop and deploy services that doesn't form part of the system on a Mac includes:
+Install the software used to develop and deploy services that may not be installed on a base system and may include:
 * [brew](https://brew.sh/) to install useful utilities and tools
 * coreutils: `brew install coreutils`
 * yq: `brew install yq`
@@ -122,7 +143,6 @@ Software used to install, develop and deploy services that doesn't form part of 
 * Kubernetes client: `brew install kubernetes-cli`
 * helm: `brew install helm`
 * argo: `brew install argo`
-
 
 ## Integration options
 
@@ -137,9 +157,11 @@ The command line interface may also be built and installed using the go command:
 ```
 View the [ivcap-cli git repo](https://github.com/reinventingscience/ivcap-cli/) for more information on using the command line interface.
 
-### SDK
+### Software Development Kit - SDK
 
-The Software Development Kit is a python service that makes the __IVCAP__ data objects and methods available to you to use in your service / application.
+The Software Development Kit (SDK) is a python service that makes the __IVCAP__ data objects and methods available to you to use in your service / application.
+
+See how to use the [SDK](sdk.md) with the [Example IVCAP Service](https://github.com/reinventingscience/ivcap-python-service-example) which demonstrates the key components needed for a service.
 
 ### REST API
 
@@ -166,11 +188,34 @@ This step will set:
 
 Once the environment is functional, deploying the application and building it. 
 
-## Sessions
+## Security
 
 Interacting with IVCAP via the REST Api will need an bearer token in the header.
 
 The bearer token is attained via the 'create session' method.
+
+### Authentication
+
+IVCAP implements the [oauth2](https://oauth.net/2/) authentication model.
+Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/reinventingscience/ivcap-cli) command line interface.
+
+The [cli login command](https://github.com/reinventingscience/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using golang.
+Service providers may choose to implement the authentication and token management within their service.
+
+### Authorisation
+
+Authorisation protocols are set in the IVCAP-core and are used to determine what, when, and how an authenticated user may access things within the system.
+
+For example, the controls may determine access to:
+* list artifacts, i.e. May only generate a list artifacts that are owned by the authenticated account.
+* read artifacts, May only return an artifact owned by the authenticated account.
+* Allow authenticated users to upload artifacts, add metadata, add collections, etc. 
+* Restrict listing and returning order details to only those orders submitted by the account.
+* Ensure orders are only created when the nominated account matches the authenticated users account.
+* list services, but only be able to create or update them if they're a service provider and the service owner (for updates).
+
+
+
 
 
 
