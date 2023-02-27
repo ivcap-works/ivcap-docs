@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{{ super() }}
+
+<!-- Giscus -->
+<h3 id="__comments">{{ lang.t("meta.comments") }}</h2>
+
+  <script src="https://giscus.app/client.js" data-repo="reinventingscience/ivcap-docs" data-repo-id="R_kgDOIPEvzw"
+    data-category="General" data-category-id="DIC_kwDOIPEvz84CUfKW" data-mapping="pathname" data-reactions-enabled="1"
+    data-emit-metadata="0" data-input-position="bottom" data-lang="en" crossorigin="anonymous" data-loading="lazy"
+    data-theme="light" async>
+    </script>
+
+  {% endblock %}
+  </script>

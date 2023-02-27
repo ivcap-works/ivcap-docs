@@ -1,0 +1,68 @@
+site_name: IVCAP - Platform for Collaborating on Analytics & Data
+theme:
+  name: material
+  custom_dir: docs/overrides
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/logo.png
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.footer
+
+nav:
+  - Home: README.md
+  - Getting Started:
+      - quick-start.md
+  # - User Guide:
+  #     - concepts.md
+  #     - Artifacts:
+  #         - workflow-inputs.md
+  #         - key-only-artifacts.md
+  #         - artifact-repository-ref.md
+  #         - conditional-artifacts-parameters.md
+  #     # - Access Control:
+  #     # - Features:
+  #     # - Debugging Tools:
+  #     - API:
+  #         - rest-api.md
+  #         - swagger.md
+  #     # - Best Practices:
+  #     # - Use Cases:
+  #     - FAQ: faq.md
+  #     - CLI Reference:
+  #         - argo: cli/argo.md
+  #         - argo archive: cli/argo_archive.md
+  #         - argo archive delete: cli/argo_archive_delete.md
+  - Service Developer Guide:
+      - Overview: developer-guide/README.md
+      - Architecture: developer-guide/architecture.md
+      - Develop Services: developer-guide/develop-services.md
+      - Deploy Services: developer-guide/deploy-services.md
+      - developer-guide/running-locally.md
+      - developer-guide/integration-options.md
+      - Python SDK: developer-guide/sdk.md
+      - developer-guide/sdk-resources.md
+
+  #      - releasing.md
+  - Operator Manual:
+      - operator-manual/README.md
+  - Roadmap: roadmap.md
+
+  # - Blog: https://blog.argoproj.io/
+  # - Slack: https://argoproj.github.io/community/join-slack
+  # - Twitter: https://twitter.com/argoproj
+  # - LinkedIn: https://www.linkedin.com/company/argoproj/
