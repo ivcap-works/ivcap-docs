@@ -1,6 +1,6 @@
 ## Installation
 
-Detailed Installation steps for IVCAP deployment are found at [ivcap-core/deploy/](https://github.com/reinventingscience/ivcap-core/tree/develop/deploy), which includes the steps for deploying to minikube, Azure, or GCP.
+Detailed Installation steps for IVCAP deployment are found at [ivcap-core/deploy/](https://github.com/reinventingscience/ivcap-core/tree/develop/deploy), including deployments to minikube, Azure, or GCP.
 
 1. Provision infrastructure using Terraform
 1. Create a new cluster
@@ -12,13 +12,13 @@ Detailed Installation steps for IVCAP deployment are found at [ivcap-core/deploy
 ### Provision Infrastructure
 
 [Provision infrastructure and deploy a kubernetes cluster](https://developer.hashicorp.com/terraform/tutorials/kubernetes) in your cloud subscription.
-Use [terraform](https://developer.hashicorp.com/terraform/language) to provision the platform and install core software components as per the [configuration files](#key-configuration-files).
+Using [terraform](https://developer.hashicorp.com/terraform/language) to provision the platform and install core software components as per the [configuration files](#key-configuration-files).
 
-Check the values and settings in the configuration files (Makefiles, yaml, and shell scripts) found in the `/deploy` sub-folders so they suit your environment.
+Adjust the values and settings in the configuration files (Makefiles, yaml, and shell scripts) found in the `/deploy` sub-folders to suit your deployment.
 
-### Use Terraform in CSIRO Azure subscription
+### Use Terraform in an Azure subscription
 
-The `/deploy/` directory contains information that describes how to [Deploy IVCAP on Azure Kubernetes Service](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/README.md), which describes what you need to [deploy a new cluster using Terraform Enterprise](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/DEPLOY.md) with the [CSIRO terraform platform](https://terraform.csiro.cloud/).
+The `/deploy/` directory contains information that describes how to [Deploy IVCAP on Azure Kubernetes Service](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/README.md) (AKS), which describes what you need to be able to [deploy a new cluster using Terraform Enterprise](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/DEPLOY.md) (an example of provisioning with a [Terraform Cloud](https://app.terraform.io/public/signup/account?product_intent=terraform) subscription).
 
 After provisioning the terraform workspace and deploying the K8s cluster, access the cluster to [Deploy IVCAP](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/README.md) into the cluster by installing and building its software and services.
 
@@ -88,7 +88,7 @@ The services installed or configured include:
 1. Install [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) as the `kubeseal`
 1. Install [istio](https://istio.io/)
 1. Install the `config/istio.yaml` configuration to _istio_
-1. Deploy and configure the _docker_ secret *Are these steps still reqiured?*
+1. Deploy and configure the _docker_ secret
 1. Deploy and configure the _minio_ secret 
 1. Deploy and configure the _storage_ secret
 1. Deploy and configure the _blob_ secret
@@ -98,8 +98,6 @@ The services installed or configured include:
 #### Terraform on Non-Azure platform
 
 [Create the new Terraform Workspace](https://developer.hashicorp.com/terraform/cli/commands/workspace/new)
-
-*Question* - we don't have AWS/other platform procedures do we want to have an entry for non-AKS here?
 
 #### Secrets and the sensitive flag <a name="secrets"></a>
 
