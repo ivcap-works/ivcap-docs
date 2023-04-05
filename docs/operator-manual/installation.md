@@ -130,11 +130,22 @@ More details are found at [ivcap-core/deploy/](https://github.com/reinventingsci
 
 ### Installing new releases and upgrades
 
-Keeping system components up to date by the makefile, or by the `terraform-plan` configuration file is in the `/ci/` directory.
+Keeping system components current is set in the `makefile`, and the configuration file for the `terraform-plan` (in the `/ci/` directory).
 
-Using the makefile to upgrade software components by running the make command within the confines of your CI/CD framework.
-It is also possible to specify the release version for a software component.
+Using the makefile to upgrade software components is achieved by running the make command within the confines of your CI/CD framework.
 
-Note: When stopping/restarting IVCAP services, care should be exercised to ensure no analytics orders are running.  Stopping an order that is running may result in the order failing.  
+It is possible to specify the software component release version to mitigate the risk of an inadvertent component upgrade.
+
+#### Service upgrades
+
+When planning to upgrade the system component services (such as Argo), one approach might be:
+* Stop accepting new requests through the `api_gateway` (which may be achieved by modifying the ingress configuration as per your SOPs)
+* Wait for existing requests to finish from the `api_gateway` and the `order_dispatcher` (which are short lived)
+* Upgrade the component or components
+* Start accepting new requests through the `api_gateway` again.
+
+#### Storage upgrades
+
+Upgrades to the `database` or `storage_proxy` are recommended to wait until active workflows have finished before proceeding with the upgrade.
 
 
