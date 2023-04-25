@@ -28,7 +28,7 @@ from ivcap_sdk_service import Service, Parameter, Option, Type, register_service
 ```
 ## Service
 
-Describe and define the service data objects held using the _Service_ dataclass which extends the _JSONWizard_ class.  Describing the service defines the [ServiceDescriptionT]() json fields needed for to call the service (handler) and holds the data which describes how to use the service.
+Describe and define the service data objects held using the _Service_ dataclass which extends the _JSONWizard_ class.  Describing the service defines the `ServiceDescriptionT` json fields needed for to call the service (handler) and holds the data which describes how to use the service.
 
 Note: Default values for the `service-id` (`id`), `provider-id`, and `account-id` are set in the container environment with the `MakeFile`.
 
@@ -59,7 +59,7 @@ register_service(MY_SERVICE_DEFINITION, my_service)
 ## Parameter
 
 Pass data to the service using the parameters defined by the `Parameter` data class.
-_Parameter_ extends _JSONWizard_ and is used in the `parameters` JSON field within the [ServiceDescriptionT]() json object.
+_Parameter_ extends _JSONWizard_ and is used in the `parameters` JSON field within the `ServiceDescriptionT` json object.
 
 Read the parameters 
 

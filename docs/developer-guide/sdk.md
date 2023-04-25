@@ -39,9 +39,9 @@ needed things for a service:
 
 ### Service Name
 
-Name your service that helps your users understand what it does, such as `load_artifacts`.
+Name your service that helps your users understand what it does, for example the service `load_artifacts` is a descriptive name.  A more detailed description of the service, along with how to use it should be provided in the [Service description](#service-description)
 
-### The Service description
+### Service description
 
 Help service users to discover and use your service by setting this key information in the Service `object`.
 This information should help the users to discover your service, describe what it is, what it does, what to use it for (and what not to use it for), how to use it, and the parameters they should provide.
