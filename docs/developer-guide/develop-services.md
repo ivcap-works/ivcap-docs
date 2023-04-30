@@ -90,3 +90,11 @@ All data, communication, and instructions are provided by either the arguments a
 All output and results from the service must be persisted by the SDK or API calls.
 
 Once the service has completed its execution, any localised or cached data will be released as the execution container is released.
+
+## Use the CLI
+
+The CLI provides a comprehensive client environment for interacting with the IVCAP and the analytics services.
+
+The [CLI can be used](using-ivcap/) to Discover, Order, Check the status of an order, and get the results of an order. 
+
+

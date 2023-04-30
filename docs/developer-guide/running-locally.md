@@ -2,26 +2,19 @@
 
 ## Local Environment Requirements
 
-Develop analytics services on your computer using python and a local instance of __IVCAP__ on minikube. 
+Develop analytics services on your computer using python and the python SDK.  Run the application locally via:
+* python condo or pip (I'm not sure how this works)
+* compile into a docker image, run locally interacting with the local file system
+* compile into a docker image, run locally interacting with the IVCAP backend which may be prod, or non-prod
+* compile into a docker image, run with a local instance of __IVCAP__ on minikube.
 
-Install minikube, the support software for IVCAP, and the git repositories (repos) to configure and build the IVCAP services.  
+For the full minikube environment install minikube, the support software for IVCAP, and the git repositories (repos) to configure and build the IVCAP services.  
 Then download and build the [Python SDK](https://github.com/reinventingscience/ivcap-sdk-python), [Command Line Interface (CLI)](https://github.com/reinventingscience/ivcap-cli), and [sample service](https://github.com/reinventingscience/ivcap-python-service-example) to get started on your analytics service. 
 
 ### Software and tools {#software}
 
-[Assuming Researcher just getting started not be a seasoned dev.  early success is good success]: 
+The full IVCAP software suite Install includes:
 
-- what is the list of software which will need to be installed for a local dev/run environment?
-- what is the install configuration for each (where changes are required)
-- what does the developer/researcher need to have on their computer to run a make file and build a (sample / stub) local service.  i.e. cloning a/the Git repo?
-- How do they run a make
-- How do they run the service and interact with it?
-
-- How do they load sample data (locally)
-- Do they pause minikube rather than stopping it at the end of the day / session?
-
-The software you will need includes:
- 
 - The [Basic Tools](#basic-tools)
   * Your code editing environment, such as [`Visual Studio Code`](https://code.visualstudio.com/)
   * [`Github Desktop`](https://desktop.github.com/) or your preferred github client to clone or download a [Github](https://github.com/) repository
@@ -42,9 +35,23 @@ The software you will need includes:
   * [Postgres](https://www.postgresql.org/)
   * [Loki](https://github.com/grafana/loki)
 - [IVCAP](https://github.com/reinventingscience/ivcap-core)
+- [sample service](https://github.com/reinventingscience/ivcap-python-service-example)
+- [ivcap-cli](https://github.com/reinventingscience/ivcap-cli) for interacting with IVCAP
 
 These software components emulate the cloud based software environment, enabling you to develop and run services locally as they would in the deployed environment.
 The following sections will help you to install and configure the software for the development environment.
+
+The light-weigh service development environment includes:
+- the same [Basic Tools](#basic-tools) as the full suite
+- optionally, the docker and kubernetes CLIs or the full [Virtual cluster (minikube)](#install-minikube)
+  * docker client [`docker-cli`](https://docs.docker.com/engine/reference/commandline/cli/)
+  * kubernetes command line tool ([`kubectl`](https://kubernetes.io/docs/tasks/tools/), or `kubernetes-cli`) depending on your operating system:
+    * [Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+    * [MacOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
+    * [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- the [`Local Development environment`](#developing-locally-local-dev)
+  * [conda](https://docs.conda.io/en/latest/) and [pip](https://pypi.org/project/pip/)
+  * [sample service](https://github.com/reinventingscience/ivcap-python-service-example)
 
 #### Basic Tools
 
@@ -101,16 +108,20 @@ More information is found on the [IVCAP Deployment](https://github.com/reinventi
 
 ### Developing locally {#local-dev}
 
-Download and build the [Python SDK](https://github.com/reinventingscience/ivcap-sdk-python), [Command Line Interface (CLI)](https://github.com/reinventingscience/ivcap-cli), and [sample service](https://github.com/reinventingscience/ivcap-python-service-example) to get started on your analytics service. 
+Download and install the [sample service](https://github.com/reinventingscience/ivcap-python-service-example) and review the `img_test_service.py` file to get started with writing your application.
 
-Review and make changes to the code in the sample service to see how it runs.
+Review the `README` file in the `sample service` for the latest tips and information on how to install the service to run using [conda](https://docs.conda.io/en/latest/) or [pip](https://pypi.org/project/pip/).
 
-### Access and Use
+Update the Makefile for the sample service to reflect your local environment.
 
+Use the `make clone-sdk` make-targets to clone the [Python SDK](https://github.com/reinventingscience/ivcap-sdk-python) to your computer and  for you to run.
 
+Use the `make run` target to run the sample service using python and test it out.
 
-## Developer Resources
+Use the `make docker-build-local`, `make docker-publish-local`, and `make docker-run` make targets build the sample service to a local docker image, and enable it to run as a docker image
 
-The ***API reference*** contains the description of the API endpoints. 
+Review and make changes to the code in the sample service.
+Build it with the make targets, and [access IVCAP services](using-ivcap/) with the CLI to test how your service runs.
 
-The command line interface 
+When running your service locally you can load images from the local file-system, or you can interact with IVCAP server for data storage.  
+Use the service order parameters to provide the input files for the sample service.
