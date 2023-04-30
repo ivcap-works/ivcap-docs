@@ -35,12 +35,12 @@ The bearer token is attained via the 'create session' method.
 IVCAP implements the [oauth2](https://oauth.net/2/) authentication model.
 Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/reinventingscience/ivcap-cli) command line interface.
 
-The [cli login command](https://github.com/reinventingscience/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using golang.
+The [cli login command](https://github.com/reinventingscience/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using Golang.
 Service providers may choose to implement authentication and token management within their service.
 
 ### Authorisation
 
-Authorisation protocols are set in the IVCAP-core and are used to determine what, when, and how an authenticated user may access things within the system.
+Authorisation protocols are set in the IVCAP core and are used to determine what, when, and how an authenticated user may access things within the system.
 
 For example, the controls may determine access to:
 

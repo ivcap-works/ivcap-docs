@@ -69,12 +69,6 @@ SERVICE = Service(
             type=Type.INT, 
             description='Mini batch size of one gpu or cpu.',
             default=1),
-        Parameter(
-            name='device',
-            type=Type.OPTION,
-            options=[Option(value='cpu'), Option(value='gpu')],
-            default="cpu",
-            description="Select which device to inference, defaults to gpu."),
         # ... Parameters used by your service and any default values they may have.
     ]
 )
@@ -97,17 +91,3 @@ Register the service with using the `register_service` method
 ```python
 register_service(SERVICE, load_artifact) 
 ```
-
-### Orders
-
-TODO
-
-#### Ordering a service
-
-TODO
-
-#### Checking the status of an order
-
-TODO
-
-#### Getting the results of an order
