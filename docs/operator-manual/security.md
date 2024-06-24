@@ -8,16 +8,16 @@ Users must [authenticate](#authentication) to gain access to their service in a 
 
 It is recommended that operators implement [threat and vulnerability scanning](#publishing-containers) before publishing containers into the cluster.
 
-### Authentication 
+### Authentication
 
 IVCAP implements the [oauth2](https://oauth.net/2/) authentication model.
-Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/reinventingscience/ivcap-cli) command line interface.
+Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/ivcap-works/ivcap-cli) command line interface.
 
-The [cli login command](https://github.com/reinventingscience/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using golang.
+The [cli login command](https://github.com/ivcap-works/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using golang.
 Service providers may choose to implement the authentication and token management within their service.
 
 Update the details for the oauth provider in the `/api-gateway/public/authinfo.yaml` yaml.
-`Authinfo.yaml` is used to authenticate the user connection with the oauth provider you specify.  
+`Authinfo.yaml` is used to authenticate the user connection with the oauth provider you specify.
 While the data structure suggests multiple providers may be allowed, only the single provider is currently supported.
 
 ### Authorisation
@@ -86,7 +86,7 @@ An error is returned when a valid JWT token is not present.
 
 Data exchanged between the service and external users and services is encrypted in transit.  However data transfer between the services inside the K8s cluster is generally not encrypted.
 
-This also means that third party containers executed inside the cluster may have access to the data used and stored for the services necessitating more solid security reviews and testing on service delivery & deployment.  
+This also means that third party containers executed inside the cluster may have access to the data used and stored for the services necessitating more solid security reviews and testing on service delivery & deployment.
 
 ### Publishing containers
 

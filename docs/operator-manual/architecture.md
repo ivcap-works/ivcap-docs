@@ -7,7 +7,7 @@ Service execution is controlled via Argo workflows where each service has its ow
 
 Service providers can access a python software development kit (SDK) that helps simplify building analytics services for IVCAP.  Sample applications are available to demonstrate the SDK use.
 
-IVCAP uses cloud infrastructure such as Azure, Amazon Web Services (AWS) to host its constituent services and software components.  
+IVCAP uses cloud infrastructure such as Azure, Amazon Web Services (AWS) to host its constituent services and software components.
 [Terraform](https://www.terraform.io/) is used to provision and manage the infrastructure.
 
 ### External applications & services
@@ -27,11 +27,11 @@ Core External services and components include:
 
 The internal services are built with the IVCAP deployment and include:
 * Api_gateway: acts as the REST API endpoint, authorises requests, and directs requests to the appropriate service.
-* Order_dispatcher: actions order requests and initiate service workflows.  
+* Order_dispatcher: actions order requests and initiate service workflows.
 * Data_proxy: Provides access to, caching, and related logging of artifacts for services.
-* Exit_handler: Reports the exit state of orders to update the order records in Magda. 
+* Exit_handler: Reports the exit state of orders to update the order records in Magda.
 
 ### Namespaces
 
 Namespaces are used to isolate internal and underlying services from the analytics services that are accessible for systems users.
-Namespaces are discussed in the how to [Deploy IVCaP on Azure Kubernetes Service](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/README.md).
+Namespaces are discussed in the how to [Deploy IVCaP on Azure Kubernetes Service](https://github.com/ivcap-works/ivcap-core/blob/develop/deploy/aks/README.md).

@@ -1,6 +1,6 @@
 ## Installation
 
-Detailed Installation steps for IVCAP deployment are found at [ivcap-core/deploy/](https://github.com/reinventingscience/ivcap-core/tree/develop/deploy), including deployments to minikube, Azure, or GCP.
+Detailed Installation steps for IVCAP deployment are found at [ivcap-core/deploy/](https://github.com/ivcap-works/ivcap-core/tree/develop/deploy), including deployments to minikube, Azure, or GCP.
 
 1. Provision infrastructure using Terraform
 1. Create a new cluster
@@ -18,9 +18,9 @@ Adjust the values and settings in the configuration files (Makefiles, yaml, and 
 
 ### Use Terraform in an Azure subscription
 
-The `/deploy/` directory contains information that describes how to [Deploy IVCAP on Azure Kubernetes Service](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/README.md) (AKS), which describes what you need to be able to [deploy a new cluster using Terraform Enterprise](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/aks/DEPLOY.md) (an example of provisioning with a [Terraform Cloud](https://app.terraform.io/public/signup/account?product_intent=terraform) subscription).
+The `/deploy/` directory contains information that describes how to [Deploy IVCAP on Azure Kubernetes Service](https://github.com/ivcap-works/ivcap-core/blob/develop/deploy/aks/README.md) (AKS), which describes what you need to be able to [deploy a new cluster using Terraform Enterprise](https://github.com/ivcap-works/ivcap-core/blob/develop/deploy/aks/DEPLOY.md) (an example of provisioning with a [Terraform Cloud](https://app.terraform.io/public/signup/account?product_intent=terraform) subscription).
 
-After provisioning the terraform workspace and deploying the K8s cluster, access the cluster to [Deploy IVCAP](https://github.com/reinventingscience/ivcap-core/blob/develop/deploy/README.md) into the cluster by installing and building its software and services.
+After provisioning the terraform workspace and deploying the K8s cluster, access the cluster to [Deploy IVCAP](https://github.com/ivcap-works/ivcap-core/blob/develop/deploy/README.md) into the cluster by installing and building its software and services.
 
 The installation and configuration of the software components use the kubernetes client, helm, and argo in addition to the terraform scripts.
 
@@ -89,7 +89,7 @@ The services installed or configured include:
 1. Install [istio](https://istio.io/)
 1. Install the `config/istio.yaml` configuration to _istio_
 1. Deploy and configure the _docker_ secret
-1. Deploy and configure the _minio_ secret 
+1. Deploy and configure the _minio_ secret
 1. Deploy and configure the _storage_ secret
 1. Deploy and configure the _blob_ secret
 1. Deploy and configure the _ACME_ secret
@@ -126,7 +126,7 @@ Check the deployment configuration for the prerequisite software for deploying I
 Use the makefile in the `/deploy` directory to deploy the services using the make targets `helm-upgrade-gke` or `helm-upgrade-aks` depending on your environment.
 Deploying to minikube has its own make target `helm-upgrade-minikube`.
 
-More details are found at [ivcap-core/deploy/](https://github.com/reinventingscience/ivcap-core/tree/develop/deploy)
+More details are found at [ivcap-core/deploy/](https://github.com/ivcap-works/ivcap-core/tree/develop/deploy)
 
 ### Installing new releases and upgrades
 
@@ -147,5 +147,3 @@ When planning to upgrade the system component services (such as Argo), one appro
 #### Storage upgrades
 
 Upgrades to the `database` or `storage_proxy` are recommended to wait until active workflows have finished before proceeding with the upgrade.
-
-

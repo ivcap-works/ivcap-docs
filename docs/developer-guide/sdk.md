@@ -5,7 +5,7 @@ The SDK abstracts the complexity of the underlying service architecture and API 
 
 ## Using the sdk for the ivcap_service
 
-Start using the SDK easily by locating, downloading and starting your service repo from the [Reinventingscience ivcap-python-service-example](https://github.com/reinventingscience/ivcap-python-service-example) repo on [github](https://github.com/).
+Start using the SDK easily by locating, downloading and starting your service repo from the [ivcap-works ivcap-python-service-example](https://github.com/ivcap-works/ivcap-python-service-example) repo on [github](https://github.com/).
 
 Make the _IVCAP_ Demo service using the instructions in the `README`
 
@@ -20,7 +20,7 @@ Build a complete service using the SDK and Python to build the container, interf
 ### Run an analytics engine
 
 Build an deployable service for an analytics engine that may be an existing application.
-Where the existing application can be a self-contained executable running as though it was running on a local machine.  
+Where the existing application can be a self-contained executable running as though it was running on a local machine.
 Use the SDK with Python to build the container, setup the environment and analytics pre-conditions, interface with IVCAP, manage the data (source input files, and store output/results), run and monitor the analytics service/application, update reporting, and clean-up the post analytics environment nicely.
 
 ## Building a Service
@@ -53,20 +53,20 @@ SERVICE = Service(
     description = "Service to test loading and saving of artifacts",
     parameters = [
         Parameter(
-            name='msg', 
-            type=Type.STRING, 
+            name='msg',
+            type=Type.STRING,
             description='Message to display.'),
         Parameter(
-            name='model', 
-            type=Type.ARTIFACT, 
+            name='model',
+            type=Type.ARTIFACT,
             description='Model to use (tgz archive of all needed components)'),
         Parameter(
-            name='image', 
-            type=Type.ARTIFACT, 
+            name='image',
+            type=Type.ARTIFACT,
             description='Image to analyse'),
         Parameter(
-            name='batch-size', 
-            type=Type.INT, 
+            name='batch-size',
+            type=Type.INT,
             description='Mini batch size of one gpu or cpu.',
             default=1),
         # ... Parameters used by your service and any default values they may have.
@@ -89,5 +89,5 @@ def service(args: Dict, logger: logging):
 Register the service with using the `register_service` method
 
 ```python
-register_service(SERVICE, load_artifact) 
+register_service(SERVICE, load_artifact)
 ```

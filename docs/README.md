@@ -1,3 +1,3 @@
 # Home
 
-The Intelligent Visual Collaboration Analytics Platform __IVCAP__ operates as a Software as a Service that enables researchers and analytics providers to use and implement services to collect, process, or analyse visual datasets using AI analytics.
+**IVCAP** is a SaaS platform for **service providers** to develop and **offer** analytics **services** that enables **researchers** to **use** these and their own services to substantially upscale their research activities.

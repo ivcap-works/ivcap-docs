@@ -5,7 +5,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  logo: assets/logo.png
+  logo: assets/logo/logo_white_32x32.png
+  favicon: assets/favicon.ico
   palette:
     - scheme: default
       primary: indigo
@@ -24,9 +25,10 @@ theme:
     - navigation.footer
 
 nav:
-  - Home: README.md
+  - Home: index.md # README.md
   - Getting Started:
-      - quick-start.md
+      - getting-started/quick-start.md
+      - getting-started/installing-cli.md
   # - User Guide:
   #     - concepts.md
   #     - Artifacts:
@@ -58,9 +60,9 @@ nav:
       - developer-guide/sdk-resources.md
 
   #      - releasing.md
-  - Operator Manual:
-      - operator-manual/README.md
-  - Roadmap: roadmap.md
+  # - Operator Manual:
+  #     - operator-manual/README.md
+  # - Roadmap: roadmap.md
 
   # - Blog: https://blog.argoproj.io/
   # - Slack: https://argoproj.github.io/community/join-slack
