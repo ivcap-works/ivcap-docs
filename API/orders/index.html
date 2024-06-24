@@ -1,0 +1,1679 @@
+<style>
+  .md-header,
+  nav {
+    --md-primary-fg-color: #415C6C !important;
+    --md-primary-fg-color--light: #5d6cc0;
+    --md-primary-fg-color--dark: #415C6C;
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3;
+
+    --md-accent-fg-color: #415C6C;
+    --md-accent-fg-color--transparent: #526cfe1a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3;
+  }
+</style>
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Orders - IVCAP - Platform for Collaborating on Analytics & Data</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#orders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IVCAP - Platform for Collaborating on Analytics &amp; Data" class="md-header__button md-logo" aria-label="IVCAP - Platform for Collaborating on Analytics & Data" data-md-component="logo">
+      
+  <img src="../../assets/logo/logo_white_32x32.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IVCAP - Platform for Collaborating on Analytics & Data
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Orders
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../developer-guide/" class="md-tabs__link">
+          
+  
+  Service Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IVCAP - Platform for Collaborating on Analytics &amp; Data" class="md-nav__button md-logo" aria-label="IVCAP - Platform for Collaborating on Analytics & Data" data-md-component="logo">
+      
+  <img src="../../assets/logo/logo_white_32x32.png" alt="logo">
+
+    </a>
+    IVCAP - Platform for Collaborating on Analytics & Data
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installing-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IVCAP CLI Tool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Service Developer Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Service Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/develop-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/deploy-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/running-locally/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Locally
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/integration-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/sdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-guide/sdk-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDK resources and methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      List orders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List orders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common use cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-orders-http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Orders HTTP request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP response codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderlistrt-json-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderListRT JSON Resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderlistitem-json-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderListItem JSON Resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common use cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-services-http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      List services HTTP request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response-codes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP response codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderrequestt-json-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderRequestT JSON Resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatusrt-json-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderStatusRT JSON Resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common use cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-services-http-request_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      List services HTTP request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response-codes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP response codes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatusrt-json-resource_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      OrderStatusRT JSON Resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<h1 id="orders">Orders</h1>
+<h2 id="overview">Overview</h2>
+<p>Request analytics services on collections of artifacts with the <code>Order</code> methods.  <em>Create</em>, <em>list</em>, and <em>Read</em> orders to request an analytics service, check progress, or access the results of the service.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td>GET /1/orders</td>
+<td>Returns a collection of zero or more <code>OrderListItem</code> objects that match the request criteria.  An individual order is accessed by the <code>Read</code> order method.</td>
+</tr>
+<tr>
+<td>Create</td>
+<td>POST /1/orders</td>
+<td>Create an order using a service, supply necessary metadata and parameters.  Use the <code>OrderStatusRT</code> json object returned to access the order id, and other order information.</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>GET /1/orders/{id}</td>
+<td>Retrieves the details for the order that matches the supplied <code>id</code> parameter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="list-orders">List orders</h3>
+<h4 id="common-use-cases">Common use cases</h4>
+<p>This method is used to retrieve a collection of zero or more <code>OrderListItem</code> records that match the search criteria given via the parameters.  Access an orders detail with the <code>Read</code> method, which returns the <code>OrderStatusRT</code> json object.</p>
+<h4 id="list-orders-http-request">List Orders HTTP request</h4>
+<p>GET https://site.uri/1/orders</p>
+<h4 id="http-response-codes">HTTP response codes</h4>
+<table>
+<thead>
+<tr>
+<th>Response code</th>
+<th>Response type</th>
+<th>Response resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><code>OrderListRT</code> json resource that contains an array of the <code>OrderListItem</code> objects</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request response</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorised response</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden response</td>
+<td><code>InvalidScopesT</code> json resource with the id of the resource in error and the error message.</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Not Implemented response</td>
+<td><code>NotImplementedT</code> json resource is returned which contains the an information message.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Use</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$filter</td>
+<td>string</td>
+<td><code>$filter=FirstName eq 'Scott'</code></td>
+<td>The search term or string used to limit the result set</td>
+</tr>
+<tr>
+<td>$orderby</td>
+<td>string</td>
+<td><code>$orderby=EndsAt desc</code></td>
+<td>The order of the orders in the result set</td>
+</tr>
+<tr>
+<td>$top</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$skip</td>
+<td>integer</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$select</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pageToken</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderlistrt-json-resource">OrderListRT JSON Resource</h4>
+<p>Use the OrderListRT structure to discover the Orders and their status.</p>
+<pre><code class="language-json">{
+    &quot;links&quot;*: {
+        &quot;first&quot;: &quot;uri&quot;,
+        &quot;next&quot;: &quot;uri&quot;,
+        &quot;self&quot;: &quot;uri&quot;
+    },
+    &quot;orders&quot;*: [{
+        &quot;account_id&quot;: &quot;string&quot;,
+        &quot;finished_at&quot;: &quot;string&quot;,
+        &quot;id&quot;: &quot;string&quot;,
+        &quot;links&quot;*: {
+            &quot;describedBy&quot;: {
+                &quot;href&quot;: &quot;uri&quot;,
+                &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;self&quot;: &quot;string&quot;,
+        },
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;ordered_at&quot;: &quot;string&quot;,
+        &quot;service_id&quot;: &quot;string&quot;,
+        &quot;status&quot;: &quot;enum&quot;
+    }]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>links</td>
+<td>An optional element which contains the <code>NavT</code> json structure of the first, next, and self URIs.</td>
+</tr>
+<tr>
+<td>links.first</td>
+<td><code>uri</code> the uri for the first order in the collection.</td>
+</tr>
+<tr>
+<td>links.next</td>
+<td><code>uri</code></td>
+</tr>
+<tr>
+<td>links.self</td>
+<td><code>uri</code></td>
+</tr>
+<tr>
+<td>orders</td>
+<td>Is an array of the <a href="#orderlistitem-json-resource">OrderListItem</a> json objects.</td>
+</tr>
+<tr>
+<td>orders.account_id</td>
+<td><code>string</code> The account ID for the order.</td>
+</tr>
+<tr>
+<td>orders.finished_at</td>
+<td><code>string</code> The date that the order finished.</td>
+</tr>
+<tr>
+<td>orders.id</td>
+<td><code>string</code> The ID for the order.</td>
+</tr>
+<tr>
+<td>orders.links</td>
+<td>contains the <code>describedBy</code> structure containing the resource <code>uri</code> and <code>type</code> and the <code>self</code> string element.</td>
+</tr>
+<tr>
+<td>orders.links.describedBy</td>
+<td></td>
+</tr>
+<tr>
+<td>orders.links.describedBy.href</td>
+<td><code>uri</code> the uri for the order.</td>
+</tr>
+<tr>
+<td>orders.links.describedBy.type</td>
+<td><code>string</code> description for the resource type.</td>
+</tr>
+<tr>
+<td>orders.links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>orders.name</td>
+<td><code>string</code> An optional, customer supplied name.</td>
+</tr>
+<tr>
+<td>orders.ordered_at</td>
+<td><code>string</code> The date the order was requested.</td>
+</tr>
+<tr>
+<td>orders.service_id</td>
+<td><code>string</code> The ID for the service for the order.</td>
+</tr>
+<tr>
+<td>orders.status</td>
+<td><code>enum</code> can be one of <code>pending</code>, <code>executing</code>, <code>finished</code>, or <code>error</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderlistitem-json-resource">OrderListItem JSON Resource</h4>
+<p>The JSON structure used in a result set to provide the information for an individual order.</p>
+<pre><code class="language-json">{
+    &quot;account_id&quot;: &quot;string&quot;,
+    &quot;finished_at&quot;: &quot;string&quot;,
+    &quot;id&quot;: &quot;string&quot;,
+    &quot;links&quot;*: {
+        &quot;describedBy&quot;: {
+            &quot;href&quot;: &quot;uri&quot;,
+            &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;self&quot;: &quot;string&quot;
+    },
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;ordered_at&quot;: &quot;string&quot;,
+    &quot;service_id&quot;: &quot;string&quot;,
+    &quot;status&quot;: &quot;enum&quot;
+}
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><code>string</code> The account ID for the order.</td>
+</tr>
+<tr>
+<td>finished_at</td>
+<td><code>string</code> The date that the order finished.</td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>string</code> The ID for the order.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>contains the <code>describedBy</code> structure containing the resource <code>uri</code> and <code>type</code> and the <code>self</code> string element.</td>
+</tr>
+<tr>
+<td>links.describedBy</td>
+<td></td>
+</tr>
+<tr>
+<td>links.describedBy.href</td>
+<td><code>uri</code> the uri for the order.</td>
+</tr>
+<tr>
+<td>links.describedBy.type</td>
+<td><code>string</code> description for the resource type.</td>
+</tr>
+<tr>
+<td>links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code> The optional, customer supplied name.</td>
+</tr>
+<tr>
+<td>ordered_at</td>
+<td><code>string</code> The data that the order was requested.</td>
+</tr>
+<tr>
+<td>service_id</td>
+<td><code>string</code> The ID for the service.</td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>enum</code> can be one of <code>pending</code>, <code>executing</code>, <code>finished</code>, or <code>error</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-order">Create order</h3>
+<h4 id="common-use-cases_1">Common use cases</h4>
+<p>Create an order to start an analytics service on a data collection.  Use the <code>ServiceListItem.id</code> as the <code>serviceID</code> (the <code>ListService</code> method lists the available services) and supply the necessary metadata and parameters using the <code>OrderRequestT</code> json object.
+The <code>OrderStatusRT</code> json object contains the order details and is returned on success.</p>
+<h4 id="list-services-http-request">List services HTTP request</h4>
+<p>POST https://site.uri/1/orders</p>
+<h4 id="http-response-codes_1">HTTP response codes</h4>
+<table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>response type</th>
+<th>response resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Created response</td>
+<td><code>ServiceStatusRT</code> json object with the service status and details.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request response.</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorised response.</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden response</td>
+<td><code>InvalidScopesT</code> json resource with the id of the resource in error and the error message.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found response</td>
+<td><code>ResourceNotFoundT</code> json object containing the <code>id</code> of the missing resource and the <code>message</code> for the error.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Request contained semantically wrong parameter value response</td>
+<td>the <code>InvalidParameterValue</code> json object containing the <code>message</code> for the error, <code>name</code> of the parameter, and the <code>value</code> of the parameter with the bad value.</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Not Implemented response</td>
+<td><code>NotImplementedT</code> json resource is returned which contains the an information message.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable response.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderrequestt-json-resource">OrderRequestT JSON Resource</h4>
+<p>Order a new analytics service workflow with the <code>OrderRequestT</code> json object.</p>
+<pre><code class="language-json">{
+    &quot;accountID&quot;*: &quot;uri&quot;,
+    &quot;metadata&quot;*: [{
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;value&quot;: &quot;string&quot;
+    }],
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;parameters&quot;*: [{
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;value&quot;: &quot;string&quot;
+    }],
+    &quot;serviceID&quot;*: &quot;uri&quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountID</td>
+<td><code>uri</code> Reference to the account for the credit of revenues for the service.</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>Optional, meta data tags used for this service.</td>
+</tr>
+<tr>
+<td>metadata.name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>metadata.value</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code> An optional customer supplied name for the order.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>Optional, the name/value parameters needed for the service.</td>
+</tr>
+<tr>
+<td>parameters.name</td>
+<td><code>string</code> The name of the parameter.</td>
+</tr>
+<tr>
+<td>parameters.value</td>
+<td><code>string</code> The value of the parameter.</td>
+</tr>
+<tr>
+<td>serviceID</td>
+<td><code>string</code> The optional, customer supplied name.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderstatusrt-json-resource">OrderStatusRT JSON Resource</h4>
+<pre><code class="language-json">{
+    &quot;account&quot;: {
+        &quot;id&quot;: &quot;uri&quot;,
+        &quot;links&quot;: {
+            &quot;describedBy&quot;: {
+                &quot;href&quot;: &quot;uri&quot;,
+                &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;self&quot;: &quot;string&quot;
+        }
+    },
+    &quot;id&quot;*: &quot;uuid&quot;,
+    &quot;links&quot;: {
+        &quot;describedBy&quot;: {
+            &quot;href&quot;: &quot;uri&quot;,
+            &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;self&quot;: &quot;string&quot;
+    },
+    &quot;metadata&quot;*: [{
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;value&quot;: &quot;string&quot;
+    }],
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;ordered_at&quot;: &quot;string&quot;,
+    &quot;parameters&quot;*: [{
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;value&quot;: &quot;string&quot;
+    }],
+    &quot;products&quot;: [{
+        &quot;id&quot;: &quot;string&quot;,
+        &quot;links&quot;: {
+            &quot;data&quot;: &quot;string&quot;,
+            &quot;describedBy&quot;: {
+                &quot;href&quot;: &quot;uri&quot;,
+                &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;self&quot;: &quot;string&quot;
+        }
+        &quot;mime-type&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;size&quot;: &quot;int64&quot;,
+        &quot;status&quot;: &quot;string&quot;
+    }]
+    &quot;service&quot;: {
+        &quot;id&quot;: &quot;uri&quot;,
+        &quot;links&quot;: {
+                &quot;describedBy&quot;: {
+                &quot;href&quot;: &quot;uri&quot;,
+                &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;self&quot;: &quot;string&quot;
+        }
+    },
+    &quot;status&quot;: &quot;enum&quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>The account details for the order .</td>
+</tr>
+<tr>
+<td>account.id</td>
+<td><code>string</code> The ID for the account for the order.</td>
+</tr>
+<tr>
+<td>account.links</td>
+<td>which contains the <code>SelfT</code> json object (which contains the <code>DescribedByT</code> and <code>self</code> objects).</td>
+</tr>
+<tr>
+<td>account.links.describedBy</td>
+<td>The <code>DescribedByT</code> json object.</td>
+</tr>
+<tr>
+<td>account.links.describedBy.href</td>
+<td><code>uri</code></td>
+</tr>
+<tr>
+<td>account.links.describedBy.type</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>account.links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>string</code> The ID for the order.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>which contains the <code>SelfT</code> json object (which contains the <code>DescribedByT</code> and <code>self</code> objects).</td>
+</tr>
+<tr>
+<td>links.describedBy</td>
+<td>The <code>DescribedByT</code> json object.</td>
+</tr>
+<tr>
+<td>links.describedBy.href</td>
+<td><code>uri</code></td>
+</tr>
+<tr>
+<td>links.describedBy.type</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>Optional, meta data tags used for this service.</td>
+</tr>
+<tr>
+<td>metadata.name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>metadata.value</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code> Optional customer supplied name for the order.</td>
+</tr>
+<tr>
+<td>ordered_at</td>
+<td><code>string</code> Containing the order date, example: 2022-01-01.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>Optional, the name/value parameters used for the order.</td>
+</tr>
+<tr>
+<td>parameters.name</td>
+<td><code>string</code> The name of the parameter.</td>
+</tr>
+<tr>
+<td>parameters.value</td>
+<td><code>string</code> The value of the parameter.</td>
+</tr>
+<tr>
+<td>products</td>
+<td>An array of the products that are created by the service for the order.</td>
+</tr>
+<tr>
+<td>products.id</td>
+<td><code>string</code> The ID for the product.</td>
+</tr>
+<tr>
+<td>products.links</td>
+<td>which contains the <code>SelfWithDataT</code> json object (which contains the <code>data</code>, <code>DescribedByT</code>, and <code>self</code> objects).</td>
+</tr>
+<tr>
+<td>products.links.data</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>products.links.describedBy</td>
+<td>the <code>DescribedByT</code> Json object.</td>
+</tr>
+<tr>
+<td>products.links.describedBy.href</td>
+<td><code>uri</code></td>
+</tr>
+<tr>
+<td>products.links.describedBy.type</td>
+<td><code>string</code> Example: 1705023718571840300.</td>
+</tr>
+<tr>
+<td>products.links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>products.mime-type</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>products.name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>products.size</td>
+<td><code>int64</code></td>
+</tr>
+<tr>
+<td>products.status</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>service</td>
+<td>Information for the service to satisfy the order.</td>
+</tr>
+<tr>
+<td>service.id</td>
+<td><code>uri</code> Reference for service provider, example: http://erdman.name/vivien.renner</td>
+</tr>
+<tr>
+<td>service.links</td>
+<td></td>
+</tr>
+<tr>
+<td>service.links.describedBy</td>
+<td>The <code>DescribedByT</code> json object.</td>
+</tr>
+<tr>
+<td>service.links.describedBy.href</td>
+<td><code>uri</code> example:  https://api.com/swagger/...</td>
+</tr>
+<tr>
+<td>service.links.describedBy.type</td>
+<td><code>string</code> example: application/openapi3+json</td>
+</tr>
+<tr>
+<td>service.links.self</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>enum</code> Can be one of <code>pending</code>, <code>executing</code>, <code>finished</code>, or <code>error</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="read-order">Read order</h3>
+<h4 id="common-use-cases_2">Common use cases</h4>
+<p>Get the details for an order with the Read services method which returns the <code>OrderStatusRT</code> json object for supplied  id parameter.</p>
+<h4 id="list-services-http-request_1">List services HTTP request</h4>
+<p>GET https://site.uri/1/orders/{id}</p>
+<h4 id="http-response-codes_2">HTTP response codes</h4>
+<table>
+<thead>
+<tr>
+<th>Error code</th>
+<th>response type</th>
+<th>response resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK response</td>
+<td><code>ServiceStatusRT</code> Json object with the service status and details.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request response</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorised response</td>
+<td></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden response</td>
+<td><code>InvalidScopesT</code> Json resource with the id of the resource in error and the error message.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found response</td>
+<td>A service matching the <code>id</code> parameter is not found, of the missing resource and the <code>message</code> for the error.</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Not Implemented response</td>
+<td>A json object containing the message for the error.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Use</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td></td>
+<td>The id for the order to return in the <code>OrderStatusRT</code> resource.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderstatusrt-json-resource_1">OrderStatusRT JSON Resource</h4>
+<p>The <a href="#orderstatusrt-json-resource"><code>OrderStatusRT</code></a> resource that contains the details for the service which matches the <code>{id}</code> parameter is given in the <strong>OK</strong> response.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+<!-- Giscus -->
+<h3 id="__comments">Comments</h3>
+
+<script src="https://giscus.app/client.js" data-repo="ivcap-works/ivcap-docs" data-repo-id="R_kgDOMMOmgA"
+  data-category="Announcements" data-category-id="DIC_kwDOMMOmgM4CgPsr" data-mapping="pathname" data-strict="0"
+  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme"
+  data-lang="en" crossorigin="anonymous" async>
+  </script>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
