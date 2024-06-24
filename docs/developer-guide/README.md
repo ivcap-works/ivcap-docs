@@ -6,10 +6,7 @@ __IVCAP__ enables researchers and analytics providers to use and develop analyti
 
 The intended audiences for this guide are the Researchers and Developers who intend to develop analytics services for __IVCAP__.
 
-A [Python SDK](sdk/) has been published to facilitate the development of services and there is [a sample service](sdk/#using-the-sdk-for-the-ivcap_service) to help you get started using the SDK.
-
-The [command line interface](https://github.com/ivcap-works/ivcap-cli) (CLI) is also available and can be used as another example service.
-The CLI also demonstrates how to develop an analytics service using go.
+A [Python SDK](https://ivcap-works.github.io/ivcap-service-sdk-python/) has been published to facilitate the development of services and there is [a sample service](https://github.com/ivcap-works/ivcap-python-service-example) to help you get started using the SDK.
 
 ## Getting started
 
@@ -30,7 +27,7 @@ The bearer token is attained via the 'create session' method.
 IVCAP implements the [oauth2](https://oauth.net/2/) authentication model.
 Authentication for the user device is currently provided via the [ivcap-cli](https://github.com/ivcap-works/ivcap-cli) command line interface.
 
-The [cli login command](https://github.com/ivcap-works/ivcap-cli) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using Golang.
+The [`ivcap context login`](https://github.com/ivcap-works/ivcap-cli?tab=readme-ov-file#configure-context-for-a-specific-deployment) illustrates the oauth2 authentication flow, token management, and the refresh of the JWT token within the service using Golang.
 Service providers may choose to implement authentication and token management within their service.
 
 ### Authorisation
@@ -39,9 +36,9 @@ Authorisation protocols are set in the IVCAP core and are used to determine what
 
 For example, the controls may determine access to:
 
-* list artifacts, i.e. May only generate a list of artifacts that are owned by the authenticated account.
-* read artifacts, May only return an artifact owned by the authenticated account.
+* List artifacts, i.e. May only generate a list of artifacts that are owned by the authenticated account.
+* Read artifacts, May only return an artifact owned by the authenticated account.
 * Allow authenticated users to upload artifacts, add metadata, add collections, etc.
 * Restrict listing and returning order details to only those orders submitted by the account.
 * Ensure orders are only created when the nominated account matches the authenticated user account.
-* list services, but only be able to create or update them if they're a service provider and the service owner (for updates).
+* List services, but only be able to create or update them if they're a service provider and the service owner (for updates).

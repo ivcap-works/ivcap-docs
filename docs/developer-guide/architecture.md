@@ -13,29 +13,20 @@ The underlying platform may be Google Cloud, Azure, or on your local machine usi
 Core External services and components include:
 
 * [Kubernetes](https://kubernetes.io/) to containerise and deploy services that provide analytics on IVCAP.  Use [Minikube](https://minikube.sigs.k8s.io/docs/start/) for a local install.
-* [Magda](https://magda.io/) to hold, catalogue and manage the IVCAP data and meta-data.
 * [Argo Workflows](https://argoproj.github.io/argo-workflows/) for sequencing analytics activities (tasks, parts of workflows, etc.) in workflow templates that provide the service.  Argo is used to execute all orders.
-* [Minio](https://min.io/) for object and data storage.
 * [Postgres](https://www.postgresql.org/) that acts as an underlying database.
-* [Mitterwald](https://helm.mittwald.de) to share authorisation tokens and secrets between services.
 * [Loki](https://github.com/grafana/loki) a monitoring and logging stack for storing logs and processing queries
   * [Promtail](https://github.com/jafernandez73/grafana-loki/blob/master/docs/promtail-setup.md) for gathering and sending logs to Loki
   * [Grafana](https://grafana.com/docs/loki/latest/api/) for querying and displaying logs
 
 Internal Services included in [IVCAP-core](https://github.com/ivcap-works/ivcap-core) include:
 
-* Api_gateway: waits and listens for requests, authorises requests, directs requests to the requested analytics service, acts as the REST API endpoint.
-* Order_dispatcher: actions order requests and initiate service workflows.
-* Data_proxy: Provides access to, caching, and related logging of artifacts for services.
-* Exit_handler: Reports the exit state of orders to update the order records in Magda.
-**...TODO**
-
-###
-
-
+* _api_gateway_: waits and listens for requests, authorises requests, directs requests to the requested analytics service, acts as the REST API endpoint.
+* _order_dispatcher_: actions order requests and initiate service workflows.
+* _data_proxy_: Provides access to, caching, and related logging of artifacts for services.
+* _storage_server_: Muliple versions can be configured depending on the storage infrastructure to be used (e.g. cloud buckets, local file system, API supplied, ...)
 
 
 ## Containers
 
-IVCAP uses Kubernetes as the environment to run the containerised services which comprise the IVCAP platform.
-containerise platform which contains the services which constitutes the IVCAP platform and the additional analytics services.
+IVCAP uses Kubernetes as the environment to run the containerised services. The container runtime used is [containerd](https://containerd.io).

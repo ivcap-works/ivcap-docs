@@ -49,15 +49,15 @@ nav:
   #         - argo: cli/argo.md
   #         - argo archive: cli/argo_archive.md
   #         - argo archive delete: cli/argo_archive_delete.md
-  - Service Developer Guide:
-      - Overview: developer-guide/README.md
-      - Architecture: developer-guide/architecture.md
-      - Develop Services: developer-guide/develop-services.md
-      - Deploy Services: developer-guide/deploy-services.md
-      - developer-guide/running-locally.md
-      - developer-guide/integration-options.md
-      - Python SDK: developer-guide/sdk.md
-      - developer-guide/sdk-resources.md
+  # - Service Developer Guide:
+  #     - Overview: developer-guide/README.md
+  #     - Architecture: developer-guide/architecture.md
+  #     - Develop Services: developer-guide/develop-services.md
+  #     - Deploy Services: developer-guide/deploy-services.md
+  #     - developer-guide/running-locally.md
+  #     - developer-guide/integration-options.md
+  #     - Python SDK: developer-guide/sdk.md
+  #     - developer-guide/sdk-resources.md
 
   #      - releasing.md
   # - Operator Manual:
