@@ -63,10 +63,15 @@
     }
   }
 
-  #hiro-img {
+  #hero-img {
     position: absolute;
     height: 80vh;
     width: auto;
+    /* 0.71 aspect ratio */
+    max-width: 80vw;
+    aspect-ratio: 0.71 !important;
+
+    /* max-height: 56vh; */
     /* top: 10px; */
     right: 20px;
   }
@@ -86,13 +91,9 @@
   .md-header--shadow {
     box-shadow: 0 0, 0 0;
   }
-
-  /* .md-logo img {
-    color: red
-  } */
 </style>
 
-<img id="hiro-img" src="assets/images/hero2.png" alt="" draggable="false">
+<img id="hero-img" src="assets/images/hero2.png" alt="" draggable="false">
 
 <section id="hero-text" class="mdx-container">
   <div class="md-grid md-typeset">
@@ -112,9 +113,6 @@
           class="md-button md-button--primary">
           Getting Started
         </a>
-        <!-- <a href="{{ 'getting-started/quick-start/' | url }}" title="Getting Started" class="md-button">
-          Getting Started
-        </a> -->
       </div>
     </div>
   </div>
@@ -128,17 +126,15 @@
 
 
       <!-- Hero content -->
-      <div class="mdx-hero__content">
-        <!-- <h1>Platform for ...<br>... science<br>... collaboration<br>... rapid prototyping</h1>
-
+      <!-- <div class="mdx-hero__content">
         <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}"
           class="md-button md-button--primary">
           Quick start
         </a>
         <a href="{{ 'insiders/' | url }}" title="Material for MkDocs Insiders" class="md-button">
           Learn More
-        </a> -->
-      </div>
+        </a>
+      </div> -->
     </div>
   </div>
 </section>
