@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="943px" preserveAspectRatio="none" style="width:1069px;height:943px;background:#FFFFFF;" version="1.1" viewBox="0 0 1069 943" width="1069px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="246.0625" style="stroke:#000000;stroke-width:1.0;" width="10" x="119.5" y="113.4297"/><rect fill="#FFFFFF" height="187.7969" style="stroke:#000000;stroke-width:1.0;" width="10" x="264.5" y="142.5625"/><rect fill="#FFFFFF" height="14" style="stroke:#000000;stroke-width:1.0;" width="10" x="626.5" y="606.2109"/><rect fill="#FFFFFF" height="86.2656" style="stroke:#000000;stroke-width:1.0;" width="10" x="756" y="577.0781"/><rect fill="#FFFFFF" height="219.125" style="stroke:#000000;stroke-width:1.0;" width="10" x="991.5" y="505.3516"/><rect fill="#FFFFFF" height="300.3906" style="stroke:#000000;stroke-width:1.0;" width="684" x="379.5" y="457.0859"/><rect fill="#FFFFFF" height="157.5313" style="stroke:#000000;stroke-width:1.0;" width="664" x="389.5" y="538.8125"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="28" x2="28" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="124.5" x2="124.5" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="269.5" x2="269.5" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="439.5" x2="439.5" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="522.5" x2="522.5" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="631.5" x2="631.5" y1="82.2969" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="760.5" x2="760.5" y1="398.1406" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="881.5" x2="881.5" y1="439.4375" y2="861.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="996.5" x2="996.5" y1="513.0156" y2="861.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="31" x="10" y="78.9951">user</text><ellipse cx="28.5" cy="14" fill="#FFFFFF" rx="8" ry="8" style="stroke:#000000;stroke-width:1.0;"/><path d="M28.5,22 L28.5,49 M15.5,30 L41.5,30 M28.5,49 L15.5,64 M28.5,49 L41.5,64 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="31" x="10" y="873.8701">user</text><ellipse cx="28.5" cy="886.1719" fill="#FFFFFF" rx="8" ry="8" style="stroke:#000000;stroke-width:1.0;"/><path d="M28.5,894.1719 L28.5,921.1719 M15.5,902.1719 L41.5,902.1719 M28.5,921.1719 L15.5,936.1719 M28.5,921.1719 L41.5,936.1719 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="98" x="75.5" y="51"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="84" x="82.5" y="70.9951">API Gateway</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="98" x="75.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="84" x="82.5" y="880.8701">API Gateway</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="132" x="203.5" y="51"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="118" x="210.5" y="70.9951">Order Dispatcher</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="132" x="203.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="118" x="210.5" y="880.8701">Order Dispatcher</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="60" x="409.5" y="51"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="46" x="416.5" y="70.9951">Magda</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="60" x="409.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="46" x="416.5" y="880.8701">Magda</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="46" x="499.5" y="51"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="32" x="506.5" y="70.9951">Argo</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="46" x="499.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="32" x="506.5" y="880.8701">Argo</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="112" x="575.5" y="51"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="98" x="582.5" y="70.9951">Cloud Storage</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="112" x="575.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="98" x="582.5" y="880.8701">Cloud Storage</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="87" x="717.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="73" x="724.5" y="880.8701">Data Proxy</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="95" x="834.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="81" x="841.5" y="880.8701">Exit Handler</text><rect fill="#FFFFFF" height="46.5938" style="stroke:#000000;stroke-width:1.0;" width="74" x="959.5" y="860.875"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="60" x="966.5" y="880.8701">Analytics</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="32" x="980.5" y="897.167">Step</text><rect fill="#FFFFFF" height="246.0625" style="stroke:#000000;stroke-width:1.0;" width="10" x="119.5" y="113.4297"/><rect fill="#FFFFFF" height="187.7969" style="stroke:#000000;stroke-width:1.0;" width="10" x="264.5" y="142.5625"/><rect fill="#FFFFFF" height="14" style="stroke:#000000;stroke-width:1.0;" width="10" x="626.5" y="606.2109"/><rect fill="#FFFFFF" height="86.2656" style="stroke:#000000;stroke-width:1.0;" width="10" x="756" y="577.0781"/><rect fill="#FFFFFF" height="219.125" style="stroke:#000000;stroke-width:1.0;" width="10" x="991.5" y="505.3516"/><polygon fill="#000000" points="107.5,109.4297,117.5,113.4297,107.5,117.4297,111.5,113.4297" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="28.5" x2="113.5" y1="113.4297" y2="113.4297"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="72" x="35.5" y="108.3638">POST order</text><polygon fill="#000000" points="252.5,138.5625,262.5,142.5625,252.5,146.5625,256.5,142.5625" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="129.5" x2="258.5" y1="142.5625" y2="142.5625"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="72" x="136.5" y="137.4966">POST order</text><polygon fill="#000000" points="427.5,167.6953,437.5,171.6953,427.5,175.6953,431.5,171.6953" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="274.5" x2="433.5" y1="171.6953" y2="171.6953"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="96" x="281.5" y="166.6294">GET service WF</text><line style="stroke:#000000;stroke-width:1.0;" x1="274.5" x2="316.5" y1="200.8281" y2="200.8281"/><line style="stroke:#000000;stroke-width:1.0;" x1="316.5" x2="316.5" y1="200.8281" y2="213.8281"/><line style="stroke:#000000;stroke-width:1.0;" x1="275.5" x2="316.5" y1="213.8281" y2="213.8281"/><polygon fill="#000000" points="285.5,209.8281,275.5,213.8281,285.5,217.8281,281.5,213.8281" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="92" x="281.5" y="195.7622">"build workflow</text><line style="stroke:#000000;stroke-width:1.0;" x1="520.5" x2="510.5" y1="242.9609" y2="238.9609"/><line style="stroke:#000000;stroke-width:1.0;" x1="520.5" x2="510.5" y1="242.9609" y2="246.9609"/><line style="stroke:#000000;stroke-width:1.0;" x1="274.5" x2="521.5" y1="242.9609" y2="242.9609"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="101" x="281.5" y="237.895">submit workflow</text><line style="stroke:#000000;stroke-width:1.0;" x1="437.5" x2="427.5" y1="272.0938" y2="268.0938"/><line style="stroke:#000000;stroke-width:1.0;" x1="437.5" x2="427.5" y1="272.0938" y2="276.0938"/><line style="stroke:#000000;stroke-width:1.0;" x1="274.5" x2="438.5" y1="272.0938" y2="272.0938"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="132" x="281.5" y="267.0278">CREATE order record</text><line style="stroke:#000000;stroke-width:1.0;" x1="437.5" x2="427.5" y1="301.2266" y2="297.2266"/><line style="stroke:#000000;stroke-width:1.0;" x1="437.5" x2="427.5" y1="301.2266" y2="305.2266"/><line style="stroke:#000000;stroke-width:1.0;" x1="274.5" x2="438.5" y1="301.2266" y2="301.2266"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="141" x="281.5" y="296.1606">ADD workflow to order</text><polygon fill="#000000" points="140.5,326.3594,130.5,330.3594,140.5,334.3594,136.5,330.3594" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="134.5" x2="268.5" y1="330.3594" y2="330.3594"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="51" x="146.5" y="325.2935">order ID</text><polygon fill="#000000" points="39.5,355.4922,29.5,359.4922,39.5,363.4922,35.5,359.4922" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="33.5" x2="123.5" y1="359.4922" y2="359.4922"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="51" x="45.5" y="354.4263">order ID</text><line style="stroke:#000000;stroke-width:1.0;" x1="715.5" x2="705.5" y1="388.625" y2="384.625"/><line style="stroke:#000000;stroke-width:1.0;" x1="715.5" x2="705.5" y1="388.625" y2="392.625"/><line style="stroke:#000000;stroke-width:1.0;" x1="522.5" x2="716.5" y1="388.625" y2="388.625"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="30" x="529.5" y="383.5591">start</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="87" x="717.5" y="367.4922"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="73" x="724.5" y="387.4873">Data Proxy</text><line style="stroke:#000000;stroke-width:1.0;" x1="832.5" x2="822.5" y1="429.9219" y2="425.9219"/><line style="stroke:#000000;stroke-width:1.0;" x1="832.5" x2="822.5" y1="429.9219" y2="433.9219"/><line style="stroke:#000000;stroke-width:1.0;" x1="522.5" x2="833.5" y1="429.9219" y2="429.9219"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="30" x="529.5" y="424.856">start</text><rect fill="#FFFFFF" height="30.2969" style="stroke:#000000;stroke-width:1.0;" width="95" x="834.5" y="408.7891"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="81" x="841.5" y="428.7842">Exit Handler</text><path d="M379.5,457.0859 L456.5,457.0859 L456.5,464.0859 L446.5,474.0859 L379.5,474.0859 L379.5,457.0859 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="300.3906" style="stroke:#000000;stroke-width:1.0;" width="684" x="379.5" y="457.0859"/><text fill="#000000" font-family="Verdana" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="32" x="394.5" y="470.1528">loop</text><text fill="#000000" font-family="Verdana" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="128" x="471.5" y="469.2964">[All Analytics Steps]</text><line style="stroke:#000000;stroke-width:1.0;" x1="957.5" x2="947.5" y1="495.3516" y2="491.3516"/><line style="stroke:#000000;stroke-width:1.0;" x1="957.5" x2="947.5" y1="495.3516" y2="499.3516"/><line style="stroke:#000000;stroke-width:1.0;" x1="522.5" x2="958.5" y1="495.3516" y2="495.3516"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="100" x="529.5" y="490.2856">start w/ params</text><rect fill="#FFFFFF" height="46.5938" style="stroke:#000000;stroke-width:1.0;" width="74" x="959.5" y="474.2188"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="60" x="966.5" y="494.2139">Analytics</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="32" x="980.5" y="510.5107">Step</text><path d="M389.5,538.8125 L466.5,538.8125 L466.5,545.8125 L456.5,555.8125 L389.5,555.8125 L389.5,538.8125 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="157.5313" style="stroke:#000000;stroke-width:1.0;" width="664" x="389.5" y="538.8125"/><text fill="#000000" font-family="Verdana" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="32" x="404.5" y="551.8794">loop</text><text fill="#000000" font-family="Verdana" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="88" x="481.5" y="551.0229">[Data access]</text><polygon fill="#000000" points="777,573.0781,767,577.0781,777,581.0781,773,577.0781" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="771" x2="990.5" y1="577.0781" y2="577.0781"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87" x="783" y="572.0122">GET/PUT data</text><polygon fill="#000000" points="647.5,602.2109,637.5,606.2109,647.5,610.2109,643.5,606.2109" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="641.5" x2="755" y1="606.2109" y2="606.2109"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87" x="653.5" y="601.145">GET/PUT data</text><polygon fill="#000000" points="744,616.2109,754,620.2109,744,624.2109,748,620.2109" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="631.5" x2="750" y1="620.2109" y2="620.2109"/><polygon fill="#000000" points="450.5,645.3438,440.5,649.3438,450.5,653.3438,446.5,649.3438" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="444.5" x2="755" y1="649.3438" y2="649.3438"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="109" x="456.5" y="644.2778">Report metadata</text><polygon fill="#000000" points="979.5,659.3438,989.5,663.3438,979.5,667.3438,983.5,663.3438" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="761" x2="985.5" y1="663.3438" y2="663.3438"/><line style="stroke:#000000;stroke-width:1.0;" x1="522.5" x2="532.5" y1="724.4766" y2="720.4766"/><line style="stroke:#000000;stroke-width:1.0;" x1="522.5" x2="532.5" y1="724.4766" y2="728.4766"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="522.5" x2="995.5" y1="724.4766" y2="724.4766"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="32" x="539.5" y="719.4106">done</text><line style="stroke:#000000;stroke-width:2.0;" x1="987.5" x2="1005.5" y1="715.4766" y2="733.4766"/><line style="stroke:#000000;stroke-width:2.0;" x1="987.5" x2="1005.5" y1="733.4766" y2="715.4766"/><line style="stroke:#000000;stroke-width:2.0;" x1="743" x2="753" y1="780.6094" y2="790.6094"/><line style="stroke:#000000;stroke-width:2.0;" x1="743" x2="753" y1="790.6094" y2="780.6094"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="522.5" x2="748" y1="785.6094" y2="785.6094"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="28" x="529.5" y="780.5435">stop</text><line style="stroke:#000000;stroke-width:2.0;" x1="864" x2="874" y1="809.7422" y2="819.7422"/><line style="stroke:#000000;stroke-width:2.0;" x1="864" x2="874" y1="819.7422" y2="809.7422"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="522.5" x2="869" y1="814.7422" y2="814.7422"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="28" x="529.5" y="809.6763">stop</text><line style="stroke:#000000;stroke-width:1.0;" x1="439.5" x2="449.5" y1="843.875" y2="839.875"/><line style="stroke:#000000;stroke-width:1.0;" x1="439.5" x2="449.5" y1="843.875" y2="847.875"/><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="439.5" x2="881" y1="843.875" y2="843.875"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="83" x="456.5" y="838.8091">report status</text><!--MD5=[ca87bc4a8de4d6fc357959bf00bfc605]
+@startuml
+!theme plain
+  actor user
+  participant "API Gateway" as gw
+  participant "Order Dispatcher" as od
+  participant "Magda" as magda 
+  participant "Argo" as argo 
+  participant "Cloud Storage" as cst
+
+  user -> gw ++: POST order
+  gw -> od ++: POST order
+  od -> magda: GET service WF
+  od -> od: "build workflow
+  od ->> argo: submit workflow
+  od ->> magda: CREATE order record
+  od ->> magda: ADD workflow to order
+  return order ID
+  return order ID
+
+  argo ->> "Data Proxy" as dp ** : start
+  argo ->> "Exit Handler" as eh ** : start
+
+  loop All Analytics Steps
+    argo ->> "Analytics\nStep" as ans ** : start w/ params
+    activate ans
+
+  
+    loop Data access
+      ans -> dp ++: GET/PUT data
+      dp -> cst ++: GET/PUT data
+      return
+      dp -> magda: Report metadata
+      return
+      |||
+    end
+
+    ans - ->> argo: done
+    deactivate ans
+    destroy ans
+    |||
+  end
+  
+  argo - ->x dp: stop
+  deactivate dp
+
+  argo - ->x eh: stop
+  eh - ->> magda: report status
+  deactivate eh
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor white
+    FontColor black
+    FontName Verdana
+    HyperLinkColor blue
+    LineColor black
+    LineThickness 1
+    Margin 5
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  header {
+    LineThickness 0
+  }
+  node {
+    MaximumWidth 300
+  }
+  title {
+    FontSize 22
+    LineThickness 0
+  }
+</style>
+
+skinparam ArrowLollipopColor black
+skinparam BackgroundColor white
+skinparam DefaultFontName Verdana
+skinparam DefaultMonospacedFontName Courier
+skinparam LifelineStrategy nosolid
+skinparam ParticipantPadding 10
+skinparam SequenceLifeLineBorderColor black
+skinparam Shadowing false
+skinparam UseBetaStyle true
+
+skinparam Activity {
+  BackgroundColor white
+  BarColor black
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam Boundary {
+  FontColor black
+}
+skinparam Box {
+  Padding 5
+}
+skinparam CircledCharacter {
+  FontColor black
+  FontName Courier
+  Radius 9
+}
+skinparam Class {
+  BackgroundColor white
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassAttribute {
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassStereotype {
+  FontColor black
+  FontName Verdana
+}
+skinparam Footer {
+  FontColor black
+  FontName Verdana
+}
+skinparam Header {
+  FontColor black
+  FontName Verdana
+}
+skinparam Hyperlink {
+  Color blue
+}
+skinparam IconPackage {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPrivate {
+  Color black
+  BackgroundColor white
+}
+skinparam IconProtected {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPublic {
+  Color black
+  BackgroundColor white
+}
+skinparam Note {
+  FontColor black
+  FontName Verdana
+}
+skinparam Package {
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam State {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeA {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeC {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeE {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeI {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeN {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam UseCaseStereoType {
+  FontColor black
+  FontName Verdana
+}
+  actor user
+  participant "API Gateway" as gw
+  participant "Order Dispatcher" as od
+  participant "Magda" as magda 
+  participant "Argo" as argo 
+  participant "Cloud Storage" as cst
+
+  user -> gw ++: POST order
+  gw -> od ++: POST order
+  od -> magda: GET service WF
+  od -> od: "build workflow
+  od ->> argo: submit workflow
+  od ->> magda: CREATE order record
+  od ->> magda: ADD workflow to order
+  return order ID
+  return order ID
+
+  argo ->> "Data Proxy" as dp ** : start
+  argo ->> "Exit Handler" as eh ** : start
+
+  loop All Analytics Steps
+    argo ->> "Analytics\nStep" as ans ** : start w/ params
+    activate ans
+
+  
+    loop Data access
+      ans -> dp ++: GET/PUT data
+      dp -> cst ++: GET/PUT data
+      return
+      dp -> magda: Report metadata
+      return
+      |||
+    end
+
+    ans - ->> argo: done
+    deactivate ans
+    destroy ans
+    |||
+  end
+  
+  argo - ->x dp: stop
+  deactivate dp
+
+  argo - ->x eh: stop
+  eh - ->> magda: report status
+  deactivate eh
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 13:26:11 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="627px" preserveAspectRatio="none" style="width:456px;height:627px;background:#FFFFFF;" version="1.1" viewBox="0 0 456 627" width="456px" zoomAndPan="magnify"><defs/><g><!--MD5=[a6f0444b0ba395250c60e922fe200d4e]
+entity collector--><ellipse cx="71" cy="119" fill="#FFFFFF" rx="4.5" ry="4.5" style="stroke:#000000;stroke-width:1.0;"/><path d="M58.5,125.5 L58.5,130.5 L68,130.5 L68,132.7574 L58.5,142.2574 L62.7426,146.5 L71,138.2426 L79.2574,146.5 L83.5,142.2574 L74,132.7574 L74,130.5 L83.5,130.5 L83.5,125.5 L58.5,125.5 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="97" x="22.5" y="160.4951">Data Collector</text><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><ellipse cx="71" cy="316" fill="#FFFFFF" rx="4.5" ry="4.5" style="stroke:#000000;stroke-width:1.0;"/><path d="M58.5,322.5 L58.5,327.5 L68,327.5 L68,329.7574 L58.5,339.2574 L62.7426,343.5 L71,335.2426 L79.2574,343.5 L83.5,339.2574 L74,329.7574 L74,327.5 L83.5,327.5 L83.5,322.5 L58.5,322.5 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="92" x="25" y="357.4951">Platform User</text><!--MD5=[62cc4166db310ca44a141886713fd6cd]
+entity provider--><ellipse cx="71" cy="538" fill="#FFFFFF" rx="4.5" ry="4.5" style="stroke:#000000;stroke-width:1.0;"/><path d="M58.5,544.5 L58.5,549.5 L68,549.5 L68,551.7574 L58.5,561.2574 L62.7426,565.5 L71,557.2426 L79.2574,565.5 L83.5,561.2574 L74,551.7574 L74,549.5 L83.5,549.5 L83.5,544.5 L58.5,544.5 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="120" x="11" y="579.4951">Analytics Provider</text><ellipse cx="320.3318" cy="600.3664" fill="#FFFFFF" rx="92.3318" ry="20.8664" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="147" x="246.8318" y="603.213">provide analytics task</text><ellipse cx="320.6612" cy="515.3322" fill="#FFFFFF" rx="129.6612" ry="28.3322" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="180" x="227.6612" y="510.9314">provide workflow template</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="101" x="267.1612" y="527.2282">(methodology)</text><ellipse cx="320.2655" cy="26.5531" fill="#FFFFFF" rx="65.7655" ry="15.5531" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="81" x="276.7655" y="30.3007">upload data</text><ellipse cx="320.4496" cy="178.4899" fill="#FFFFFF" rx="105.4496" ry="23.4899" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="176" x="232.4496" y="181.3366">manage data provenance</text><ellipse cx="320.5118" cy="98.4024" fill="#FFFFFF" rx="95.0118" ry="21.4024" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="244.0118" y="101.249">manage data life-cycle</text><ellipse cx="320.4084" cy="335.7278" fill="#FFFFFF" rx="104.9084" ry="26.2278" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="131" x="251.9084" y="331.3269">search for available</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="120" x="257.4084" y="347.6238">analytics services</text><ellipse cx="320.3735" cy="255.2747" fill="#FFFFFF" rx="79.3735" ry="18.2747" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="117" x="259.9676" y="258.7248">request analytics</text><ellipse cx="320.2614" cy="424.2523" fill="#FFFFFF" rx="124.2614" ry="27.2523" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="165" x="234.7614" y="419.8514">explore analytics results</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="112" x="261.2614" y="436.1483">and provenance</text><!--MD5=[8a0c6feada91812e124483f6f22816a8]
+link user to search--><path d="M117.11,335.5 C143.25,335.5 177.38,335.5 210.14,335.5 " fill="none" id="user-to-search" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="215.39,335.5,206.39,331.5,210.39,335.5,206.39,339.5,215.39,335.5" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[5cfa85f1a60a3dc5159f471daba35ed3]
+link user to reqAnalytics--><path d="M117.19,317.81 C139.29,309.41 166.38,299.49 191,291.5 C213.95,284.06 239.49,276.71 261.71,270.62 " fill="none" id="user-to-reqAnalytics" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="266.69,269.26,256.9543,267.7714,261.8665,270.5768,259.0612,275.489,266.69,269.26" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[eb80aeb6d097f5ec08e261295085f687]
+link user to exploreResults--><path d="M117.19,351.87 C139.42,359.91 166.61,369.73 191,378.5 C209.91,385.3 230.4,392.65 249.34,399.43 " fill="none" id="user-to-exploreResults" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="254.12,401.14,246.9923,394.3433,249.4119,399.4565,244.2987,401.8762,254.12,401.14" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[4ce3a12f546b2880d173240085e94dc3]
+link user to provWF--><path d="M88.43,360.68 C109.08,390.51 147.17,439.89 191,469.5 C203.88,478.2 218.59,485.46 233.35,491.45 " fill="none" id="user-to-provWF" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="238.36,493.43,231.4706,486.3918,233.7127,491.5854,228.5192,493.8275,238.36,493.43" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[3250834b1c9cd965bf84554d6090642f]
+link user to manageDataProv--><path d="M91.74,310.28 C113.46,284.12 150.68,243.71 191,219.5 C206.51,210.19 224.35,202.76 241.72,196.94 " fill="none" id="user-to-manageDataProv" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="246.6,195.33,236.8022,194.3282,241.8481,196.8854,239.2909,201.9313,246.6,195.33" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[3c329c873d9e95d406955af5630dd268]
+link collector to upload--><path d="M103.62,113.23 C126.67,95.92 159.28,73.62 191,59.5 C213.4,49.53 239.39,42.15 262.11,36.92 " fill="none" id="collector-to-upload" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="267.21,35.77,257.55,33.8506,262.3328,36.8713,259.3121,41.6541,267.21,35.77" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[5375875ce075e27cb50483ab113c75c7]
+link collector to manageData--><path d="M119.72,130.79 C153.06,125.4 198.42,118.07 237.49,111.75 " fill="none" id="collector-to-manageData" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="242.72,110.91,233.1965,108.3993,237.7842,111.7089,234.4747,116.2966,242.72,110.91" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[97f87b6195dcf4f2895eeca48705a999]
+link collector to manageDataProv--><path d="M119.72,146.21 C150.77,151.23 192.26,157.94 229.37,163.93 " fill="none" id="collector-to-manageDataProv" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="234.35,164.74,226.1047,159.3534,229.4142,163.9411,224.8265,167.2507,234.35,164.74" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[e9dc89aad9a9d37a14d5284551f42827]
+link collector to reqAnalytics--><path d="M103.12,163.85 C126.19,181.57 159.05,204.64 191,219.5 C211.23,228.91 234.41,236.33 255.48,241.93 " fill="none" id="collector-to-reqAnalytics" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="260.5,243.24,252.7982,237.1014,255.6613,241.9802,250.7825,244.8434,260.5,243.24" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[a3918b441c0ee153176481fcea01a173]
+link provider to provTask--><path d="M131.28,567.8 C164.27,573.53 205.73,580.73 241.34,586.92 " fill="none" id="provider-to-provTask" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="246.55,587.83,238.3712,582.3431,241.6244,586.9709,236.9966,590.2241,246.55,587.83" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[e3dc5c9b17f8b91ebf8c33524686a979]
+link provider to provWF--><path d="M131.28,547.44 C155.52,543.33 184.33,538.44 212.03,533.74 " fill="none" id="provider-to-provWF" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="217.19,532.86,207.6445,530.4343,212.2615,533.7028,208.9931,538.3199,217.19,532.86" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[419c458abff29e15ddb6d93ba4ee8814]
+@startuml
+!theme plain
+skinparam monochrome true
+skinparam actorStyle Hollow
+left to right direction
+
+
+actor :Data Collector: as collector
+actor :Platform User: as user
+actor :Analytics Provider: as provider
+
+usecase "provide analytics task" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "upload data" as upload
+usecase "manage data provenance" as manageDataProv
+usecase "manage data life-cycle" as manageData
+
+usecase "search for available\nanalytics services" as search
+usecase "request analytics" as reqAnalytics
+usecase "explore analytics results\nand provenance" as exploreResults
+
+user - -> search
+user - -> reqAnalytics
+user - -> exploreResults
+user - -> provWF
+user - -> manageDataProv
+
+collector - -> upload
+collector - -> manageData
+collector - -> manageDataProv
+collector - -> reqAnalytics
+
+provider - -> provTask
+provider - -> provWF
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor white
+    FontColor black
+    FontName Verdana
+    HyperLinkColor blue
+    LineColor black
+    LineThickness 1
+    Margin 5
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  header {
+    LineThickness 0
+  }
+  node {
+    MaximumWidth 300
+  }
+  title {
+    FontSize 22
+    LineThickness 0
+  }
+</style>
+
+skinparam ArrowLollipopColor black
+skinparam BackgroundColor white
+skinparam DefaultFontName Verdana
+skinparam DefaultMonospacedFontName Courier
+skinparam LifelineStrategy nosolid
+skinparam ParticipantPadding 10
+skinparam SequenceLifeLineBorderColor black
+skinparam Shadowing false
+skinparam UseBetaStyle true
+
+skinparam Activity {
+  BackgroundColor white
+  BarColor black
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam Boundary {
+  FontColor black
+}
+skinparam Box {
+  Padding 5
+}
+skinparam CircledCharacter {
+  FontColor black
+  FontName Courier
+  Radius 9
+}
+skinparam Class {
+  BackgroundColor white
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassAttribute {
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassStereotype {
+  FontColor black
+  FontName Verdana
+}
+skinparam Footer {
+  FontColor black
+  FontName Verdana
+}
+skinparam Header {
+  FontColor black
+  FontName Verdana
+}
+skinparam Hyperlink {
+  Color blue
+}
+skinparam IconPackage {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPrivate {
+  Color black
+  BackgroundColor white
+}
+skinparam IconProtected {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPublic {
+  Color black
+  BackgroundColor white
+}
+skinparam Note {
+  FontColor black
+  FontName Verdana
+}
+skinparam Package {
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam State {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeA {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeC {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeE {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeI {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeN {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam UseCaseStereoType {
+  FontColor black
+  FontName Verdana
+}
+skinparam monochrome true
+skinparam actorStyle Hollow
+left to right direction
+
+
+actor :Data Collector: as collector
+actor :Platform User: as user
+actor :Analytics Provider: as provider
+
+usecase "provide analytics task" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "upload data" as upload
+usecase "manage data provenance" as manageDataProv
+usecase "manage data life-cycle" as manageData
+
+usecase "search for available\nanalytics services" as search
+usecase "request analytics" as reqAnalytics
+usecase "explore analytics results\nand provenance" as exploreResults
+
+user - -> search
+user - -> reqAnalytics
+user - -> exploreResults
+user - -> provWF
+user - -> manageDataProv
+
+collector - -> upload
+collector - -> manageData
+collector - -> manageDataProv
+collector - -> reqAnalytics
+
+provider - -> provTask
+provider - -> provWF
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 13:26:11 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

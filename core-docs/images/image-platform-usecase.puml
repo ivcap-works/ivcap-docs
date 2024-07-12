@@ -1,0 +1,36 @@
+@startuml
+skinparam monochrome true
+skinparam actorStyle Hollow
+left to right direction
+
+
+actor :Data Collector: as collector
+actor :Platform User: as user
+actor :Analytics Provider: as provider
+
+usecase "provide analytics task" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "upload data" as upload
+usecase "manage data provenance" as manageDataProv
+usecase "manage data life-cycle" as manageData
+
+usecase "search for available\nanalytics services" as search
+usecase "request analytics" as reqAnalytics
+usecase "explore analytics results\nand provenance" as exploreResults
+
+user --> search
+user --> reqAnalytics
+user --> exploreResults
+user --> provWF
+user --> manageDataProv
+
+collector --> upload
+collector --> manageData
+collector --> manageDataProv
+collector --> reqAnalytics
+
+provider --> provTask
+provider --> provWF
+
+@enduml

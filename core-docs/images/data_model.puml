@@ -1,0 +1,85 @@
+@startuml
+
+
+entity "Policy" as py {
+  * id : UUID <<generated>>
+  * name: TEXT
+  * definition: JSON
+}
+
+entity "Service" as sv {
+  * id : UUID <<generated>>
+  * description: TEXT
+  * service_definition: URL
+  * parameter_schema: JSON
+  * policy_id: ref<<Policy>>
+}
+
+entity "ServiceInvocation" as svi {
+  * id : UUID <<generated>>
+  * service_id : ref <<Service>>
+  * order_id : ref <<Order>>
+  * parameters: JSON
+  * status: PENDING | ...
+  cost: NUMBER
+}
+
+entity "Principal" as pr {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Account" as acc {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Order" as ord {
+  * id : UUID <<generated>>
+  * account_id : ref <<Account>>
+  * placed_by: ref <<Principal>>
+  * service_id : ref <<Service>>
+  * parameters: JSON
+  * placed_at: DATE
+}
+
+entity "Artifact" as art {
+  * id : UUID <<generated>>
+  * produced_by : ref <<ServiceInvocation>>
+  * owned_by : ref <<Account>>
+  * mime_type: STRING 
+  * url: URL
+}
+
+entity "Assertion" as ass {
+  * id : UUID <<generated>>
+  * issuer_id: ref<<Principal>>
+  * subject_id : ref <<any>>
+  * property_name : TEXT
+  * obj_type: STRING | NUMBER | REF 
+    object_ref: UUID
+    object_s: STRING
+    object_n: NUMBER
+  * valid_from: DATE
+    valid_to: DATE
+}
+
+sv }|-- svi
+sv }|-- ord
+ord }|-- svi
+pr }|-- ord
+acc }|-- ord
+acc }|-- art
+svi }|-- art
+
+py }|-- sv
+py }|-- art
+py }|-- acc
+
+py ... ass
+
+hide circle
+hide methods
+'skinparam linetype ortho
+skinparam monochrome true
+@enduml

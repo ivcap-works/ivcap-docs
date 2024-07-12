@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+title 
+CIP Use Cases
+end title
+
+actor :Marketplace User: as user
+actor :Service Provider: as provider
+
+usecase "provide analytics services" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "search for available\nanalytics services" as search
+usecase "order analytics services" as reqAnalytics
+usecase "explore analytics results\nand their provenance" as exploreResults
+
+user --> search
+user --> reqAnalytics
+user --> exploreResults
+user --> provWF
+
+provider --> provTask
+provider --> provWF
+
+@enduml

@@ -1,0 +1,119 @@
+digraph G {
+  // node [fontname = "Handlee"];
+  // edge [fontname = "Handlee"];
+  newrank=true;
+  node [style=rounded, shape = rect]
+  
+  start [label = ""; width = 0.3; shape = circle; style=filled; color = black]
+  end [label = ""; width = 0.3; shape = doublecircle; style=filled; color = black];
+
+  subgraph cluster_0 {
+    label = "Select Workflow";
+    color = lightgrey
+
+    search [
+      label = <<FONT>Search for workflow</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">GET /1/workflows?q={query}</FONT>>
+    ];
+    refine [label = "Refine search"];
+    found_it [
+      label = "Found it?";
+      shape = diamond;
+      style = wedged;
+    ];
+    verify [
+      label = <<FONT>Verify description</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">GET /1/workflows/{id}</FONT>>
+    ];
+    satisfied[
+      label = "Satisified?";
+      shape = diamond;
+      style = wedged;
+    ];
+    
+    search -> found_it;
+    found_it -> verify [ label = "Yes" ];
+    verify -> satisfied;
+    satisfied-> refine [ label = "No" ];
+    found_it -> refine [ label = "No" ];
+    refine -> search;
+
+    {
+      rank=same;
+      found_it refine;
+    }
+  }
+ 
+  subgraph cluster_1 {
+    label = "Order Workflow";
+    color = lightgrey
+
+    order [
+      label = <<FONT>Order workflow<BR/>with parameters</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">POST /1/orders</FONT>>
+    ];
+    check [
+      label = <<FONT>Check Status</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">GET /1/orders/{id}</FONT>>
+    ];
+    status[
+      label = "Status?";
+      shape = diamond;
+      style = wedged;
+    ];
+    // list_a [label = "List\norder details"]
+    get_a [
+      label = "Get artifacts?";
+      shape = diamond;
+      style = wedged;
+    ]
+
+    order -> check;
+    check -> status;
+    status:ne -> check [ label = " Everything\nelse"]
+    status -> get_a [ label = OK]
+    // list_a -> get_a
+  }
+  
+  subgraph cluster_2 {
+    label = "Manage Artifacts";
+    color = lightgrey
+
+    manage_a [
+      label = "Action?";
+      shape = diamond;
+      style = wedged;
+    ]
+    read_a [
+      label = <<FONT>Download artifact</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">GET /1/artifacts/{id}</FONT>>
+    ];
+    write_a [
+      label = <<FONT>Upload artifact</FONT><BR/><FONT POINT-SIZE="10" FACE="courier">POST /1/artifacts/</FONT>>
+    ];
+    manage_a -> read_a [ label = "  Download" ]
+    manage_a -> write_a [ label = Upload ]
+
+  }
+    
+  start -> search;
+  start -> order;
+  start -> manage_a:n;
+  {
+    rank=same;
+    search order manage_a;
+  }
+  
+  satisfied -> order [ label = "Yes" ];
+  found_it -> end [ label = "Giving up" ];
+  satisfied -> end;
+
+  status -> end [ label = "Failed" ];
+  get_a -> end [ label = "No" ];
+  get_a -> read_a [ label = "Download" ]
+  {
+    rank=same;
+    read_a check;
+  }
+
+
+  // {
+  //   rank=max;
+  //   end;
+  // }
+}

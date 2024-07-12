@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="902px" preserveAspectRatio="none" style="width:1006px;height:902px;background:#FFFFFF;" version="1.1" viewBox="0 0 1006 902" width="1006px" zoomAndPan="magnify"><defs/><g><!--MD5=[747195c2df66eb084e0c57f126fac8cc]
+class py--><g id="elem_py"><rect codeLine="3" fill="#FFFFFF" height="83.1875" id="py" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="177" x="529" y="12"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="39" x="598" y="29.9951">Policy</text><line style="stroke:#000000;stroke-width:1.0;" x1="530" x2="705" y1="38.2969" y2="38.2969"/><ellipse cx="540" cy="49.2969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="547" y="55.292">id : UUID «generated»</text><ellipse cx="540" cy="65.5938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="84" x="547" y="71.5889">name: TEXT</text><ellipse cx="540" cy="81.8906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="105" x="547" y="87.8857">definition: JSON</text></g><!--MD5=[4f3236df9696f56c8ee77bf788044db7]
+class sv--><g id="elem_sv"><rect codeLine="9" fill="#FFFFFF" height="115.7813" id="sv" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="199" x="12" y="155"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="50" x="86.5" y="172.9951">Service</text><line style="stroke:#000000;stroke-width:1.0;" x1="13" x2="210" y1="181.2969" y2="181.2969"/><ellipse cx="23" cy="192.2969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="30" y="198.292">id : UUID «generated»</text><ellipse cx="23" cy="208.5938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="122" x="30" y="214.5889">description: TEXT</text><ellipse cx="23" cy="224.8906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="155" x="30" y="230.8857">service_definition: URL</text><ellipse cx="23" cy="241.1875" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="175" x="30" y="247.1826">parameter_schema: JSON</text><ellipse cx="23" cy="257.4844" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="142" x="30" y="263.4795">policy_id: ref«Policy»</text></g><!--MD5=[c41f0b3bbc242259228eed19fff2558b]
+class svi--><g id="elem_svi"><rect codeLine="17" fill="#FFFFFF" height="132.0781" id="svi" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="195" x="237" y="588"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="120" x="274.5" y="605.9951">ServiceInvocation</text><line style="stroke:#000000;stroke-width:1.0;" x1="238" x2="431" y1="614.2969" y2="614.2969"/><ellipse cx="248" cy="625.2969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="255" y="631.292">id : UUID «generated»</text><ellipse cx="248" cy="641.5938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="171" x="255" y="647.5889">service_id : ref «Service»</text><ellipse cx="248" cy="657.8906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="148" x="255" y="663.8857">order_id : ref «Order»</text><ellipse cx="248" cy="674.1875" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="121" x="255" y="680.1826">parameters: JSON</text><ellipse cx="248" cy="690.4844" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="140" x="255" y="696.4795">status: PENDING | ...</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="100" x="255" y="712.7764">cost: NUMBER</text></g><!--MD5=[aa862b9a7c0b577ebbd2878d73f721ed]
+class pr--><g id="elem_pr"><rect codeLine="26" fill="#FFFFFF" height="66.8906" id="pr" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="177" x="246" y="179.5"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="57" x="306" y="197.4951">Principal</text><line style="stroke:#000000;stroke-width:1.0;" x1="247" x2="422" y1="205.7969" y2="205.7969"/><ellipse cx="257" cy="216.7969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="264" y="222.792">id : UUID «generated»</text><ellipse cx="257" cy="233.0938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="84" x="264" y="239.0889">name: TEXT</text></g><!--MD5=[8be9a1d45a27ed621c0e415c9d857dd4]
+class acc--><g id="elem_acc"><rect codeLine="31" fill="#FFFFFF" height="66.8906" id="acc" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="177" x="458" y="179.5"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="57" x="518" y="197.4951">Account</text><line style="stroke:#000000;stroke-width:1.0;" x1="459" x2="634" y1="205.7969" y2="205.7969"/><ellipse cx="469" cy="216.7969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="476" y="222.792">id : UUID «generated»</text><ellipse cx="469" cy="233.0938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="84" x="476" y="239.0889">name: TEXT</text></g><!--MD5=[ea8604f3c5e32d5b7b38cb5c9f60a6b5]
+class ord--><g id="elem_ord"><rect codeLine="36" fill="#FFFFFF" height="132.0781" id="ord" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="209" x="230" y="363.5"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="39" x="315" y="381.4951">Order</text><line style="stroke:#000000;stroke-width:1.0;" x1="231" x2="438" y1="389.7969" y2="389.7969"/><ellipse cx="241" cy="400.7969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="248" y="406.792">id : UUID «generated»</text><ellipse cx="241" cy="417.0938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="185" x="248" y="423.0889">account_id : ref «Account»</text><ellipse cx="241" cy="433.3906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="175" x="248" y="439.3857">placed_by: ref «Principal»</text><ellipse cx="241" cy="449.6875" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="171" x="248" y="455.6826">service_id : ref «Service»</text><ellipse cx="241" cy="465.9844" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="121" x="248" y="471.9795">parameters: JSON</text><ellipse cx="241" cy="482.2813" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="113" x="248" y="488.2764">placed_at: DATE</text></g><!--MD5=[50718309d077c0382ed25765dd3d0e91]
+class art--><g id="elem_art"><rect codeLine="45" fill="#FFFFFF" height="115.7813" id="art" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="287" x="403" y="780"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="47" x="523" y="797.9951">Artifact</text><line style="stroke:#000000;stroke-width:1.0;" x1="404" x2="689" y1="806.2969" y2="806.2969"/><ellipse cx="414" cy="817.2969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="421" y="823.292">id : UUID «generated»</text><ellipse cx="414" cy="833.5938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="263" x="421" y="839.5889">produced_by : ref «ServiceInvocation»</text><ellipse cx="414" cy="849.8906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="180" x="421" y="855.8857">owned_by : ref «Account»</text><ellipse cx="414" cy="866.1875" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="136" x="421" y="872.1826">mime_type: STRING</text><ellipse cx="414" cy="882.4844" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="53" x="421" y="888.4795">url: URL</text></g><!--MD5=[69be5291cc5dc2731407681d4461b1e1]
+class ass--><g id="elem_ass"><rect codeLine="53" fill="#FFFFFF" height="197.2656" id="ass" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1.0;" width="257" x="742" y="331"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="65" x="838" y="348.9951">Assertion</text><line style="stroke:#000000;stroke-width:1.0;" x1="743" x2="998" y1="357.2969" y2="357.2969"/><ellipse cx="753" cy="368.2969" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="760" y="374.292">id : UUID «generated»</text><ellipse cx="753" cy="384.5938" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="163" x="760" y="390.5889">issuer_id: ref«Principal»</text><ellipse cx="753" cy="400.8906" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="147" x="760" y="406.8857">subject_id : ref «any»</text><ellipse cx="753" cy="417.1875" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="153" x="760" y="423.1826">property_name : TEXT</text><ellipse cx="753" cy="433.4844" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="233" x="760" y="439.4795">obj_type: STRING | NUMBER | REF</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="111" x="760" y="455.7764">object_ref: UUID</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="119" x="760" y="472.0732">object_s: STRING</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="129" x="760" y="488.3701">object_n: NUMBER</text><ellipse cx="753" cy="498.6719" fill="#FFFFFF" rx="3" ry="3" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="115" x="760" y="504.667">valid_from: DATE</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="98" x="760" y="520.9639">valid_to: DATE</text></g><!--MD5=[2c7e06f493adab9244eb424c501242aa]
+reverse link sv to svi--><g id="link_sv_svi"><path codeLine="66" d="M123.26,279.06 C137.26,345.25 164.94,449.05 212.5,528 C225.33,549.3 242.46,569.78 259.82,587.78 " fill="none" id="sv-backto-svi" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="123.2494" x2="115.7458" y1="279.0123" y2="272.402"/><line style="stroke:#000000;stroke-width:1.0;" x1="123.2494" x2="127.4942" y1="279.0123" y2="269.958"/><line style="stroke:#000000;stroke-width:1.0;" x1="123.2494" x2="121.62" y1="279.0123" y2="271.18"/><line style="stroke:#000000;stroke-width:1.0;" x1="119.7405" x2="127.5728" y1="281.7851" y2="280.1557"/></g><!--MD5=[6a111c612397438610c7862c62cd2a4e]
+reverse link sv to ord--><g id="link_sv_ord"><path codeLine="67" d="M176.91,276.91 C205.1,304.03 238.06,335.73 266.53,363.12 " fill="none" id="sv-backto-ord" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="176.7331" x2="166.8086" y1="276.7486" y2="275.5223"/><line style="stroke:#000000;stroke-width:1.0;" x1="176.7331" x2="175.1314" y1="276.7486" y2="266.8777"/><line style="stroke:#000000;stroke-width:1.0;" x1="176.7331" x2="170.97" y1="276.7486" y2="271.2"/><line style="stroke:#000000;stroke-width:1.0;" x1="175.3996" x2="180.9482" y1="281.0173" y2="275.2542"/></g><!--MD5=[2c84f0e22a6f8a26a32353bcc102d732]
+reverse link ord to svi--><g id="link_ord_svi"><path codeLine="68" d="M334.5,504.03 C334.5,531.07 334.5,561.48 334.5,587.75 " fill="none" id="ord-backto-svi" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="328.5" y1="503.75" y2="495.75"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="340.5" y1="503.75" y2="495.75"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="334.5" y1="503.75" y2="495.75"/><line style="stroke:#000000;stroke-width:1.0;" x1="330.5" x2="338.5" y1="505.75" y2="505.75"/></g><!--MD5=[44ded3646ea3c32c1bfaa546134ac7c0]
+reverse link pr to ord--><g id="link_pr_ord"><path codeLine="69" d="M334.5,254.87 C334.5,285.44 334.5,327.88 334.5,363.14 " fill="none" id="pr-backto-ord" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="328.5" y1="254.58" y2="246.58"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="340.5" y1="254.58" y2="246.58"/><line style="stroke:#000000;stroke-width:1.0;" x1="334.5" x2="334.5" y1="254.58" y2="246.58"/><line style="stroke:#000000;stroke-width:1.0;" x1="330.5" x2="338.5" y1="256.58" y2="256.58"/></g><!--MD5=[ef2dc4d6bb69c7ca07928f4aed36d9e7]
+reverse link acc to ord--><g id="link_acc_ord"><path codeLine="70" d="M508.41,252.54 C478.04,283.26 434.85,326.97 399.1,363.14 " fill="none" id="acc-backto-ord" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="508.6718" x2="510.036" y1="252.2654" y2="242.3588"/><line style="stroke:#000000;stroke-width:1.0;" x1="508.6718" x2="518.564" y1="252.2654" y2="250.8012"/><line style="stroke:#000000;stroke-width:1.0;" x1="508.6718" x2="514.3" y1="252.2654" y2="246.58"/><line style="stroke:#000000;stroke-width:1.0;" x1="504.4221" x2="510.1074" y1="250.8726" y2="256.5008"/></g><!--MD5=[2f8fda0ff1a2666dffffa9d9376e5656]
+reverse link acc to art--><g id="link_acc_art"><path codeLine="71" d="M546.5,254.66 C546.5,362.4 546.5,655.53 546.5,779.94 " fill="none" id="acc-backto-art" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="546.5" x2="540.5" y1="254.62" y2="246.62"/><line style="stroke:#000000;stroke-width:1.0;" x1="546.5" x2="552.5" y1="254.62" y2="246.62"/><line style="stroke:#000000;stroke-width:1.0;" x1="546.5" x2="546.5" y1="254.62" y2="246.62"/><line style="stroke:#000000;stroke-width:1.0;" x1="542.5" x2="550.5" y1="256.62" y2="256.62"/></g><!--MD5=[4ff1f34eca0417cb18cdc10bab263e0e]
+reverse link svi to art--><g id="link_svi_art"><path codeLine="72" d="M416.6,725.48 C437.55,743.47 459.81,762.58 479.88,779.8 " fill="none" id="svi-backto-art" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="416.509" x2="406.5308" y1="725.4022" y2="724.7418"/><line style="stroke:#000000;stroke-width:1.0;" x1="416.509" x2="414.3492" y1="725.4022" y2="715.6382"/><line style="stroke:#000000;stroke-width:1.0;" x1="416.509" x2="410.44" y1="725.4022" y2="720.19"/><line style="stroke:#000000;stroke-width:1.0;" x1="415.4202" x2="420.6324" y1="729.7398" y2="723.6708"/></g><!--MD5=[1b4db9e7589963ec7a663ba50e230fd0]
+reverse link py to sv--><g id="link_py_sv"><path codeLine="74" d="M520.59,73.87 C440.87,91.14 325.63,119.21 228.5,155 C222.78,157.11 216.96,159.41 211.13,161.83 " fill="none" id="py-backto-sv" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="520.8493" x2="527.407" y1="73.814" y2="66.2644"/><line style="stroke:#000000;stroke-width:1.0;" x1="520.8493" x2="529.933" y1="73.814" y2="77.9956"/><line style="stroke:#000000;stroke-width:1.0;" x1="520.8493" x2="528.67" y1="73.814" y2="72.13"/><line style="stroke:#000000;stroke-width:1.0;" x1="518.0521" x2="519.7361" y1="70.3247" y2="78.1454"/></g><!--MD5=[3cd4e0d63a786755b3ba5b32b71df33f]
+reverse link py to art--><g id="link_py_art"><path codeLine="75" d="M638.07,103.02 C643.95,119.24 649.56,137.62 652.5,155 C661.1,205.83 657.04,219.64 652.5,271 C635.86,459.21 586.02,678.02 561.06,779.66 " fill="none" id="py-backto-art" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="637.9555" x2="629.5454" y1="102.7394" y2="97.3291"/><line style="stroke:#000000;stroke-width:1.0;" x1="637.9555" x2="640.7946" y1="102.7394" y2="93.1509"/><line style="stroke:#000000;stroke-width:1.0;" x1="637.9555" x2="635.17" y1="102.7394" y2="95.24"/><line style="stroke:#000000;stroke-width:1.0;" x1="634.9022" x2="642.4016" y1="106.007" y2="103.2215"/></g><!--MD5=[587fbf21cd539ab9fc2b3da734cabacd]
+reverse link py to acc--><g id="link_py_acc"><path codeLine="76" d="M595.82,102.6 C584.62,127.43 571.25,157.09 561.26,179.25 " fill="none" id="py-backto-acc" style="stroke:#000000;stroke-width:1.0;"/><line style="stroke:#000000;stroke-width:1.0;" x1="595.9311" x2="593.7505" y1="102.3527" y2="92.5934"/><line style="stroke:#000000;stroke-width:1.0;" x1="595.9311" x2="604.6895" y1="102.3527" y2="97.5266"/><line style="stroke:#000000;stroke-width:1.0;" x1="595.9311" x2="599.22" y1="102.3527" y2="95.06"/><line style="stroke:#000000;stroke-width:1.0;" x1="591.4626" x2="598.7553" y1="102.5314" y2="105.8203"/></g><!--MD5=[95ea52651576f79311139dbb046bbbf4]
+link py to ass--><g id="link_py_ass"><path codeLine="78" d="M661.53,95.42 C679.08,112.88 698.8,134.04 714.5,155 C755.72,210.01 794.08,276.97 822.45,330.87 " fill="none" id="py-ass" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/></g><!--MD5=[9ebaf00c045ea8bb7acb0a929f6a230b]
+@startuml
+!theme plain
+
+
+entity "Policy" as py {
+  * id : UUID <<generated>>
+  * name: TEXT
+  * definition: JSON
+}
+
+entity "Service" as sv {
+  * id : UUID <<generated>>
+  * description: TEXT
+  * service_definition: URL
+  * parameter_schema: JSON
+  * policy_id: ref<<Policy>>
+}
+
+entity "ServiceInvocation" as svi {
+  * id : UUID <<generated>>
+  * service_id : ref <<Service>>
+  * order_id : ref <<Order>>
+  * parameters: JSON
+  * status: PENDING | ...
+  cost: NUMBER
+}
+
+entity "Principal" as pr {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Account" as acc {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Order" as ord {
+  * id : UUID <<generated>>
+  * account_id : ref <<Account>>
+  * placed_by: ref <<Principal>>
+  * service_id : ref <<Service>>
+  * parameters: JSON
+  * placed_at: DATE
+}
+
+entity "Artifact" as art {
+  * id : UUID <<generated>>
+  * produced_by : ref <<ServiceInvocation>>
+  * owned_by : ref <<Account>>
+  * mime_type: STRING 
+  * url: URL
+}
+
+entity "Assertion" as ass {
+  * id : UUID <<generated>>
+  * issuer_id: ref<<Principal>>
+  * subject_id : ref <<any>>
+  * property_name : TEXT
+  * obj_type: STRING | NUMBER | REF 
+    object_ref: UUID
+    object_s: STRING
+    object_n: NUMBER
+  * valid_from: DATE
+    valid_to: DATE
+}
+
+sv }|- - svi
+sv }|- - ord
+ord }|- - svi
+pr }|- - ord
+acc }|- - ord
+acc }|- - art
+svi }|- - art
+
+py }|- - sv
+py }|- - art
+py }|- - acc
+
+py ... ass
+
+hide circle
+hide methods
+'skinparam linetype ortho
+skinparam monochrome true
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor white
+    FontColor black
+    FontName Verdana
+    HyperLinkColor blue
+    LineColor black
+    LineThickness 1
+    Margin 5
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  header {
+    LineThickness 0
+  }
+  node {
+    MaximumWidth 300
+  }
+  title {
+    FontSize 22
+    LineThickness 0
+  }
+</style>
+
+skinparam ArrowLollipopColor black
+skinparam BackgroundColor white
+skinparam DefaultFontName Verdana
+skinparam DefaultMonospacedFontName Courier
+skinparam LifelineStrategy nosolid
+skinparam ParticipantPadding 10
+skinparam SequenceLifeLineBorderColor black
+skinparam Shadowing false
+skinparam UseBetaStyle true
+
+skinparam Activity {
+  BackgroundColor white
+  BarColor black
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam Boundary {
+  FontColor black
+}
+skinparam Box {
+  Padding 5
+}
+skinparam CircledCharacter {
+  FontColor black
+  FontName Courier
+  Radius 9
+}
+skinparam Class {
+  BackgroundColor white
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassAttribute {
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassStereotype {
+  FontColor black
+  FontName Verdana
+}
+skinparam Footer {
+  FontColor black
+  FontName Verdana
+}
+skinparam Header {
+  FontColor black
+  FontName Verdana
+}
+skinparam Hyperlink {
+  Color blue
+}
+skinparam IconPackage {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPrivate {
+  Color black
+  BackgroundColor white
+}
+skinparam IconProtected {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPublic {
+  Color black
+  BackgroundColor white
+}
+skinparam Note {
+  FontColor black
+  FontName Verdana
+}
+skinparam Object {
+  BorderColor black
+}
+skinparam Package {
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam State {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeA {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeC {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeE {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeI {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeN {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam UseCaseStereoType {
+  FontColor black
+  FontName Verdana
+}
+
+
+entity "Policy" as py {
+  * id : UUID <<generated>>
+  * name: TEXT
+  * definition: JSON
+}
+
+entity "Service" as sv {
+  * id : UUID <<generated>>
+  * description: TEXT
+  * service_definition: URL
+  * parameter_schema: JSON
+  * policy_id: ref<<Policy>>
+}
+
+entity "ServiceInvocation" as svi {
+  * id : UUID <<generated>>
+  * service_id : ref <<Service>>
+  * order_id : ref <<Order>>
+  * parameters: JSON
+  * status: PENDING | ...
+  cost: NUMBER
+}
+
+entity "Principal" as pr {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Account" as acc {
+  * id : UUID <<generated>>
+  * name: TEXT
+}
+
+entity "Order" as ord {
+  * id : UUID <<generated>>
+  * account_id : ref <<Account>>
+  * placed_by: ref <<Principal>>
+  * service_id : ref <<Service>>
+  * parameters: JSON
+  * placed_at: DATE
+}
+
+entity "Artifact" as art {
+  * id : UUID <<generated>>
+  * produced_by : ref <<ServiceInvocation>>
+  * owned_by : ref <<Account>>
+  * mime_type: STRING 
+  * url: URL
+}
+
+entity "Assertion" as ass {
+  * id : UUID <<generated>>
+  * issuer_id: ref<<Principal>>
+  * subject_id : ref <<any>>
+  * property_name : TEXT
+  * obj_type: STRING | NUMBER | REF 
+    object_ref: UUID
+    object_s: STRING
+    object_n: NUMBER
+  * valid_from: DATE
+    valid_to: DATE
+}
+
+sv }|- - svi
+sv }|- - ord
+ord }|- - svi
+pr }|- - ord
+acc }|- - ord
+acc }|- - art
+svi }|- - art
+
+py }|- - sv
+py }|- - art
+py }|- - acc
+
+py ... ass
+
+hide circle
+hide methods
+skinparam monochrome true
+@enduml
+
+PlantUML version 1.2022.6(Tue Jun 21 17:34:49 GMT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

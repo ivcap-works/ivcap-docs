@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="458px" preserveAspectRatio="none" style="width:456px;height:458px;background:#FFFFFF;" version="1.1" viewBox="0 0 456 458" width="456px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="35.6094" style="stroke:#FFFFFF;stroke-width:0.0;" width="184" x="131.6612" y="10"/><text fill="#000000" font-family="Verdana" font-size="22" font-weight="bold" lengthAdjust="spacing" textLength="174" x="136.6612" y="35.4209">CIP Use Cases</text><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><ellipse cx="71" cy="195.1094" fill="#FFFFFF" rx="8" ry="8" style="stroke:#000000;stroke-width:1.0;"/><path d="M71,203.1094 L71,230.1094 M58,211.1094 L84,211.1094 M71,230.1094 L58,245.1094 M71,230.1094 L84,245.1094 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="120" x="11" y="260.1045">Marketplace User</text><!--MD5=[62cc4166db310ca44a141886713fd6cd]
+entity provider--><ellipse cx="71" cy="340.1094" fill="#FFFFFF" rx="8" ry="8" style="stroke:#000000;stroke-width:1.0;"/><path d="M71,348.1094 L71,375.1094 M58,356.1094 L84,356.1094 M71,375.1094 L58,390.1094 M71,375.1094 L84,390.1094 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="110" x="16" y="405.1045">Service Provider</text><ellipse cx="320.4911" cy="429.5076" fill="#FFFFFF" rx="104.9911" ry="23.3982" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="175" x="232.9911" y="432.3543">provide analytics services</text><ellipse cx="320.6612" cy="342.4416" fill="#FFFFFF" rx="129.6612" ry="28.3322" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="180" x="227.6612" y="338.0407">provide workflow template</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="101" x="267.1612" y="354.3376">(methodology)</text><ellipse cx="320.4084" cy="83.8372" fill="#FFFFFF" rx="104.9084" ry="26.2278" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="131" x="251.9084" y="79.4363">search for available</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="120" x="257.4084" y="95.7332">analytics services</text><ellipse cx="320.6147" cy="166.7323" fill="#FFFFFF" rx="98.6147" ry="22.1229" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="161" x="240.1147" y="169.579">order analytics services</text><ellipse cx="320.2614" cy="251.3616" fill="#FFFFFF" rx="124.2614" ry="27.2523" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="165" x="234.7614" y="246.9608">explore analytics results</text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="147" x="243.7614" y="263.2576">and their provenance</text><!--MD5=[8a0c6feada91812e124483f6f22816a8]
+link user to search--><path d="M111.4,185.8994 C133.38,165.9994 162.09,142.6294 191,126.6094 C207.08,117.6994 225.32,110.2194 242.9,104.1294 " fill="none" id="user-to-search" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="247.84,102.4494,238.0303,101.5716,243.1081,104.0648,240.615,109.1426,247.84,102.4494" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[5cfa85f1a60a3dc5159f471daba35ed3]
+link user to reqAnalytics--><path d="M131.28,210.7194 C166.05,202.5694 210.23,192.2194 247.05,183.5894 " fill="none" id="user-to-reqAnalytics" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="251.96,182.4394,242.2843,180.6007,247.0922,183.5814,244.1115,188.3893,251.96,182.4394" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[eb80aeb6d097f5ec08e261295085f687]
+link user to exploreResults--><path d="M131.28,231.0794 C153,233.4494 178.4,236.2194 203.38,238.9394 " fill="none" id="user-to-exploreResults" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="208.37,239.4894,199.8574,234.5361,203.3995,238.9466,198.989,242.4888,208.37,239.4894" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[4ce3a12f546b2880d173240085e94dc3]
+link user to provWF--><path d="M130.63,263.2794 C149.47,274.8294 170.72,286.9594 191,296.6094 C206.94,304.1894 224.49,311.2594 241.35,317.4594 " fill="none" id="user-to-provWF" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="246.09,319.1894,239.0055,312.3476,241.3927,317.4761,236.2642,319.8633,246.09,319.1894" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[a3918b441c0ee153176481fcea01a173]
+link provider to provTask--><path d="M126.01,382.6994 C160.45,391.0494 205.59,401.9894 243.6,411.2094 " fill="none" id="provider-to-provTask" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="248.68,412.4394,240.8687,406.4408,243.8194,411.2671,238.993,414.2178,248.68,412.4394" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[e3dc5c9b17f8b91ebf8c33524686a979]
+link provider to provWF--><path d="M126.01,363.7194 C147.61,361.3594 173.42,358.5494 199.05,355.7494 " fill="none" id="provider-to-provWF" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="204.17,355.1894,194.789,352.19,199.1995,355.7321,195.6574,360.1427,204.17,355.1894" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[4f8a09bffe62c698e75658f31076c212]
+@startuml
+!theme plain
+left to right direction
+
+title 
+CIP Use Cases
+end title
+
+actor :Marketplace User: as user
+actor :Service Provider: as provider
+
+usecase "provide analytics services" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "search for available\nanalytics services" as search
+usecase "order analytics services" as reqAnalytics
+usecase "explore analytics results\nand their provenance" as exploreResults
+
+user - -> search
+user - -> reqAnalytics
+user - -> exploreResults
+user - -> provWF
+
+provider - -> provTask
+provider - -> provWF
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor white
+    FontColor black
+    FontName Verdana
+    HyperLinkColor blue
+    LineColor black
+    LineThickness 1
+    Margin 5
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  header {
+    LineThickness 0
+  }
+  node {
+    MaximumWidth 300
+  }
+  title {
+    FontSize 22
+    LineThickness 0
+  }
+</style>
+
+skinparam ArrowLollipopColor black
+skinparam BackgroundColor white
+skinparam DefaultFontName Verdana
+skinparam DefaultMonospacedFontName Courier
+skinparam LifelineStrategy nosolid
+skinparam ParticipantPadding 10
+skinparam SequenceLifeLineBorderColor black
+skinparam Shadowing false
+skinparam UseBetaStyle true
+
+skinparam Activity {
+  BackgroundColor white
+  BarColor black
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam Boundary {
+  FontColor black
+}
+skinparam Box {
+  Padding 5
+}
+skinparam CircledCharacter {
+  FontColor black
+  FontName Courier
+  Radius 9
+}
+skinparam Class {
+  BackgroundColor white
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassAttribute {
+  FontColor black
+  FontName Verdana
+}
+skinparam ClassStereotype {
+  FontColor black
+  FontName Verdana
+}
+skinparam Footer {
+  FontColor black
+  FontName Verdana
+}
+skinparam Header {
+  FontColor black
+  FontName Verdana
+}
+skinparam Hyperlink {
+  Color blue
+}
+skinparam IconPackage {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPrivate {
+  Color black
+  BackgroundColor white
+}
+skinparam IconProtected {
+  Color black
+  BackgroundColor white
+}
+skinparam IconPublic {
+  Color black
+  BackgroundColor white
+}
+skinparam Note {
+  FontColor black
+  FontName Verdana
+}
+skinparam Package {
+  BorderColor black
+  FontColor black
+  FontName Verdana
+}
+skinparam State {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeA {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeC {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeE {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeI {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam StereotypeN {
+  BackgroundColor white
+  BorderColor black
+}
+skinparam UseCaseStereoType {
+  FontColor black
+  FontName Verdana
+}
+left to right direction
+
+title 
+CIP Use Cases
+end title
+
+actor :Marketplace User: as user
+actor :Service Provider: as provider
+
+usecase "provide analytics services" as provTask
+usecase "provide workflow template\n(methodology)" as provWF
+
+usecase "search for available\nanalytics services" as search
+usecase "order analytics services" as reqAnalytics
+usecase "explore analytics results\nand their provenance" as exploreResults
+
+user - -> search
+user - -> reqAnalytics
+user - -> exploreResults
+user - -> provWF
+
+provider - -> provTask
+provider - -> provWF
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 13:26:11 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

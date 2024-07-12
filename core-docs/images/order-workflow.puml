@@ -1,0 +1,49 @@
+@startuml
+  actor user
+  participant "API Gateway" as gw
+  participant "Order Dispatcher" as od
+  participant "Magda" as magda 
+  participant "Argo" as argo 
+  participant "Cloud Storage" as cst
+
+  user -> gw ++: POST order
+  gw -> od ++: POST order
+  od -> magda: GET service WF
+  od -> od: "build workflow
+  od ->> argo: submit workflow
+  od ->> magda: CREATE order record
+  od ->> magda: ADD workflow to order
+  return order ID
+  return order ID
+
+  argo ->> "Data Proxy" as dp ** : start
+  argo ->> "Exit Handler" as eh ** : start
+
+  loop All Analytics Steps
+    argo ->> "Analytics\nStep" as ans ** : start w/ params
+    activate ans
+
+  
+    loop Data access
+      ans -> dp ++: GET/PUT data
+      dp -> cst ++: GET/PUT data
+      return
+      dp -> magda: Report metadata
+      return
+      |||
+    end
+
+    ans -->> argo: done
+    deactivate ans
+    destroy ans
+    |||
+  end
+  
+  argo -->x dp: stop
+  deactivate dp
+
+  argo -->x eh: stop
+  eh -->> magda: report status
+  deactivate eh
+
+@enduml
