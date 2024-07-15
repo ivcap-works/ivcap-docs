@@ -1,3 +1,5 @@
+> DRAFT
+
 # Security Groups
 
 In the context of __(use case)__
@@ -12,8 +14,6 @@ accepting __(downside)__.
 * Author(s): Max Ott
 * Deciders: ???
 * Date: 2024-06-25
-
-Technical Story: (if appropriate)
 
 ## Context
 
@@ -119,3 +119,14 @@ Zanzibar (as well as Topaz) maintains basic relationships such as  “user U has
 While our current work on Topaz was motivated by managing account memberships - which user can _speak for_ a specific account - we may be able to directly extend that to the functionality currently provided by OPA and specific rules.
 
 The basic idea is that we create __permission sets (PS)__ which can be associated with a particular action as described above. Authorisation then allows a user __U__ to perform a specific action __A__ related to a specific aspect or entity __X__ _iff_ the user is part of the respective __PS__.
+
+For the aspect records themselves, we would add a `read_ps` and a `retract_ps` property to each record and then check if the requester is part of the respective PS. This would greatly simplify search as we further restrict any query with an additional check if the record's `read_ps` is within the set of PSs the requester is part of.
+
+Creating an aspect, as mentioned above, is a bit more involved and, for pragmatic reasons, also extends to "creating" an entity URN. For the latter, we will likely only need to restrict the creation of "systems" URNs to platform internal processes. That leaves us with two remaining concerns:
+
+* Who can create an aspect of a specific schema
+* Can an entity have more then one aspect of the same schema
+
+There are multiple reasons to maintain a record of schemas and their definitions; validation is one of them. If we manage schemas, we first of all, need to protect them in a similar (if not identical fashion) as aspects, where the entity is the name of the schema and the (only?) aspect being the schema definition. However, a particular schema can only be created, but never retracted. In addition, we may add an additional, but optional `create_ps` property, to indicate on who can create aspects of that schema type (that property can be modified at later stages).
+
+WHat is unclear to me right now, if we can also control the number of aspects with the same schema also through an additional property of the schema record.
