@@ -1,6 +1,6 @@
 > DRAFT
 
-# Security Groups
+# ADR 5: Security Groups
 
 In the context of __(use case)__
 facing __(concern)__
