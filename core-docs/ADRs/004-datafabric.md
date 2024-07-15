@@ -1,19 +1,16 @@
 # Providing a Datafabric Service
 
-In the context of __(use case)__
-facing __(concern)__
-we decided for __(option)__
-to achieve __(quality)__
-accepting __(downside)__.
+In the context of __searching and analysing all platform data__
+facing __no available service__
+we decided for __implementing the below described model__
+to achieve __a first solutions__
+accepting __lack of example use cases__.
 
 ## Status
 
-* Status: proposed (_any of proposed, accepted, rejected, deprecated, superseded_)
+* Status: accespted
 * Author(s): Max Ott
-* Deciders: ???
 * Date: 2023-12-06
-
-Technical Story: (if appropriate)
 
 ## Context
 
@@ -37,7 +34,7 @@ how to do this, needs to be part of this ADR.
 
 ## Decision
 
-_What is the change that we're proposing and/or doing?_
+Implement the model proposed below with Postgres as the first provider
 
 ## Consequences
 
@@ -46,10 +43,12 @@ _What is the change that we're proposing and/or doing?_
 * Con: This will create substantial downstream work, such as updating `ivcap-cli`, and the various SDKs
 * Con: Core IVCAP information will still need to be accessible in the datafabric, resulting in either data duplication
 or additional implementation complexity
+* Con: Inefficient authorisation mechanism impeding scalability
 
 ## Considered Options
 
-None explicitely
+None explicitly. However, this was heaviliy influence by [Magda](https://magda.io/)
+and the Author's experiences in building similar systems.
 
 ## Detailed Discussion
 
