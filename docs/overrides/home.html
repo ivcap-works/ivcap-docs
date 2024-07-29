@@ -63,86 +63,132 @@
     }
   }
 
-  #hero-img {
-    position: absolute;
-    height: 80vh;
-    width: auto;
-    /* 0.71 aspect ratio */
-    max-width: 80vw;
-    aspect-ratio: 0.71 !important;
-
-    /* max-height: 56vh; */
-    /* top: 10px; */
-    right: 20px;
-  }
-
-  #hero-text {
-    position: absolute;
-    z-index: 99999;
-    bottom: 5em;
-    left: 4em
-  }
-
-  #hero-text h1 {
-    color: white;
-    font-size: 3em;
-  }
-
   .md-header--shadow {
     box-shadow: 0 0, 0 0;
   }
+
+  .md-main .md-top {
+    display: none;
+  }
+
+  #landing-page {
+    flex-grow: 999;
+    /* 100dvw; */
+    display: flex;
+    flex-direction: row;
+    --Collapsed-breakpoint: 769px;
+    --Cover-width: 50vw;
+    --Form-maxWidth: 800px;
+    --Transition-duration: 0.4s;
+
+    --md-primary-fg-color: #415C6C !important;
+    --md-primary-bg-color: #fff;
+  }
+
+  #hero {
+    width: clamp(100vw - var(--Cover-width), (var(--Collapsed-breakpoint) - 100vw)* 999, 100vw);
+    z-index: 1;
+    display: flex;
+
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    backdrop-filter: blur(12px);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+  }
+
+  #hero-inner {
+    display: flex;
+    flex-direction: column;
+    height: clamp(300px, 600px, 80svh);
+
+    width: clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw)* 999, 100%);
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #hero-inner main {
+    color: white;
+
+    align-self: flex-end;
+    margin: auto;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    padding-top: 16px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 400px;
+    max-width: 100%;
+  }
+
+  main h1 {
+    font-size: 4em;
+    font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    line-height: 1.3;
+  }
+
+  main a {}
+
+
+  .md-button {
+    font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    margin-right: auto;
+
+    background-color: var(--md-primary-fg-color);
+    border-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+
+    border: .1rem solid;
+    border-radius: .5rem;
+    cursor: pointer;
+    display: inline-block;
+    padding: .625em 2em;
+    transition: color 125ms, background-color 125ms, border-color 125ms;
+    text-decoration: none;
+  }
+
+  #background {
+    padding-top: 3em;
+    height: 100%;
+  }
+
+  #hero-img {
+    width: clamp(0px, 400px, 400px);
+
+  }
 </style>
 
-<img id="hero-img" src="assets/images/hero2.png" alt="" draggable="false">
-
-<section id="hero-text" class="mdx-container">
-  <div class="md-grid md-typeset">
-    <div class="mdx-hero">
-      <!-- Hero image -->
-
-
-      <!-- Hero content -->
-      <div class="mdx-hero__content">
+<div id="landing-page" class="md-grid">
+  <div id="hero">
+    <div id="hero-inner">
+      <main>
         <h1>Platform for ...<br>... science<br>... collaboration<br>... rapid prototyping</h1>
-
-        <!-- <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}"
-          class="md-button md-button--primary">
-          Quick start
-        </a> -->
-        <a href="{{ 'getting-started/quick-start/' | url }}" title="Getting Started"
-          class="md-button md-button--primary">
+        <a href="{{ 'getting-started/quick-start/' | url }}" title="Getting Started" class="md-button">
           Getting Started
         </a>
-      </div>
+
+      </main>
     </div>
   </div>
-</section>
-
-<!-- Hero for landing page -->
-<section class="mdx-container">
-  <div class="md-grid md-typeset">
-    <div class="mdx-hero">
-      <!-- Hero image -->
-
-
-      <!-- Hero content -->
-      <!-- <div class="mdx-hero__content">
-        <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}"
-          class="md-button md-button--primary">
-          Quick start
-        </a>
-        <a href="{{ 'insiders/' | url }}" title="Material for MkDocs Insiders" class="md-button">
-          Learn More
-        </a>
-      </div> -->
-    </div>
+  <div id="background" class="MuiBox-root css-bnagi0">
+    <img id="hero-img" src="assets/images/hero2.png" alt="" draggable="false">
   </div>
-</section>
+</div>
 
 {% endblock %}
 
+
 <!-- Content -->
-{% block content %}{% endblock %}
+{% block content %}
+
+
+{% endblock %}
 
 <!-- Application footer -->
 {% block footer %}{% endblock %}
