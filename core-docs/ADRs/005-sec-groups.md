@@ -47,7 +47,44 @@ _What are the main criteria relevant to, and driving, the decision_
 
 ## Decision
 
-_What is the change that we're proposing and/or doing?_
+We are going to introduce CIDs (capability ID) which identify the capability a caller would
+need to posses in order for a specific request to be performed by the system. A request is further
+defined by an action and an optional context. Currently, the set of actions are: `create`, `read`,
+and `retract`. The context is effectively restricting the request. It may include a set of
+schema or entity URNs. In addition, certain requests may require an explicit context on the
+required CID
+
+The provisioning of the token, or any additional verification services will be provided by a
+separate service and are not part of this ADR.
+
+### Reading and Retracting Aspect Records
+
+Each aspect record will include two additional columns holding the CID required to read or retract the record accordingly. Those CIDs need to be set when the record is created. If it needs ot be changed, the
+current record needs to be retracted and a new one with the exact content, but a new CID needs to be
+created. Note, this require the necessary CID to create a new aspect record.
+
+### Creating a new Aspect Record
+
+Creating a new "generic" record is straight forward as long as the caller can provide verified CIDs
+to constrain future reading and retracting of the new record.
+
+However, we need to add a few restrictions to that. First of all, any URNs starting with `urn:ivcap:...`
+can only be created by internal processes. While we have previously established that the entity name (URN)
+itself has no meaning, we enforce that restrictions for convenience (e.g. debugging, monitoring) sake.
+
+Any additional constraints will refer to specific schemas and the number of aspects with that schema attached to a single entity.
+
+#### Creating a new `Service` Record
+
+Services are a fundamental offering of IVCAP and will very likely require some additional verification and validation. It start with ensuring that referenced docker images are indeed accessible. A deployment may also
+require additional onboarding steps or QA controls. To support service discovery, we may require a more detailed
+description of the service. In addition, there can only be exactly one single aspect for that schema for every service URN.
+
+However, we will still allow users to add additional aspects to a service URN, except for schemas starting with `urn:ivcap:schema:system...` (**TODO**: Needs to further verified)
+
+#### Creating a new `Artifact` Record
+
+Artifacts in IVCAP are associated with a corresponding _blob_ stored either in IVCAP's blob storage or retrievable via a URL. We therefore want to ensure that a URN starting with `urn:ivcap:artifact:...` will from the beginning be associated with a specific schema (**TODO**: specific schema). It should be noted, that _deleting_ an artifact would simply require the retraction of the respective aspect.
 
 ## Consequences
 
@@ -58,7 +95,11 @@ _What becomes easier or more difficult to do because of this change?_
 * OPA's
 [partial evaluation](https://blog.openpolicyagent.org/partial-evaluation-162750eaf422) feature
 
-_Discuss both Pros and Cons of the Options_
+We have been using OPA so far and ran into multiple issues. One of them was that authorisation was
+enforced at multipe places with it's own set of policies leading to potential inconsistencies.
+
+We also encountered scalability issues given that it turned out ot be very difficult to turn
+the many possible policies into SQL.
 
 ## Detailed Discussion (Optional)
 
@@ -91,14 +132,14 @@ For instance, let us look at a particular Artifact holding an image:
 
   Entity  urn:ivcap:artifact:4fade...
  At Time  now
- Records  ┌────┬─────────────────────────────┬───────────────────────────────────────────┐
-          │ ID │ ENTITY                      │ SCHEMA                                    │
-          ├────┼─────────────────────────────┼───────────────────────────────────────────┤
-          │ @1 │ urn:ivcap:artifact:4fade... │ urn:ivcap:schema:artifact-in-collection.1 │
-          │ @2 │ urn:ivcap:artifact:4fade... │ urn:ivcap:schema:artifact.1               │
-          │ @3 │ urn:ivcap:artifact:4fade... │ urn:ivcap:schema:image.photo.1            │
-          │ @4 │ urn:ivcap:artifact:4fade... │ urn:ibenthos:schema.survey_image.3        │
-          └────┴─────────────────────────────┴───────────────────────────────────────────┘
+ Records  ┌────┬───────────-───────┬───────────────────────────────────────────┐
+          │ ID │ ENTITY            │ SCHEMA                                    │
+          ├────┼───────────-───────┼───────────────────────────────────────────┤
+          │ @1 │ artifact:4fade... │ urn:ivcap:schema:artifact-in-collection.1 │
+          │ @2 │ artifact:4fade... │ urn:ivcap:schema:artifact.1               │
+          │ @3 │ artifact:4fade... │ urn:ivcap:schema:image.photo.1            │
+          │ @4 │ artifact:4fade... │ urn:ibenthos:schema.survey_image.3        │
+          └────┴───────-───────────┴───────────────────────────────────────────┘
 ```
 
 The first two aspects have schemas starting with `urn:ivcap:schema:artifact..` which have been created internally as part of creating and uploading the image. The last two aspects with schema `urn:ivcap:schema:image.photo.1
@@ -129,4 +170,4 @@ Creating an aspect, as mentioned above, is a bit more involved and, for pragmati
 
 There are multiple reasons to maintain a record of schemas and their definitions; validation is one of them. If we manage schemas, we first of all, need to protect them in a similar (if not identical fashion) as aspects, where the entity is the name of the schema and the (only?) aspect being the schema definition. However, a particular schema can only be created, but never retracted. In addition, we may add an additional, but optional `create_ps` property, to indicate on who can create aspects of that schema type (that property can be modified at later stages).
 
-WHat is unclear to me right now, if we can also control the number of aspects with the same schema also through an additional property of the schema record.
+What is unclear to me right now, if we can also control the number of aspects with the same schema also through an additional property of the schema record.
