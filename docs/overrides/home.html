@@ -73,12 +73,17 @@
 
   #landing-page {
     flex-grow: 999;
-    /* 100dvw; */
     display: flex;
     flex-direction: row;
-    --Collapsed-breakpoint: 769px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2em 1em;
+    gap: 2em;
+    --Collapsed-breakpoint: 900px;
     --Cover-width: 50vw;
-    --Form-maxWidth: 800px;
+    --Form-maxWidth: 600px;
     --Transition-duration: 0.4s;
 
     --md-primary-fg-color: #415C6C !important;
@@ -86,49 +91,35 @@
   }
 
   #hero {
-    width: clamp(100vw - var(--Cover-width), (var(--Collapsed-breakpoint) - 100vw)* 999, 100vw);
+    flex: 1;
+    min-width: 0;
     z-index: 1;
     display: flex;
-
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    backdrop-filter: blur(12px);
-    /* background-color: rgba(255, 255, 255, 0.2); */
+    justify-content: flex-start;
   }
 
   #hero-inner {
     display: flex;
     flex-direction: column;
-    height: clamp(300px, 600px, 80svh);
-
-    width: clamp(var(--Form-maxWidth), (var(--Collapsed-breakpoint) - 100vw)* 999, 100%);
-    max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
   }
 
   #hero-inner main {
     color: white;
-
-    align-self: flex-end;
-    margin: auto;
-    margin-bottom: 2em;
-    margin-left: 2em;
-    padding-top: 16px;
-    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    width: 400px;
+    gap: 1.5em;
     max-width: 100%;
   }
 
   main h1 {
-    font-size: 4em;
+    font-size: 3.2em;
     font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     font-weight: 300;
     letter-spacing: -.01em;
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
   main a {}
@@ -136,7 +127,7 @@
 
   .md-button {
     font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
     margin-right: auto;
 
@@ -148,19 +139,34 @@
     border-radius: .5rem;
     cursor: pointer;
     display: inline-block;
-    padding: .625em 2em;
+    padding: .625em 1.5em;
     transition: color 125ms, background-color 125ms, border-color 125ms;
     text-decoration: none;
   }
 
   #background {
-    padding-top: 3em;
-    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
   }
 
   #hero-img {
-    width: clamp(0px, 400px, 400px);
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
 
+  /* Mobile: hide image, keep only text */
+  @media (max-width: 900px) {
+    #background {
+      display: none;
+    }
+
+    #hero {
+      justify-content: center;
+    }
   }
 </style>
 

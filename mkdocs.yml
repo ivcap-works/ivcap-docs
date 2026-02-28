@@ -29,6 +29,17 @@ nav:
   - Getting Started:
       - getting-started/quick-start.md
       - getting-started/installing-cli.md
+      - Choosing Your Starting Point: getting-started/choosing-starting-point.md
+  - Service Examples:
+      - Overview: examples/index.md
+      - "Service Modes: Lambda vs Batch": examples/service-modes.md
+      - Quick Reference: examples/quick-reference.md
+      - Capability Matrix: examples/capability-matrix.md
+      - Beginner Guide: examples/beginner/index.md
+      - Tutorials:
+          - GO Term Mapper: examples/go-term-mapper-tutorial.md
+          - Working with Artifacts: examples/artifact-tutorial.md
+          - Services Calling Services: examples/agent-calling-agent-tutorial.md
   # - User Guide:
   #     - concepts.md
   #     - Artifacts:
