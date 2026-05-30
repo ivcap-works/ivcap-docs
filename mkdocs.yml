@@ -25,12 +25,41 @@ theme:
     - navigation.footer
 
 nav:
-  - Home: index.md # README.md
-  - Getting Started:
+  - Home: index.md
+  - Get started:
       - getting-started/quick-start.md
       - getting-started/installing-cli.md
-      - Choosing Your Starting Point: getting-started/choosing-starting-point.md
-  - Service Examples:
+      - Platform overview: getting-started/platform-overview.md
+      - Choosing your starting point: getting-started/choosing-starting-point.md
+  - User Guide:
+      - user-guide/index.md
+      - CLI basics: user-guide/cli-basics.md
+      - Discover services: user-guide/discover-services.md
+      - Run & monitor orders: user-guide/run-and-monitor-orders.md
+      - Work with artifacts: user-guide/work-with-artifacts.md
+      - Data Fabric:
+          - user-guide/datafabric/index.md
+          - Collections & records: user-guide/datafabric/collections-and-records.md
+          - Datasets & queries: user-guide/datafabric/datasets-and-queries.md
+      - Troubleshooting: user-guide/troubleshooting.md
+  - Developer Guide:
+      - Overview: developer-guide/README.md
+      - Architecture: developer-guide/architecture.md
+      - Using IVCAP (CLI): developer-guide/using-ivcap.md
+      - Develop services: developer-guide/develop-services.md
+      - Deploy services: developer-guide/deploy-services.md
+      - Running locally: developer-guide/running-locally.md
+      - Integration options: developer-guide/integration-options.md
+      - SDK:
+          - developer-guide/sdk.md
+          - developer-guide/sdk-resources.md
+  - API:
+      - API overview: API/index.md
+      - Services: API/service.md
+      - Orders: API/orders.md
+      - Artifacts: API/artifact.md
+      - Sessions: API/sessions.md
+  - Examples:
       - Overview: examples/index.md
       - "Service Modes: Lambda vs Batch": examples/service-modes.md
       - Quick Reference: examples/quick-reference.md

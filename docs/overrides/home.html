@@ -1,62 +1,37 @@
 {% extends "base.html" %}
 
 <!-- Render hero under tabs -->
-{% block tabs %}
-{{ super() }}
+{% block tabs %} {{ super() }}
 
-<!-- Additional styles for landing page -->
+<!-- Landing page styles -->
 <style>
-  .md-container {
-    --md-primary-fg-color: #415C6C !important;
-    --md-primary-fg-color--light: #5d6cc0;
-    --md-primary-fg-color--dark: #415C6C;
-    --md-primary-bg-color: #fff;
-    --md-primary-bg-color--light: #ffffffb3;
-
-    --md-accent-fg-color: #415C6C;
-    --md-accent-fg-color--transparent: #526cfe1a;
-    --md-accent-bg-color: #fff;
-    --md-accent-bg-color--light: #ffffffb3;
-  }
-
-  body {
-    background: linear-gradient(to bottom, #3F51B5 0%, #7CADED 100%);
-    background: linear-gradient(to bottom, #415C6C 0%, #aacdde 100%);
-
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
-  /* Application header should be static for the landing page */
+  /* Let the Material palette stay in control for the rest of the docs.
+     Only decorate the landing page. */
   .md-header {
-    position: initial;
-    background-color: transparent;
+    background: transparent;
   }
 
-  /* Remove spacing, as we cannot hide it completely */
+  /* Add some breathing room so the hero doesn't sit under the header */
+  .md-header + .md-container {
+    padding-top: 1rem;
+  }
+
+  /* Remove spacing, as we can't hide it completely */
   .md-main__inner {
     margin: 0;
   }
 
-  /* Hide main content for now */
+  /* Hide the normal page content (index.md) - this template replaces it */
   .md-content {
     display: none;
   }
 
-  .md-tabs {
-    background-color: transparent;
-  }
-
-  /* Hide table of contents */
+  /* Hide navigation + TOC for a cleaner landing */
   @media screen and (min-width: 60em) {
     .md-sidebar--secondary {
       display: none;
     }
   }
-
-  /* Hide navigation */
   @media screen and (min-width: 76.25em) {
     .md-sidebar--primary {
       display: none;
@@ -64,137 +39,390 @@
   }
 
   .md-header--shadow {
-    box-shadow: 0 0, 0 0;
+    box-shadow: none;
   }
-
   .md-main .md-top {
     display: none;
   }
 
-  #landing-page {
-    flex-grow: 999;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
+  /* Page background */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        1200px 500px at 15% 10%,
+        rgba(64, 176, 255, 0.25) 0%,
+        rgba(0, 0, 0, 0) 60%
+      ),
+      radial-gradient(
+        900px 450px at 85% 25%,
+        rgba(124, 58, 237, 0.22) 0%,
+        rgba(0, 0, 0, 0) 55%
+      ),
+      linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(3, 7, 18, 1) 100%);
+    background-attachment: fixed;
+  }
+
+  #ivcap-landing {
+    --ivcap-text: rgba(255, 255, 255, 0.92);
+    --ivcap-muted: rgba(255, 255, 255, 0.72);
+    --ivcap-card: rgba(255, 255, 255, 0.07);
+    --ivcap-card-border: rgba(255, 255, 255, 0.12);
+    --ivcap-accent: #60a5fa; /* sky-400 */
+    --ivcap-accent-2: #a78bfa; /* violet-400 */
+    --ivcap-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+    padding: 3rem 1rem 3rem;
+  }
+
+  .ivcap-wrap {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2em 1em;
-    gap: 2em;
-    --Collapsed-breakpoint: 900px;
-    --Cover-width: 50vw;
-    --Form-maxWidth: 600px;
-    --Transition-duration: 0.4s;
-
-    --md-primary-fg-color: #415C6C !important;
-    --md-primary-bg-color: #fff;
   }
 
-  #hero {
-    flex: 1;
-    min-width: 0;
-    z-index: 1;
+  .ivcap-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2.5rem 1.25rem;
+    border: 1px solid var(--ivcap-card-border);
+    border-radius: 1.25rem;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.04) 60%
+    );
+    box-shadow: var(--ivcap-shadow);
+    backdrop-filter: blur(10px);
+  }
+
+  .ivcap-hero h1 {
+    margin: 0;
+    color: var(--ivcap-text);
+    font-size: 2.6rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .ivcap-hero p {
+    margin: 1rem 0 0;
+    color: var(--ivcap-muted);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
+  .ivcap-badges {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
   }
 
-  #hero-inner {
+  .ivcap-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--ivcap-card-border);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--ivcap-text);
+    font-size: 0.85rem;
+  }
+
+  .ivcap-badge .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      var(--ivcap-accent),
+      var(--ivcap-accent-2)
+    );
+  }
+
+  .ivcap-cta {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding: 1em;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
 
-  #hero-inner main {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    max-width: 100%;
-  }
-
-  main h1 {
-    font-size: 3.2em;
-    font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    letter-spacing: -.01em;
-    line-height: 1.2;
-  }
-
-  main a {}
-
-
-  .md-button {
-    font-family: Roboto, -apple-sys, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-right: auto;
-
-    background-color: var(--md-primary-fg-color);
-    border-color: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-
-    border: .1rem solid;
-    border-radius: .5rem;
-    cursor: pointer;
-    display: inline-block;
-    padding: .625em 1.5em;
-    transition: color 125ms, background-color 125ms, border-color 125ms;
-    text-decoration: none;
-  }
-
-  #background {
-    flex: 1;
-    display: flex;
+  .ivcap-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1em;
+    gap: 0.5rem;
+    padding: 0.75rem 1.05rem;
+    border-radius: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition:
+      transform 120ms ease,
+      background 120ms ease,
+      border-color 120ms ease;
+    will-change: transform;
   }
 
-  #hero-img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
+  .ivcap-btn:hover {
+    transform: translateY(-1px);
   }
 
-  /* Mobile: hide image, keep only text */
+  .ivcap-btn-primary {
+    background: linear-gradient(
+      90deg,
+      rgba(96, 165, 250, 0.95),
+      rgba(167, 139, 250, 0.95)
+    );
+    color: rgba(2, 6, 23, 0.95);
+  }
+
+  .ivcap-btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--ivcap-card-border);
+    color: var(--ivcap-text);
+  }
+
+  .ivcap-hero-aside {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .ivcap-metric {
+    border-radius: 1rem;
+    border: 1px solid var(--ivcap-card-border);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1rem;
+  }
+
+  .ivcap-metric .k {
+    color: var(--ivcap-muted);
+    font-size: 0.9rem;
+  }
+  .ivcap-metric .v {
+    color: var(--ivcap-text);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+
+  .ivcap-section {
+    margin-top: 2rem;
+  }
+
+  .ivcap-section h2 {
+    color: var(--ivcap-text);
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+
+  .ivcap-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ivcap-card {
+    border-radius: 1.1rem;
+    border: 1px solid var(--ivcap-card-border);
+    background: var(--ivcap-card);
+    padding: 1.05rem 1.05rem 1.15rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .ivcap-card h3 {
+    margin: 0;
+    color: var(--ivcap-text);
+    font-size: 1.05rem;
+  }
+
+  .ivcap-card p {
+    margin: 0.55rem 0 0;
+    color: var(--ivcap-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  .ivcap-linkrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .ivcap-linkrow a {
+    color: var(--ivcap-text);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .ivcap-linkrow a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Responsive */
   @media (max-width: 900px) {
-    #background {
-      display: none;
+    .ivcap-hero {
+      grid-template-columns: 1fr;
     }
-
-    #hero {
-      justify-content: center;
+    .ivcap-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
 
-<div id="landing-page" class="md-grid">
-  <div id="hero">
-    <div id="hero-inner">
-      <main>
-        <h1>Platform for ...<br>... science<br>... collaboration<br>... rapid prototyping</h1>
-        <a href="{{ 'getting-started/quick-start/' | url }}" title="Getting Started" class="md-button">
-          Getting Started
-        </a>
+<section id="ivcap-landing">
+  <div class="ivcap-wrap">
+    <header class="ivcap-hero">
+      <div>
+        <h1>Where Ambitious Science Gets the Scale It Deserves</h1>
+        <p>
+          IVCAP is live and ready to use — with large-scale compute, agentic
+          workflows, and rigorous provenance built in. Extend it with your own
+          services. Fit it into your existing workflows. Just bring the problem.
+        </p>
 
-      </main>
-    </div>
+        <div class="ivcap-badges" aria-label="Key highlights">
+          <span class="ivcap-badge"
+            ><span class="dot"></span>Composable workflows</span
+          >
+          <span class="ivcap-badge"
+            ><span class="dot"></span>Data Fabric & artifacts</span
+          >
+          <span class="ivcap-badge"
+            ><span class="dot"></span>Dataset as query</span
+          >
+          <span class="ivcap-badge"
+            ><span class="dot"></span>Secure collaboration</span
+          >
+        </div>
+
+        <div class="ivcap-cta">
+          <a
+            class="ivcap-btn ivcap-btn-primary"
+            href="{{ 'getting-started/quick-start/' | url }}"
+            >Get started</a
+          >
+          <a
+            class="ivcap-btn ivcap-btn-secondary"
+            href="{{ 'getting-started/platform-overview/' | url }}"
+            >Platform overview</a
+          >
+          <a
+            class="ivcap-btn ivcap-btn-secondary"
+            href="{{ 'examples/' | url }}"
+            >Examples</a
+          >
+        </div>
+
+        <div class="ivcap-linkrow" aria-label="Quick links">
+          <a href="{{ 'user-guide/index/' | url }}">Use the platform</a>
+          <a href="{{ 'developer-guide/README/' | url }}">Build services</a>
+          <a href="{{ 'API/index/' | url }}">API reference</a>
+        </div>
+      </div>
+
+      <aside class="ivcap-hero-aside" aria-label="IVCAP in practice">
+        <div class="ivcap-metric">
+          <div class="k">Designed for</div>
+          <div class="v">science + analytics + simulation</div>
+        </div>
+        <div class="ivcap-metric">
+          <div class="k">Execution model</div>
+          <div class="v">services → orders → artifacts</div>
+        </div>
+        <div class="ivcap-metric">
+          <div class="k">From the Jan 2024 overview</div>
+          <div class="v">workflows • data fabric • dataset-as-query</div>
+        </div>
+      </aside>
+    </header>
+
+    <section class="ivcap-section" aria-label="Core capabilities">
+      <h2>Every Stage of Discovery. One Platform. Unlimited Scale</h2>
+      <div class="ivcap-grid">
+        <article class="ivcap-card">
+          <h3>Agentic workflows + classic models</h3>
+          <p>
+            Combine LLM/agent-driven steps with traditional simulation and
+            analytics services. Orchestrate the full investigative lifecycle
+            with composable workflows.
+          </p>
+        </article>
+
+        <article class="ivcap-card">
+          <h3>Provenance & repeatability</h3>
+          <p>
+            Every run produces traceable artifacts and metadata, enabling
+            reproducible pipelines, auditability, and “same input → same result”
+            confidence.
+          </p>
+        </article>
+
+        <article class="ivcap-card">
+          <h3>Collaboration without compromise</h3>
+          <p>
+            Flexible projects and teams, strong authorization, and privacy
+            controls — so you can work across organisations while protecting
+            sensitive data.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="ivcap-section" aria-label="How it works">
+      <h2>How IVCAP fits your day-to-day</h2>
+      <div class="ivcap-grid">
+        <article class="ivcap-card">
+          <h3>Publish services</h3>
+          <p>
+            Package research code as services that can be shared, reviewed,
+            versioned, and deployed rapidly.
+          </p>
+        </article>
+        <article class="ivcap-card">
+          <h3>Submit orders</h3>
+          <p>
+            Run services at scale (batch or interactive patterns) and connect
+            steps into reliable pipelines.
+          </p>
+        </article>
+        <article class="ivcap-card">
+          <h3>Track artifacts in the Data Fabric</h3>
+          <p>
+            Manage datasets, models, observations and results — including
+            intent-defined datasets (“dataset as query”).
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="ivcap-section" aria-label="Next steps">
+      <h2>Next steps</h2>
+      <div class="ivcap-cta">
+        <a
+          class="ivcap-btn ivcap-btn-primary"
+          href="{{ 'getting-started/quick-start/' | url }}"
+          >Quick start</a
+        >
+        <a
+          class="ivcap-btn ivcap-btn-secondary"
+          href="{{ 'getting-started/choosing-starting-point/' | url }}"
+          >Choose your path</a
+        >
+      </div>
+    </section>
   </div>
-  <div id="background" class="MuiBox-root css-bnagi0">
-    <img id="hero-img" src="assets/images/hero2.png" alt="" draggable="false">
-  </div>
-</div>
+</section>
 
 {% endblock %}
-
 
 <!-- Content -->
-{% block content %}
-
-
-{% endblock %}
+{% block content %} {% endblock %}
 
 <!-- Application footer -->
 {% block footer %}{% endblock %}

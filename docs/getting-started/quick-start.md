@@ -16,7 +16,7 @@ But before we can proceed, please ensure that the following [prerequisites¶](#p
 
 ## Prerequisites¶ <a name="prerequisites¶"></a>
 
-Before you start you need to have access to an IVCAP deployment and have the `ivcap-cli` tool installed ([see instructions](../installing-cli/)).
+Before you start you need to have access to an IVCAP deployment and have the `ivcap-cli` tool installed ([see instructions](installing-cli.md)).
 
 ## Authenticate <a name="authenticate"></a>
 
