@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "python-lambda",
+    "name": "Lambda Service Example",
+    "repo": "ivcap-works/ivcap-python-lambda-example",
+    "branch": "main",
+    "capabilities": [
+      "build-services"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "beginner",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "python-service",
+    "name": "Python Service Example",
+    "repo": "ivcap-works/ivcap-python-service-example",
+    "branch": "main",
+    "capabilities": [
+      "build-services",
+      "artifacts"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "beginner",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "collection-example",
+    "name": "Collection Example",
+    "repo": "ivcap-works/ivcap-python-service-example-collection",
+    "branch": "main",
+    "capabilities": [
+      "build-services",
+      "data-fabric"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "intermediate",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "crewai-service",
+    "name": "CrewAI Multi-Agent Service",
+    "repo": "ivcap-works/ivcap-crewai-service",
+    "branch": "main",
+    "capabilities": [
+      "ai-agents",
+      "build-services"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "advanced",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "ai-tool-template",
+    "name": "AI Tool Template",
+    "repo": "ivcap-works/ivcap-python-ai-tool-template",
+    "branch": "main",
+    "capabilities": [
+      "ai-agents",
+      "build-services"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "intermediate",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "agent-calling-agent",
+    "name": "Agent Calling Agent Tutorial",
+    "repo": "ivcap-works/agent-calling-agent-tutorial",
+    "branch": "main",
+    "capabilities": [
+      "ai-agents",
+      "workflows"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "advanced",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "gene-ontology-mapper",
+    "name": "Gene Ontology Term Mapper",
+    "repo": "ivcap-works/gene-onology-term-mapper",
+    "branch": "main",
+    "capabilities": [
+      "domain-bio",
+      "build-services"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "intermediate",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "markdown-conversion",
+    "name": "Markdown Conversion Service",
+    "repo": "ivcap-works/ivcap-markdown-conversion-service",
+    "branch": "main",
+    "capabilities": [
+      "ai-agents",
+      "artifacts"
+    ],
+    "sdks": [
+      "python-service"
+    ],
+    "difficulty": "intermediate",
+    "pull_files": [
+      "README.md"
+    ]
+  }
+]

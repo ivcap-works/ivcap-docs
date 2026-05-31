@@ -1,0 +1,19 @@
+{
+  "slug": "gene-ontology-mapper",
+  "name": "Gene Ontology Term Mapper",
+  "repo": "ivcap-works/gene-onology-term-mapper",
+  "branch": "main",
+  "capabilities": [
+    "domain-bio",
+    "build-services"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "intermediate",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2025-07-16",
+  "stars": 1
+}

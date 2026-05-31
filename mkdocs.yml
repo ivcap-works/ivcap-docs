@@ -1,4 +1,7 @@
-site_name: IVCAP - Platform for Collaborating on Analytics & Data
+site_name: IVCAP Documentation
+site_url: https://docs.ivcap.net/
+site_description: IVCAP — a managed, provenance-aware platform for running, building,
+  and orchestrating analytic services and AI agents.
 theme:
   name: material
   custom_dir: docs/overrides
@@ -8,63 +11,180 @@ theme:
   logo: assets/logo/logo_white_32x32.png
   favicon: assets/favicon.ico
   palette:
-    - scheme: default
-      primary: indigo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-
+  - scheme: default
+    primary: indigo
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.footer
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.sections
+  - navigation.indexes
+  - navigation.top
+  - navigation.footer
+  - navigation.path
+  - search.suggest
+  - search.highlight
+  - content.code.copy
+  - content.code.annotate
+exclude_docs: 'README.md
 
+  '
+validation:
+  links:
+    not_found: ignore
+plugins:
+- search
+- tags
+- llmstxt-md:
+    enable_markdown_urls: true
+    enable_llms_txt: true
+    enable_llms_full: true
+    markdown_description: IVCAP is a managed, provenance-aware platform for running,
+      building, and orchestrating analytic services and AI agents. It exposes a REST
+      API and CLI for submitting jobs, managing artifacts, querying provenance via
+      the Data Fabric, and building multi-agent pipelines.
+    sections:
+      Concepts:
+      - concepts/*.md
+      Get Started:
+      - getting-started/*.md
+      Guides — Running Analyses:
+      - guides/running/*.md
+      Guides — Building Services:
+      - guides/building/*.md
+      Guides — Building AI Agents:
+      - guides/agents/*.md
+      Guides — Integrating IVCAP:
+      - guides/integrating/*.md
+      Reference:
+      - reference/*.md
+      - reference/api/*.md
+      Examples:
+      - examples/*.md
+markdown_extensions:
+- attr_list
+- md_in_html
+- tables
+- admonition
+- pymdownx.details
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: __PYTAG_0__
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.tabbed:
+    alternate_style: true
+- toc:
+    permalink: true
 nav:
-  - Home: index.md # README.md
-  - Getting Started:
-      - getting-started/quick-start.md
-      - getting-started/installing-cli.md
-  # - User Guide:
-  #     - concepts.md
-  #     - Artifacts:
-  #         - workflow-inputs.md
-  #         - key-only-artifacts.md
-  #         - artifact-repository-ref.md
-  #         - conditional-artifacts-parameters.md
-  #     # - Access Control:
-  #     # - Features:
-  #     # - Debugging Tools:
-  #     - API:
-  #         - rest-api.md
-  #         - swagger.md
-  #     # - Best Practices:
-  #     # - Use Cases:
-  #     - FAQ: faq.md
-  #     - CLI Reference:
-  #         - argo: cli/argo.md
-  #         - argo archive: cli/argo_archive.md
-  #         - argo archive delete: cli/argo_archive_delete.md
-  # - Service Developer Guide:
-  #     - Overview: developer-guide/README.md
-  #     - Architecture: developer-guide/architecture.md
-  #     - Develop Services: developer-guide/develop-services.md
-  #     - Deploy Services: developer-guide/deploy-services.md
-  #     - developer-guide/running-locally.md
-  #     - developer-guide/integration-options.md
-  #     - Python SDK: developer-guide/sdk.md
-  #     - developer-guide/sdk-resources.md
-
-  #      - releasing.md
-  # - Operator Manual:
-  #     - operator-manual/README.md
-  # - Roadmap: roadmap.md
-
-  # - Blog: https://blog.argoproj.io/
-  # - Slack: https://argoproj.github.io/community/join-slack
-  # - Twitter: https://twitter.com/argoproj
-  # - LinkedIn: https://www.linkedin.com/company/argoproj/
+- Home: index.md
+- Concepts:
+  - concepts/index.md
+  - Services and Jobs: concepts/services-and-jobs.md
+  - The Data Fabric: concepts/data-fabric.md
+  - Aspects and Provenance: concepts/aspects-and-provenance.md
+  - Artifacts: concepts/artifacts.md
+  - Queues: concepts/queues.md
+  - Agentic Patterns: concepts/agentic-patterns.md
+- Get Started:
+  - getting-started/index.md
+  - Install the CLI: getting-started/install.md
+  - Run Your First Analysis: getting-started/run-analysis.md
+  - Build Your First Service: getting-started/build-service.md
+  - Build Your First AI Agent: getting-started/build-agent.md
+- Guides:
+  - guides/index.md
+  - Running Analyses:
+    - guides/running/index.md
+    - Discover Services: guides/running/discover-services.md
+    - Submit and Monitor Jobs: guides/running/submit-jobs.md
+    - Work with Artifacts: guides/running/work-with-artifacts.md
+    - Query Provenance: guides/running/query-provenance.md
+    - Troubleshooting: guides/running/troubleshooting.md
+  - Building Services:
+    - guides/building/index.md
+    - Service Basics: guides/building/service-basics.md
+    - Using Artifacts: guides/building/use-artifacts.md
+    - Using Queues: guides/building/use-queues.md
+    - Calling Other Services: guides/building/call-other-services.md
+    - Calling LLMs: guides/building/call-llms.md
+    - Deploy and Register: guides/building/deploy.md
+    - Running Locally: guides/building/run-locally.md
+  - Building AI Agents:
+    - guides/agents/index.md
+    - Agent Patterns: guides/agents/agent-patterns.md
+    - Multi-Agent Orchestration: guides/agents/multi-agent.md
+    - CrewAI on IVCAP: guides/agents/crewai.md
+    - Using IVCAP from External Agents: guides/agents/using-ivcap-externally.md
+  - Integrating IVCAP:
+    - guides/integrating/index.md
+    - Authentication: guides/integrating/authentication.md
+    - Python Client SDK: guides/integrating/python-client-sdk.md
+    - REST API Primer: guides/integrating/rest-api-primer.md
+    - Using IVCAP via MCP: guides/integrating/mcp.md
+- Reference:
+  - reference/index.md
+  - Glossary: reference/glossary.md
+  - URN Reference: reference/urns.md
+  - CLI Reference: reference/cli.md
+  - REST API:
+    - reference/api/index.md
+    - Services & Jobs: reference/api/services.md
+    - Artifacts: reference/api/artifacts.md
+    - Aspects: reference/api/aspects.md
+    - Queues: reference/api/queues.md
+    - Secrets: reference/api/secrets.md
+    - Packages: reference/api/packages.md
+    - Sessions: reference/api/sessions.md
+    - Live Events: reference/api/events.md
+    - Search: reference/api/search.md
+- SDKs:
+  - IVCAP CLI:
+    - Full API Reference ↗: https://github.com/ivcap-works/ivcap-cli
+  - Python Client SDK:
+    - Full API Reference ↗: https://ivcap-works.github.io/ivcap-client-sdk-python/
+  - Python Service SDK:
+    - Full API Reference ↗: https://ivcap-works.github.io/ivcap-service-sdk-python
+- Capabilities:
+  - Ai Agents:
+    - Agent Calling Agent Tutorial: content/examples/agent-calling-agent/index.md
+    - AI Tool Template: content/examples/ai-tool-template/index.md
+    - CrewAI Multi-Agent Service: content/examples/crewai-service/index.md
+    - Markdown Conversion Service: content/examples/markdown-conversion/index.md
+  - Artifacts:
+    - Markdown Conversion Service: content/examples/markdown-conversion/index.md
+    - Python Service Example: content/examples/python-service/index.md
+  - Build Services:
+    - AI Tool Template: content/examples/ai-tool-template/index.md
+    - Collection Example: content/examples/collection-example/index.md
+    - CrewAI Multi-Agent Service: content/examples/crewai-service/index.md
+    - Gene Ontology Term Mapper: content/examples/gene-ontology-mapper/index.md
+    - Lambda Service Example: content/examples/python-lambda/index.md
+    - Python Service Example: content/examples/python-service/index.md
+  - Data Fabric:
+    - Collection Example: content/examples/collection-example/index.md
+  - Domain Bio:
+    - Gene Ontology Term Mapper: content/examples/gene-ontology-mapper/index.md
+  - Workflows:
+    - Agent Calling Agent Tutorial: content/examples/agent-calling-agent/index.md
+- Examples:
+  - examples/index.md
+  - Capability Matrix: examples/capability-matrix.md
+  - Agent Calling Agent Tutorial: content/examples/agent-calling-agent/index.md
+  - AI Tool Template: content/examples/ai-tool-template/index.md
+  - Collection Example: content/examples/collection-example/index.md
+  - CrewAI Multi-Agent Service: content/examples/crewai-service/index.md
+  - Gene Ontology Term Mapper: content/examples/gene-ontology-mapper/index.md
+  - Markdown Conversion Service: content/examples/markdown-conversion/index.md
+  - Lambda Service Example: content/examples/python-lambda/index.md
+  - Python Service Example: content/examples/python-service/index.md

@@ -121,7 +121,7 @@ Use the `make run` target to run the sample service using python and test it out
 Use the `make docker-build-local`, `make docker-publish-local`, and `make docker-run` make targets build the sample service to a local docker image, and enable it to run as a docker image
 
 Review and make changes to the code in the sample service.
-Build it with the make targets, and [access IVCAP services](using-ivcap/) with the CLI to test how your service runs.
+Build it with the make targets, and [access IVCAP services](using-ivcap.md) with the CLI to test how your service runs.
 
 When running your service locally you can load images from the local file-system, or you can interact with IVCAP server for data storage.
 Use the service order parameters to provide the input files for the sample service.

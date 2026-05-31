@@ -8,12 +8,12 @@ When developing IVCAP services, critical to support users:
 * [Checking the status]() should let the user know what went wrong if it wasn't able to terminate with success.
 * Provide information on the output so users can [Retreiving the output]() after the service has terminated.
 
-IVCAP users [find your service](#discovering-a-service) and accesses the information that tells them what it is, how to use it, and its output. 
+IVCAP users [find your service](#discovering-a-service) and accesses the information that tells them what it is, how to use it, and its output.
 
 ## Argo
 
 Analytics services are implemented as Argo workflows.  Argo controls the execution of the services within the K8s cluster.
-Sandboxing the service runtime, data in and data out is provided via the REST API.  The Python SDK abstracts the REST API .  **SANDBOXING**  
+Sandboxing the service runtime, data in and data out is provided via the REST API.  The Python SDK abstracts the REST API .  **SANDBOXING**
 
 Data In and Data out is made available to the service via the Api, or by using SDK functions.  Images for analysis are retrieved for processing via the API or the SDK [`cache_file`]() funciton **Link to cache_file desc**.
 Output generated is stored via the API or the SDK [`deliver`]() funciton
@@ -25,7 +25,7 @@ Implement a service as an __Argo__ workflow template and register it within __IV
 
 Ordering a service creates and executes an argo workflow using the parameters, metadata, artifacts, and the workflow template specified for the service.
 
-Services are executed in a sandbox environment, with their own context.  
+Services are executed in a sandbox environment, with their own context.
 Services do not interact with other services, workflows, or external data sources other than via the REST API methods.
 Access to input artifacts, data, or generated output is provided via the REST API methods.
 The complexity of using the API is abstracted with the Python SDK, and the CLI.
@@ -55,7 +55,7 @@ The Service information should describe what the service does, the context in wh
 ## Discovering a service
 
 Discover services using the service description information and the SDK, CLI, or the API.  (The SDK and the CLI abstract and simplify the complexity of the API calls)
-Users use the service description to find and choose the service to use.  
+Users use the service description to find and choose the service to use.
 Use the list services method with the users search criteria to list the available services that match.
 
 The service description information will need to contain detailed information about:
@@ -95,6 +95,4 @@ Once the service has completed its execution, any localised or cached data will 
 
 The CLI provides a comprehensive client environment for interacting with the IVCAP and the analytics services.
 
-The [CLI can be used](using-ivcap/) to Discover, Order, Check the status of an order, and get the results of an order. 
-
-
+The [CLI can be used](using-ivcap.md) to discover services, create orders, check order status, and retrieve results.

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ivcap-docs"
+version = "0.1.0"
+description = "IVCAP documentation site"
+authors = ["IVCAP Team"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = ">=1.6"
+mkdocs-material = ">=9.5"
+mkdocs-git-revision-date-localized-plugin = ">=1.2"
+pyyaml = ">=6.0"
+jsonschema = ">=4.0"
+mkdocs-llmstxt-md = "^0.2.0"
+
+[tool.poetry.group.dev.dependencies]
+# No extra dev-only deps yet
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

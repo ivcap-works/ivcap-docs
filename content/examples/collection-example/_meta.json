@@ -1,0 +1,19 @@
+{
+  "slug": "collection-example",
+  "name": "Collection Example",
+  "repo": "ivcap-works/ivcap-python-service-example-collection",
+  "branch": "main",
+  "capabilities": [
+    "build-services",
+    "data-fabric"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "intermediate",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2024-11-03",
+  "stars": 0
+}

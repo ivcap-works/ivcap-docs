@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "slug",
+      "name",
+      "repo",
+      "branch",
+      "capabilities",
+      "language",
+      "audience"
+    ],
+    "additionalProperties": true,
+    "properties": {
+      "slug": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "repo": {
+        "type": "string",
+        "pattern": "^[^/]+/[^/]+$"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "github_pages_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "pull_docs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "capabilities": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "language": {
+        "type": "string",
+        "enum": [
+          "python",
+          "go",
+          "javascript",
+          "typescript"
+        ]
+      },
+      "audience": {
+        "type": "string",
+        "enum": [
+          "service-author",
+          "app-developer",
+          "all"
+        ]
+      }
+    }
+  }
+}

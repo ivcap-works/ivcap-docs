@@ -1,0 +1,104 @@
+# .github/workflows/build.yml
+#
+# Calls `make` targets — all logic lives in the Makefile and scripts.
+# Triggered by:
+#   - Nightly schedule (refresh all upstream content)
+#   - Push to main (hub docs changes)
+#   - repository_dispatch (SDK or example repo released)
+#   - Manual workflow_dispatch
+
+name: Build & Deploy Hub
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Nightly at 02:00 UTC
+    - cron: "0 2 * * *"
+  repository_dispatch:
+    # SDK or example repos trigger this via:
+    #   gh api repos/your-org/hub/dispatches \
+    #       --input '{"event_type":"sdk-updated","client_payload":{"sdk":"python"}}'
+    types: [sdk-updated, example-updated]
+  workflow_dispatch:
+    inputs:
+      sdk:
+        description: "Fetch a single SDK only (leave blank for all)"
+        required: false
+      example:
+        description: "Fetch a single example only (leave blank for all)"
+        required: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed for gh-pages push
+
+    steps:
+      - name: Checkout hub repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history needed for git-revision-date plugin
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: make install
+
+      # Restore the git-clone cache across runs to avoid re-cloning unchanged repos
+      - name: Restore clone cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: clone-cache-${{ github.run_id }}
+          restore-keys: |
+            clone-cache-
+
+      # Single-SDK fetch (triggered by repository_dispatch or manual input)
+      - name: Fetch single SDK
+        if: >
+          (github.event_name == 'repository_dispatch' &&
+           github.event.action == 'sdk-updated') ||
+          (github.event_name == 'workflow_dispatch' &&
+           github.event.inputs.sdk != '')
+        env:
+          SDK: ${{ github.event.client_payload.sdk || github.event.inputs.sdk }}
+        run: make fetch-sdk SDK=$SDK
+
+      # Single-example fetch (triggered by repository_dispatch or manual input)
+      - name: Fetch single example
+        if: >
+          (github.event_name == 'repository_dispatch' &&
+           github.event.action == 'example-updated') ||
+          (github.event_name == 'workflow_dispatch' &&
+           github.event.inputs.example != '')
+        env:
+          EX: ${{ github.event.client_payload.example || github.event.inputs.example }}
+        run: make fetch-example EX=$EX
+
+      # Full fetch for scheduled/push runs
+      - name: Fetch all content
+        if: >
+          github.event_name == 'push' ||
+          github.event_name == 'schedule'
+        run: make fetch
+
+      - name: Validate registries
+        run: make validate
+
+      - name: Build site
+        run: make build
+
+      - name: Check links
+        run: make check-links
+        continue-on-error: true   # link failures annotate but don't block deploy
+
+      - name: Deploy to GitHub Pages
+        run: make deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

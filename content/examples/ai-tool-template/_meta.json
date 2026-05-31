@@ -1,0 +1,19 @@
+{
+  "slug": "ai-tool-template",
+  "name": "AI Tool Template",
+  "repo": "ivcap-works/ivcap-python-ai-tool-template",
+  "branch": "main",
+  "capabilities": [
+    "ai-agents",
+    "build-services"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "intermediate",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2026-02-10",
+  "stars": 0
+}
