@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "python-service",
+    "name": "Python Service SDK",
+    "repo": "ivcap-works/ivcap-service-sdk-python",
+    "branch": "main",
+    "github_pages_url": "https://ivcap-works.github.io/ivcap-service-sdk-python",
+    "pull_docs": [
+      "docs/getting-started.md",
+      "docs/concepts.md",
+      "docs/guides"
+    ],
+    "capabilities": [
+      "build-services",
+      "artifacts",
+      "data-fabric",
+      "workflows",
+      "ai-agents"
+    ],
+    "language": "python",
+    "audience": "service-author"
+  },
+  {
+    "slug": "python-client",
+    "name": "Python Client SDK",
+    "repo": "ivcap-works/ivcap-sdk-python",
+    "branch": "main",
+    "github_pages_url": "https://ivcap-works.github.io/ivcap-client-sdk-python/",
+    "pull_docs": [
+      "docs/getting-started.md",
+      "docs/guides"
+    ],
+    "capabilities": [
+      "run-services",
+      "artifacts",
+      "aspects"
+    ],
+    "language": "python",
+    "audience": "app-developer"
+  },
+  {
+    "slug": "cli",
+    "name": "IVCAP CLI",
+    "repo": "ivcap-works/ivcap-cli",
+    "branch": "main",
+    "github_pages_url": "https://github.com/ivcap-works/ivcap-cli",
+    "pull_docs": [
+      "docs/"
+    ],
+    "capabilities": [
+      "run-services",
+      "artifacts",
+      "data-fabric"
+    ],
+    "language": "go",
+    "audience": "all"
+  }
+]

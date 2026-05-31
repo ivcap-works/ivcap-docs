@@ -1,31 +1,46 @@
 <style>
+  /* Global header & tab colours — deep navy matching the landing page */
   .md-header,
   nav {
-    --md-primary-fg-color: #415C6C !important;
-    --md-primary-fg-color--light: #5d6cc0;
-    --md-primary-fg-color--dark: #415C6C;
+    --md-primary-fg-color: #0f1729 !important;
+    --md-primary-fg-color--light: #1e2d4a;
+    --md-primary-fg-color--dark: #0a0f20;
     --md-primary-bg-color: #fff;
     --md-primary-bg-color--light: #ffffffb3;
 
-    --md-accent-fg-color: #415C6C;
-    --md-accent-fg-color--transparent: #526cfe1a;
+    --md-accent-fg-color: #60a5fa;
+    --md-accent-fg-color--transparent: #60a5fa1a;
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: #ffffffb3;
   }
+
+  /* Slightly lighter shade for the tab bar to separate it from the header */
+  .md-tabs {
+    background-color: #131e35;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
 </style>
 
-{% extends "base.html" %}
-
-{% block content %}
-{{ super() }}
+{% extends "base.html" %} {% block content %} {{ super() }}
 
 <!-- Giscus -->
 <h3 id="__comments">{{ lang.t("meta.comments") }}</h3>
 
-<script src="https://giscus.app/client.js" data-repo="ivcap-works/ivcap-docs" data-repo-id="R_kgDOMMOmgA"
-  data-category="Announcements" data-category-id="DIC_kwDOMMOmgM4CgPsr" data-mapping="pathname" data-strict="0"
-  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme"
-  data-lang="en" crossorigin="anonymous" async>
-  </script>
+<script
+  src="https://giscus.app/client.js"
+  data-repo="ivcap-works/ivcap-docs"
+  data-repo-id="R_kgDOMMOmgA"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOMMOmgM4CgPsr"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  crossorigin="anonymous"
+  async
+></script>
 
 {% endblock %}

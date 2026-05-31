@@ -2,4 +2,11 @@ site/
 *.tgz
 .*.tgz
 
+# Generated content fetched from SDK/example repos at build time
+content/
+
+# Git clone cache used by fetch scripts
+.cache/
+
 .vscode
+old_docs/

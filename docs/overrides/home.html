@@ -7,8 +7,19 @@
 <style>
   /* Let the Material palette stay in control for the rest of the docs.
      Only decorate the landing page. */
+
+  /* Dark header & tabs to match the page background */
   .md-header {
-    background: transparent;
+    background-color: rgba(10, 15, 32, 0.97);
+  }
+  .md-tabs {
+    background-color: rgba(15, 23, 42, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Increase top-level navigation tab font size */
+  .md-tabs__link {
+    font-size: 1rem;
   }
 
   /* Add some breathing room so the hero doesn't sit under the header */
@@ -42,6 +53,11 @@
     box-shadow: none;
   }
   .md-main .md-top {
+    display: none;
+  }
+
+  /* Hide the dark/light toggle on the landing page */
+  .md-header__option {
     display: none;
   }
 
@@ -157,9 +173,10 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.05rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 0.9rem;
     text-decoration: none;
+    font-size: 1.05rem;
     font-weight: 600;
     border: 1px solid transparent;
     transition:
@@ -258,6 +275,7 @@
   .ivcap-linkrow a {
     color: var(--ivcap-text);
     text-decoration: none;
+    font-size: 1.05rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   }
   .ivcap-linkrow a:hover {
@@ -279,37 +297,42 @@
   <div class="ivcap-wrap">
     <header class="ivcap-hero">
       <div>
-        <h1>Where Ambitious Science Gets the Scale It Deserves</h1>
+        <h1>
+          Fits Into How You Already Work — Then Lets You Share, Compose, and
+          Scale.
+        </h1>
         <p>
-          IVCAP is live and ready to use — with large-scale compute, agentic
-          workflows, and rigorous provenance built in. Extend it with your own
-          services. Fit it into your existing workflows. Just bring the problem.
+          IVCAP integrates with your existing research environment — notebooks,
+          scripts, or custom pipelines — and gives you the platform to expose
+          your work as services, compose them with colleagues across domains,
+          and scale from a single interactive run to full operational
+          deployment.
         </p>
 
         <div class="ivcap-badges" aria-label="Key highlights">
           <span class="ivcap-badge"
-            ><span class="dot"></span>Composable workflows</span
+            ><span class="dot"></span>Agentic &amp; composable workflows</span
           >
           <span class="ivcap-badge"
-            ><span class="dot"></span>Data Fabric & artifacts</span
+            ><span class="dot"></span>Provenance &amp; reproducibility</span
           >
           <span class="ivcap-badge"
-            ><span class="dot"></span>Dataset as query</span
+            ><span class="dot"></span>Cross-domain collaboration</span
           >
           <span class="ivcap-badge"
-            ><span class="dot"></span>Secure collaboration</span
+            ><span class="dot"></span>Research → operational services</span
           >
         </div>
 
         <div class="ivcap-cta">
           <a
             class="ivcap-btn ivcap-btn-primary"
-            href="{{ 'getting-started/quick-start/' | url }}"
+            href="{{ 'getting-started/' | url }}"
             >Get started</a
           >
           <a
             class="ivcap-btn ivcap-btn-secondary"
-            href="{{ 'getting-started/platform-overview/' | url }}"
+            href="{{ 'concepts/' | url }}"
             >Platform overview</a
           >
           <a
@@ -318,84 +341,88 @@
             >Examples</a
           >
         </div>
-
-        <div class="ivcap-linkrow" aria-label="Quick links">
-          <a href="{{ 'user-guide/index/' | url }}">Use the platform</a>
-          <a href="{{ 'developer-guide/README/' | url }}">Build services</a>
-          <a href="{{ 'API/index/' | url }}">API reference</a>
-        </div>
       </div>
 
       <aside class="ivcap-hero-aside" aria-label="IVCAP in practice">
         <div class="ivcap-metric">
-          <div class="k">Designed for</div>
-          <div class="v">science + analytics + simulation</div>
+          <div class="k">Built for</div>
+          <div class="v">
+            science · analytics · information management · collaboration
+          </div>
         </div>
         <div class="ivcap-metric">
-          <div class="k">Execution model</div>
-          <div class="v">services → orders → artifacts</div>
+          <div class="k">Workflow model</div>
+          <div class="v">
+            notebook → service → agentic pipeline → operational scale
+          </div>
         </div>
         <div class="ivcap-metric">
-          <div class="k">From the Jan 2024 overview</div>
-          <div class="v">workflows • data fabric • dataset-as-query</div>
+          <div class="k">Provenance by design</div>
+          <div class="v">
+            every run is traceable, repeatable &amp; accountable
+          </div>
         </div>
       </aside>
     </header>
 
     <section class="ivcap-section" aria-label="Core capabilities">
-      <h2>Every Stage of Discovery. One Platform. Unlimited Scale</h2>
+      <h2>One Platform for the Full Research Lifecycle</h2>
       <div class="ivcap-grid">
         <article class="ivcap-card">
-          <h3>Agentic workflows + classic models</h3>
+          <h3>Agentic &amp; analytical workflows</h3>
           <p>
-            Combine LLM/agent-driven steps with traditional simulation and
-            analytics services. Orchestrate the full investigative lifecycle
-            with composable workflows.
+            Compose LLM-driven agents with traditional simulation, AI inference,
+            and data-processing services into end-to-end pipelines — from
+            exploratory research to automated, large-scale production runs.
           </p>
         </article>
 
         <article class="ivcap-card">
-          <h3>Provenance & repeatability</h3>
+          <h3>Provenance, repeatability &amp; accountability</h3>
           <p>
-            Every run produces traceable artifacts and metadata, enabling
-            reproducible pipelines, auditability, and “same input → same result”
-            confidence.
+            The Data Fabric automatically records what data was used, which
+            services processed it, and what results were produced — so you
+            always know where an output came from and can reproduce it exactly.
           </p>
         </article>
 
         <article class="ivcap-card">
-          <h3>Collaboration without compromise</h3>
+          <h3>Composable cross-disciplinary collaboration</h3>
           <p>
-            Flexible projects and teams, strong authorization, and privacy
-            controls — so you can work across organisations while protecting
-            sensitive data.
+            Services built by different domain experts — ecologists, AI
+            researchers, data engineers — can be freely combined into new
+            workflows. Composability means a breakthrough in one field
+            immediately becomes a building block for another.
           </p>
         </article>
       </div>
     </section>
 
     <section class="ivcap-section" aria-label="How it works">
-      <h2>How IVCAP fits your day-to-day</h2>
+      <h2>From Prototype to Production — Without Starting Over</h2>
       <div class="ivcap-grid">
         <article class="ivcap-card">
-          <h3>Publish services</h3>
+          <h3>Package &amp; publish services</h3>
           <p>
-            Package research code as services that can be shared, reviewed,
-            versioned, and deployed rapidly.
+            Turn research code — notebooks, scripts, or models — into versioned,
+            discoverable services that colleagues and automated pipelines can
+            invoke at any scale.
           </p>
         </article>
         <article class="ivcap-card">
-          <h3>Submit orders</h3>
+          <h3>Orchestrate agentic pipelines</h3>
           <p>
-            Run services at scale (batch or interactive patterns) and connect
-            steps into reliable pipelines.
+            Chain services into multi-step workflows driven by LLM agents or
+            classic control logic. Scale from a single interactive run to
+            ecosystem-wide batch processing without changing your code.
           </p>
         </article>
         <article class="ivcap-card">
-          <h3>Track artifacts in the Data Fabric</h3>
+          <h3>Trust your results with full provenance</h3>
           <p>
-            Manage datasets, models, observations and results — including
-            intent-defined datasets (“dataset as query”).
+            Every artifact carries its full lineage — what data it came from,
+            which service version produced it, and under what parameters —
+            enabling robust audit trails and scientific reproducibility.
           </p>
         </article>
       </div>
@@ -406,13 +433,16 @@
       <div class="ivcap-cta">
         <a
           class="ivcap-btn ivcap-btn-primary"
-          href="{{ 'getting-started/quick-start/' | url }}"
+          href="{{ 'getting-started/install/' | url }}"
           >Quick start</a
         >
         <a
           class="ivcap-btn ivcap-btn-secondary"
-          href="{{ 'getting-started/choosing-starting-point/' | url }}"
+          href="{{ 'getting-started/' | url }}"
           >Choose your path</a
+        >
+        <a class="ivcap-btn ivcap-btn-secondary" href="{{ 'concepts/' | url }}"
+          >Core concepts</a
         >
       </div>
     </section>
