@@ -5,7 +5,7 @@ DOMAIN   = docs.develop.ivcap.net
 ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # ── Directories ────────────────────────────────────────────────────────────────
-CONTENT_DIR      := content
+CONTENT_DIR      := docs/content
 SDK_DIR          := $(CONTENT_DIR)/sdk
 EXAMPLES_DIR     := $(CONTENT_DIR)/examples
 CACHE_DIR        := .cache
@@ -52,6 +52,7 @@ help:
 	@echo ""
 	@echo "  $(CYAN)Deployment$(RESET)"
 	@echo "    deploy            Build and deploy to IVCAP platform"
+	@echo "    gh-pages          Build from local content and push to gh-pages branch"
 	@echo ""
 	@echo "  $(CYAN)Housekeeping$(RESET)"
 	@echo "    clean             Remove fetched content and build artefacts"
@@ -170,7 +171,7 @@ check-links: build
 # ──────────────────────────────────────────────────────────────────────────────
 # Deploy to IVCAP platform
 # ──────────────────────────────────────────────────────────────────────────────
-.PHONY: deploy
+.PHONY: deploy gh-pages
 
 $(ROOT_DIR)/$(DOMAIN).tgz: build
 	cd $(ROOT_DIR)/site && tar zcf $(ROOT_DIR)/$(DOMAIN).tgz *
@@ -183,7 +184,17 @@ deploy: $(ROOT_DIR)/$(DOMAIN).tgz
 		\"host\": \"$(DOMAIN)\",\
 		\"artifact\": \"$(BUILD_ART)\",\
 		\"404\": \"404.html\"\
-	}" | ivcap --timeout 600 aspect update urn:ivcap:app-server:$(DOMAIN) -f -
+	}" | ivcap datafabric update urn:ivcap:app-server:$(DOMAIN) -f -
+
+# Build from whatever content is already present (no remote fetch) and push
+# the result to the orphaned gh-pages branch.
+# Uses `mkdocs gh-deploy` which handles creating/updating the branch.
+gh-pages:
+	@echo "$(BOLD)Building site from local content (no remote fetch)...$(RESET)"
+	$(MKDOCS) build --strict
+	@echo "$(BOLD)Pushing built site to gh-pages branch...$(RESET)"
+	$(MKDOCS) gh-deploy --force --clean
+	@echo "$(GREEN)gh-pages branch updated.$(RESET)"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Clean

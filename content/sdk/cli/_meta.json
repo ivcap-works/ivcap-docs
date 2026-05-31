@@ -1,0 +1,14 @@
+{
+  "slug": "cli",
+  "name": "IVCAP CLI",
+  "github_pages_url": "https://github.com/ivcap-works/ivcap-cli",
+  "capabilities": [
+    "run-services",
+    "artifacts",
+    "data-fabric"
+  ],
+  "language": "go",
+  "pulled_files": [
+    "docs/"
+  ]
+}
