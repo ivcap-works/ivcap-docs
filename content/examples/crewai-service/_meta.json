@@ -1,0 +1,19 @@
+{
+  "slug": "crewai-service",
+  "name": "CrewAI Multi-Agent Service",
+  "repo": "ivcap-works/ivcap-crewai-service",
+  "branch": "main",
+  "capabilities": [
+    "ai-agents",
+    "build-services"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "advanced",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2026-05-25",
+  "stars": null
+}

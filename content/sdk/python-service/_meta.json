@@ -1,0 +1,18 @@
+{
+  "slug": "python-service",
+  "name": "Python Service SDK",
+  "github_pages_url": "https://ivcap-works.github.io/ivcap-service-sdk-python",
+  "capabilities": [
+    "build-services",
+    "artifacts",
+    "data-fabric",
+    "workflows",
+    "ai-agents"
+  ],
+  "language": "python",
+  "pulled_files": [
+    "docs/getting-started.md",
+    "docs/concepts.md",
+    "docs/guides"
+  ]
+}

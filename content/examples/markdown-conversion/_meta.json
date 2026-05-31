@@ -1,0 +1,19 @@
+{
+  "slug": "markdown-conversion",
+  "name": "Markdown Conversion Service",
+  "repo": "ivcap-works/ivcap-markdown-conversion-service",
+  "branch": "main",
+  "capabilities": [
+    "ai-agents",
+    "artifacts"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "intermediate",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2025-07-24",
+  "stars": null
+}

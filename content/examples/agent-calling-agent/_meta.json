@@ -1,0 +1,19 @@
+{
+  "slug": "agent-calling-agent",
+  "name": "Agent Calling Agent Tutorial",
+  "repo": "ivcap-works/agent-calling-agent-tutorial",
+  "branch": "main",
+  "capabilities": [
+    "ai-agents",
+    "workflows"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "advanced",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2025-07-20",
+  "stars": null
+}

@@ -1,0 +1,93 @@
+# IVCAP Documentation
+
+> IVCAP — a managed, provenance-aware platform for running, building, and orchestrating analytic services and AI agents.
+
+IVCAP is a managed, provenance-aware platform for running, building, and orchestrating analytic services and AI agents. It exposes a REST API and CLI for submitting jobs, managing artifacts, querying provenance via the Data Fabric, and building multi-agent pipelines.
+
+## Concepts
+
+- [How IVCAP Works](https://docs.ivcap.net/concepts/index.md)
+- [Agentic Patterns](https://docs.ivcap.net/concepts/agentic-patterns/index.md)
+- [Artifacts](https://docs.ivcap.net/concepts/artifacts/index.md)
+- [Aspects and Provenance](https://docs.ivcap.net/concepts/aspects-and-provenance/index.md)
+- [The Data Fabric](https://docs.ivcap.net/concepts/data-fabric/index.md)
+- [Queues](https://docs.ivcap.net/concepts/queues/index.md)
+- [Services and Jobs](https://docs.ivcap.net/concepts/services-and-jobs/index.md)
+
+## Get Started
+
+- [Get Started with IVCAP](https://docs.ivcap.net/getting-started/index.md)
+- [Build Your First AI Agent](https://docs.ivcap.net/getting-started/build-agent/index.md)
+- [Build Your First Service](https://docs.ivcap.net/getting-started/build-service/index.md)
+- [Choosing Your Starting Point](https://docs.ivcap.net/getting-started/choosing-starting-point/index.md)
+- [Install the CLI](https://docs.ivcap.net/getting-started/install/index.md)
+- [IVCAP CLI Tool](https://docs.ivcap.net/getting-started/installing-cli/index.md)
+- [Platform overview](https://docs.ivcap.net/getting-started/platform-overview/index.md)
+- [Quick Start](https://docs.ivcap.net/getting-started/quick-start/index.md)
+- [Run Your First Analysis](https://docs.ivcap.net/getting-started/run-analysis/index.md)
+
+## Guides — Running Analyses
+
+- [Running Analyses](https://docs.ivcap.net/guides/running/index.md)
+- [Discover Services](https://docs.ivcap.net/guides/running/discover-services/index.md)
+- [Query Provenance](https://docs.ivcap.net/guides/running/query-provenance/index.md)
+- [Submit and Monitor Jobs](https://docs.ivcap.net/guides/running/submit-jobs/index.md)
+- [Troubleshooting](https://docs.ivcap.net/guides/running/troubleshooting/index.md)
+- [Work with Artifacts](https://docs.ivcap.net/guides/running/work-with-artifacts/index.md)
+
+## Guides — Building Services
+
+- [Building Services](https://docs.ivcap.net/guides/building/index.md)
+- [Calling LLMs](https://docs.ivcap.net/guides/building/call-llms/index.md)
+- [Calling Other Services](https://docs.ivcap.net/guides/building/call-other-services/index.md)
+- [Deploy and Register](https://docs.ivcap.net/guides/building/deploy/index.md)
+- [Running Locally](https://docs.ivcap.net/guides/building/run-locally/index.md)
+- [Service Basics](https://docs.ivcap.net/guides/building/service-basics/index.md)
+- [Using Artifacts](https://docs.ivcap.net/guides/building/use-artifacts/index.md)
+- [Using Queues](https://docs.ivcap.net/guides/building/use-queues/index.md)
+
+## Guides — Building AI Agents
+
+- [Building AI Agents with IVCAP](https://docs.ivcap.net/guides/agents/index.md)
+- [Agent Patterns](https://docs.ivcap.net/guides/agents/agent-patterns/index.md)
+- [CrewAI on IVCAP](https://docs.ivcap.net/guides/agents/crewai/index.md)
+- [LlamaIndex on IVCAP](https://docs.ivcap.net/guides/agents/llama-index/index.md)
+- [Multi-Agent Orchestration](https://docs.ivcap.net/guides/agents/multi-agent/index.md)
+- [Using IVCAP from External Agents](https://docs.ivcap.net/guides/agents/using-ivcap-externally/index.md)
+
+## Guides — Integrating IVCAP
+
+- [Integrating with IVCAP](https://docs.ivcap.net/guides/integrating/index.md)
+- [Authentication](https://docs.ivcap.net/guides/integrating/authentication/index.md)
+- [Using IVCAP via MCP](https://docs.ivcap.net/guides/integrating/mcp/index.md)
+- [Python Client SDK](https://docs.ivcap.net/guides/integrating/python-client-sdk/index.md)
+- [REST API Primer](https://docs.ivcap.net/guides/integrating/rest-api-primer/index.md)
+
+## Reference
+
+- [Reference](https://docs.ivcap.net/reference/index.md)
+- [CLI Reference](https://docs.ivcap.net/reference/cli/index.md)
+- [Glossary](https://docs.ivcap.net/reference/glossary/index.md)
+- [URN Reference](https://docs.ivcap.net/reference/urns/index.md)
+- [REST API Reference](https://docs.ivcap.net/reference/api/index.md)
+- [Artifacts](https://docs.ivcap.net/reference/api/artifacts/index.md)
+- [Aspects](https://docs.ivcap.net/reference/api/aspects/index.md)
+- [Live Events](https://docs.ivcap.net/reference/api/events/index.md)
+- [Orders (Jobs) — Redirected](https://docs.ivcap.net/reference/api/orders/index.md)
+- [Packages](https://docs.ivcap.net/reference/api/packages/index.md)
+- [Queues](https://docs.ivcap.net/reference/api/queues/index.md)
+- [Search](https://docs.ivcap.net/reference/api/search/index.md)
+- [Secrets](https://docs.ivcap.net/reference/api/secrets/index.md)
+- [Services & Jobs](https://docs.ivcap.net/reference/api/services/index.md)
+- [Sessions](https://docs.ivcap.net/reference/api/sessions/index.md)
+
+## Examples
+
+- [Examples](https://docs.ivcap.net/examples/index.md)
+- [Tutorial: Services Calling Other Services](https://docs.ivcap.net/examples/agent-calling-agent-tutorial/index.md)
+- [Tutorial: Working with Artifacts and the DataFabric](https://docs.ivcap.net/examples/artifact-tutorial/index.md)
+- [Capability Matrix](https://docs.ivcap.net/examples/capability-matrix/index.md)
+- [Tutorial: Building a GO Term Mapper Service](https://docs.ivcap.net/examples/go-term-mapper-tutorial/index.md)
+- [Quick Reference](https://docs.ivcap.net/examples/quick-reference/index.md)
+- [Service Modes: Lambda vs Batch](https://docs.ivcap.net/examples/service-modes/index.md)
+- [Beginner Examples](https://docs.ivcap.net/examples/beginner/index.md)

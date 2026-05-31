@@ -1,0 +1,18 @@
+{
+  "slug": "python-lambda",
+  "name": "Lambda Service Example",
+  "repo": "ivcap-works/ivcap-python-lambda-example",
+  "branch": "main",
+  "capabilities": [
+    "build-services"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "beginner",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2024-08-21",
+  "stars": null
+}

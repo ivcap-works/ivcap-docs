@@ -1,0 +1,15 @@
+{
+  "slug": "python-client",
+  "name": "Python Client SDK",
+  "github_pages_url": "https://ivcap-works.github.io/ivcap-client-sdk-python/",
+  "capabilities": [
+    "run-services",
+    "artifacts",
+    "aspects"
+  ],
+  "language": "python",
+  "pulled_files": [
+    "docs/getting-started.md",
+    "docs/guides"
+  ]
+}

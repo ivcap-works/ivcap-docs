@@ -1,0 +1,19 @@
+{
+  "slug": "python-service",
+  "name": "Python Service Example",
+  "repo": "ivcap-works/ivcap-python-service-example",
+  "branch": "main",
+  "capabilities": [
+    "build-services",
+    "artifacts"
+  ],
+  "sdks": [
+    "python-service"
+  ],
+  "difficulty": "beginner",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2024-09-09",
+  "stars": null
+}
