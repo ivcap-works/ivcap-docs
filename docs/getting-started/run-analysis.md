@@ -29,7 +29,7 @@ process, molecular function, or cellular component) fetched from the
 List available services and search for the GO Term Mapper:
 
 ```bash
-ivcap service list --filter "name~='gene-ontology'"
+ivcap service search gene-ontology
 ```
 
 ```
