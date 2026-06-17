@@ -19,6 +19,7 @@ Usage:
 
 import argparse
 import json
+import os
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -226,6 +227,12 @@ def main() -> None:
         config["nav"], "__CAPABILITIES__", capabilities_nav
     )
     config["nav"] = replace_placeholder(config["nav"], "__EXAMPLES__", examples_nav)
+
+    # Inject the deployed git commit SHA so the landing-page badge can display it.
+    # The value comes from DOCS_GIT_COMMIT (set by the CI "Get short commit SHA" step).
+    # Falls back to "" (badge hidden) when building locally.
+    git_commit = os.environ.get("DOCS_GIT_COMMIT", "")
+    config.setdefault("extra", {})["git_commit"] = git_commit
 
     output.write_text(_dump_config(config, python_tags))
     print(f"✓ mkdocs.yml written to {output}")

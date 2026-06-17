@@ -45,10 +45,11 @@ theme:
 exclude_docs: |
   README.md
 
-# Short git commit SHA injected at build time via DOCS_GIT_COMMIT env var.
-# Displayed on the landing page so you can verify which commit is deployed.
+# Short git commit SHA displayed on the landing page (bottom-left badge).
+# generate_nav.py injects the value from the DOCS_GIT_COMMIT env var at
+# build time; it is "" when building locally so the badge is hidden.
 extra:
-  git_commit: !ENV [DOCS_GIT_COMMIT, ""]
+  git_commit: ""
 
 # Suppress "not found" warnings for links to source files (e.g. .py, .json, .svg)
 # that are referenced in fetched example READMEs but not included in the docs.
