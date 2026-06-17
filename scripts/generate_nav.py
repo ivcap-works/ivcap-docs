@@ -26,18 +26,27 @@ from pathlib import Path
 import yaml  # pip install pyyaml
 
 
-# ── YAML helpers for !!python/name: tag round-tripping ────────────────────────
+# ── YAML helpers for non-safe tag round-tripping ──────────────────────────────
+# mkdocs.yml uses tags that yaml.safe_load rejects:
+#   !!python/name:some.module.name   (e.g. for superfences)
+#   !ENV [VAR, "default"]            (mkdocs env-var interpolation)
+# We stash every occurrence as a quoted sentinel before safe_load, then restore
+# the originals verbatim in the dumped output.
 
-_PYTHON_TAG_RE = re.compile(r"!!python/name:\S+")
+_NONSAFE_TAG_RE = re.compile(
+    r"!!python/name:\S+"  # !!python/name:... tags
+    r"|!ENV\s+\[[^\]]*\]"  # !ENV [VAR, "default"] form
+    r"|!ENV\s+\S+"  # !ENV VAR plain form
+)
 
 
 def _load_template(path: Path) -> tuple[dict, list[str]]:
     """
-    Load a mkdocs-style YAML template that may contain ``!!python/name:`` tags.
+    Load a mkdocs-style YAML template that may contain ``!!python/name:`` or
+    ``!ENV`` tags that ``yaml.safe_load`` would reject.
 
-    ``yaml.safe_load`` rejects those tags, so we stash each unique tag string,
-    replace it with an innocuous quoted sentinel, parse safely, then restore the
-    originals after dumping.
+    Each unique tag string is stashed, replaced with an innocuous quoted
+    sentinel, parsed safely, then restored after dumping.
 
     Returns (config_dict, ordered_tag_list).
     """
@@ -51,7 +60,7 @@ def _load_template(path: Path) -> tuple[dict, list[str]]:
         idx = tags.index(tag)
         return f'"__PYTAG_{idx}__"'
 
-    safe_text = _PYTHON_TAG_RE.sub(_stash, text)
+    safe_text = _NONSAFE_TAG_RE.sub(_stash, text)
     return yaml.safe_load(safe_text), tags
 
 
