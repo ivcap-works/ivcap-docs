@@ -65,11 +65,18 @@ def _load_template(path: Path) -> tuple[dict, list[str]]:
 
 
 def _dump_config(config: dict, tags: list[str]) -> str:
-    """Dump *config* to YAML and restore the original ``!!python/name:`` tags."""
+    """Dump *config* to YAML and restore the original non-safe tags.
+
+    PyYAML may emit the sentinel as a plain scalar (no surrounding quotes),
+    single-quoted, or double-quoted depending on the value and context.
+    We replace all three forms, most-specific (quoted) first.
+    """
     text = yaml.dump(config, allow_unicode=True, sort_keys=False)
     for idx, tag in enumerate(tags):
-        text = text.replace(f"'__PYTAG_{idx}__'", tag)
-        text = text.replace(f'"__PYTAG_{idx}__"', tag)
+        sentinel = f"__PYTAG_{idx}__"
+        text = text.replace(f"'{sentinel}'", tag)  # single-quoted
+        text = text.replace(f'"{sentinel}"', tag)  # double-quoted
+        text = text.replace(sentinel, tag)  # bare / plain scalar
     return text
 
 
