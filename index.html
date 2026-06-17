@@ -696,6 +696,31 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Git commit badge */
+  .ivcap-commit {
+    position: fixed;
+    bottom: 0.6rem;
+    left: 0.75rem;
+    z-index: 100;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.38);
+    background: rgba(10, 15, 32, 0.6);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition:
+      color 150ms ease,
+      border-color 150ms ease;
+  }
+  .ivcap-commit:hover {
+    color: rgba(255, 255, 255, 0.72);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
 </style>
 
 <section id="ivcap-landing">
@@ -854,7 +879,7 @@
   </div>
 </section>
 
-
+ 
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
