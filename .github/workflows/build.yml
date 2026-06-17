@@ -94,7 +94,13 @@ jobs:
       - name: Validate registries
         run: make validate
 
+      - name: Get short commit SHA
+        id: sha
+        run: echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Build site
+        env:
+          DOCS_GIT_COMMIT: ${{ steps.sha.outputs.short }}
         run: make build
 
       - name: Check links

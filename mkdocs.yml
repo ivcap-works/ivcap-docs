@@ -35,6 +35,9 @@ theme:
 exclude_docs: 'README.md
 
   '
+extra:
+  git_commit: !ENV [DOCS_GIT_COMMIT, ""]
+
 validation:
   links:
     not_found: ignore
