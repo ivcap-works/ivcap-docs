@@ -96,11 +96,14 @@ jobs:
 
       - name: Get short commit SHA
         id: sha
-        run: echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+        run: |
+          SHORT=$(git rev-parse --short HEAD)
+          echo "short=$SHORT" >> "$GITHUB_OUTPUT"
+          # Also export to GITHUB_ENV so every subsequent step inherits it
+          # (make gh-pages rebuilds the site, so it needs the var too)
+          echo "DOCS_GIT_COMMIT=$SHORT" >> "$GITHUB_ENV"
 
       - name: Build site
-        env:
-          DOCS_GIT_COMMIT: ${{ steps.sha.outputs.short }}
         run: make build
 
       - name: Check links
