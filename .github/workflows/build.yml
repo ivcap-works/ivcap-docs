@@ -33,19 +33,22 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # needed for gh-pages push
+      contents: write # needed for gh-pages push
 
     steps:
       - name: Checkout hub repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # full history needed for git-revision-date plugin
+          fetch-depth: 0 # full history needed for git-revision-date plugin
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
+
+      - name: Install Poetry
+        run: pip install poetry
 
       - name: Install dependencies
         run: make install
@@ -96,7 +99,7 @@ jobs:
 
       - name: Check links
         run: make check-links
-        continue-on-error: true   # link failures annotate but don't block deploy
+        continue-on-error: true # link failures annotate but don't block deploy
 
       - name: Deploy to GitHub Pages
         run: make deploy

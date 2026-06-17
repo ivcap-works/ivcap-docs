@@ -17,15 +17,15 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/**"       # only trigger when docs actually change
+      - "docs/**" # only trigger when docs actually change
       - "mkdocs.yml"
 
 env:
   HUB_REPO: "your-org/hub"
   # For SDK repos: set to the SDK's slug in sdk-registry.json
   # For example repos: set to the example's slug in example-registry.json
-  REGISTRY_SLUG: "python"          # ← change per repo
-  DISPATCH_TYPE: "sdk-updated"     # ← use "example-updated" for example repos
+  REGISTRY_SLUG: "python" # ← change per repo
+  DISPATCH_TYPE: "sdk-updated" # ← use "example-updated" for example repos
 
 jobs:
   notify-hub:
@@ -34,7 +34,7 @@ jobs:
       - name: Trigger hub rebuild
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.HUB_DISPATCH_TOKEN }}
+          github-token: ${{ secrets.HUB_DISPATCH_TOKEN || github.token }}
           script: |
             await github.rest.repos.createDispatchEvent({
               owner: "${{ env.HUB_REPO }}".split("/")[0],
