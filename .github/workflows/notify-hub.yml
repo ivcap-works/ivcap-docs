@@ -1,27 +1,33 @@
 # .github/workflows/notify-hub.yml
 #
-# Add this workflow to each SDK and example repo.
-# On release (or push to main), it pings the hub to trigger a targeted rebuild.
+# TEMPLATE — copy this file to each downstream SDK or example repo.
+# On release it pings the hub (ivcap-works/ivcap-docs) to trigger a
+# targeted rebuild of only the changed SDK/example docs.
 #
-# Requirements:
+# This file lives here as a reference only.  The push trigger is intentionally
+# absent so it does NOT run inside the hub repo itself (which would call itself
+# and fail).
+#
+# Requirements (in the downstream repo):
 #   - Create a repo secret HUB_DISPATCH_TOKEN with a PAT that has
-#     `repo` scope on the hub repo (or use a fine-grained token
-#     with Contents: Read & Write on the hub repo only).
-#   - Set HUB_REPO and REGISTRY_SLUG for each repo.
+#     `repo` scope on the hub repo (or a fine-grained token with
+#     Contents: Read & Write on ivcap-works/ivcap-docs only).
+#   - Set REGISTRY_SLUG and DISPATCH_TYPE for each repo.
 
 name: Notify Hub
 
 on:
   release:
     types: [published]
-  push:
-    branches: [main]
-    paths:
-      - "docs/**" # only trigger when docs actually change
-      - "mkdocs.yml"
+  # NOTE: do NOT add a push trigger here when this file is in the hub repo.
+  # For downstream repos, you may add:
+  #   push:
+  #     branches: [main]
+  #     paths:
+  #       - "docs/**"
 
 env:
-  HUB_REPO: "your-org/hub"
+  HUB_REPO: "ivcap-works/ivcap-docs"
   # For SDK repos: set to the SDK's slug in sdk-registry.json
   # For example repos: set to the example's slug in example-registry.json
   REGISTRY_SLUG: "python" # ← change per repo
