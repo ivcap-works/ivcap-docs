@@ -4564,40 +4564,38 @@ covers the essentials for integrating directly from any HTTP client.</p>
 </code></pre></div>
 <hr />
 <h2 id="typical-workflow">Typical workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h2>
-<p>```mermaid
-sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
     actor Client
-    participant API as IVCAP API</p>
-<div class="highlight"><pre><span></span><code>Client-&gt;&gt;API: GET /1/services (list available services)
-API--&gt;&gt;Client: [{id, name, parameters}, ...]
+    participant API as IVCAP API
 
-Client-&gt;&gt;API: GET /1/services/{id} (inspect service schema)
-API--&gt;&gt;Client: {name, description, parameters: [...]}
+    Client-&gt;&gt;API: GET /1/services (list available services)
+    API--&gt;&gt;Client: [{id, name, parameters}, ...]
 
-opt Input data required
-    Client-&gt;&gt;API: POST /1/artifacts (create artifact record)
-    API--&gt;&gt;Client: {id: &quot;urn:ivcap:artifact:...&quot;}
-    Client-&gt;&gt;API: PUT /1/artifacts/{id}/blob (upload content)
-    API--&gt;&gt;Client: 200 OK
-end
+    Client-&gt;&gt;API: GET /1/services/{id} (inspect service schema)
+    API--&gt;&gt;Client: {name, description, parameters: [...]}
 
-Client-&gt;&gt;API: POST /1/services/{id}/jobs (submit job)
-API--&gt;&gt;Client: {id: &quot;urn:ivcap:job:...&quot;, status: &quot;pending&quot;}
+    opt Input data required
+        Client-&gt;&gt;API: POST /1/artifacts (create artifact record)
+        API--&gt;&gt;Client: {id: "urn:ivcap:artifact:..."}
+        Client-&gt;&gt;API: PUT /1/artifacts/{id}/blob (upload content)
+        API--&gt;&gt;Client: 200 OK
+    end
 
-loop Poll until finished
-    Client-&gt;&gt;API: GET /1/services/{id}/jobs/{jobId}
-    API--&gt;&gt;Client: {status: &quot;executing&quot; | &quot;succeeded&quot; | &quot;failed&quot;}
-end
+    Client-&gt;&gt;API: POST /1/services/{id}/jobs (submit job)
+    API--&gt;&gt;Client: {id: "urn:ivcap:job:...", status: "pending"}
 
-Client-&gt;&gt;API: GET /1/services/{id}/jobs/{jobId}/output (get result)
-API--&gt;&gt;Client: {&lt;service output fields&gt;}
+    loop Poll until finished
+        Client-&gt;&gt;API: GET /1/services/{id}/jobs/{jobId}
+        API--&gt;&gt;Client: {status: "executing" | "succeeded" | "failed"}
+    end
 
-opt Download artifact output
-    Client-&gt;&gt;API: GET /1/artifacts/{id}/blob
-    API--&gt;&gt;Client: &lt;binary content&gt;
-end
-</code></pre></div>
-<p>```</p>
+    Client-&gt;&gt;API: GET /1/services/{id}/jobs/{jobId}/output (get result)
+    API--&gt;&gt;Client: {&lt;service output fields&gt;}
+
+    opt Download artifact output
+        Client-&gt;&gt;API: GET /1/artifacts/{id}/blob
+        API--&gt;&gt;Client: &lt;binary content&gt;
+    end</code></pre>
 <hr />
 <h2 id="core-resources">Core resources<a class="headerlink" href="#core-resources" title="Permanent link">&para;</a></h2>
 <h3 id="services-1services">Services — <code>/1/services</code><a class="headerlink" href="#services-1services" title="Permanent link">&para;</a></h3>
@@ -4704,8 +4702,7 @@ end
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Job status lifecycle:</strong></p>
-<p><code>mermaid
-stateDiagram-v2
+<pre class="mermaid"><code>stateDiagram-v2
     [*] --&gt; pending : job submitted
     pending --&gt; scheduled : container starting
     scheduled --&gt; executing : service running
@@ -4714,7 +4711,7 @@ stateDiagram-v2
     executing --&gt; error : platform/infra error
     succeeded --&gt; [*]
     failed --&gt; [*]
-    error --&gt; [*]</code></p>
+    error --&gt; [*]</code></pre>
 <table>
 <thead>
 <tr>

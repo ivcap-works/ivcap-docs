@@ -4101,15 +4101,14 @@ CLI and the platform's REST API.</p>
 </table>
 <hr />
 <h2 id="how-ivcap-works-in-30-seconds">How IVCAP works (in 30 seconds)<a class="headerlink" href="#how-ivcap-works-in-30-seconds" title="Permanent link">&para;</a></h2>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
     A[You] --&gt;|1. ivcap service list| B(Service Catalogue)
     A --&gt;|2. ivcap artifact upload| C(Artifact Store)
     A --&gt;|3. ivcap job create| D(Job)
     D --&gt;|runs| E(Service Container)
     E --&gt;|reads| C
     E --&gt;|writes results to| C
-    D --&gt;|auto-records| F(Provenance Aspects)</code></p>
+    D --&gt;|auto-records| F(Provenance Aspects)</code></pre>
 <ol>
 <li><strong>Browse the catalogue</strong> to find a service that does what you need.</li>
 <li><strong>Upload any input data</strong> you want to pass to the service (optional — many services

@@ -4588,15 +4588,14 @@ acknowledge after you have successfully processed and saved the result.</p>
 <h2 id="fan-out-pattern">Fan-out pattern<a class="headerlink" href="#fan-out-pattern" title="Permanent link">&para;</a></h2>
 <p>A common pipeline architecture: one coordinator enqueues all work, then multiple
 workers consume in parallel.</p>
-<p><code>mermaid
-graph LR
+<pre class="mermaid"><code>graph LR
     C[Coordinator job] --&gt;|enqueue N items| Q[(Queue)]
     Q --&gt;|dequeue| W1[Worker job 1]
     Q --&gt;|dequeue| W2[Worker job 2]
     Q --&gt;|dequeue| W3[Worker job 3]
     W1 --&gt; A1[(Artifact)]
     W2 --&gt; A2[(Artifact)]
-    W3 --&gt; A3[(Artifact)]</code></p>
+    W3 --&gt; A3[(Artifact)]</code></pre>
 <p>The coordinator and workers are separate IVCAP services, deployed independently.
 Users submit a coordinator job with a queue URN; the coordinator enqueues all work
 items and exits. Workers are submitted as separate jobs (by the coordinator or by

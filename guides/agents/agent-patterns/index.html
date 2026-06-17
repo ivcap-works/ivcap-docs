@@ -4250,12 +4250,11 @@ deployed as a container, and called via the platform's job API.</p>
 <h2 id="pattern-1-llm-wrapper">Pattern 1: LLM wrapper<a class="headerlink" href="#pattern-1-llm-wrapper" title="Permanent link">&para;</a></h2>
 <p>The simplest agent pattern. A service receives structured input, constructs a prompt,
 calls an LLM via the sidecar, and returns structured output.</p>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
     A[Request\nstructured input] --&gt; B[Prompt\nconstruction]
     B --&gt; C[LLM]
     C --&gt; D[Output\nparsing]
-    D --&gt; E[Result\nstructured output]</code></p>
+    D --&gt; E[Result\nstructured output]</code></pre>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_llm_client</span><span class="p">,</span> <span class="n">Service</span><span class="p">,</span> <span class="n">JobContext</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_ai_tool</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tool_server</span><span class="p">,</span> <span class="n">ivcap_ai_tool</span><span class="p">,</span> <span class="n">ToolOptions</span><span class="p">,</span> <span class="n">logging_init</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
@@ -4299,12 +4298,11 @@ classification, translation, extraction, explanation.</p>
 <h2 id="pattern-2-tool-calling-agent-react-loop">Pattern 2: Tool-calling agent (ReAct loop)<a class="headerlink" href="#pattern-2-tool-calling-agent-react-loop" title="Permanent link">&para;</a></h2>
 <p>A service that runs a reasoning loop: the LLM decides which IVCAP service to call next,
 the service executes it, and the result feeds back to the LLM for the next step.</p>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
     A[Request] --&gt; B[LLM\nreason + decide]
     B --&gt;|tool_call| C[IVCAP service\nexecute]
     C --&gt;|tool result| B
-    B --&gt;|stop| D[Result]</code></p>
+    B --&gt;|stop| D[Result]</code></pre>
 <p>This is the IVCAP implementation of the <a href="https://arxiv.org/abs/2210.03629">ReAct</a> pattern.
 The LLM acts as the reasoning engine; IVCAP services act as the tools.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -4466,12 +4464,11 @@ properties of this pattern:</p>
 <p>Services chained in sequence: the output of one becomes the input of the next.
 Each stage is a separately registered IVCAP service with its own container, resource
 allocation, and provenance record.</p>
-<p><code>mermaid
-flowchart TD
+<pre class="mermaid"><code>flowchart TD
     A[Input artifact\nPDF] --&gt;|artifact URN| B[Stage 1\nPDF → Markdown]
     B --&gt;|markdown artifact URN| C[Stage 2\nMarkdown → structured extraction\nLLM]
     C --&gt;|data artifact URN| D[Stage 3\nStructured data → domain analysis]
-    D --&gt; E[Result]</code></p>
+    D --&gt; E[Result]</code></pre>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@ivcap_ai_tool</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">]))</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_pipeline</span><span class="p">(</span><span class="n">req</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">:</span> <span class="n">JobContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">ivcap</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="n">ivcap</span>
@@ -4511,8 +4508,7 @@ scientific papers, reports, or other PDF-format documents before passing them to
 <h2 id="pattern-5-fan-out-fan-in">Pattern 5: Fan-out / fan-in<a class="headerlink" href="#pattern-5-fan-out-fan-in" title="Permanent link">&para;</a></h2>
 <p>A coordinator submits many sub-jobs in parallel and aggregates the results.
 Useful when you have N independent units of work (regions, documents, samples).</p>
-<p><code>mermaid
-flowchart TD
+<pre class="mermaid"><code>flowchart TD
     C[Coordinator] --&gt;|parallel| A[Sub-job: region A]
     C --&gt;|parallel| B[Sub-job: region B]
     C --&gt;|parallel| D[Sub-job: region C]
@@ -4520,7 +4516,7 @@ flowchart TD
     A --&gt; F[Aggregate results]
     B --&gt; F
     D --&gt; F
-    E --&gt; F</code></p>
+    E --&gt; F</code></pre>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JobStatus</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>

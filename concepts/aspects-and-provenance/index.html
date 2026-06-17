@@ -4393,12 +4393,11 @@ artifact creation, status changes, domain annotations — is recorded as an aspe
 only modification allowed is setting <code>validTo = now</code>, which <em>retracts</em> the aspect — marking
 it as no longer true from that point forward. A new corrected aspect is then created with
 <code>validFrom = now</code>.</p>
-<p><code>mermaid
-timeline
+<pre class="mermaid"><code>timeline
     title Aspect lifecycle for urn:ivcap:artifact:abc...
     2025-06-01 : classification v3.1 asserted (validFrom)
     2025-06-15 : retracted (validTo set) + new aspect asserted
-    2025-06-15 : classification v3.2 replaces it (new validFrom)</code></p>
+    2025-06-15 : classification v3.2 replaces it (new validFrom)</code></pre>
 <p>This append-only model means you can <strong>query the state of any entity at any point in the
 past</strong>, which is the foundation of IVCAP's provenance guarantee.</p>
 <hr />

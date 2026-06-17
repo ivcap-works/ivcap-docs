@@ -4105,8 +4105,7 @@
 <h1 id="integrating-with-ivcap">Integrating with IVCAP<a class="headerlink" href="#integrating-with-ivcap" title="Permanent link">&para;</a></h1>
 <p>IVCAP is accessed entirely through a single REST API. Three integration paths sit on
 top of that API, each suited to different audiences and use cases:</p>
-<p><code>mermaid
-graph TD
+<pre class="mermaid"><code>graph TD
     A[Your application / script / agent] --&gt; B[ivcap CLI]
     A --&gt; C[Python client SDK]
     A --&gt; D[REST API directly]
@@ -4115,7 +4114,7 @@ graph TD
     C --&gt; F
     D --&gt; F
     E --&gt; F
-    F --&gt; G[IVCAP platform]</code></p>
+    F --&gt; G[IVCAP platform]</code></pre>
 <table>
 <thead>
 <tr>
@@ -4168,39 +4167,37 @@ See <a href="mcp/">Using IVCAP via MCP</a>.</p>
 <h2 id="the-integration-model">The integration model<a class="headerlink" href="#the-integration-model" title="Permanent link">&para;</a></h2>
 <p>All four paths talk to the same API. Understanding the four core resource types
 helps you work with any of them:</p>
-<p>```mermaid
-erDiagram
+<pre class="mermaid"><code>erDiagram
     SERVICE ||--o{ JOB : "runs as"
     JOB ||--o{ ARTIFACT : "produces"
     JOB ||--o{ ASPECT : "is described by"
-    ARTIFACT ||--o{ ASPECT : "is described by"</p>
-<div class="highlight"><pre><span></span><code>SERVICE {
-    urn id
-    string name
-    string description
-    json parameters
-}
-JOB {
-    urn id
-    string status
-    urn service_id
-}
-ARTIFACT {
-    urn id
-    string name
-    string mime_type
-    bytes content
-}
-ASPECT {
-    urn id
-    urn entity
-    urn schema
-    json content
-    datetime valid_from
-    datetime valid_to
-}
-</code></pre></div>
-<p>```</p>
+    ARTIFACT ||--o{ ASPECT : "is described by"
+
+    SERVICE {
+        urn id
+        string name
+        string description
+        json parameters
+    }
+    JOB {
+        urn id
+        string status
+        urn service_id
+    }
+    ARTIFACT {
+        urn id
+        string name
+        string mime_type
+        bytes content
+    }
+    ASPECT {
+        urn id
+        urn entity
+        urn schema
+        json content
+        datetime valid_from
+        datetime valid_to
+    }</code></pre>
 <table>
 <thead>
 <tr>

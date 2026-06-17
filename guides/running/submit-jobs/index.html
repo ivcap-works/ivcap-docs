@@ -4466,8 +4466,7 @@ your parameter values, then call <code>svc.request_job()</code>:</p>
 </div>
 <hr />
 <h2 id="job-lifecycle">Job lifecycle<a class="headerlink" href="#job-lifecycle" title="Permanent link">&para;</a></h2>
-<p><code>mermaid
-stateDiagram-v2
+<pre class="mermaid"><code>stateDiagram-v2
     [*] --&gt; pending
     pending --&gt; scheduled : platform schedules execution
     scheduled --&gt; executing : container starts
@@ -4476,7 +4475,7 @@ stateDiagram-v2
     executing --&gt; error : platform / infrastructure fault
     succeeded --&gt; [*]
     failed --&gt; [*]
-    error --&gt; [*]</code></p>
+    error --&gt; [*]</code></pre>
 <table>
 <thead>
 <tr>

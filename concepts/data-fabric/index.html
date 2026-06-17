@@ -4241,12 +4241,11 @@ a domain classification) is described by one or more <strong><a href="../aspects
 attached to its URN. The Data Fabric is the store for all of those aspects.</p>
 <hr />
 <h2 id="core-concepts">Core concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
-<p><code>mermaid
-graph LR
+<pre class="mermaid"><code>graph LR
     E(Entity&lt;br/&gt;urn:ivcap:...) -. "has" .-&gt; A1[Aspect&lt;br/&gt;schema A]
     E -. "has" .-&gt; A2[Aspect&lt;br/&gt;schema B]
     A2 -- "references" --&gt; E2(Another Entity)
-    A1 -- "references" --&gt; ART(Artifact)</code></p>
+    A1 -- "references" --&gt; ART(Artifact)</code></pre>
 <table>
 <thead>
 <tr>

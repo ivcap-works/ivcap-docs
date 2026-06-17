@@ -4311,27 +4311,25 @@ workflow. If you haven't done so yet, start with
 </div>
 <hr />
 <h2 id="how-the-two-agents-cooperate">How the two agents cooperate<a class="headerlink" href="#how-the-two-agents-cooperate" title="Permanent link">&para;</a></h2>
-<p>```mermaid
-sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
     actor User
     participant RW as Report Writer
     participant LLM1 as LLM (writer)
     participant FC as Fact Checker
-    participant LLM2 as LLM (reviewer)</p>
-<div class="highlight"><pre><span></span><code>User-&gt;&gt;RW: topic: &quot;The Solar System&quot;
-RW-&gt;&gt;LLM1: write summary + references
-LLM1--&gt;&gt;RW: report text with [1], [2] references
+    participant LLM2 as LLM (reviewer)
 
-loop for each reference
-    RW-&gt;&gt;FC: assess reference [N]
-    FC-&gt;&gt;LLM2: assess credibility &amp; relevance
-    LLM2--&gt;&gt;FC: assessment text
-    FC--&gt;&gt;RW: assessment for [N]
-end
+    User-&gt;&gt;RW: topic: "The Solar System"
+    RW-&gt;&gt;LLM1: write summary + references
+    LLM1--&gt;&gt;RW: report text with [1], [2] references
 
-RW--&gt;&gt;User: report + reference assessments
-</code></pre></div>
-<p>```</p>
+    loop for each reference
+        RW-&gt;&gt;FC: assess reference [N]
+        FC-&gt;&gt;LLM2: assess credibility &amp; relevance
+        LLM2--&gt;&gt;FC: assessment text
+        FC--&gt;&gt;RW: assessment for [N]
+    end
+
+    RW--&gt;&gt;User: report + reference assessments</code></pre>
 <p>Both services are ordinary IVCAP services — deployed independently, discoverable
 via <code>ivcap service list</code>, and invokable directly with <code>ivcap job create</code>.
 The Report Writer discovers and calls the Fact Checker at runtime using the

@@ -4367,14 +4367,13 @@ artifact, and metadata change. This guide shows how to query that history.</p>
 record attached to an entity URN. Aspects are <strong>append-only</strong>: the platform never deletes
 or overwrites history. The only modification allowed is <em>retracting</em> an aspect (setting
 a <code>validTo</code> timestamp), which leaves the original record intact and queryable.</p>
-<p><code>mermaid
-timeline
+<pre class="mermaid"><code>timeline
     title Provenance trail for a single job
     T+0s  : Job submitted → order-placed aspect on job URN
     T+2s  : Container starts → status=executing aspect
     T+2s  : Artifact consumed → artifact-usedBy-order aspect
     T+45s : Job finishes → order-finished aspect
-    T+45s : Output artifact created → order-produced-artifact aspect</code></p>
+    T+45s : Output artifact created → order-produced-artifact aspect</code></pre>
 <hr />
 <h2 id="automatic-provenance-schemas">Automatic provenance schemas<a class="headerlink" href="#automatic-provenance-schemas" title="Permanent link">&para;</a></h2>
 <table>

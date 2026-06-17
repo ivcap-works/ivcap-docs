@@ -4506,25 +4506,23 @@ platform and controls which services, artifacts, and aspects you can access.</p>
 <p>IVCAP delegates authentication to an external <strong>identity provider</strong> (IdP) — Auth0 by
 default, but configurable per deployment. The IdP issues short-lived JWT tokens that
 IVCAP validates on every request.</p>
-<p>```mermaid
-sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
     actor User
     participant CLI as ivcap CLI / your app
     participant IdP as Identity Provider (Auth0)
-    participant API as IVCAP API Gateway</p>
-<div class="highlight"><pre><span></span><code>User-&gt;&gt;CLI: ivcap context login
-CLI-&gt;&gt;IdP: device authorisation request
-IdP--&gt;&gt;CLI: device code + verification URL
-CLI--&gt;&gt;User: &quot;Open https://... and enter code ABC-123&quot;
-User-&gt;&gt;IdP: completes browser login
-IdP--&gt;&gt;CLI: access token + refresh token
-CLI-&gt;&gt;CLI: stores tokens in context
+    participant API as IVCAP API Gateway
 
-Note over CLI,API: Every subsequent request:
-CLI-&gt;&gt;API: GET /1/services  (Authorization: Bearer &lt;token&gt;)
-API--&gt;&gt;CLI: 200 OK
-</code></pre></div>
-<p>```</p>
+    User-&gt;&gt;CLI: ivcap context login
+    CLI-&gt;&gt;IdP: device authorisation request
+    IdP--&gt;&gt;CLI: device code + verification URL
+    CLI--&gt;&gt;User: "Open https://... and enter code ABC-123"
+    User-&gt;&gt;IdP: completes browser login
+    IdP--&gt;&gt;CLI: access token + refresh token
+    CLI-&gt;&gt;CLI: stores tokens in context
+
+    Note over CLI,API: Every subsequent request:
+    CLI-&gt;&gt;API: GET /1/services  (Authorization: Bearer &lt;token&gt;)
+    API--&gt;&gt;CLI: 200 OK</code></pre>
 <p>The token has an expiry time (typically 1–24 hours). The CLI handles refresh
 automatically. If you are using the REST API directly, you must refresh the token
 before it expires using the refresh token flow.</p>

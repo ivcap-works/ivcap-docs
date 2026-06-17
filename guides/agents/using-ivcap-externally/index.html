@@ -4496,15 +4496,14 @@ assistant or agent framework.</p>
 <p>This means you can build agent workflows <em>outside</em> IVCAP — in Claude Desktop, an
 LLM Studio session, a Jupyter Notebook, or your own Python code — while IVCAP acts
 as the managed execution and data backend:</p>
-<p><code>mermaid
-graph TD
+<pre class="mermaid"><code>graph TD
     A[Your AI assistant\nor agent framework] --&gt;|MCP tool calls| B[IVCAP MCP server\nivcap mcp serve]
     A --&gt;|Python client calls| C[IVCAP Python client\nIVCAP from ivcap_client.ivcap]
     B --&gt; D[IVCAP platform]
     C --&gt; D
     D --&gt; E[Services &amp; Jobs]
     D --&gt; F[Artifacts]
-    D --&gt; G[Data Fabric / Aspects]</code></p>
+    D --&gt; G[Data Fabric / Aspects]</code></pre>
 <hr />
 <h2 id="what-ivcap-exposes-as-tools">What IVCAP exposes as tools<a class="headerlink" href="#what-ivcap-exposes-as-tools" title="Permanent link">&para;</a></h2>
 <p>Whether you use the MCP server or the Python client, you can:</p>

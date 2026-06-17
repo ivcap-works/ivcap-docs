@@ -4605,8 +4605,7 @@ needed.</p>
 </code></pre></div>
 <hr />
 <h2 id="typical-workflow">Typical workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h2>
-<p><code>mermaid
-flowchart LR
+<pre class="mermaid"><code>flowchart LR
     A[IVCAP] --&gt; B[List / find services]
     B --&gt; C{Need to upload input?}
     C -- yes --&gt; D[upload_artifact]
@@ -4615,7 +4614,7 @@ flowchart LR
     E --&gt; F[Poll: job.finished]
     F --&gt; G{Succeeded?}
     G -- yes --&gt; H[job.result]
-    G -- no --&gt; I[Inspect error]</code></p>
+    G -- no --&gt; I[Inspect error]</code></pre>
 <hr />
 <h2 id="discovering-services">Discovering services<a class="headerlink" href="#discovering-services" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_client.ivcap</span><span class="w"> </span><span class="kn">import</span> <span class="n">IVCAP</span>

@@ -4451,12 +4451,11 @@ becomes visible again and can be re-delivered.</p>
 <hr />
 <h2 id="pipeline-patterns-with-queues">Pipeline patterns with queues<a class="headerlink" href="#pipeline-patterns-with-queues" title="Permanent link">&para;</a></h2>
 <h3 id="fan-out-one-producer-many-consumers">Fan-out: one producer, many consumers<a class="headerlink" href="#fan-out-one-producer-many-consumers" title="Permanent link">&para;</a></h3>
-<p><code>mermaid
-graph LR
+<pre class="mermaid"><code>graph LR
     T[Coordinator job] --&gt;|enqueue N items| Q[(Queue)]
     Q --&gt;|dequeue| W1[Worker job 1]
     Q --&gt;|dequeue| W2[Worker job 2]
-    Q --&gt;|dequeue| W3[Worker job 3]</code></p>
+    Q --&gt;|dequeue| W3[Worker job 3]</code></pre>
 <p>A coordinator service discovers N artifacts matching a query, enqueues them all, then
 exits. A pool of worker services dequeue items, process them, and write results as
 artifacts.</p>

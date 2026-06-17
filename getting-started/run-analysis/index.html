@@ -4453,23 +4453,21 @@ replace <code>--watch</code> with <code>--stream</code>:</p>
 </code></pre></div>
 <hr />
 <h2 id="what-just-happened">What just happened?<a class="headerlink" href="#what-just-happened" title="Permanent link">&para;</a></h2>
-<p>```mermaid
-sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
     actor You
     participant CLI as ivcap CLI
     participant Platform as IVCAP Platform
     participant Service as GO Term Mapper
-    participant QuickGO as QuickGO API</p>
-<div class="highlight"><pre><span></span><code>You-&gt;&gt;CLI: job create --watch
-CLI-&gt;&gt;Platform: submit job + input JSON
-Platform-&gt;&gt;Service: start container, pass request
-Service-&gt;&gt;QuickGO: fetch annotations for P12345, Q9H0H5
-QuickGO--&gt;&gt;Service: GO annotation data
-Service--&gt;&gt;Platform: structured JSON result
-Platform--&gt;&gt;CLI: job succeeded + result
-CLI--&gt;&gt;You: display result
-</code></pre></div>
-<p>```</p>
+    participant QuickGO as QuickGO API
+
+    You-&gt;&gt;CLI: job create --watch
+    CLI-&gt;&gt;Platform: submit job + input JSON
+    Platform-&gt;&gt;Service: start container, pass request
+    Service-&gt;&gt;QuickGO: fetch annotations for P12345, Q9H0H5
+    QuickGO--&gt;&gt;Service: GO annotation data
+    Service--&gt;&gt;Platform: structured JSON result
+    Platform--&gt;&gt;CLI: job succeeded + result
+    CLI--&gt;&gt;You: display result</code></pre>
 <p>IVCAP took your input, spun up the GO Term Mapper container, called the QuickGO
 API on your behalf, and stored the structured JSON result. The result — along with
 a full provenance record linking input parameters, service version, and output — is

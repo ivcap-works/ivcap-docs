@@ -4511,21 +4511,19 @@ and provenance record — and agents call each other by URN.</p>
 <li>Submits a sub-job and waits for the result</li>
 </ol>
 <p>The callee does not know who is calling it — it is a self-contained service.</p>
-<p>```mermaid
-sequenceDiagram
+<pre class="mermaid"><code>sequenceDiagram
     actor User
-    participant A as Agent A<br/>Report Writer
-    participant B as Agent B<br/>Fact Checker</p>
-<div class="highlight"><pre><span></span><code>User-&gt;&gt;A: topic + fact_checker_urn
-A-&gt;&gt;A: 1. Write report with LLM
-A-&gt;&gt;A: 2. Extract references
-A-&gt;&gt;B: 3. submit sub-job (references[])
-B-&gt;&gt;B: For each ref: call LLM
-B--&gt;&gt;A: 4. Return assessments
-A-&gt;&gt;A: 5. Merge into final response
-A--&gt;&gt;User: ReportResponse (content + assessed refs)
-</code></pre></div>
-<p>```</p>
+    participant A as Agent A&lt;br/&gt;Report Writer
+    participant B as Agent B&lt;br/&gt;Fact Checker
+
+    User-&gt;&gt;A: topic + fact_checker_urn
+    A-&gt;&gt;A: 1. Write report with LLM
+    A-&gt;&gt;A: 2. Extract references
+    A-&gt;&gt;B: 3. submit sub-job (references[])
+    B-&gt;&gt;B: For each ref: call LLM
+    B--&gt;&gt;A: 4. Return assessments
+    A-&gt;&gt;A: 5. Merge into final response
+    A--&gt;&gt;User: ReportResponse (content + assessed refs)</code></pre>
 <hr />
 <h2 id="example-report-writer-fact-checker">Example: Report Writer + Fact Checker<a class="headerlink" href="#example-report-writer-fact-checker" title="Permanent link">&para;</a></h2>
 <h3 id="the-fact-checker-a-standalone-agent">The Fact Checker — a standalone agent<a class="headerlink" href="#the-fact-checker-a-standalone-agent" title="Permanent link">&para;</a></h3>
