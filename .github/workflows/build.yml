@@ -102,7 +102,10 @@ jobs:
         continue-on-error: true # link failures annotate but don't block deploy
 
       - name: Deploy to GitHub Pages
-        run: make deploy
-        continue-on-error: true # requires ivcap CLI + credentials; skipped locally
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          make gh-pages
+        continue-on-error: true # gh-deploy can't push when running locally with act
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
