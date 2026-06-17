@@ -24,7 +24,7 @@ CLI and the platform's REST API.
 flowchart LR
     A[You] -->|1. ivcap service list| B(Service Catalogue)
     A -->|2. ivcap artifact upload| C(Artifact Store)
-    A -->|3. ivcap order create| D(Job)
+    A -->|3. ivcap job create| D(Job)
     D -->|runs| E(Service Container)
     E -->|reads| C
     E -->|writes results to| C
@@ -59,7 +59,7 @@ recorded as an immutable provenance record. You never have to write that bookkee
 | Term | What it means |
 |---|---|
 | **Service** | A registered analytic capability with defined parameters and an execution environment |
-| **Job** (also called *order*) | A single execution of a service — you create one by submitting a request with parameters |
+| **Job** | A single execution of a service — you create one by submitting a request with parameters |
 | **Artifact** | Any binary or structured data stored in IVCAP — images, CSVs, models, JSON documents, etc. |
 | **Aspect** | A typed, time-stamped piece of metadata attached to any entity (the basis of all provenance) |
 | **URN** | A stable, globally unique identifier like `urn:ivcap:service:<uuid>` or `urn:ivcap:artifact:<uuid>` |

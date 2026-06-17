@@ -4105,7 +4105,7 @@ CLI and the platform's REST API.</p>
 flowchart LR
     A[You] --&gt;|1. ivcap service list| B(Service Catalogue)
     A --&gt;|2. ivcap artifact upload| C(Artifact Store)
-    A --&gt;|3. ivcap order create| D(Job)
+    A --&gt;|3. ivcap job create| D(Job)
     D --&gt;|runs| E(Service Container)
     E --&gt;|reads| C
     E --&gt;|writes results to| C
@@ -4146,7 +4146,7 @@ first. It walks you through the full flow end-to-end in about 10 minutes.</p>
 <td>A registered analytic capability with defined parameters and an execution environment</td>
 </tr>
 <tr>
-<td><strong>Job</strong> (also called <em>order</em>)</td>
+<td><strong>Job</strong></td>
 <td>A single execution of a service — you create one by submitting a request with parameters</td>
 </tr>
 <tr>

@@ -15,24 +15,30 @@ updates result in a new version of the service definition.
 
 ```json
 {
-  "name": "Fire Risk Analysis",
-  "description": "Runs fire risk analysis for a given region.",
-  "parameters": [
-    { "name": "region",     "label": "Region name",       "type": "string"   },
-    { "name": "threshold",  "label": "Rainfall threshold", "type": "float",
-      "unit": "m" },
-    { "name": "input-data", "label": "Input dataset",      "type": "artifact" }
-  ],
-  "workflow": {
-    "type": "basic",
-    "basic": {
-      "image": "my-registry.example.com/fire-risk:1.2.3",
-      "command": ["/app/run"],
-      "memory": { "request": "512Mi", "limit": "2Gi" },
-      "cpu":    { "request": "250m",  "limit": "2000m" }
+  "id": "urn:ivcap:service:3c51bd86-fd86-53bc-a932-91ff3a1e2fee",
+  "name": "AI tool to check for prime numbers",
+  "description": "Checks if a number is prime.",
+  "controller-schema": "urn:ivcap:schema.service.rest.1",
+  "controller": {
+    "$schema": "urn:ivcap:schema.service.rest.1",
+    "command": [
+      "python",
+      "/app/tool-service.py"
+    ],
+    "image": "45a06508-5c3a-4678-8e6d-e6399bf27538/ivcap_python_ai_tool_template_amd64:06548bc",
+    "resources": {
+      "limits": {
+        "cpu": "500m",
+        "memory": "1Gi"
+      },
+      "requests": {
+        "cpu": "500m",
+        "memory": "1Gi"
+      }
     }
   },
-  "policy": "urn:ivcap:policy:public"
+  "policy": "urn:ivcap:policy:ivcap.open.metadata",
+  "status": "active"
 }
 ```
 
@@ -90,10 +96,7 @@ job gets its own URN and is independently tracked through its lifecycle.
 === "CLI"
 
     ```bash
-    ivcap order create urn:ivcap:service:<uuid> \
-        region="Tasmania-North" \
-        threshold=0.05 \
-        input-data=urn:ivcap:artifact:<uuid>
+    ivcap service create urn:ivcap:service:<uuid> -f request.json
     ```
 
 === "REST"
@@ -185,7 +188,7 @@ Once a job has `succeeded`, retrieve its output artifacts:
 
     ```bash
     # List what the job produced
-    ivcap order get urn:ivcap:job:<uuid>
+    ivcap job get urn:ivcap:job:<uuid>
 
     # Download a specific result artifact
     ivcap artifact download urn:ivcap:artifact:<uuid> -f result.png
@@ -214,11 +217,11 @@ $ ivcap artifact upload background.png --name "background" --mime-type image/png
 ID: urn:ivcap:artifact:6a1c3f2e-...
 
 # 3 – Submit the job
-$ ivcap order create @1 msg="Hello IVCAP" img-art=urn:ivcap:artifact:6a1c3f2e-...
-Order 'urn:ivcap:job:505c8573-...' with status 'pending' submitted.
+$ echo '{"msg": "Hello IVCAP", "img-art": "urn:ivcap:artifact:6a1c3f2e-..."}' | ivcap service create @1 -f -
+Job 'urn:ivcap:job:505c8573-...' with status 'pending' submitted.
 
 # 4 – Wait for completion
-$ ivcap order get urn:ivcap:job:505c8573-...
+$ ivcap job get urn:ivcap:job:505c8573-...
   Status  succeeded
 Products  @1 │ out.png │ image/png
 

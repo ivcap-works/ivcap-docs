@@ -4032,12 +4032,15 @@ graph LR
         J([Job])
         A([Artifact])
         Asp([Aspect])
-        S --&gt;|submits| J
+        S --&gt;|creates| J
         J --&gt;|produces| A
-        S -.-&gt;|every event\nrecorded as| Asp
-        J -.-&gt;|every event\nrecorded as| Asp
-        A -.-&gt;|every event\nrecorded as| Asp
-    end</code></p>
+        A --&gt;|consumes| J
+        S -.-&gt;|every change &amp; usage
+recorded as\nrecorded as| Asp
+        J -.-&gt;|every progress and error\nrecorded as| Asp
+        A -.-&gt;|every usage\nrecorded as| Asp
+    end
+    style DF fill:transparent,stroke:none</code></p>
 <table>
 <thead>
 <tr>

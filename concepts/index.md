@@ -24,12 +24,15 @@ graph LR
         J([Job])
         A([Artifact])
         Asp([Aspect])
-        S -->|submits| J
+        S -->|creates| J
         J -->|produces| A
-        S -.->|every event\nrecorded as| Asp
-        J -.->|every event\nrecorded as| Asp
-        A -.->|every event\nrecorded as| Asp
+        A -->|consumes| J
+        S -.->|every change & usage
+recorded as\nrecorded as| Asp
+        J -.->|every progress and error\nrecorded as| Asp
+        A -.->|every usage\nrecorded as| Asp
     end
+    style DF fill:transparent,stroke:none
 ```
 
 | Entity | What it is | URN pattern |
