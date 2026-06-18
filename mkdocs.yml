@@ -163,6 +163,7 @@ nav:
   - Python Service SDK:
     - Full API Reference ↗: https://ivcap-works.github.io/ivcap-service-sdk-python
 - Capabilities:
+  - capabilities/index.md
   - Ai Agents:
     - Agent Calling Agent Tutorial: content/examples/agent-calling-agent/index.md
     - AI Tool Template: content/examples/ai-tool-template/index.md
