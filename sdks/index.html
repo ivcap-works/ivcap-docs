@@ -1,3 +1,26 @@
+<style>
+  /* Global header & tab colours — deep navy matching the landing page */
+  .md-header,
+  nav {
+    --md-primary-fg-color: #0f1729 !important;
+    --md-primary-fg-color--light: #1e2d4a;
+    --md-primary-fg-color--dark: #0a0f20;
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3;
+
+    --md-accent-fg-color: #60a5fa;
+    --md-accent-fg-color--transparent: #60a5fa1a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3;
+  }
+
+  /* Slightly lighter shade for the tab bar to separate it from the header */
+  .md-tabs {
+    background-color: #131e35;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -10,29 +33,27 @@
       
       
       
-        <link rel="canonical" href="https://docs.ivcap.net/">
+        <link rel="canonical" href="https://docs.ivcap.net/sdks/">
       
       
-      
-        <link rel="next" href="concepts/">
       
       
         
       
       
-      <link rel="icon" href="assets/favicon.ico">
+      <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>IVCAP Documentation - IVCAP Documentation</title>
+        <title>SDKs & Tools - IVCAP Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,7 +72,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ivcap" class="md-skip">
+        <a href="#sdks-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +113,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="IVCAP Documentation" class="md-header__button md-logo" aria-label="IVCAP Documentation" data-md-component="logo">
+    <a href=".." title="IVCAP Documentation" class="md-header__button md-logo" aria-label="IVCAP Documentation" data-md-component="logo">
       
-  <img src="assets/logo/logo_white_32x32.png" alt="logo">
+  <img src="../assets/logo/logo_white_32x32.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IVCAP Documentation
+              SDKs &amp; Tools
             
           </span>
         </div>
@@ -204,11 +225,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -229,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="concepts/" class="md-tabs__link">
+        <a href="../concepts/" class="md-tabs__link">
           
   
   
@@ -251,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="getting-started/" class="md-tabs__link">
+        <a href="../getting-started/" class="md-tabs__link">
           
   
   
@@ -273,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="guides/" class="md-tabs__link">
+        <a href="../guides/" class="md-tabs__link">
           
   
   
@@ -295,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="reference/" class="md-tabs__link">
+        <a href="../reference/" class="md-tabs__link">
           
   
   
@@ -356,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="content/examples/agent-calling-agent/" class="md-tabs__link">
+        <a href="../content/examples/agent-calling-agent/" class="md-tabs__link">
           
   
   
@@ -381,7 +400,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="examples/" class="md-tabs__link">
+        <a href="../examples/" class="md-tabs__link">
           
   
   
@@ -404,491 +423,9 @@
     
     <div class="md-container" data-md-component="container">
       
-       
+      
         
       
-
-<!-- Landing page styles -->
-<style>
-  /* Let the Material palette stay in control for the rest of the docs.
-     Only decorate the landing page. */
-
-  /* Dark header & tabs to match the page background */
-  .md-header {
-    background-color: rgba(10, 15, 32, 0.97);
-  }
-  .md-tabs {
-    background-color: rgba(15, 23, 42, 0.97);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  /* Increase top-level navigation tab font size */
-  .md-tabs__link {
-    font-size: 1rem;
-  }
-
-  /* Add some breathing room so the hero doesn't sit under the header */
-  .md-header + .md-container {
-    padding-top: 1rem;
-  }
-
-  /* Remove spacing, as we can't hide it completely */
-  .md-main__inner {
-    margin: 0;
-  }
-
-  /* Hide the normal page content (index.md) - this template replaces it */
-  .md-content {
-    display: none;
-  }
-
-  /* Hide navigation + TOC for a cleaner landing */
-  @media screen and (min-width: 60em) {
-    .md-sidebar--secondary {
-      display: none;
-    }
-  }
-  @media screen and (min-width: 76.25em) {
-    .md-sidebar--primary {
-      display: none;
-    }
-  }
-
-  .md-header--shadow {
-    box-shadow: none;
-  }
-  .md-main .md-top {
-    display: none;
-  }
-
-  /* Hide the dark/light toggle on the landing page */
-  .md-header__option {
-    display: none;
-  }
-
-  /* Page background */
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-      radial-gradient(
-        1200px 500px at 15% 10%,
-        rgba(64, 176, 255, 0.25) 0%,
-        rgba(0, 0, 0, 0) 60%
-      ),
-      radial-gradient(
-        900px 450px at 85% 25%,
-        rgba(124, 58, 237, 0.22) 0%,
-        rgba(0, 0, 0, 0) 55%
-      ),
-      linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(3, 7, 18, 1) 100%);
-    background-attachment: fixed;
-  }
-
-  #ivcap-landing {
-    --ivcap-text: rgba(255, 255, 255, 0.92);
-    --ivcap-muted: rgba(255, 255, 255, 0.72);
-    --ivcap-card: rgba(255, 255, 255, 0.07);
-    --ivcap-card-border: rgba(255, 255, 255, 0.12);
-    --ivcap-accent: #60a5fa; /* sky-400 */
-    --ivcap-accent-2: #a78bfa; /* violet-400 */
-    --ivcap-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-
-    padding: 3rem 1rem 3rem;
-  }
-
-  .ivcap-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .ivcap-hero {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2rem;
-    align-items: center;
-    padding: 2.5rem 1.25rem;
-    border: 1px solid var(--ivcap-card-border);
-    border-radius: 1.25rem;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.04) 60%
-    );
-    box-shadow: var(--ivcap-shadow);
-    backdrop-filter: blur(10px);
-  }
-
-  .ivcap-hero h1 {
-    margin: 0;
-    color: var(--ivcap-text);
-    font-size: 2.6rem;
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .ivcap-hero p {
-    margin: 1rem 0 0;
-    color: var(--ivcap-muted);
-    font-size: 1.1rem;
-    line-height: 1.55;
-    max-width: 62ch;
-  }
-
-  .ivcap-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
-  }
-
-  .ivcap-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid var(--ivcap-card-border);
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--ivcap-text);
-    font-size: 0.85rem;
-  }
-
-  .ivcap-badge .dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      var(--ivcap-accent),
-      var(--ivcap-accent-2)
-    );
-  }
-
-  .ivcap-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .ivcap-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.9rem;
-    text-decoration: none;
-    font-size: 1.05rem;
-    font-weight: 600;
-    border: 1px solid transparent;
-    transition:
-      transform 120ms ease,
-      background 120ms ease,
-      border-color 120ms ease;
-    will-change: transform;
-  }
-
-  .ivcap-btn:hover {
-    transform: translateY(-1px);
-  }
-
-  .ivcap-btn-primary {
-    background: linear-gradient(
-      90deg,
-      rgba(96, 165, 250, 0.95),
-      rgba(167, 139, 250, 0.95)
-    );
-    color: rgba(2, 6, 23, 0.95);
-  }
-
-  .ivcap-btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--ivcap-card-border);
-    color: var(--ivcap-text);
-  }
-
-  .ivcap-hero-aside {
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  .ivcap-metric {
-    border-radius: 1rem;
-    border: 1px solid var(--ivcap-card-border);
-    background: rgba(255, 255, 255, 0.06);
-    padding: 1rem;
-  }
-
-  .ivcap-metric .k {
-    color: var(--ivcap-muted);
-    font-size: 0.9rem;
-  }
-  .ivcap-metric .v {
-    color: var(--ivcap-text);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-top: 0.25rem;
-  }
-
-  .ivcap-section {
-    margin-top: 2rem;
-  }
-
-  .ivcap-section h2 {
-    color: var(--ivcap-text);
-    font-size: 1.5rem;
-    margin: 0 0 1rem;
-  }
-
-  .ivcap-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .ivcap-card {
-    border-radius: 1.1rem;
-    border: 1px solid var(--ivcap-card-border);
-    background: var(--ivcap-card);
-    padding: 1.05rem 1.05rem 1.15rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  }
-
-  .ivcap-card h3 {
-    margin: 0;
-    color: var(--ivcap-text);
-    font-size: 1.05rem;
-  }
-
-  .ivcap-card p {
-    margin: 0.55rem 0 0;
-    color: var(--ivcap-muted);
-    line-height: 1.5;
-    font-size: 0.95rem;
-  }
-
-  .ivcap-linkrow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-  }
-
-  .ivcap-linkrow a {
-    color: var(--ivcap-text);
-    text-decoration: none;
-    font-size: 1.05rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  }
-  .ivcap-linkrow a:hover {
-    border-bottom-color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .ivcap-hero {
-      grid-template-columns: 1fr;
-    }
-    .ivcap-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Git commit badge */
-  .ivcap-commit {
-    position: fixed;
-    bottom: 0.6rem;
-    right: 0.75rem;
-    z-index: 100;
-    font-family: "Roboto Mono", monospace;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.38);
-    background: rgba(10, 15, 32, 0.6);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(4px);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition:
-      color 150ms ease,
-      border-color 150ms ease;
-  }
-  .ivcap-commit:hover {
-    color: rgba(255, 255, 255, 0.72);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-</style>
-
-<section id="ivcap-landing">
-  <div class="ivcap-wrap">
-    <header class="ivcap-hero">
-      <div>
-        <h1>
-          Fits Into How You Already Work — Then Lets You Share, Compose, and
-          Scale.
-        </h1>
-        <p>
-          IVCAP integrates with your existing research environment — notebooks,
-          scripts, or custom pipelines — and gives you the platform to expose
-          your work as services, compose them with colleagues across domains,
-          and scale from a single interactive run to full operational
-          deployment.
-        </p>
-
-        <div class="ivcap-badges" aria-label="Key highlights">
-          <span class="ivcap-badge"
-            ><span class="dot"></span>Agentic &amp; composable workflows</span
-          >
-          <span class="ivcap-badge"
-            ><span class="dot"></span>Provenance &amp; reproducibility</span
-          >
-          <span class="ivcap-badge"
-            ><span class="dot"></span>Cross-domain collaboration</span
-          >
-          <span class="ivcap-badge"
-            ><span class="dot"></span>Research → operational services</span
-          >
-        </div>
-
-        <div class="ivcap-cta">
-          <a
-            class="ivcap-btn ivcap-btn-primary"
-            href="getting-started/"
-            >Get started</a
-          >
-          <a
-            class="ivcap-btn ivcap-btn-secondary"
-            href="concepts/"
-            >Platform overview</a
-          >
-          <a
-            class="ivcap-btn ivcap-btn-secondary"
-            href="examples/"
-            >Examples</a
-          >
-        </div>
-      </div>
-
-      <aside class="ivcap-hero-aside" aria-label="IVCAP in practice">
-        <div class="ivcap-metric">
-          <div class="k">Built for</div>
-          <div class="v">
-            science · analytics · information management · collaboration
-          </div>
-        </div>
-        <div class="ivcap-metric">
-          <div class="k">Workflow model</div>
-          <div class="v">
-            notebook → service → agentic pipeline → operational scale
-          </div>
-        </div>
-        <div class="ivcap-metric">
-          <div class="k">Provenance by design</div>
-          <div class="v">
-            every run is traceable, repeatable &amp; accountable
-          </div>
-        </div>
-      </aside>
-    </header>
-
-    <section class="ivcap-section" aria-label="Core capabilities">
-      <h2>One Platform for the Full Research Lifecycle</h2>
-      <div class="ivcap-grid">
-        <article class="ivcap-card">
-          <h3>Agentic &amp; analytical workflows</h3>
-          <p>
-            Compose LLM-driven agents with traditional simulation, AI inference,
-            and data-processing services into end-to-end pipelines — from
-            exploratory research to automated, large-scale production runs.
-          </p>
-        </article>
-
-        <article class="ivcap-card">
-          <h3>Provenance, repeatability &amp; accountability</h3>
-          <p>
-            The Data Fabric automatically records what data was used, which
-            services processed it, and what results were produced — so you
-            always know where an output came from and can reproduce it exactly.
-          </p>
-        </article>
-
-        <article class="ivcap-card">
-          <h3>Composable cross-disciplinary collaboration</h3>
-          <p>
-            Services built by different domain experts — ecologists, AI
-            researchers, data engineers — can be freely combined into new
-            workflows. Composability means a breakthrough in one field
-            immediately becomes a building block for another.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="ivcap-section" aria-label="How it works">
-      <h2>From Prototype to Production — Without Starting Over</h2>
-      <div class="ivcap-grid">
-        <article class="ivcap-card">
-          <h3>Package &amp; publish services</h3>
-          <p>
-            Turn research code — notebooks, scripts, or models — into versioned,
-            discoverable services that colleagues and automated pipelines can
-            invoke at any scale.
-          </p>
-        </article>
-        <article class="ivcap-card">
-          <h3>Orchestrate agentic pipelines</h3>
-          <p>
-            Chain services into multi-step workflows driven by LLM agents or
-            classic control logic. Scale from a single interactive run to
-            ecosystem-wide batch processing without changing your code.
-          </p>
-        </article>
-        <article class="ivcap-card">
-          <h3>Trust your results with full provenance</h3>
-          <p>
-            Every artifact carries its full lineage — what data it came from,
-            which service version produced it, and under what parameters —
-            enabling robust audit trails and scientific reproducibility.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="ivcap-section" aria-label="Next steps">
-      <h2>Next steps</h2>
-      <div class="ivcap-cta">
-        <a
-          class="ivcap-btn ivcap-btn-primary"
-          href="getting-started/install/"
-          >Quick start</a
-        >
-        <a
-          class="ivcap-btn ivcap-btn-secondary"
-          href="getting-started/"
-          >Choose your path</a
-        >
-        <a class="ivcap-btn ivcap-btn-secondary" href="concepts/"
-          >Core concepts</a
-        >
-      </div>
-    </section>
-  </div>
-</section>
-
-
-<a
-  class="ivcap-commit"
-  href="https://github.com/ivcap-works/ivcap-docs/commit/6160e88"
-  target="_blank"
-  rel="noopener"
-  title="Deployed commit"
-  >6160e88</a
->
- 
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -905,9 +442,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="IVCAP Documentation" class="md-nav__button md-logo" aria-label="IVCAP Documentation" data-md-component="logo">
+    <a href=".." title="IVCAP Documentation" class="md-nav__button md-logo" aria-label="IVCAP Documentation" data-md-component="logo">
       
-  <img src="assets/logo/logo_white_32x32.png" alt="logo">
+  <img src="../assets/logo/logo_white_32x32.png" alt="logo">
 
     </a>
     IVCAP Documentation
@@ -919,37 +456,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -965,70 +475,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-would-you-like-to-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What would you like to do?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-concepts-in-60-seconds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key concepts in 60 seconds
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-ivcap-as-an-ai-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using IVCAP as an AI agent
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#not-sure-where-to-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Not sure where to start?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1075,7 +521,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="concepts/" class="md-nav__link ">
+            <a href="../concepts/" class="md-nav__link ">
               
   
   
@@ -1119,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/services-and-jobs/" class="md-nav__link">
+      <a href="../concepts/services-and-jobs/" class="md-nav__link">
         
   
   
@@ -1147,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/data-fabric/" class="md-nav__link">
+      <a href="../concepts/data-fabric/" class="md-nav__link">
         
   
   
@@ -1175,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/aspects-and-provenance/" class="md-nav__link">
+      <a href="../concepts/aspects-and-provenance/" class="md-nav__link">
         
   
   
@@ -1203,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/artifacts/" class="md-nav__link">
+      <a href="../concepts/artifacts/" class="md-nav__link">
         
   
   
@@ -1231,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/queues/" class="md-nav__link">
+      <a href="../concepts/queues/" class="md-nav__link">
         
   
   
@@ -1259,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/agentic-patterns/" class="md-nav__link">
+      <a href="../concepts/agentic-patterns/" class="md-nav__link">
         
   
   
@@ -1325,7 +771,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="getting-started/" class="md-nav__link ">
+            <a href="../getting-started/" class="md-nav__link ">
               
   
   
@@ -1369,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/install/" class="md-nav__link">
+      <a href="../getting-started/install/" class="md-nav__link">
         
   
   
@@ -1397,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/run-analysis/" class="md-nav__link">
+      <a href="../getting-started/run-analysis/" class="md-nav__link">
         
   
   
@@ -1425,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/build-service/" class="md-nav__link">
+      <a href="../getting-started/build-service/" class="md-nav__link">
         
   
   
@@ -1453,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/build-agent/" class="md-nav__link">
+      <a href="../getting-started/build-agent/" class="md-nav__link">
         
   
   
@@ -1519,7 +965,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/" class="md-nav__link ">
+            <a href="../guides/" class="md-nav__link ">
               
   
   
@@ -1596,7 +1042,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/running/" class="md-nav__link ">
+            <a href="../guides/running/" class="md-nav__link ">
               
   
   
@@ -1640,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/running/discover-services/" class="md-nav__link">
+      <a href="../guides/running/discover-services/" class="md-nav__link">
         
   
   
@@ -1668,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/running/submit-jobs/" class="md-nav__link">
+      <a href="../guides/running/submit-jobs/" class="md-nav__link">
         
   
   
@@ -1696,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/running/work-with-artifacts/" class="md-nav__link">
+      <a href="../guides/running/work-with-artifacts/" class="md-nav__link">
         
   
   
@@ -1724,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/running/query-provenance/" class="md-nav__link">
+      <a href="../guides/running/query-provenance/" class="md-nav__link">
         
   
   
@@ -1752,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/running/troubleshooting/" class="md-nav__link">
+      <a href="../guides/running/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1825,7 +1271,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/building/" class="md-nav__link ">
+            <a href="../guides/building/" class="md-nav__link ">
               
   
   
@@ -1869,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/service-basics/" class="md-nav__link">
+      <a href="../guides/building/service-basics/" class="md-nav__link">
         
   
   
@@ -1897,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/use-artifacts/" class="md-nav__link">
+      <a href="../guides/building/use-artifacts/" class="md-nav__link">
         
   
   
@@ -1925,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/use-queues/" class="md-nav__link">
+      <a href="../guides/building/use-queues/" class="md-nav__link">
         
   
   
@@ -1953,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/call-other-services/" class="md-nav__link">
+      <a href="../guides/building/call-other-services/" class="md-nav__link">
         
   
   
@@ -1981,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/call-llms/" class="md-nav__link">
+      <a href="../guides/building/call-llms/" class="md-nav__link">
         
   
   
@@ -2009,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/deploy/" class="md-nav__link">
+      <a href="../guides/building/deploy/" class="md-nav__link">
         
   
   
@@ -2037,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/building/run-locally/" class="md-nav__link">
+      <a href="../guides/building/run-locally/" class="md-nav__link">
         
   
   
@@ -2104,7 +1550,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/agents/" class="md-nav__link ">
+            <a href="../guides/agents/" class="md-nav__link ">
               
   
   
@@ -2148,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/agents/agent-patterns/" class="md-nav__link">
+      <a href="../guides/agents/agent-patterns/" class="md-nav__link">
         
   
   
@@ -2176,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/agents/multi-agent/" class="md-nav__link">
+      <a href="../guides/agents/multi-agent/" class="md-nav__link">
         
   
   
@@ -2204,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/agents/crewai/" class="md-nav__link">
+      <a href="../guides/agents/crewai/" class="md-nav__link">
         
   
   
@@ -2232,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/agents/using-ivcap-externally/" class="md-nav__link">
+      <a href="../guides/agents/using-ivcap-externally/" class="md-nav__link">
         
   
   
@@ -2299,7 +1745,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/integrating/" class="md-nav__link ">
+            <a href="../guides/integrating/" class="md-nav__link ">
               
   
   
@@ -2343,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/integrating/authentication/" class="md-nav__link">
+      <a href="../guides/integrating/authentication/" class="md-nav__link">
         
   
   
@@ -2371,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/integrating/python-client-sdk/" class="md-nav__link">
+      <a href="../guides/integrating/python-client-sdk/" class="md-nav__link">
         
   
   
@@ -2399,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/integrating/rest-api-primer/" class="md-nav__link">
+      <a href="../guides/integrating/rest-api-primer/" class="md-nav__link">
         
   
   
@@ -2427,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/integrating/mcp/" class="md-nav__link">
+      <a href="../guides/integrating/mcp/" class="md-nav__link">
         
   
   
@@ -2501,7 +1947,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../reference/" class="md-nav__link ">
               
   
   
@@ -2545,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/glossary/" class="md-nav__link">
+      <a href="../reference/glossary/" class="md-nav__link">
         
   
   
@@ -2573,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/urns/" class="md-nav__link">
+      <a href="../reference/urns/" class="md-nav__link">
         
   
   
@@ -2601,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/cli/" class="md-nav__link">
+      <a href="../reference/cli/" class="md-nav__link">
         
   
   
@@ -2670,7 +2116,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/api/" class="md-nav__link ">
+            <a href="../reference/api/" class="md-nav__link ">
               
   
   
@@ -2714,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/services/" class="md-nav__link">
+      <a href="../reference/api/services/" class="md-nav__link">
         
   
   
@@ -2742,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/artifacts/" class="md-nav__link">
+      <a href="../reference/api/artifacts/" class="md-nav__link">
         
   
   
@@ -2770,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/aspects/" class="md-nav__link">
+      <a href="../reference/api/aspects/" class="md-nav__link">
         
   
   
@@ -2798,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/queues/" class="md-nav__link">
+      <a href="../reference/api/queues/" class="md-nav__link">
         
   
   
@@ -2826,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/secrets/" class="md-nav__link">
+      <a href="../reference/api/secrets/" class="md-nav__link">
         
   
   
@@ -2854,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/packages/" class="md-nav__link">
+      <a href="../reference/api/packages/" class="md-nav__link">
         
   
   
@@ -2882,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/sessions/" class="md-nav__link">
+      <a href="../reference/api/sessions/" class="md-nav__link">
         
   
   
@@ -2910,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/events/" class="md-nav__link">
+      <a href="../reference/api/events/" class="md-nav__link">
         
   
   
@@ -2938,7 +2384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/api/search/" class="md-nav__link">
+      <a href="../reference/api/search/" class="md-nav__link">
         
   
   
@@ -3419,7 +2865,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/agent-calling-agent/" class="md-nav__link ">
+            <a href="../content/examples/agent-calling-agent/" class="md-nav__link ">
               
   
   
@@ -3463,7 +2909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/ai-tool-template/" class="md-nav__link">
+      <a href="../content/examples/ai-tool-template/" class="md-nav__link">
         
   
   
@@ -3491,7 +2937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/crewai-service/" class="md-nav__link">
+      <a href="../content/examples/crewai-service/" class="md-nav__link">
         
   
   
@@ -3519,7 +2965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/markdown-conversion/" class="md-nav__link">
+      <a href="../content/examples/markdown-conversion/" class="md-nav__link">
         
   
   
@@ -3580,7 +3026,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/markdown-conversion/" class="md-nav__link ">
+            <a href="../content/examples/markdown-conversion/" class="md-nav__link ">
               
   
   
@@ -3624,7 +3070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/python-service/" class="md-nav__link">
+      <a href="../content/examples/python-service/" class="md-nav__link">
         
   
   
@@ -3693,7 +3139,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/ai-tool-template/" class="md-nav__link ">
+            <a href="../content/examples/ai-tool-template/" class="md-nav__link ">
               
   
   
@@ -3737,7 +3183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/collection-example/" class="md-nav__link">
+      <a href="../content/examples/collection-example/" class="md-nav__link">
         
   
   
@@ -3765,7 +3211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/crewai-service/" class="md-nav__link">
+      <a href="../content/examples/crewai-service/" class="md-nav__link">
         
   
   
@@ -3793,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/gene-ontology-mapper/" class="md-nav__link">
+      <a href="../content/examples/gene-ontology-mapper/" class="md-nav__link">
         
   
   
@@ -3821,7 +3267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/python-lambda/" class="md-nav__link">
+      <a href="../content/examples/python-lambda/" class="md-nav__link">
         
   
   
@@ -3849,7 +3295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/python-service/" class="md-nav__link">
+      <a href="../content/examples/python-service/" class="md-nav__link">
         
   
   
@@ -3908,7 +3354,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/collection-example/" class="md-nav__link ">
+            <a href="../content/examples/collection-example/" class="md-nav__link ">
               
   
   
@@ -3978,7 +3424,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/gene-ontology-mapper/" class="md-nav__link ">
+            <a href="../content/examples/gene-ontology-mapper/" class="md-nav__link ">
               
   
   
@@ -4048,7 +3494,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="content/examples/agent-calling-agent/" class="md-nav__link ">
+            <a href="../content/examples/agent-calling-agent/" class="md-nav__link ">
               
   
   
@@ -4143,7 +3589,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="examples/" class="md-nav__link ">
+            <a href="../examples/" class="md-nav__link ">
               
   
   
@@ -4187,7 +3633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/capability-matrix/" class="md-nav__link">
+      <a href="../examples/capability-matrix/" class="md-nav__link">
         
   
   
@@ -4215,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/agent-calling-agent/" class="md-nav__link">
+      <a href="../content/examples/agent-calling-agent/" class="md-nav__link">
         
   
   
@@ -4243,7 +3689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/ai-tool-template/" class="md-nav__link">
+      <a href="../content/examples/ai-tool-template/" class="md-nav__link">
         
   
   
@@ -4271,7 +3717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/collection-example/" class="md-nav__link">
+      <a href="../content/examples/collection-example/" class="md-nav__link">
         
   
   
@@ -4299,7 +3745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/crewai-service/" class="md-nav__link">
+      <a href="../content/examples/crewai-service/" class="md-nav__link">
         
   
   
@@ -4327,7 +3773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/gene-ontology-mapper/" class="md-nav__link">
+      <a href="../content/examples/gene-ontology-mapper/" class="md-nav__link">
         
   
   
@@ -4355,7 +3801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/markdown-conversion/" class="md-nav__link">
+      <a href="../content/examples/markdown-conversion/" class="md-nav__link">
         
   
   
@@ -4383,7 +3829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/python-lambda/" class="md-nav__link">
+      <a href="../content/examples/python-lambda/" class="md-nav__link">
         
   
   
@@ -4411,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="content/examples/python-service/" class="md-nav__link">
+      <a href="../content/examples/python-service/" class="md-nav__link">
         
   
   
@@ -4466,10 +3912,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-would-you-like-to-do" class="md-nav__link">
+  <a href="#ivcap-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What would you like to do?
+        IVCAP CLI
       
     </span>
   </a>
@@ -4477,10 +3923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-concepts-in-60-seconds" class="md-nav__link">
+  <a href="#python-client-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key concepts in 60 seconds
+        Python Client SDK
       
     </span>
   </a>
@@ -4488,21 +3934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-ivcap-as-an-ai-agent" class="md-nav__link">
+  <a href="#python-service-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using IVCAP as an AI agent
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#not-sure-where-to-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Not sure where to start?
+        Python Service SDK
       
     </span>
   </a>
@@ -4530,6 +3965,69 @@
               
               <article class="md-content__inner md-typeset">
                  
+                  
+
+
+
+<h1 id="sdks-tools">SDKs &amp; Tools<a class="headerlink" href="#sdks-tools" title="Permanent link">&para;</a></h1>
+<p>IVCAP provides three SDKs and a CLI that cover every stage of working with the platform — from interactive exploration to building and deploying production services.</p>
+<hr />
+<h2 id="ivcap-cli">IVCAP CLI<a class="headerlink" href="#ivcap-cli" title="Permanent link">&para;</a></h2>
+<p>The command-line interface for interacting with an IVCAP deployment.  Use it to discover services, submit jobs, upload/download artifacts, query provenance, and more.  It also exposes a built-in <strong>MCP server</strong> so any MCP-compatible AI assistant can control IVCAP directly.</p>
+<ul>
+<li><a href="../getting-started/install/">Install the CLI</a></li>
+<li><a href="../reference/cli/">CLI Reference</a></li>
+<li><a href="https://github.com/ivcap-works/ivcap-cli" target="_blank">Full API Reference ↗</a></li>
+</ul>
+<hr />
+<h2 id="python-client-sdk">Python Client SDK<a class="headerlink" href="#python-client-sdk" title="Permanent link">&para;</a></h2>
+<p>A Python library for calling IVCAP from notebooks, scripts, or external applications.  Wraps the REST API with idiomatic Python objects and async support.</p>
+<ul>
+<li><a href="../guides/integrating/python-client-sdk/">Guide: Python Client SDK</a></li>
+<li><a href="https://ivcap-works.github.io/ivcap-client-sdk-python/" target="_blank">Full API Reference ↗</a></li>
+</ul>
+<hr />
+<h2 id="python-service-sdk">Python Service SDK<a class="headerlink" href="#python-service-sdk" title="Permanent link">&para;</a></h2>
+<p>A Python framework for <em>building</em> IVCAP services — handling parameter parsing, artifact I/O, provenance recording, and service registration so you can focus on your analysis logic.</p>
+<ul>
+<li><a href="../getting-started/build-service/">Guide: Build your first service</a></li>
+<li><a href="https://ivcap-works.github.io/ivcap-service-sdk-python" target="_blank">Full API Reference ↗</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+<!-- Giscus -->
+<h3 id="__comments">Comments</h3>
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo="ivcap-works/ivcap-docs"
+  data-repo-id="R_kgDOMMOmgA"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOMMOmgM4CgPsr"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  crossorigin="anonymous"
+  async
+></script>
+
+
               </article>
             </div>
           
@@ -4545,6 +4043,26 @@
         
       </main>
       
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -4554,10 +4072,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
