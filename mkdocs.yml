@@ -155,6 +155,7 @@ nav:
     - Live Events: reference/api/events.md
     - Search: reference/api/search.md
 - SDKs:
+  - sdks/index.md
   - IVCAP CLI:
     - Full API Reference ↗: https://github.com/ivcap-works/ivcap-cli
   - Python Client SDK:
