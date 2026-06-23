@@ -33,13 +33,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.ivcap.net/guides/agents/">
+        <link rel="canonical" href="https://docs.ivcap.net/guides/nextflow/">
       
       
-        <link rel="prev" href="../building/run-locally/">
+        <link rel="prev" href="../argo-workflows/">
       
       
-        <link rel="next" href="agent-patterns/">
+        <link rel="next" href="../../reference/">
       
       
         
@@ -50,7 +50,7 @@
     
     
       
-        <title>Building AI Agents with IVCAP - IVCAP Documentation</title>
+        <title>Building and Deploying Nextflow Pipelines - IVCAP Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-ai-agents-with-ivcap" class="md-skip">
+        <a href="#building-and-deploying-nextflow-pipelines" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building AI Agents with IVCAP
+              Building and Deploying Nextflow Pipelines
             
           </span>
         </div>
@@ -1517,8 +1517,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1548,15 +1546,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../agents/" class="md-nav__link ">
               
   
   
@@ -1574,13 +1572,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1600,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="agent-patterns/" class="md-nav__link">
+      <a href="../agents/agent-patterns/" class="md-nav__link">
         
   
   
@@ -1628,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="multi-agent/" class="md-nav__link">
+      <a href="../agents/multi-agent/" class="md-nav__link">
         
   
   
@@ -1656,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="crewai/" class="md-nav__link">
+      <a href="../agents/crewai/" class="md-nav__link">
         
   
   
@@ -1684,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="using-ivcap-externally/" class="md-nav__link">
+      <a href="../agents/using-ivcap-externally/" class="md-nav__link">
         
   
   
@@ -1988,8 +1986,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2009,15 +2009,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../nextflow/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -2036,7 +2036,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4093,33 +4093,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#agents-on-ivcap-building-internal-agents" class="md-nav__link">
+  <a href="#when-to-use-nextflow-on-ivcap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agents on IVCAP — building internal agents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Agents on IVCAP — building internal agents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#agents-calling-other-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Agents calling other agents
+        When to use Nextflow on IVCAP
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#framework-based-agents-crewai" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Framework-based agents: CrewAI
+        Architecture overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-structure-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Structure your project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-docker-and-the-ivcap-weblog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Configure Docker and the IVCAP weblog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-write-ivcapyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Write ivcap.yaml
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Write ivcap.yaml">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-fields-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key fields explained
       
     </span>
   </a>
@@ -4132,38 +4165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agents-using-ivcap-external-agents-and-mcp" class="md-nav__link">
+  <a href="#step-4-package-the-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agents using IVCAP — external agents and MCP
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Agents using IVCAP — external agents and MCP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#supported-client-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supported client environments
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-your-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing your approach
+        Step 4: Package the pipeline
       
     </span>
   </a>
@@ -4171,10 +4176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#whats-in-this-section" class="md-nav__link">
+  <a href="#step-5-deploy-the-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What's in this section
+        Step 5: Deploy the pipeline
       
     </span>
   </a>
@@ -4182,10 +4187,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
+  <a href="#step-6-submit-and-monitor-a-job" class="md-nav__link">
     <span class="md-ellipsis">
       
-        See also
+        Step 6: Submit and monitor a job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-retrieve-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Retrieve results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-development-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local development workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
       
     </span>
   </a>
@@ -4256,7 +4316,7 @@
         <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
-    Building AI Agents
+    Nextflow Pipelines
   </span>
 
         </a>
@@ -4275,228 +4335,456 @@
 
 
 
-<h1 id="building-ai-agents-with-ivcap">Building AI Agents with IVCAP<a class="headerlink" href="#building-ai-agents-with-ivcap" title="Permanent link">&para;</a></h1>
-<p>IVCAP supports AI agent workloads in two complementary ways:</p>
-<table>
-<thead>
-<tr>
-<th>Approach</th>
-<th>What it means</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Agents on IVCAP</strong></td>
-<td>You build an agent as an IVCAP service — it runs on the platform, has full access to the sidecar (LLMs, other services, the Data Fabric), and produces provenance-tracked results</td>
-</tr>
-<tr>
-<td><strong>Agents using IVCAP</strong></td>
-<td>You run an agent <em>outside</em> IVCAP (in Claude, Cursor, Jupyter, or your own code) and give it IVCAP capabilities via the built-in MCP server or Python client</td>
-</tr>
-</tbody>
-</table>
-<p>Both approaches use the same underlying IVCAP capabilities. The choice depends on where you want your agent to run and how you want to manage it.</p>
-<hr />
-<h2 id="agents-on-ivcap-building-internal-agents">Agents <em>on</em> IVCAP — building internal agents<a class="headerlink" href="#agents-on-ivcap-building-internal-agents" title="Permanent link">&para;</a></h2>
-<p>When you build an agent as an IVCAP service, it runs inside the platform just like any other service. This gives you:</p>
-<ul>
-<li><strong>Managed LLM access</strong> — call any configured model through the sidecar without API keys in your code</li>
-<li><strong>Service-to-service orchestration</strong> — your agent can call other IVCAP services as sub-jobs</li>
-<li><strong>Agents as tools</strong> — any IVCAP service can be treated as a tool by another service; agents can call other agents</li>
-<li><strong>Automatic provenance</strong> — every LLM call, sub-job, and artifact is recorded</li>
-<li><strong>Independent scaling</strong> — each agent in a multi-agent system runs in its own container</li>
-</ul>
-<p>The simplest form is a plain Python function that calls an LLM:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_llm_client</span><span class="p">,</span> <span class="n">JobContext</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_ai_tool</span><span class="w"> </span><span class="kn">import</span> <span class="n">ivcap_ai_tool</span><span class="p">,</span> <span class="n">ToolOptions</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nd">@ivcap_ai_tool</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Agent&quot;</span><span class="p">]))</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">analyse</span><span class="p">(</span><span class="n">req</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">:</span> <span class="n">JobContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">llm</span> <span class="o">=</span> <span class="n">get_llm_client</span><span class="p">()</span>   <span class="c1"># sidecar-managed, no API key in code</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">query</span><span class="p">}]</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">answer</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="agents-calling-other-agents">Agents calling other agents<a class="headerlink" href="#agents-calling-other-agents" title="Permanent link">&para;</a></h3>
-<p>A service can call any other deployed IVCAP service by its URN — including other agent services. The calling service does not need to know anything about the callee's implementation, only its schema:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Resolve an agent service by its URN</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="n">ivcap</span><span class="o">.</span><span class="n">get_agent</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">fact_checker</span><span class="o">.</span><span class="n">agent_id</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Introspect its schema and build a typed request</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">req</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">request_model</span><span class="p">(</span><span class="n">references</span><span class="o">=</span><span class="n">references</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Submit as a sub-job and wait for the result</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">job</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">exec_agent</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span>
-</code></pre></div>
-<p>This means an agent service can act as a <strong>tool</strong> for another agent. You compose complex behaviour by wiring together focused, independently deployable agents — each testable on its own, each with its own resource allocation, each tracked with full provenance.</p>
-<p>See <a href="agent-patterns/">Agent Patterns</a> for the common design patterns, and <a href="multi-agent/">Multi-Agent Orchestration</a> for a worked example.</p>
-<h3 id="framework-based-agents-crewai">Framework-based agents: CrewAI<a class="headerlink" href="#framework-based-agents-crewai" title="Permanent link">&para;</a></h3>
-<p>You can run CrewAI crews as IVCAP services. There are two paths:</p>
+<h1 id="building-and-deploying-nextflow-pipelines">Building and Deploying Nextflow Pipelines<a class="headerlink" href="#building-and-deploying-nextflow-pipelines" title="Permanent link">&para;</a></h1>
+<p>IVCAP has a built-in <strong>Nextflow controller</strong> that lets you package any
+Nextflow DSL2 pipeline as a service and run it as a reproducible,
+provenance-tracked job — without rewriting a single line of Nextflow code.</p>
+<p>This guide walks through:</p>
 <ol>
-<li><strong>Build your own CrewAI service</strong> — write Python code that defines a <code>Crew</code>, wrap it as an IVCAP service, and give each CrewAI agent tools that call other IVCAP services.</li>
-<li><strong>Use the IVCAP CrewAI runner</strong> — submit a crew definition (YAML) to the pre-deployed CrewAI service; the platform handles execution. You only need to define <em>what</em> the crew should do, not <em>how</em> to run it.</li>
+<li>Structuring a Nextflow project for IVCAP</li>
+<li>Configuring Docker and the IVCAP weblog in <code>nextflow.config</code></li>
+<li>Writing the <code>ivcap.yaml</code> pipeline definition</li>
+<li>Packaging the pipeline as a tar archive</li>
+<li>Uploading and registering the service</li>
+<li>Submitting a job and retrieving results</li>
 </ol>
-<p>See <a href="crewai/">CrewAI on IVCAP</a> for the full guide.</p>
+<p>The running example is <a href="https://github.com/ivcap-works/ivcap-rnaseq-nextflow" target="_blank">ivcap-rnaseq-nextflow ↗</a> — a paired-end RNA-seq QC
+pipeline using FastQC, Trim Galore, and MultiQC.</p>
 <hr />
-<h2 id="agents-using-ivcap-external-agents-and-mcp">Agents <em>using</em> IVCAP — external agents and MCP<a class="headerlink" href="#agents-using-ivcap-external-agents-and-mcp" title="Permanent link">&para;</a></h2>
-<p>You do not need to deploy a service to use IVCAP as part of an agent workflow. The <code>ivcap</code> CLI includes a built-in <strong>Model Context Protocol (MCP) server</strong> that exposes the full IVCAP API as tools to any MCP-compatible client.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ivcap<span class="w"> </span>mcp<span class="w"> </span>serve<span class="w">   </span><span class="c1"># exposes IVCAP as an MCP tool set on stdio</span>
-</code></pre></div>
-<p>This enables scenarios where the agent reasoning happens <em>outside</em> IVCAP — in Claude Desktop, an LLM Studio session, a Jupyter Notebook, or your own code — while IVCAP acts as the execution and data backend:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Your AI assistant / agent framework
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          │  (MCP tool calls)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>          ▼
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  IVCAP MCP server (ivcap mcp serve)
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>          │
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>          ▼
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  IVCAP platform — services, jobs, artifacts, Data Fabric
-</code></pre></div>
-<p>With this setup, an AI agent can:</p>
+<h2 id="when-to-use-nextflow-on-ivcap">When to use Nextflow on IVCAP<a class="headerlink" href="#when-to-use-nextflow-on-ivcap" title="Permanent link">&para;</a></h2>
+<p>Use the Nextflow controller when your analysis is already written in (or
+well-suited to) Nextflow DSL2. Compare with other service types:</p>
+<table>
+<thead>
+<tr>
+<th>Service type</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic (lambda/batch)</strong></td>
+<td>Single-container services with a Python SDK</td>
+</tr>
+<tr>
+<td><strong>Argo Workflows</strong></td>
+<td>Multi-stage pipelines with custom Docker images and shared storage</td>
+</tr>
+<tr>
+<td><strong>Nextflow</strong></td>
+<td>Existing nf-core / Nextflow DSL2 pipelines; rich tool ecosystem; per-process container management</td>
+</tr>
+</tbody>
+</table>
+<p>Key advantages of the Nextflow path:</p>
 <ul>
-<li><strong>Discover and inspect services</strong> — list what's available, read parameter schemas</li>
-<li><strong>Submit and monitor jobs</strong> — run any registered IVCAP service on your behalf</li>
-<li><strong>Upload inputs, download results</strong> — manage artifacts without writing code</li>
-<li><strong>Query provenance</strong> — ask questions about what ran, when, and what it produced</li>
+<li><strong>No custom Docker builds required</strong> — use existing images from Quay.io,
+  Docker Hub, or nf-core directly</li>
+<li><strong>nf-core compatible</strong> — any nf-core pipeline can be wrapped with minimal
+  configuration</li>
+<li><strong>Familiar Nextflow development loop</strong> — run locally with <code>nextflow run</code>
+  exactly as you do today; IVCAP only needs the packaged pipeline scripts</li>
 </ul>
-<h3 id="supported-client-environments">Supported client environments<a class="headerlink" href="#supported-client-environments" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Environment</th>
-<th>How to connect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Claude Desktop</strong></td>
-<td>Add <code>ivcap</code> to <code>claude_desktop_config.json</code> as an MCP server</td>
-</tr>
-<tr>
-<td><strong>LLM Studio</strong> (e.g. LM Studio, Jan)</td>
-<td>Configure IVCAP as an MCP tool server in the model settings</td>
-</tr>
-<tr>
-<td><strong>Cursor / Cline</strong></td>
-<td>Add to MCP server configuration in VS Code settings</td>
-</tr>
-<tr>
-<td><strong>Jupyter Notebooks</strong></td>
-<td>Use <code>jupyter-ai</code> (MCP support) or the <code>mcp</code> Python client</td>
-</tr>
-<tr>
-<td><strong>Custom agents</strong></td>
-<td>Use the MCP Python SDK or the IVCAP Python client directly</td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="using-ivcap-externally/">Using IVCAP from External Agents</a> for configuration details for each environment.</p>
 <hr />
-<h2 id="choosing-your-approach">Choosing your approach<a class="headerlink" href="#choosing-your-approach" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>You want to…</th>
-<th>Best approach</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Build a reusable, versioned agent that runs on-platform</td>
-<td>Internal agent service</td>
-</tr>
-<tr>
-<td>Compose multiple agents with provenance tracking</td>
-<td>Multi-agent service composition</td>
-</tr>
-<tr>
-<td>Orchestrate a crew of LLM-backed workers</td>
-<td>CrewAI on IVCAP</td>
-</tr>
-<tr>
-<td>Use IVCAP from Claude or another AI assistant</td>
-<td>MCP server</td>
-</tr>
-<tr>
-<td>Explore IVCAP capabilities interactively</td>
-<td>Jupyter Notebook + MCP or Python client</td>
-</tr>
-<tr>
-<td>Add IVCAP to an existing agent framework</td>
-<td>MCP server or Python client SDK</td>
-</tr>
-</tbody>
-</table>
-<p>The two approaches are not mutually exclusive. A common pattern is to build your core analysis logic as IVCAP services and then control them from an external AI assistant or Jupyter notebook during research and exploration.</p>
-<hr />
-<h2 id="whats-in-this-section">What's in this section<a class="headerlink" href="#whats-in-this-section" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Guide</th>
-<th>What it covers</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="agent-patterns/">Agent Patterns</a></td>
-<td>Design patterns for IVCAP-native agents: LLM wrappers, tool-calling, fan-out, agents-as-tools</td>
-</tr>
-<tr>
-<td><a href="multi-agent/">Multi-Agent Orchestration</a></td>
-<td>Composing multiple agent services; full worked example</td>
-</tr>
-<tr>
-<td><a href="crewai/">CrewAI on IVCAP</a></td>
-<td>Running CrewAI crews as services, or using the CrewAI runner</td>
-</tr>
-<tr>
-<td><a href="using-ivcap-externally/">Using IVCAP from External Agents</a></td>
-<td>MCP server, Claude, Jupyter, custom frameworks</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../building/call-llms/">Calling LLMs via the Sidecar</a> — how services access LLMs without API keys</li>
-<li><a href="../building/call-other-services/">Calling Other Services</a> — the sub-job API used by orchestrator services</li>
-<li><a href="../../concepts/agentic-patterns/">Agentic Patterns concept page</a> — the design principles behind IVCAP's agent model</li>
-</ul>
-        <div id="llms-copy-button" style="position: fixed; z-index: 1100; top: 80px; right: 20px;">
-            <button onclick="copyMarkdownToClipboard()" style="cursor: pointer; background: #007acc; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Copy Markdown</button>
-        </div>
-        <script>
-        async function copyMarkdownToClipboard() {
-            try {
-                const currentPath = window.location.pathname;
-                const mdPath = currentPath.endsWith('/') ? currentPath + 'index.md' : currentPath.replace(/\.html$/, '.md');
+<h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    subgraph Local["Local development"]
+        NF["nextflow run main.nf\n(local test)"]
+        PKG["make package\n→ simple-rna-seq.tar"]
+    end
 
-                const response = await fetch(mdPath);
-                if (response.ok) {
-                    const markdown = await response.text();
-                    await navigator.clipboard.writeText(markdown);
-                    // Show feedback
-                    const button = document.querySelector('#llms-copy-button button');
-                    const originalText = button.textContent;
-                    button.textContent = 'Copied!';
-                    button.style.background = '#28a745';
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '#007acc';
-                    }, 2000);
-                } else {
-                    throw new Error('Markdown file not found');
-                }
-            } catch (err) {
-                console.error('Failed to copy markdown:', err);
-                alert('Failed to copy markdown content');
-            }
-        }
-        </script>
-        
+    subgraph IVCAP
+        ART["Pipeline artifact\n(simple-rna-seq.tar)"]
+        SVC["Service registration\n(ivcap df update)"]
+        CTL["Nextflow Controller\n(IVCAP)"]
+        RES["Results artifact\n(output tar.gz)"]
+        PRV["Provenance aspect\nurn:ivcap:schema:nextflow.result.1"]
+    end
+
+    subgraph K8s["Kubernetes (per job)"]
+        RUN["nextflow run\n(inside pod)"]
+        PROC["Process pods\n(Nextflow-managed)"]
+    end
+
+    PKG --&gt;|ivcap artifact create| ART
+    ART --&gt; SVC
+    SVC --&gt;|job submitted| CTL
+    CTL --&gt;|downloads pipeline artifact| RUN
+    RUN --&gt;|spawns| PROC
+    PROC --&gt;|results| RES
+    RES --&gt; PRV</code></pre>
+<p>The IVCAP Nextflow controller:</p>
+<ol>
+<li>Downloads the pipeline tar from the artifact store</li>
+<li>Runs <code>nextflow run main.nf</code> inside a Kubernetes pod</li>
+<li>Nextflow manages its own process pods (one per DSL2 process execution)</li>
+<li>Results are packaged and uploaded back to the artifact store</li>
+<li>A provenance aspect (<code>urn:ivcap:schema:nextflow.result.1</code>) is attached to
+   the job recording the results artifact URN and final status</li>
+</ol>
+<hr />
+<h2 id="step-1-structure-your-project">Step 1: Structure your project<a class="headerlink" href="#step-1-structure-your-project" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-pipeline/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── main.nf                   # Nextflow DSL2 entrypoint
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── nextflow.config           # Docker + weblog configuration
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── modules/                  # DSL2 process modules
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── fastqc.nf
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── conf/                     # Profile-specific overrides
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── test.config
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   └── weblog.disabled.config
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── data/                     # Local example inputs
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── paired-end.csv        # Default samplesheet for local runs
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── schema_input.json         # JSON schema for the sample sheet columns
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── ivcap.yaml                # IVCAP pipeline definition (deploy this)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── params.json               # Default Nextflow params for local runs
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>└── Makefile                  # Convenience targets
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">What gets packaged</p>
+<p>Only <code>main.nf</code>, <code>nextflow.config</code>, <code>modules/</code>, <code>conf/</code>, <code>schema_input.json</code>,
+and <code>ivcap.yaml</code> are included in the deployment tar. The <code>data/</code> directory and
+<code>params.json</code> are for local development only.</p>
+</div>
+<hr />
+<h2 id="step-2-configure-docker-and-the-ivcap-weblog">Step 2: Configure Docker and the IVCAP weblog<a class="headerlink" href="#step-2-configure-docker-and-the-ivcap-weblog" title="Permanent link">&para;</a></h2>
+<p>IVCAP requires two things in <code>nextflow.config</code>:</p>
+<ol>
+<li><strong>Docker enabled</strong> — every process runs in a container pulled from a public registry</li>
+<li><strong>Weblog enabled</strong> — Nextflow POSTs progress events to the IVCAP controller
+   so job status is updated in real time</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// nextflow.config</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">docker</span><span class="o">.</span><span class="na">enabled</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">docker</span><span class="o">.</span><span class="na">fixOwnership</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">   </span><span class="c1">// prevents root-owned files in work/</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">weblog</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">// The IVCAP controller injects the correct URL at runtime</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://localhost:8088&#39;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="o">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">profiles</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">test</span><span class="w">   </span><span class="o">{</span><span class="w"> </span><span class="n">includeConfig</span><span class="w"> </span><span class="s1">&#39;conf/test.config&#39;</span><span class="w">             </span><span class="o">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="n">docker</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">docker</span><span class="o">.</span><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">docker</span><span class="o">.</span><span class="na">fixOwnership</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="o">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">// Prevent pipefail issues</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">process</span><span class="o">.</span><span class="na">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;/bin/bash&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;-euo&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;pipefail&#39;</span><span class="o">]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c1">// Use a public container registry mirror (optional)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">docker</span><span class="o">.</span><span class="na">registry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;quay.io&#39;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">params</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="n">outdir</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;results&#39;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="n">input_csv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;data/paired-end.csv&#39;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="n">input</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="o">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1">// Execution reports (written to outdir/pipeline_info/)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="kt">def</span><span class="w"> </span><span class="n">trace_timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span><span class="o">().</span><span class="na">format</span><span class="o">(</span><span class="s1">&#39;yyyy-MM-dd_HH-mm-ss&#39;</span><span class="o">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="kt">def</span><span class="w"> </span><span class="n">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">outdir</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">timeline</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${outdir}/pipeline_info/execution_timeline_${trace_timestamp}.html&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="n">report</span><span class="w">   </span><span class="o">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${outdir}/pipeline_info/execution_report_${trace_timestamp}.html&quot;</span><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="n">trace</span><span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${outdir}/pipeline_info/execution_trace_${trace_timestamp}.txt&quot;</span><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="n">dag</span><span class="w">      </span><span class="o">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="o">;</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${outdir}/pipeline_info/pipeline_dag_${trace_timestamp}.html&quot;</span><span class="w">      </span><span class="o">}</span>
+</code></pre></div>
+<p>Also provide a <code>conf/weblog.disabled.config</code> override for local runs where you
+don't have the IVCAP controller listening:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// conf/weblog.disabled.config</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">weblog</span><span class="o">.</span><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+<p>For local runs, use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nextflow<span class="w"> </span>run<span class="w"> </span>main.nf<span class="w"> </span>-c<span class="w"> </span>nextflow.config<span class="w"> </span>-c<span class="w"> </span>conf/weblog.disabled.config<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-params-file<span class="w"> </span>params.json<span class="w"> </span>--input<span class="w"> </span>data/paired-end.csv<span class="w"> </span>-cache<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></p>
+<hr />
+<h2 id="step-3-write-ivcapyaml">Step 3: Write <code>ivcap.yaml</code><a class="headerlink" href="#step-3-write-ivcapyaml" title="Permanent link">&para;</a></h2>
+<p><code>ivcap.yaml</code> is the single file that describes your pipeline to IVCAP — its
+parameters, sample schema, default reference assets, and an example request.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># ivcap.yaml</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">$schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:schema.nextflow.pipeline.1</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:sd-core:nextflow:simple-rnaseq-pipeline</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simple-rnaseq-pipeline</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">service-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:service:a98b81a8-9279-509f-9c0e-40d39e83058a</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="no">Paired-end RNA-seq QC workflow.</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="no">Steps: FastQC → Trim Galore → (HISAT2 optional) → MultiQC.</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nt">contact</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jane Smith</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jane@example.org</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># ── Pipeline parameters ────────────────────────────────────────────────────────</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># These map directly to Nextflow --params-file entries.</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hisat2_index_zip</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">      </span><span class="no">URI (artifact URN or external URL) pointing to the HISAT2 index zip.</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span><span class="no">Defaults to the built-in test index (see assets below).</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">asset:hisat2_index</span><span class="w">   </span><span class="c1"># references the &#39;hisat2_index&#39; asset below</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report_id</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Identifier string used in the MultiQC report filename.</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="c1"># ── Sample sheet schema ────────────────────────────────────────────────────────</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="c1"># Each entry here becomes a column in the CSV samplesheet passed to Nextflow.</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="nt">samples</span><span class="p">:</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sample_name</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the biological sample.</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fastq_1</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URN or URL of the forward (R1) FASTQ file.</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fastq_2</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URN or URL of the reverse (R2) FASTQ file.</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="c1"># ── Default reference assets ───────────────────────────────────────────────────</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="c1"># Assets are pre-staged by the IVCAP controller before the pipeline starts.</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="c1"># They can be overridden by supplying the matching property in the job request.</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="nt">assets</span><span class="p">:</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hisat2_index</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default HISAT2 index for local testing.</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="w">    </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/nf-core/test-datasets/raw/refs/heads/taxprofiler/data/database/ganon/test-db-ganon.tar.gz</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a><span class="c1"># ── Example job request ────────────────────────────────────────────────────────</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="nt">example</span><span class="p">:</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="w">  </span><span class="nt">$schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:schema:simple-rnaseq-pipeline.request.1</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="w">    </span><span class="nt">hisat2_index_zip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/nf-core/test-datasets/refs/heads/taxprofiler/data/database/ganon/test-db-ganon.tar.gz</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="w">    </span><span class="nt">report_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all_paired-end</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="w">  </span><span class="nt">samples</span><span class="p">:</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sample_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ERR5766176</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="w">      </span><span class="nt">fastq_1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/nextflow-io/training/refs/heads/master/other/hands-on/data/reads/ENCSR000COQ1_1.fastq.gz</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="w">      </span><span class="nt">fastq_2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/nextflow-io/training/refs/heads/master/other/hands-on/data/reads/ENCSR000COQ1_2.fastq.gz</span>
+</code></pre></div>
+<h3 id="key-fields-explained">Key fields explained<a class="headerlink" href="#key-fields-explained" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$schema: urn:ivcap:schema.nextflow.pipeline.1</code></td>
+<td>Tells IVCAP to use the Nextflow controller</td>
+</tr>
+<tr>
+<td><code>service-id</code></td>
+<td>Stable service URN — generate once with <code>python3 -c "import uuid; print('urn:ivcap:service:' + str(uuid.uuid4()))"</code></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td>Scalar Nextflow params (maps to <code>--params-file</code>)</td>
+</tr>
+<tr>
+<td><code>samples</code></td>
+<td>Columns in the CSV samplesheet passed to <code>--input</code></td>
+</tr>
+<tr>
+<td><code>assets</code></td>
+<td>Reference data pre-staged before the pipeline starts; <code>default: asset:&lt;name&gt;</code> links a property to an asset</td>
+</tr>
+<tr>
+<td><code>example</code></td>
+<td>Pre-filled example shown in the service catalogue and used by <code>make test-job</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-4-package-the-pipeline">Step 4: Package the pipeline<a class="headerlink" href="#step-4-package-the-pipeline" title="Permanent link">&para;</a></h2>
+<p>The IVCAP controller runs your pipeline from a tar archive — not a Docker
+image. Only the Nextflow scripts and config are bundled; process containers
+are pulled at runtime from public registries.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>package
+</code></pre></div>
+<p>This runs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tar<span class="w"> </span>cvf<span class="w"> </span>simple-rna-seq.tar<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>ivcap.yaml<span class="w"> </span>main.nf<span class="w"> </span>nextflow.config<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>modules/<span class="w"> </span>conf/<span class="w"> </span>schema_input.json
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">What to include in the tar</p>
+<p>Include everything Nextflow needs to execute: entry script, config,
+DSL2 modules, profile configs, and <code>schema_input.json</code>. Do <strong>not</strong>
+include <code>data/</code>, <code>work/</code>, <code>results/</code>, or <code>.nextflow/</code> — these are
+local-only.</p>
+</div>
+<hr />
+<h2 id="step-5-deploy-the-pipeline">Step 5: Deploy the pipeline<a class="headerlink" href="#step-5-deploy-the-pipeline" title="Permanent link">&para;</a></h2>
+<p><code>make deploy</code> does three things in sequence:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>package → upload artifact → update service definition
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>make<span class="w"> </span>deploy
+</code></pre></div>
+<p>Under the hood:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 1. Package (Step 4 above)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>tar<span class="w"> </span>cvf<span class="w"> </span>simple-rna-seq.tar<span class="w"> </span>ivcap.yaml<span class="w"> </span>main.nf<span class="w"> </span>nextflow.config<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>modules/<span class="w"> </span>conf/<span class="w"> </span>schema_input.json
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 2. Upload the tar as an IVCAP artifact</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nv">PIPELINE_URN</span><span class="o">=</span><span class="k">$(</span>ivcap<span class="w"> </span>artifact<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span>-n<span class="w"> </span><span class="s2">&quot;simple-rna-seq nextflow pipeline&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span>-p<span class="w"> </span>urn:ivcap:policy:ivcap.open.artifact<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span>-f<span class="w"> </span>simple-rna-seq.tar<span class="k">)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># 3. Register (or update) the service definition</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">#    @PIPELINE@ in ivcap-service.yaml is replaced with the artifact URN</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>cat<span class="w"> </span>ivcap-service.yaml<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s|@PIPELINE@|</span><span class="si">${</span><span class="nv">PIPELINE_URN</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>ivcap<span class="w"> </span>df<span class="w"> </span>update<span class="w"> </span><span class="si">${</span><span class="nv">SERVICE_ID</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">      </span>-p<span class="w"> </span>urn:ivcap:policy:ivcap.open.metadata<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span>--format<span class="w"> </span>yaml<span class="w"> </span>-f<span class="w"> </span>-
+</code></pre></div>
+<p>The <code>ivcap df update</code> command registers the service definition — linking the
+service URN to the pipeline artifact uploaded in step 2. The IVCAP Nextflow
+controller reads this definition at job submission time and downloads the
+correct version of the pipeline.</p>
+<p>Verify deployment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ivcap<span class="w"> </span>service<span class="w"> </span>list
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>ivcap<span class="w"> </span>service<span class="w"> </span>get<span class="w"> </span>urn:ivcap:service:&lt;your-uuid&gt;
+</code></pre></div>
+<hr />
+<h2 id="step-6-submit-and-monitor-a-job">Step 6: Submit and monitor a job<a class="headerlink" href="#step-6-submit-and-monitor-a-job" title="Permanent link">&para;</a></h2>
+<p>Create a JSON request file that matches the <code>example</code> block in your
+<code>ivcap.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ivcap:schema:simple-rnaseq-pipeline.request.1&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;hisat2_index_zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ivcap:artifact:abc12345-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">&quot;report_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;run-001&quot;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="nt">&quot;samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span><span class="nt">&quot;sample_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ERR5766176&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span><span class="nt">&quot;fastq_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ivcap:artifact:def67890-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="nt">&quot;fastq_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:ivcap:artifact:ghi11223-...&quot;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Samples can be URLs or artifact URNs</p>
+<p><code>fastq_1</code> / <code>fastq_2</code> accept either public HTTPS URLs or
+<code>urn:ivcap:artifact:…</code> URNs — the IVCAP controller handles both.</p>
+</div>
+<p>Submit the job:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ivcap<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>urn:ivcap:service:&lt;uuid&gt;<span class="w"> </span>-f<span class="w"> </span>tests/simple_rnaseq_ivcap.json<span class="w"> </span>--stream
+</code></pre></div>
+<p>Or with the Makefile:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>make<span class="w"> </span>test-job
+</code></pre></div>
+<p>The <code>--stream</code> flag prints live progress events as Nextflow stages advance:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ivcap.job.status&quot;</span><span class="p">,</span><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;executing&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ivcap.job.event&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;download pipeline&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ivcap.job.event&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FASTQC (3)&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ivcap.job.status&quot;</span><span class="p">,</span><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;succeeded&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="step-7-retrieve-results">Step 7: Retrieve results<a class="headerlink" href="#step-7-retrieve-results" title="Permanent link">&para;</a></h2>
+<p>Query all aspects attached to the completed job:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ivcap<span class="w"> </span>datafabric<span class="w"> </span>query<span class="w"> </span>-e<span class="w"> </span>urn:ivcap:job:&lt;uuid&gt;
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a> Records  ┌────┬─────────────────────────────────┬───────────────────────────────────────────┐
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>          │ ID │ ENTITY                          │ SCHEMA                                    │
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>          ├────┼─────────────────────────────────┼───────────────────────────────────────────┤
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>          │ @1 │ urn:ivcap:job:&lt;uuid&gt;            │ urn:ivcap:schema:simple-rnaseq-pipeline... │
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>          │ @2 │ urn:ivcap:job:&lt;uuid&gt;            │ urn:ivcap:schema:nextflow.result.1        │
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>          │ @3 │ urn:ivcap:job:&lt;uuid&gt;            │ urn:ivcap:schema:job.result.1             │
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>          └────┴─────────────────────────────────┴───────────────────────────────────────────┘
+</code></pre></div>
+<p>Read the Nextflow result aspect (<code>@2</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ivcap<span class="w"> </span>datafabric<span class="w"> </span>get<span class="w"> </span>@2<span class="w"> </span>--content-only
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">$schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:schema:nextflow.result.1</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">job_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:job:&lt;uuid&gt;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">results_artifact_urn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urn:ivcap:artifact:c6879dfc-e10a-4428-8438-13e9a81affe3</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">succeeded</span>
+</code></pre></div>
+<p>Download the full results archive:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ivcap<span class="w"> </span>--silent<span class="w"> </span>artifact<span class="w"> </span>download<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span>urn:ivcap:artifact:c6879dfc-e10a-4428-8438-13e9a81affe3<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span>-f<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>ztf<span class="w"> </span>-
+</code></pre></div>
+<p>The archive contains everything in <code>results/</code> — FastQC HTML reports, trimming
+logs, the MultiQC report, and Nextflow's own execution timeline and trace files.</p>
+<hr />
+<h2 id="local-development-workflow">Local development workflow<a class="headerlink" href="#local-development-workflow" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    W["Write / edit\nmain.nf, modules/"] --&gt; T
+    T["make run\n(local, no IVCAP)"] --&gt; |iterate| W
+    T --&gt; |ready| P
+    P["make package\n→ .tar"] --&gt; D
+    D["make deploy\n(upload + register)"] --&gt; J
+    J["make test-job\n(submit to IVCAP)"]</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Local test (no IVCAP required)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>make<span class="w"> </span>run
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Deploy and test on IVCAP</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>make<span class="w"> </span>deploy
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>make<span class="w"> </span>test-job
+</code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job stays <code>pending</code> indefinitely</td>
+<td>Nextflow controller not running or pipeline artifact not found</td>
+<td>Check <code>ivcap service get</code> — confirm artifact URN in service definition</td>
+</tr>
+<tr>
+<td><code>weblog</code> connection refused during local run</td>
+<td>IVCAP controller not listening</td>
+<td>Add <code>-c conf/weblog.disabled.config</code> to your local <code>nextflow run</code> command</td>
+</tr>
+<tr>
+<td>Process fails with <code>permission denied</code> on output files</td>
+<td>Missing <code>docker.fixOwnership = true</code></td>
+<td>Add to <code>nextflow.config</code></td>
+</tr>
+<tr>
+<td>No results in results artifact</td>
+<td>Nextflow process failed silently</td>
+<td>Check <code>.nextflow.log</code> in the downloaded results archive</td>
+</tr>
+<tr>
+<td><code>schema_input.json</code> not found by controller</td>
+<td>Not included in tar</td>
+<td>Add to the <code>tar cvf</code> command and to the <code>Makefile</code> package target</td>
+</tr>
+<tr>
+<td>Samples not picked up</td>
+<td>Wrong column names in samplesheet</td>
+<td>Compare column names in <code>schema_input.json</code> with <code>samples[].name</code> in <code>ivcap.yaml</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="complete-example">Complete example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="https://github.com/ivcap-works/ivcap-rnaseq-nextflow" target="_blank">→ ivcap-works/ivcap-rnaseq-nextflow ↗</a></p>
+<hr />
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p><a class="md-button" href="../argo-workflows/">→ Argo Workflows guide</a>
+<a class="md-button" href="../building/deploy/">→ Deploy a basic service</a>
+<a class="md-button" href="../building/use-artifacts/">→ Use Artifacts</a></p>
 
 
 
@@ -4554,7 +4842,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../building/run-locally/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Running Locally">
+          <a href="../argo-workflows/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building and Deploying Argo Workflows">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4564,20 +4852,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Running Locally
+                Building and Deploying Argo Workflows
               </div>
             </div>
           </a>
         
         
           
-          <a href="agent-patterns/" class="md-footer__link md-footer__link--next" aria-label="Next: Agent Patterns">
+          <a href="../../reference/" class="md-footer__link md-footer__link--next" aria-label="Next: Reference">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Agent Patterns
+                Reference
               </div>
             </div>
             <div class="md-footer__button md-icon">
