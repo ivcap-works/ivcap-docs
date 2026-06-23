@@ -28,4 +28,10 @@ Task-oriented guides for every audience. Pick the section that matches your role
     For application developers connecting IVCAP to their own systems — Python
     client SDK, REST API, and the CLI's built-in MCP server.
 
+- :material-pipe: **[Argo Workflows](argo-workflows/index.md)**
+
+    For engineers building multi-stage pipelines — Docker image build and
+    push, Argo Workflow YAML, `ivcap.yml` service definition, and deployment
+    to the IVCAP Argo controller.
+
 </div>
