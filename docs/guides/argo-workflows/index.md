@@ -43,15 +43,17 @@ container. Use an Argo Workflow when you need:
 ## Architecture overview
 
 ```mermaid
+%%{init: {'themeVariables': {'edgeLabelBackground': '#ffffff00'}}}%%
 flowchart TD
-    JS(["👤 User\nivcap order create"])
+    ICON["👤 User"]:::nobox
+    JS(["ivcap order create"])
 
     subgraph IVCAP["IVCAP Platform"]
         AC["Argo Controller"]
         AR["Artifact / Data Fabric"]
         RES["Result aspect\nurn:ivcap:schema:argo.job-result.1"]
 
-        subgraph K8s["Kubernetes cluster  —  Argo-orchestrated"]
+        subgraph K8s["Argo-orchestrated"]
             PVC[("Shared PVC\n/workspace")]
             P1["Pod: Stage 1\nfetch"]
             P2["Pod: Stage 2\npreprocess"]
@@ -59,14 +61,16 @@ flowchart TD
         end
     end
 
+    ICON --> JS
     JS -->|submits job| AC
     AC -->|spawns| P1
     AR -->|input artifacts| P1
     P1 --- PVC
     PVC --- P2
-    P2 --- PVC
     PVC --- P3
     P3 -->|result.ivcap.json| RES
+
+    classDef nobox fill:none,stroke:none
 ```
 
 ---
