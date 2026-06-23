@@ -47,6 +47,8 @@ container. Use an Argo Workflow when you need:
 flowchart TD
     ICON["👤 User"]:::nobox
     JS(["ivcap order create"])
+    ICON2["👤 User"]:::nobox
+    JS2(["ivcap service create"])
 
     subgraph IVCAP["IVCAP Platform"]
         AC["Argo Controller"]
@@ -63,6 +65,8 @@ flowchart TD
 
     ICON --> JS
     JS -->|submits job| AC
+    ICON2 --> JS2
+    JS2 -->|registers service| AR
     AC -->|spawns| P1
     AR -->|input artifacts| P1
     P1 --- PVC
