@@ -162,6 +162,8 @@ nav:
           - Using IVCAP via MCP: guides/integrating/mcp.md
       - Argo Workflows:
           - guides/argo-workflows/index.md
+      - Nextflow Pipelines:
+          - guides/nextflow/index.md
 
   - Reference:
       - reference/index.md

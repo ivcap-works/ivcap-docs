@@ -34,4 +34,10 @@ Task-oriented guides for every audience. Pick the section that matches your role
     push, Argo Workflow YAML, `ivcap.yml` service definition, and deployment
     to the IVCAP Argo controller.
 
+- :material-dna: **[Nextflow Pipelines](nextflow/index.md)**
+
+    For bioinformaticians and data scientists with existing Nextflow DSL2
+    pipelines — package, deploy, and run them on IVCAP with full provenance
+    tracking and no custom Docker builds required.
+
 </div>
