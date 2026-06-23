@@ -24,7 +24,7 @@ pipeline using FastQC, Trim Galore, and MultiQC.
 ---
 
 ## When to use Nextflow on IVCAP
-
+git
 Use the Nextflow controller when your analysis is already written in (or
 well-suited to) Nextflow DSL2. Compare with other service types:
 
