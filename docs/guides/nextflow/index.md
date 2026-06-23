@@ -49,28 +49,34 @@ Key advantages of the Nextflow path:
 
 ```mermaid
 flowchart TD
-    subgraph Local["Local development"]
-        NF["nextflow run main.nf\n(local test)"]
-        PKG["make package\n→ simple-rna-seq.tar"]
+    subgraph Developer["🔧 Pipeline Developer"]
+        subgraph Local["Local development"]
+            NF["nextflow run main.nf\n(local test)"]
+            PKG["make package\n→ pipeline.tar"]
+        end
     end
 
-    subgraph IVCAP
-        ART["Pipeline artifact\n(simple-rna-seq.tar)"]
-        SVC["Service registration\n(ivcap df update)"]
-        CTL["Nextflow Controller\n(IVCAP)"]
+    subgraph User["👤 Pipeline User"]
+        REQ["ivcap job create\n(request + samples)"]
+    end
+
+    subgraph IVCAP["IVCAP Platform"]
+        ART["Pipeline artifact\n(pipeline.tar)"]
+        SVC["Service definition\n(ivcap df update)"]
+        CTL["Service Controller"]
         RES["Results artifact\n(output tar.gz)"]
         PRV["Provenance aspect\nurn:ivcap:schema:nextflow.result.1"]
-    end
 
-    subgraph K8s["Nextflow orchestrated"]
-        RUN["nextflow run\n(inside pod)"]
-        PROC["Process pods\n(Nextflow-managed)"]
+        subgraph NFO["Nextflow orchestrated"]
+            RUN["nextflow run\n(inside pod)"]
+            PROC["Process pods\n(Nextflow-managed)"]
+        end
     end
 
     PKG -->|ivcap artifact create| ART
     ART --> SVC
-    SVC -->|job submitted| CTL
-    CTL -->|downloads pipeline artifact| RUN
+    REQ -->|job submitted| CTL
+    CTL -->|downloads pipeline| RUN
     RUN -->|spawns| PROC
     PROC -->|results| RES
     RES --> PRV
