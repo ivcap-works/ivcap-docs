@@ -44,30 +44,29 @@ container. Use an Argo Workflow when you need:
 
 ```mermaid
 flowchart TD
-    subgraph IVCAP
-        JS["Job submitted\n(ivcap order create)"]
+    JS(["👤 User\nivcap order create"])
+
+    subgraph IVCAP["IVCAP Platform"]
         AC["Argo Controller"]
-        AR["Artifact / Data Fabric\n(IVCAP)"]
-        RES["Result aspect\n(urn:ivcap:schema:argo.job-result.1)"]
+        AR["Artifact / Data Fabric"]
+        RES["Result aspect\nurn:ivcap:schema:argo.job-result.1"]
+
+        subgraph K8s["Kubernetes cluster  —  Argo-orchestrated"]
+            PVC[("Shared PVC\n/workspace")]
+            P1["Pod: Stage 1\nfetch"]
+            P2["Pod: Stage 2\npreprocess"]
+            P3["Pod: Stage 3\nclassify"]
+        end
     end
 
-    subgraph K8s["Kubernetes cluster"]
-        PVC["Shared PVC\n/workspace (2 Gi)"]
-        P1["Pod: Stage 1\nfetch"]
-        P2["Pod: Stage 2\npreprocess"]
-        P3["Pod: Stage 3\nclassify"]
-    end
-
-    JS --> AC
-    AC -->|creates| P1
-    AR -->|artifacts downloaded| P1
-    P1 -->|writes /workspace/data| PVC
-    P1 -->|done| P2
-    PVC -->|reads /workspace/data| P2
-    P2 -->|writes /workspace/data| PVC
-    P2 -->|done| P3
-    PVC -->|reads /workspace/data| P3
-    P3 -->|writes /result.ivcap.json| RES
+    JS -->|submits job| AC
+    AC -->|spawns| P1
+    AR -->|input artifacts| P1
+    P1 --- PVC
+    PVC --- P2
+    P2 --- PVC
+    PVC --- P3
+    P3 -->|result.ivcap.json| RES
 ```
 
 ---
