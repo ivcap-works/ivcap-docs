@@ -51,6 +51,9 @@ exclude_docs: |
 extra:
   git_commit: ""
 
+extra_css:
+  - stylesheets/mermaid-custom.css
+
 # Suppress "not found" warnings for links to source files (e.g. .py, .json, .svg)
 # that are referenced in fetched example READMEs but not included in the docs.
 validation:

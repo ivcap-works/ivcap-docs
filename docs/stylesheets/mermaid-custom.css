@@ -1,0 +1,10 @@
+/* ── Mermaid diagram customisations ────────────────────────────────────────── */
+
+/* Make edge (arrow) label backgrounds transparent so they don't show a white
+   box over subgraph fill colours. The Mermaid themeVariable edgeLabelBackground
+   is not reliably honoured by all renderer versions, so we override via CSS. */
+.edgeLabel .label rect,
+.edgeLabel rect {
+  fill: transparent !important;
+  opacity: 0 !important;
+}

@@ -38,6 +38,9 @@ exclude_docs: 'README.md
 extra:
   git_commit: !ENV [DOCS_GIT_COMMIT, ""]
 
+extra_css:
+  - stylesheets/mermaid-custom.css
+
 validation:
   links:
     not_found: ignore

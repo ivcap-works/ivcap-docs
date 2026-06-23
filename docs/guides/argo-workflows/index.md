@@ -46,12 +46,12 @@ container. Use an Argo Workflow when you need:
 %%{init: {'themeVariables': {'edgeLabelBackground': '#ffffff00'}}}%%
 flowchart TD
     ICON["👤 User"]:::nobox
-    JS(["ivcap order create"])
+    JS(["ivcap job create"])
     ICON2["👤 User"]:::nobox
     JS2(["ivcap service create"])
 
     subgraph IVCAP["IVCAP Platform"]
-        AC["Argo Controller"]
+        AC["Service Controller"]
         AR["Artifact / Data Fabric"]
         RES["Result aspect\nurn:ivcap:schema:argo.job-result.1"]
 
