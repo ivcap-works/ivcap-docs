@@ -38,7 +38,6 @@ IVCAP is a managed, provenance-aware platform for running, building, and orchest
 ## Guides — Building Services
 
 - [Building Services](https://docs.ivcap.net/guides/building/index.md)
-- [Argo Workflows](https://docs.ivcap.net/guides/building/argo-workflows/index.md)
 - [Calling LLMs](https://docs.ivcap.net/guides/building/call-llms/index.md)
 - [Calling Other Services](https://docs.ivcap.net/guides/building/call-other-services/index.md)
 - [Deploy and Register](https://docs.ivcap.net/guides/building/deploy/index.md)
