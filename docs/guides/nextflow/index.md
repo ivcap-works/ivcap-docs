@@ -62,7 +62,7 @@ flowchart TD
         PRV["Provenance aspect\nurn:ivcap:schema:nextflow.result.1"]
     end
 
-    subgraph K8s["Kubernetes (per job)"]
+    subgraph K8s["Nextflow orchestrated"]
         RUN["nextflow run\n(inside pod)"]
         PROC["Process pods\n(Nextflow-managed)"]
     end
