@@ -166,6 +166,8 @@ nav:
     - Full API Reference ↗: https://ivcap-works.github.io/ivcap-client-sdk-python/
   - Python Service SDK:
     - Full API Reference ↗: https://ivcap-works.github.io/ivcap-service-sdk-python
+  - JavaScript/TypeScript Client SDK:
+    - Full API Reference ↗: https://ivcap-works.github.io/ivcap-client-sdk-js/
 - Capabilities:
   - capabilities/index.md
   - Ai Agents:

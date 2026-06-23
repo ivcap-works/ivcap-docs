@@ -184,6 +184,8 @@ nav:
 
   - SDKs:
       - sdks/index.md
+      - JavaScript/TypeScript Client SDK:
+          - Full API Reference ↗: https://ivcap-works.github.io/ivcap-client-sdk-js/
       - __SDK__
 
   - Capabilities:

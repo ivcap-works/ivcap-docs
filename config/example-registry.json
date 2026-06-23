@@ -133,5 +133,37 @@
     "pull_files": [
       "README.md"
     ]
+  },
+  {
+    "slug": "argo-example",
+    "name": "Argo Workflow: Bird Species Classification",
+    "repo": "ivcap-works/ivcap-argo-example",
+    "branch": "main",
+    "capabilities": [
+      "workflows",
+      "build-services",
+      "artifacts"
+    ],
+    "sdks": [],
+    "difficulty": "advanced",
+    "pull_files": [
+      "README.md"
+    ]
+  },
+  {
+    "slug": "rnaseq-nextflow",
+    "name": "Nextflow Pipeline: RNA-seq QC",
+    "repo": "ivcap-works/ivcap-rnaseq-nextflow",
+    "branch": "main",
+    "capabilities": [
+      "workflows",
+      "build-services",
+      "domain-bio"
+    ],
+    "sdks": [],
+    "difficulty": "intermediate",
+    "pull_files": [
+      "README.md"
+    ]
   }
 ]

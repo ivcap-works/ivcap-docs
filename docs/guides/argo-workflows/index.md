@@ -6,16 +6,23 @@ stage runs in its own Kubernetes pod, stages share a persistent volume, and
 the result is returned to IVCAP's provenance system when the final stage
 completes.
 
-This guide walks through:
-
-1. Structuring your pipeline code and Docker image(s)
-2. Writing the Argo Workflow YAML
-3. Writing the `ivcap.yml` service definition
-4. Merging the two files and registering the service
-5. Submitting and monitoring a job
-
-The running example is the [ivcap-argo-example ↗](https://github.com/ivcap-works/ivcap-argo-example){target="_blank"} — a three-stage bird-species
+The running example is [ivcap-argo-example ↗](https://github.com/ivcap-works/ivcap-argo-example){target="_blank"} — a three-stage bird-species
 classification pipeline using EfficientNetB2.
+
+## Contents
+
+- [When to use Argo Workflows](#when-to-use-argo-workflows)
+- [Architecture overview](#architecture-overview)
+- [Step 1: Structure your project](#step-1-structure-your-project)
+- [Step 2: Write the Dockerfile](#step-2-write-the-dockerfile)
+- [Step 3: Build and push the Docker image](#step-3-build-and-push-the-docker-image)
+- [Step 4: Write the Argo Workflow YAML](#step-4-write-the-argo-workflow-yaml)
+- [Step 5: Write the `ivcap.yml` service definition](#step-5-write-the-ivcapyml-service-definition)
+- [Step 6: Merge and register the service](#step-6-merge-and-register-the-service)
+- [Step 7: Submit and monitor a job](#step-7-submit-and-monitor-a-job)
+- [Writing the result file](#writing-the-result-file-resultivcapjson)
+- [Reading IVCAP artifacts in a stage](#reading-ivcap-artifacts-in-a-stage)
+- [Troubleshooting](#troubleshooting)
 
 ---
 

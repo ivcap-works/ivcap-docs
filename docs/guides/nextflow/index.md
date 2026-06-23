@@ -4,17 +4,22 @@ IVCAP has a built-in **Nextflow controller** that lets you package any
 Nextflow DSL2 pipeline as a service and run it as a reproducible,
 provenance-tracked job — without rewriting a single line of Nextflow code.
 
-This guide walks through:
-
-1. Structuring a Nextflow project for IVCAP
-2. Configuring Docker and the IVCAP weblog in `nextflow.config`
-3. Writing the `ivcap.yaml` pipeline definition
-4. Packaging the pipeline as a tar archive
-5. Uploading and registering the service
-6. Submitting a job and retrieving results
-
 The running example is [ivcap-rnaseq-nextflow ↗](https://github.com/ivcap-works/ivcap-rnaseq-nextflow){target="_blank"} — a paired-end RNA-seq QC
 pipeline using FastQC, Trim Galore, and MultiQC.
+
+## Contents
+
+- [When to use Nextflow on IVCAP](#when-to-use-nextflow-on-ivcap)
+- [Architecture overview](#architecture-overview)
+- [Step 1: Structure your project](#step-1-structure-your-project)
+- [Step 2: Configure Docker and the IVCAP weblog](#step-2-configure-docker-and-the-ivcap-weblog)
+- [Step 3: Write `ivcap.yaml`](#step-3-write-ivcapyaml)
+- [Step 4: Package the pipeline](#step-4-package-the-pipeline)
+- [Step 5: Deploy the pipeline](#step-5-deploy-the-pipeline)
+- [Step 6: Submit and monitor a job](#step-6-submit-and-monitor-a-job)
+- [Step 7: Retrieve results](#step-7-retrieve-results)
+- [Local development workflow](#local-development-workflow)
+- [Troubleshooting](#troubleshooting)
 
 ---
 

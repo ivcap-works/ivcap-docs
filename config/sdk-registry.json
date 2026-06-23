@@ -54,5 +54,23 @@
     ],
     "language": "go",
     "audience": "all"
+  },
+  {
+    "slug": "js-client",
+    "name": "JavaScript/TypeScript Client SDK",
+    "repo": "ivcap-works/ivcap-client-sdk-js",
+    "branch": "main",
+    "github_pages_url": "https://ivcap-works.github.io/ivcap-client-sdk-js/",
+    "pull_docs": [
+      "docs/docs/getting-started",
+      "docs/docs/guides"
+    ],
+    "capabilities": [
+      "run-services",
+      "artifacts",
+      "aspects"
+    ],
+    "language": "typescript",
+    "audience": "app-developer"
   }
 ]
