@@ -148,6 +148,7 @@ nav:
           - Calling LLMs: guides/building/call-llms.md
           - Deploy and Register: guides/building/deploy.md
           - Running Locally: guides/building/run-locally.md
+          - Argo Workflows: guides/building/argo-workflows.md
       - Building AI Agents:
           - guides/agents/index.md
           - Agent Patterns: guides/agents/agent-patterns.md

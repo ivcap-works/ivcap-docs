@@ -63,6 +63,7 @@ Write code  →  Test locally  →  Containerise  →  Deploy
 | [Call LLMs](call-llms.md) | Using the sidecar LLM client — credential-free, provenance-recorded |
 | [Call Other Services](call-other-services.md) | Submitting sub-jobs from within a service |
 | [Use Queues](use-queues.md) | Async pipelines: fan-out, standing orders, producer/consumer patterns |
+| [Argo Workflows](argo-workflows.md) | Multi-stage pipelines: Docker image build, Argo YAML, `ivcap.yml`, deployment |
 
 ---
 
