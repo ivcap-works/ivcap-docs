@@ -48,24 +48,17 @@ Key advantages of the Nextflow path:
 ## Architecture overview
 
 ```mermaid
+%%{init: {'themeVariables': {'edgeLabelBackground': '#ffffff00'}}}%%
 flowchart TD
-    subgraph Developer["🔧 Pipeline Developer"]
-        subgraph Local["Local development"]
-            NF["nextflow run main.nf\n(local test)"]
-            PKG["make package\n→ pipeline.tar"]
-        end
-    end
-
-    subgraph User["👤 Pipeline User"]
-        REQ["ivcap job create\n(request + samples)"]
-    end
+    ICON["👤 User"]:::nobox
+    JS(["ivcap job create"])
+    ICON2["🔧 Developer"]:::nobox
+    JS2(["make deploy\n(package + upload + register)"])
 
     subgraph IVCAP["IVCAP Platform"]
-        ART["Pipeline artifact\n(pipeline.tar)"]
-        SVC["Service definition\n(ivcap df update)"]
-        CTL["Service Controller"]
-        RES["Results artifact\n(output tar.gz)"]
-        PRV["Provenance aspect\nurn:ivcap:schema:nextflow.result.1"]
+        AC["Service Controller"]
+        AR["Artifact / Data Fabric"]
+        RES["Provenance aspect\nurn:ivcap:schema:nextflow.result.1"]
 
         subgraph NFO["Nextflow orchestrated"]
             RUN["nextflow run\n(inside pod)"]
@@ -73,13 +66,16 @@ flowchart TD
         end
     end
 
-    PKG -->|ivcap artifact create| ART
-    ART --> SVC
-    REQ -->|job submitted| CTL
-    CTL -->|downloads pipeline| RUN
+    ICON --> JS
+    JS -->|submits job| AC
+    ICON2 --> JS2
+    JS2 -->|registers pipeline| AR
+    AC -->|downloads pipeline| RUN
+    AR -->|input artifacts| RUN
     RUN -->|spawns| PROC
     PROC -->|results| RES
-    RES --> PRV
+
+    classDef nobox fill:none,stroke:none
 ```
 
 The IVCAP Nextflow controller:
