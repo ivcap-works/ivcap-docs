@@ -1,0 +1,15 @@
+{
+  "slug": "js-client",
+  "name": "JavaScript/TypeScript Client SDK",
+  "github_pages_url": "https://ivcap-works.github.io/ivcap-client-sdk-js/",
+  "capabilities": [
+    "run-services",
+    "artifacts",
+    "aspects"
+  ],
+  "language": "typescript",
+  "pulled_files": [
+    "docs/docs/getting-started",
+    "docs/docs/guides"
+  ]
+}

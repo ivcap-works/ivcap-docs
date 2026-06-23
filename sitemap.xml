@@ -69,6 +69,10 @@
          <lastmod>2026-06-23</lastmod>
     </url>
     <url>
+         <loc>https://docs.ivcap.net/content/examples/argo-example/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
          <loc>https://docs.ivcap.net/content/examples/collection-example/</loc>
          <lastmod>2026-06-23</lastmod>
     </url>
@@ -90,6 +94,58 @@
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/python-service/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/examples/rnaseq-nextflow/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/authentication/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/installation/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/quick-start/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/advanced/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/artifacts/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/aspects/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/collections/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/error-handling/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/jobs/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/overview/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/pagination/</loc>
+         <lastmod>2026-06-23</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/services/</loc>
          <lastmod>2026-06-23</lastmod>
     </url>
     <url>

@@ -1,0 +1,21 @@
+/* ── Mermaid diagram customisations ────────────────────────────────────────── */
+
+/* Remove white/grey boxes behind edge (arrow) labels.
+ *
+ * Material for MkDocs renders every Mermaid diagram inside a *closed* shadow
+ * DOM, so ordinary CSS selectors (.edgeLabel rect { … }) cannot pierce it.
+ * The only mechanism that works across the shadow boundary is CSS custom
+ * properties (they are inherited). Material injects themeCSS that sets:
+ *
+ *   .edgeLabel, .edgeLabel p { background-color: var(--md-mermaid-label-bg-color) }
+ *
+ * Setting the variable to `transparent` removes the white/grey background
+ * while leaving node-label colours (--md-mermaid-node-bg-color) unchanged. */
+:root {
+  --md-mermaid-label-bg-color: transparent;
+}
+
+/* Dark-mode override (slate scheme) */
+[data-md-color-scheme="slate"] {
+  --md-mermaid-label-bg-color: transparent;
+}

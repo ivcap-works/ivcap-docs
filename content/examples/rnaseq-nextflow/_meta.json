@@ -1,0 +1,18 @@
+{
+  "slug": "rnaseq-nextflow",
+  "name": "Nextflow Pipeline: RNA-seq QC",
+  "repo": "ivcap-works/ivcap-rnaseq-nextflow",
+  "branch": "main",
+  "capabilities": [
+    "workflows",
+    "build-services",
+    "domain-bio"
+  ],
+  "sdks": [],
+  "difficulty": "intermediate",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2026-05-15",
+  "stars": 0
+}

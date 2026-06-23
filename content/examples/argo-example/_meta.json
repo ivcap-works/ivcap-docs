@@ -1,0 +1,18 @@
+{
+  "slug": "argo-example",
+  "name": "Argo Workflow: Bird Species Classification",
+  "repo": "ivcap-works/ivcap-argo-example",
+  "branch": "main",
+  "capabilities": [
+    "workflows",
+    "build-services",
+    "artifacts"
+  ],
+  "sdks": [],
+  "difficulty": "advanced",
+  "pull_files": [
+    "README.md"
+  ],
+  "last_updated": "2026-06-16",
+  "stars": 0
+}
