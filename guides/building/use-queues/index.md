@@ -169,7 +169,7 @@ the user) and process items until the queue is empty.
 ### Coordinator service
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def coordinate(req: Request, ctxt: JobContext) -> Result:
     """Discover all matching artifacts and enqueue them for processing."""
     ivcap = ctxt.ivcap
@@ -187,7 +187,7 @@ def coordinate(req: Request, ctxt: JobContext) -> Result:
 ### Worker service
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def work(req: Request, ctxt: JobContext) -> Result:
     """Drain the queue: process each artifact and upload results."""
     ivcap = ctxt.ivcap

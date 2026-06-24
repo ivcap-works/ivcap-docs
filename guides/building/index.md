@@ -20,18 +20,18 @@ Once registered, anyone with access can discover and run them as jobs.
 
 ## How services are built
 
-The standard toolchain is **Python + [Poetry](https://python-poetry.org/) + the `ivcap-ai-tool` package**:
+The standard toolchain is **Python + [Poetry](https://python-poetry.org/) + the `ivcap-lambda` package**:
 
 | Component | Purpose |
 |---|---|
-| [`ivcap-ai-tool`](https://pypi.org/project/ivcap-ai-tool/) | HTTP wrapper, schema generation, AI tool exposure |
+| [`ivcap-lambda`](https://pypi.org/project/ivcap-lambda/) | HTTP wrapper, schema generation, AI tool exposure |
 | [`ivcap-service`](https://pypi.org/project/ivcap-service/) | Core SDK — artifacts, aspects, sidecar access |
 | [`poetry-plugin-ivcap`](https://github.com/ivcap-works/poetry-plugin-ivcap) | `poetry ivcap run/deploy` commands |
 | Docker | Containerises the service for deployment |
 | `ivcap` CLI | Registers the service and pushes images |
 
 You don't have to use this stack — any HTTP server packaged in a container can be registered
-as a service. But the `ivcap-ai-tool` stack automates schema generation, deployment, and
+as a service. But the `ivcap-lambda` stack automates schema generation, deployment, and
 AI tool registration in a single `poetry ivcap deploy`.
 
 ---

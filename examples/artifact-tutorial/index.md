@@ -84,7 +84,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import ClassVar, Optional
 
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -117,7 +117,7 @@ class Result(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Markdown Conversion"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Markdown Conversion"]))
 def conversion_service(req: Request, ctxt: JobContext) -> Result:
     """Parse an uploaded document into markdown.
 
@@ -168,7 +168,7 @@ def conversion_service(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -348,7 +348,7 @@ if cached:
 Dependencies for this service:
 
 ```bash
-poetry add markitdown ivcap-ai-tool
+poetry add markitdown ivcap-lambda
 poetry install --no-root
 ```
 

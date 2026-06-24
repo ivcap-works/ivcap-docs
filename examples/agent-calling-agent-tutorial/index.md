@@ -80,7 +80,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 load_dotenv()
 logging_init()
@@ -115,7 +115,7 @@ class FactCheckOutput(BaseModel):
     results: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Verify and assess the quality of a list of references.
     Returns an LLM assessment of each reference's credibility and relevance."""
@@ -143,7 +143,7 @@ def get_client():
     return OpenAI()
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Key points
@@ -174,7 +174,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 load_dotenv()
 logging_init()
@@ -218,7 +218,7 @@ class ReportResponse(BaseModel):
     references: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     """Write a report on a topic and fact-check its references using a separate agent."""
     logger.debug(f"Generating report for topic: {request.topic}")
@@ -287,7 +287,7 @@ def get_client():
     return OpenAI()
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -377,13 +377,13 @@ Each service declares its own dependencies:
 ```bash
 # Fact Checker
 cd fact_checker
-poetry add openai python-dotenv ivcap-ai-tool
+poetry add openai python-dotenv ivcap-lambda
 ```
 
 ```bash
 # Report Writer
 cd report_writer
-poetry add openai python-dotenv ivcap-ai-tool
+poetry add openai python-dotenv ivcap-lambda
 ```
 
 Each has its own `pyproject.toml` configuration:

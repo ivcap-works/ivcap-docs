@@ -19,6 +19,16 @@
     background-color: #131e35;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  /* Mobile drawer header (logo + site title area) — match the deep-navy header.
+   * The drawer is a sibling of .md-header, so the variable override above does
+   * not cascade into it; we target the title block directly.
+   * !important is needed to override Material's theme-colour specificity. */
+  .md-nav--primary .md-nav__title,
+  [data-md-component="navigation"] .md-nav__title {
+    background-color: #0f1729 !important;
+    color: #fff !important;
+  }
 </style>
 
 
@@ -2844,8 +2854,6 @@
       
         
       
-        
-      
     
     
     
@@ -2934,7 +2942,7 @@
   <span class="md-ellipsis">
     
   
-    JavaScript/TypeScript Client SDK
+    IVCAP CLI
   
 
     
@@ -2947,98 +2955,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    JavaScript/TypeScript Client SDK
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://ivcap-works.github.io/ivcap-client-sdk-js/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Full API Reference ↗
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IVCAP CLI
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3099,19 +3015,59 @@
       
         
       
-        
+    
+    
+    
+      
       
         
       
-        
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
-      
         
-      
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
-      
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript/TypeScript Client SDK
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript/TypeScript Client SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
       
         
       
@@ -3132,17 +3088,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    JavaScript/TypeScript Client SDK
+    Getting Started
   
 
     
@@ -3153,12 +3109,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    JavaScript/TypeScript Client SDK
+    Getting Started
   
 
           </label>
@@ -3247,6 +3203,86 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -3500,6 +3536,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -3560,10 +3604,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
             
   
   
@@ -3581,8 +3625,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3652,10 +3696,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
             
   
   
@@ -3673,8 +3717,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5489,7 +5533,7 @@ no knowledge of the Report Writer.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span><span class="p">,</span> <span class="n">Field</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">getLogger</span><span class="p">,</span> <span class="n">Service</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_ai_tool</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tool_server</span><span class="p">,</span> <span class="n">ivcap_ai_tool</span><span class="p">,</span> <span class="n">ToolOptions</span><span class="p">,</span> <span class="n">logging_init</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_lambda</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_lambda_server</span><span class="p">,</span> <span class="n">ivcap_lambda</span><span class="p">,</span> <span class="n">ToolOptions</span><span class="p">,</span> <span class="n">logging_init</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">logging_init</span><span class="p">()</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;app&quot;</span><span class="p">)</span>
@@ -5518,7 +5562,7 @@ no knowledge of the Report Writer.</p>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ReferenceAssessment</span><span class="p">]</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nd">@ivcap_ai_tool</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Fact Checker&quot;</span><span class="p">],</span> <span class="n">service_id</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nd">@ivcap_lambda</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Fact Checker&quot;</span><span class="p">],</span> <span class="n">service_id</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">verify_references</span><span class="p">(</span><span class="nb">input</span><span class="p">:</span> <span class="n">FactCheckInput</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FactCheckOutput</span><span class="p">:</span>
 <a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Verify and assess the quality of a list of references.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_llm_client</span>
@@ -5540,7 +5584,7 @@ no knowledge of the Report Writer.</p>
 <a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    <span class="k">return</span> <span class="n">FactCheckOutput</span><span class="p">(</span><span class="n">results</span><span class="o">=</span><span class="n">verified</span><span class="p">)</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="n">start_tool_server</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="n">start_lambda_server</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title"><code>service_id=\"/\"</code></p>
@@ -5555,7 +5599,7 @@ was passed in the request.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span><span class="p">,</span> <span class="n">Field</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">getLogger</span><span class="p">,</span> <span class="n">Service</span><span class="p">,</span> <span class="n">JobContext</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_ai_tool</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tool_server</span><span class="p">,</span> <span class="n">ivcap_ai_tool</span><span class="p">,</span> <span class="n">ToolOptions</span><span class="p">,</span> <span class="n">logging_init</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_lambda</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_lambda_server</span><span class="p">,</span> <span class="n">ivcap_lambda</span><span class="p">,</span> <span class="n">ToolOptions</span><span class="p">,</span> <span class="n">logging_init</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">logging_init</span><span class="p">()</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;app&quot;</span><span class="p">)</span>
@@ -5594,7 +5638,7 @@ was passed in the request.</p>
 <a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    <span class="n">references</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ReferenceWithAssessment</span><span class="p">]</span>
 <a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="nd">@ivcap_ai_tool</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Report Writer&quot;</span><span class="p">]))</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="nd">@ivcap_lambda</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="o">=</span><span class="n">ToolOptions</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Report Writer&quot;</span><span class="p">]))</span>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="k">def</span><span class="w"> </span><span class="nf">generate_report</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">ReportRequest</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">:</span> <span class="n">JobContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReportResponse</span><span class="p">:</span>
 <a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a report on a topic and fact-check its references using a separate agent.&quot;&quot;&quot;</span>
 <a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">ivcap_service</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_llm_client</span>
@@ -5652,7 +5696,7 @@ was passed in the request.</p>
 <a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>    <span class="p">)</span>
 <a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>
 <a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>    <span class="n">start_tool_server</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>    <span class="n">start_lambda_server</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="the-five-line-composition-pattern">The five-line composition pattern<a class="headerlink" href="#the-five-line-composition-pattern" title="Permanent link">&para;</a></h2>

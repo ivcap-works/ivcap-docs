@@ -90,7 +90,7 @@ import io
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field, ConfigDict
 from ivcap_service import getLogger, Service, JobContext, get_llm_client
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -114,7 +114,7 @@ class Result(BaseModel):
     summary: str = Field(description="Plain-language summary")
     summary_artifact: str = Field(description="URN of the stored summary artifact")
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis", "LLM"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis", "LLM"]))
 def summarise(req: Request, ctxt: JobContext) -> Result:
     """Summarise a document artifact using an LLM.
 
@@ -156,7 +156,7 @@ def summarise(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -168,7 +168,7 @@ For lambda services handling many concurrent requests, use the async client:
 ```python
 from ivcap_service import get_async_llm_client
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 async def analyse(req: Request) -> Result:
     llm = get_async_llm_client()
 

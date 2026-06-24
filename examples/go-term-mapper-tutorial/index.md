@@ -99,13 +99,13 @@ my_app/
 ## Step 4: Add Dependencies
 
 ```bash
-poetry add httpx pydantic ivcap-ai-tool
+poetry add httpx pydantic ivcap-lambda
 poetry install --no-root
 ```
 
 - **`httpx`** — async HTTP client for calling the QuickGO API
 - **`pydantic`** — data validation and schema definition
-- **`ivcap-ai-tool`** — IVCAP SDK for building lambda services that work as AI tools
+- **`ivcap-lambda`** — IVCAP SDK for building lambda services that work as AI tools
 
 ---
 
@@ -230,7 +230,7 @@ from typing import List, Dict, Optional
 import asyncio
 from pydantic import BaseModel, ConfigDict, Field
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, logging_init, ToolOptions, ivcap_ai_tool
+from ivcap_lambda import start_lambda_server, logging_init, ToolOptions, ivcap_lambda
 
 from go_term_fetcher import Annotation, fetch_go_terms, filter_by_category
 
@@ -277,10 +277,10 @@ class Result(BaseModel):
 
 ### The service handler
 
-The `@ivcap_ai_tool` decorator registers this function as the HTTP handler and also exposes it as a callable AI tool. The docstring becomes the tool's description for agent frameworks.
+The `@ivcap_lambda` decorator registers this function as the HTTP handler and also exposes it as a callable AI tool. The docstring becomes the tool's description for agent frameworks.
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["GO Term Mapper"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["GO Term Mapper"]))
 async def map_go_terms(req: Request) -> Result:
     """Maps protein or gene identifiers (UniProt IDs) to their GO annotations
     using the QuickGO REST API. Optionally filters by GO category.
@@ -313,7 +313,7 @@ async def map_go_terms(req: Request) -> Result:
 
 ```python
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---

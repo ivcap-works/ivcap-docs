@@ -19,6 +19,16 @@
     background-color: #131e35;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  /* Mobile drawer header (logo + site title area) — match the deep-navy header.
+   * The drawer is a sibling of .md-header, so the variable override above does
+   * not cascade into it; we target the title block directly.
+   * !important is needed to override Material's theme-colour specificity. */
+  .md-nav--primary .md-nav__title,
+  [data-md-component="navigation"] .md-nav__title {
+    background-color: #0f1729 !important;
+    color: #fff !important;
+  }
 </style>
 
 
@@ -2575,8 +2585,6 @@
       
         
       
-        
-      
     
     
     
@@ -2671,7 +2679,7 @@
   <span class="md-ellipsis">
     
   
-    JavaScript/TypeScript Client SDK
+    IVCAP CLI
   
 
     
@@ -2684,101 +2692,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    JavaScript/TypeScript Client SDK
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://ivcap-works.github.io/ivcap-client-sdk-js/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Full API Reference ↗
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IVCAP CLI
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2839,26 +2752,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -2875,10 +2768,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
             
   
   
@@ -2896,12 +2789,72 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             
   
     JavaScript/TypeScript Client SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
   
 
           </label>
@@ -2990,6 +2943,86 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -3243,6 +3276,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -3306,10 +3347,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
             
   
   
@@ -3327,8 +3368,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3401,10 +3442,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
             
   
   
@@ -3422,8 +3463,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4899,10 +4940,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python-client-sdk" class="md-nav__link">
+  <a href="#python-client-sdk-ivcap-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python Client SDK
+        Python Client SDK (ivcap-client)
       
     </span>
   </a>
@@ -4910,10 +4951,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python-service-sdk" class="md-nav__link">
+  <a href="#javascripttypescript-client-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python Service SDK
+        JavaScript/TypeScript Client SDK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-service-sdk-ivcap-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Service SDK (ivcap-service)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-lambda-sdk-ivcap-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Lambda SDK (ivcap-lambda)
       
     </span>
   </a>
@@ -4986,7 +5049,7 @@
 
 
 <h1 id="sdks-tools">SDKs &amp; Tools<a class="headerlink" href="#sdks-tools" title="Permanent link">&para;</a></h1>
-<p>IVCAP provides three SDKs and a CLI that cover every stage of working with the platform — from interactive exploration to building and deploying production services.</p>
+<p>IVCAP provides five SDKs and a CLI that cover every stage of working with the platform — from interactive exploration to building and deploying production services.</p>
 <hr />
 <h2 id="ivcap-cli">IVCAP CLI<a class="headerlink" href="#ivcap-cli" title="Permanent link">&para;</a></h2>
 <p>The command-line interface for interacting with an IVCAP deployment.  Use it to discover services, submit jobs, upload/download artifacts, query provenance, and more.  It also exposes a built-in <strong>MCP server</strong> so any MCP-compatible AI assistant can control IVCAP directly.</p>
@@ -4996,18 +5059,37 @@
 <li><a href="https://github.com/ivcap-works/ivcap-cli" target="_blank">Full API Reference ↗</a></li>
 </ul>
 <hr />
-<h2 id="python-client-sdk">Python Client SDK<a class="headerlink" href="#python-client-sdk" title="Permanent link">&para;</a></h2>
-<p>A Python library for calling IVCAP from notebooks, scripts, or external applications.  Wraps the REST API with idiomatic Python objects and async support.</p>
+<h2 id="python-client-sdk-ivcap-client">Python Client SDK (<code>ivcap-client</code>)<a class="headerlink" href="#python-client-sdk-ivcap-client" title="Permanent link">&para;</a></h2>
+<p>A Python library for calling IVCAP from notebooks, scripts, or external applications.  Wraps the REST API with idiomatic Python objects and async support.  Auto-detects platform vs local mode from environment variables — no code changes needed when switching between development and production.</p>
 <ul>
 <li><a href="../guides/integrating/python-client-sdk/">Guide: Python Client SDK</a></li>
 <li><a href="https://ivcap-works.github.io/ivcap-client-sdk-python/" target="_blank">Full API Reference ↗</a></li>
 </ul>
 <hr />
-<h2 id="python-service-sdk">Python Service SDK<a class="headerlink" href="#python-service-sdk" title="Permanent link">&para;</a></h2>
-<p>A Python framework for <em>building</em> IVCAP services — handling parameter parsing, artifact I/O, provenance recording, and service registration so you can focus on your analysis logic.</p>
+<h2 id="javascripttypescript-client-sdk">JavaScript/TypeScript Client SDK<a class="headerlink" href="#javascripttypescript-client-sdk" title="Permanent link">&para;</a></h2>
+<p>A TypeScript/JavaScript library for calling IVCAP from web applications, Node.js scripts, or any JS/TS environment.  Wraps the REST API with idiomatic typed objects and async/await support.</p>
+<ul>
+<li><a href="https://ivcap-works.github.io/ivcap-client-sdk-js/" target="_blank">Full API Reference ↗</a></li>
+</ul>
+<hr />
+<h2 id="python-service-sdk-ivcap-service">Python Service SDK (<code>ivcap-service</code>)<a class="headerlink" href="#python-service-sdk-ivcap-service" title="Permanent link">&para;</a></h2>
+<p>The core Python SDK for <em>building</em> IVCAP <strong>batch</strong> services — long-running, queue-based workers that the platform launches as a fresh container per job.  Handles artifact I/O, provenance recording, progress reporting, and structured logging so you can focus on your analysis logic.</p>
 <ul>
 <li><a href="../getting-started/build-service/">Guide: Build your first service</a></li>
 <li><a href="https://ivcap-works.github.io/ivcap-service-sdk-python" target="_blank">Full API Reference ↗</a></li>
+</ul>
+<hr />
+<h2 id="python-lambda-sdk-ivcap-lambda">Python Lambda SDK (<code>ivcap-lambda</code>)<a class="headerlink" href="#python-lambda-sdk-ivcap-lambda" title="Permanent link">&para;</a></h2>
+<p>A Python framework for building <strong>lambda</strong> (request/response) services — persistent HTTP servers where the platform routes each job as a <code>POST</code> request.  Ideal for short-lived, stateless operations such as API wrappers, lookups, and AI agent tools.</p>
+<div class="admonition note">
+<p class="admonition-title">Renamed from <code>ivcap-ai-tool</code></p>
+<p>This package was previously published as <code>ivcap-ai-tool</code>. The module and decorator
+have been renamed to <code>ivcap_lambda</code>. The old names remain available as deprecated
+aliases for backwards compatibility.</p>
+</div>
+<ul>
+<li><a href="../guides/building/service-basics/">Guide: Service Basics</a></li>
+<li><a href="https://pypi.org/project/ivcap-lambda/" target="_blank">PyPI ↗</a></li>
 </ul>
 
 

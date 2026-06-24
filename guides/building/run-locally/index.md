@@ -208,7 +208,7 @@ poetry run pytest -v
 
 ## Exploring the OpenAPI spec
 
-Every `ivcap-ai-tool` service exposes an OpenAPI spec at `/openapi.json` and an
+Every `ivcap-lambda` service exposes an OpenAPI spec at `/openapi.json` and an
 interactive Swagger UI at `/docs`:
 
 ```

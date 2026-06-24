@@ -95,7 +95,7 @@ poetry new my_service --flat
 cd my_service
 
 # Add core dependencies
-poetry add pydantic ivcap-ai-tool
+poetry add pydantic ivcap-lambda
 poetry install --no-root
 ```
 
@@ -175,13 +175,13 @@ class Result(BaseModel):
 
 ## Writing the handler
 
-Wrap your function with `@ivcap_ai_tool`. The decorator registers it as both the
+Wrap your function with `@ivcap_lambda`. The decorator registers it as both the
 HTTP handler and an AI-callable tool. Write a rich docstring — it becomes the
 tool description shown in the service catalogue and used by AI agents.
 
 ```python
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -192,7 +192,7 @@ service = Service(
     license={"name": "MIT", "url": "https://opensource.org/license/MIT"},
 )
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 def analyse(req: Request, ctxt: JobContext) -> Result:
     """Analyse a region and return a risk score.
 
@@ -214,7 +214,7 @@ def analyse(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Async handlers
@@ -224,7 +224,7 @@ Lambda services benefit from `async` handlers when making multiple I/O calls:
 ```python
 import asyncio
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 async def analyse(req: Request) -> Result:
     # Fan out multiple async calls simultaneously
     results = await asyncio.gather(

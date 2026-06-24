@@ -1376,7 +1376,7 @@ The Report Writer discovers and calls the Fact Checker at runtime using the
 ### 1 — Each agent is a normal IVCAP service
 
 There is no special "agent" runtime. Each agent is a Python function wrapped with
-`ivcap-ai-tool`, containerised, and deployed exactly as in the
+`ivcap-lambda`, containerised, and deployed exactly as in the
 [Build Your First Service](build-service.md) tutorial. The `@service` decorator
 handles HTTP, schema validation, and platform registration.
 
@@ -1552,7 +1552,7 @@ An IVCAP service is a **containerised HTTP endpoint** that:
 2. Does its work (calling APIs, running models, processing data, …)
 3. Returns a structured JSON result
 
-The [`ivcap-ai-tool`](https://pypi.org/project/ivcap-ai-tool/) Python package
+The [`ivcap-lambda`](https://pypi.org/project/ivcap-lambda/) Python package
 provides the service wrapper that handles the HTTP layer, schema validation, and
 automatic registration with the platform.
 
@@ -1577,22 +1577,36 @@ locally with plain Python before introducing any IVCAP concepts.
 
 ### 2 — Wrap it as an IVCAP service
 
-Use `ivcap-ai-tool` to declare the service, its input/output schemas, and its
+Use `ivcap-lambda` to declare the service, its input/output schemas, and its
 entrypoint. A minimal wrapper looks like this:
 
 ```python
-from ivcap_ai_tool import service, run
+from pydantic import BaseModel, Field
+from ivcap_service import Service, ServiceContact
+from ivcap_lambda import ivcap_lambda, start_lambda_server, ToolOptions, logging_init
 
-@service(schema="urn:sd:schema.gene-ontology-term-mapper.request.1")
-async def map_go_terms(ids: List[str], category: str = "") -> GOTermResult:
+logging_init()
+
+service = Service(
+    name="GO Term Mapper",
+    contact=ServiceContact(name="Your Name", email="you@example.com"),
+)
+
+@ivcap_lambda("/")
+async def map_go_terms(req: Request) -> GOTermResult:
+    """Map UniProt protein IDs to GO annotations.
+
+    Calls the QuickGO API and returns structured GO term annotations
+    for each supplied UniProt ID.
+    """
     results = {}
-    for uid in ids:
+    for uid in req.ids:
         terms = await fetch_go_terms(uid)
-        results[uid] = filter_by_category(terms, category)
+        results[uid] = filter_by_category(terms, req.category)
     return GOTermResult(results=results)
 
 if __name__ == "__main__":
-    run(map_go_terms)
+    start_lambda_server(service)
 ```
 
 ### 3 — Test locally
@@ -3978,18 +3992,18 @@ Once registered, anyone with access can discover and run them as jobs.
 
 ## How services are built
 
-The standard toolchain is **Python + [Poetry](https://python-poetry.org/) + the `ivcap-ai-tool` package**:
+The standard toolchain is **Python + [Poetry](https://python-poetry.org/) + the `ivcap-lambda` package**:
 
 | Component | Purpose |
 |---|---|
-| [`ivcap-ai-tool`](https://pypi.org/project/ivcap-ai-tool/) | HTTP wrapper, schema generation, AI tool exposure |
+| [`ivcap-lambda`](https://pypi.org/project/ivcap-lambda/) | HTTP wrapper, schema generation, AI tool exposure |
 | [`ivcap-service`](https://pypi.org/project/ivcap-service/) | Core SDK — artifacts, aspects, sidecar access |
 | [`poetry-plugin-ivcap`](https://github.com/ivcap-works/poetry-plugin-ivcap) | `poetry ivcap run/deploy` commands |
 | Docker | Containerises the service for deployment |
 | `ivcap` CLI | Registers the service and pushes images |
 
 You don't have to use this stack — any HTTP server packaged in a container can be registered
-as a service. But the `ivcap-ai-tool` stack automates schema generation, deployment, and
+as a service. But the `ivcap-lambda` stack automates schema generation, deployment, and
 AI tool registration in a single `poetry ivcap deploy`.
 
 ---
@@ -4130,7 +4144,7 @@ import io
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field, ConfigDict
 from ivcap_service import getLogger, Service, JobContext, get_llm_client
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -4154,7 +4168,7 @@ class Result(BaseModel):
     summary: str = Field(description="Plain-language summary")
     summary_artifact: str = Field(description="URN of the stored summary artifact")
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis", "LLM"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis", "LLM"]))
 def summarise(req: Request, ctxt: JobContext) -> Result:
     """Summarise a document artifact using an LLM.
 
@@ -4196,7 +4210,7 @@ def summarise(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -4208,7 +4222,7 @@ For lambda services handling many concurrent requests, use the async client:
 ```python
 from ivcap_service import get_async_llm_client
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 async def analyse(req: Request) -> Result:
     llm = get_async_llm_client()
 
@@ -4427,7 +4441,7 @@ import time
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 from ivcap_client import JobStatus
 
 logging_init()
@@ -4448,7 +4462,7 @@ class Result(BaseModel):
     flood_score: float
     combined_risk: str
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Orchestration"]))
 def synthesise(req: Request, ctxt: JobContext) -> Result:
     """Run fire and flood risk analyses and synthesise results.
 
@@ -4501,7 +4515,7 @@ def synthesise(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -4574,7 +4588,7 @@ For `async` handlers, use the async request API:
 import asyncio
 from ivcap_client import JobStatus
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Orchestration"]))
 async def orchestrate_async(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
 
@@ -5105,7 +5119,7 @@ poetry run pytest -v
 
 ## Exploring the OpenAPI spec
 
-Every `ivcap-ai-tool` service exposes an OpenAPI spec at `/openapi.json` and an
+Every `ivcap-lambda` service exposes an OpenAPI spec at `/openapi.json` and an
 interactive Swagger UI at `/docs`:
 
 ```
@@ -5252,7 +5266,7 @@ poetry new my_service --flat
 cd my_service
 
 # Add core dependencies
-poetry add pydantic ivcap-ai-tool
+poetry add pydantic ivcap-lambda
 poetry install --no-root
 ```
 
@@ -5332,13 +5346,13 @@ class Result(BaseModel):
 
 ## Writing the handler
 
-Wrap your function with `@ivcap_ai_tool`. The decorator registers it as both the
+Wrap your function with `@ivcap_lambda`. The decorator registers it as both the
 HTTP handler and an AI-callable tool. Write a rich docstring — it becomes the
 tool description shown in the service catalogue and used by AI agents.
 
 ```python
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -5349,7 +5363,7 @@ service = Service(
     license={"name": "MIT", "url": "https://opensource.org/license/MIT"},
 )
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 def analyse(req: Request, ctxt: JobContext) -> Result:
     """Analyse a region and return a risk score.
 
@@ -5371,7 +5385,7 @@ def analyse(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Async handlers
@@ -5381,7 +5395,7 @@ Lambda services benefit from `async` handlers when making multiple I/O calls:
 ```python
 import asyncio
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Analysis"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Analysis"]))
 async def analyse(req: Request) -> Result:
     # Fan out multiple async calls simultaneously
     results = await asyncio.gather(
@@ -5654,7 +5668,7 @@ import io
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field, ConfigDict
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -5674,7 +5688,7 @@ class Result(BaseModel):
     output_urn: str
     model_config = ConfigDict(populate_by_name=True)
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Conversion"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Conversion"]))
 def convert(req: Request, ctxt: JobContext) -> Result:
     """Convert a document artifact to plain text."""
     ivcap = ctxt.ivcap
@@ -5704,7 +5718,7 @@ def convert(req: Request, ctxt: JobContext) -> Result:
     return Result(id=req.document, output_urn=out_art.urn)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -5902,7 +5916,7 @@ the user) and process items until the queue is empty.
 ### Coordinator service
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def coordinate(req: Request, ctxt: JobContext) -> Result:
     """Discover all matching artifacts and enqueue them for processing."""
     ivcap = ctxt.ivcap
@@ -5920,7 +5934,7 @@ def coordinate(req: Request, ctxt: JobContext) -> Result:
 ### Worker service
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def work(req: Request, ctxt: JobContext) -> Result:
     """Drain the queue: process each artifact and upload results."""
     ivcap = ctxt.ivcap
@@ -6081,9 +6095,9 @@ The simplest form is a plain Python function that calls an LLM:
 
 ```python
 from ivcap_service import get_llm_client, JobContext
-from ivcap_ai_tool import ivcap_ai_tool, ToolOptions
+from ivcap_lambda import ivcap_lambda, ToolOptions
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent"]))
 def analyse(req: Request, ctxt: JobContext) -> Result:
     llm = get_llm_client()   # sidecar-managed, no API key in code
     response = llm.chat.completions.create(
@@ -6203,7 +6217,7 @@ The two approaches are not mutually exclusive. A common pattern is to build your
 # Agent Patterns on IVCAP
 
 This page describes the common design patterns for building AI agent services on IVCAP.
-All patterns share the same foundation: a Python function wrapped with `@ivcap_ai_tool`,
+All patterns share the same foundation: a Python function wrapped with `@ivcap_lambda`,
 deployed as a container, and called via the platform's job API.
 
 ---
@@ -6223,7 +6237,7 @@ flowchart LR
 
 ```python
 from ivcap_service import get_llm_client, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 from pydantic import BaseModel, Field
 from typing import ClassVar
 
@@ -6242,7 +6256,7 @@ class Result(BaseModel):
     jschema: str = Field(SCHEMA, alias="$schema")
     explanation: str
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent", "LLM"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent", "LLM"]))
 def explain(req: Request, ctxt: JobContext) -> Result:
     """Explain a scientific concept using an LLM."""
     llm = get_llm_client()
@@ -6257,7 +6271,7 @@ def explain(req: Request, ctxt: JobContext) -> Result:
     return Result(explanation=response.choices[0].message.content)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 **When to use:** Any task that maps cleanly to a single LLM call — summarisation,
@@ -6284,7 +6298,7 @@ The LLM acts as the reasoning engine; IVCAP services act as the tools.
 ```python
 import json
 from ivcap_service import get_llm_client, JobContext
-from ivcap_ai_tool import ivcap_ai_tool, ToolOptions
+from ivcap_lambda import ivcap_lambda, ToolOptions
 
 TOOLS = [
     {
@@ -6319,7 +6333,7 @@ TOOLS = [
 ]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent", "Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent", "Orchestration"]))
 def risk_agent(req: Request, ctxt: JobContext) -> Result:
     """Agent that decides which risk analyses to run based on a natural language query."""
     llm = get_llm_client()
@@ -6391,7 +6405,7 @@ via `get_agent()`:
 
 ```python
 # The "callee" service — a standalone fact-checker
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Assess credibility of a list of references."""
     ...
@@ -6399,7 +6413,7 @@ async def verify_references(input: FactCheckInput) -> FactCheckOutput:
 
 ```python
 # The "caller" service — uses the fact-checker as a tool
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     # Receive the callee's URN as part of the request (not hardcoded)
     agent = ctxt.ivcap.get_agent(request.fact_checker.agent_id)
@@ -6444,7 +6458,7 @@ flowchart TD
 ```
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def run_pipeline(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
 
@@ -6502,7 +6516,7 @@ flowchart TD
 import time
 from ivcap_client import JobStatus
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Coordinator"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Coordinator"]))
 def analyse_all_regions(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
     svc = ivcap.get_service_by_name("Regional Analyser")
@@ -6543,7 +6557,7 @@ An orchestrator inspects input (possibly using an LLM classifier) and routes wor
 different downstream services based on what it finds.
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Router"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Router"]))
 def route_document(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
     llm = get_llm_client()
@@ -6648,14 +6662,14 @@ as IVCAP artifacts.
 ### How it works
 
 You write a standard IVCAP service — a Python function decorated with
-`@ivcap_ai_tool` — whose body creates and runs a CrewAI `Crew`. The crew's LLM
+`@ivcap_lambda` — whose body creates and runs a CrewAI `Crew`. The crew's LLM
 calls go through the IVCAP sidecar (no API key in your code), and any IVCAP service
 can be wrapped as a CrewAI tool.
 
 ### Minimal example
 
 ```bash
-poetry add crewai ivcap-ai-tool ivcap-service
+poetry add crewai ivcap-lambda ivcap-service
 ```
 
 ```python
@@ -6666,7 +6680,7 @@ from typing import ClassVar, Optional
 import time
 
 from ivcap_service import getLogger, Service, JobContext, get_llm_client
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -6721,7 +6735,7 @@ class PDFToMarkdownTool(BaseTool):
 
 # ── CrewAI service handler ──────────────────────────────────────────────────
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["CrewAI", "Research"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["CrewAI", "Research"]))
 def run_research_crew(req: Request, ctxt: JobContext) -> Result:
     """Run a CrewAI research crew on a given topic."""
     import io
@@ -6792,7 +6806,7 @@ def run_research_crew(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Using IVCAP services as CrewAI tools
@@ -6977,7 +6991,7 @@ For developing a custom CrewAI service locally:
 
 ```bash
 # Set up your environment
-poetry add crewai ivcap-ai-tool ivcap-service
+poetry add crewai ivcap-lambda ivcap-service
 export OPENAI_API_KEY="sk-..."   # used instead of the sidecar locally
 
 # Run the service locally
@@ -7098,7 +7112,7 @@ no knowledge of the Report Writer.
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional, List
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -7127,7 +7141,7 @@ class FactCheckOutput(BaseModel):
     results: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Verify and assess the quality of a list of references."""
     from ivcap_service import get_llm_client
@@ -7149,7 +7163,7 @@ async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     return FactCheckOutput(results=verified)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 !!! note "`service_id=\"/\"`"
@@ -7167,7 +7181,7 @@ was passed in the request.
 from pydantic import BaseModel, ConfigDict, Field
 from typing import List, Optional
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -7206,7 +7220,7 @@ class ReportResponse(BaseModel):
     references: List[ReferenceWithAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     """Write a report on a topic and fact-check its references using a separate agent."""
     from ivcap_service import get_llm_client
@@ -7264,7 +7278,7 @@ Include at least 2 well-formatted references at the end like:
     )
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -8499,7 +8513,7 @@ can focus on your workflow rather than HTTP details.
     | Package | Purpose |
     |---|---|
     | `ivcap-client` | **This page.** For use from *outside* IVCAP — notebooks, scripts, agents |
-    | `ivcap-service` + `ivcap-ai-tool` | For use *inside* a service container — see [Calling Other Services](../building/call-other-services.md) |
+    | `ivcap-service` + `ivcap-lambda` | For use *inside* a service container — see [Calling Other Services](../building/call-other-services.md) |
 
 ---
 
@@ -9780,132 +9794,156 @@ Definitions for every IVCAP term. Terms are listed alphabetically.
 
 ---
 
-**Artifact**
-: Any binary or structured data blob stored in IVCAP — images, CSV files,
-  JSON results, trained models, etc. Identified by `urn:ivcap:artifact:<uuid>`.
-  Artifacts are immutable once uploaded; subsequent versions are new artifacts.
-  See [Artifacts](../concepts/artifacts.md).
+### Artifact
 
-**Aspect**
-: A typed, time-stamped, append-only metadata record attached to any entity
-  URN (service, job, artifact, or another aspect). Identified by
-  `urn:ivcap:aspect:<uuid>`. Aspects are the metadata currency of the platform
-  and the foundation of provenance tracking. They are never deleted — only
-  *retracted* (given a `validTo` timestamp). See [Aspects and Provenance](../concepts/aspects-and-provenance.md).
+Any binary or structured data blob stored in IVCAP — images, CSV files,
+JSON results, trained models, etc. Identified by `urn:ivcap:artifact:<uuid>`.
+Artifacts are immutable once uploaded; subsequent versions are new artifacts.
+See [Artifacts](../concepts/artifacts.md).
 
-**Batch service**
-: A service that runs asynchronously and produces output artifacts once complete.
-  Suitable for long-running analyses. Contrast with [lambda service](#lambda-service).
+### Aspect
 
-**Context** (CLI)
-: A named CLI configuration pointing at a specific IVCAP deployment, stored in
-  `~/.ivcap/config.yaml`. Created with `ivcap context create <name> <base-url>`.
+A typed, time-stamped, append-only metadata record attached to any entity
+URN (service, job, artifact, or another aspect). Identified by
+`urn:ivcap:aspect:<uuid>`. Aspects are the metadata currency of the platform
+and the foundation of provenance tracking. They are never deleted — only
+*retracted* (given a `validTo` timestamp). See [Aspects and Provenance](../concepts/aspects-and-provenance.md).
 
-**Data Fabric**
-: IVCAP's universal, append-only information store. Everything — service
-  registrations, job events, artifact metadata, user-defined annotations — is
-  recorded as Aspects in the Data Fabric. Supports point-in-time queries and
-  cross-entity search. See [The Data Fabric](../concepts/data-fabric.md).
+### Batch service
 
-**Datafabric**
-: Alternative spelling of [Data Fabric](#data-fabric). The two spellings are
-  used interchangeably in platform code and documentation.
+A service that runs asynchronously and produces output artifacts once complete.
+Suitable for long-running analyses. Contrast with [lambda service](#lambda-service).
 
-**Job**
-: A single execution of a service, created by submitting parameters to a
-  service endpoint. Identified by `urn:ivcap:job:<uuid>`. Lifecycle:
-  `pending` → `scheduled` → `executing` → `succeeded | failed | error`.
-  Also called *order* in the CLI and older API paths (they mean the same thing).
-  See [Services and Jobs](../concepts/services-and-jobs.md).
+### Context (CLI)
 
-**Lambda service**
-: A service that returns results synchronously or via a short poll — analogous
-  to a function call. Suitable for fast, stateless operations. Contrast with
-  [batch service](#batch-service).
+A named CLI configuration pointing at a specific IVCAP deployment, stored in
+`~/.ivcap/config.yaml`. Created with `ivcap context create <name> <base-url>`.
 
-**MCP server**
-: Model Context Protocol server. The `ivcap` CLI includes a built-in MCP server
-  (`ivcap mcp serve`) that exposes IVCAP's capabilities as MCP tools, allowing
-  any MCP-compatible AI assistant to list services, submit jobs, and manage
-  artifacts directly. See [Using IVCAP via MCP](../guides/integrating/mcp.md).
+### Data Fabric
 
-**Metadata**
-: In IVCAP, metadata is recorded as [Aspects](#aspect) in the Data Fabric.
-  The `/1/metadata` API path is an alias for the aspects endpoint.
+IVCAP's universal, append-only information store. Everything — service
+registrations, job events, artifact metadata, user-defined annotations — is
+recorded as Aspects in the Data Fabric. Supports point-in-time queries and
+cross-entity search. See [The Data Fabric](../concepts/data-fabric.md).
 
-**Order** (CLI legacy)
-: The legacy CLI term for a [job](#job). The `ivcap order` command group
-  submits and monitors service executions. The REST API exposes jobs under
-  `/1/services/{id}/jobs`; the older `/1/orders` path is retained for backward
-  compatibility. The canonical term throughout the documentation is **job**.
+### Datafabric
 
-**Package**
-: A Docker container image stored in the platform's account-scoped registry.
-  Used as the execution environment for a service. See [Packages API](../reference/api/packages.md).
+Alternative spelling of [Data Fabric](#data-fabric). The two spellings are
+used interchangeably in platform code and documentation.
 
-**Policy**
-: An access control rule attached to an entity (service, artifact, aspect, etc.).
-  Identified by `urn:ivcap:policy:<name>`. Example: `urn:ivcap:policy:public`.
+### Job
 
-**Project**
-: A logical grouping of resources (services, artifacts, aspects) within an
-  account, used for access control and billing. Corresponds to the
-  `/1/project` API resource.
+A single execution of a service, created by submitting parameters to a
+service endpoint. Identified by `urn:ivcap:job:<uuid>`. Lifecycle:
+`pending` → `scheduled` → `executing` → `succeeded | failed | error`.
+Also called *order* in the CLI and older API paths (they mean the same thing).
+See [Services and Jobs](../concepts/services-and-jobs.md).
 
-**Provenance**
-: The immutable record of how every result was produced — which service ran,
-  with which inputs and parameters, at what time, and who submitted it.
-  Recorded automatically as Aspects. See [Aspects and Provenance](../concepts/aspects-and-provenance.md).
+### Lambda service
 
-**Queue**
-: An async message queue for communication between services or pipeline stages.
-  One service enqueues work items; another dequeues and processes them.
-  Identified by `urn:ivcap:queue:<uuid>`. See [Queues](../concepts/queues.md).
+A service that returns results synchronously or via a short poll — analogous
+to a function call. Suitable for fast, stateless operations. Contrast with
+[batch service](#batch-service).
 
-**Schema**
-: A URN that identifies the type of an [Aspect](#aspect).
-  Format: `urn:ivcap:schema:<domain>:<name>.<version>`.
-  Example: `urn:ivcap:schema:order-placed.1`.
-  Platform schemas (job lifecycle events, artifact provenance) are defined by
-  IVCAP; user-defined schemas can be registered for custom metadata.
+### MCP server
 
-**Secret**
-: An API key or credential stored securely in IVCAP and injected into service
-  containers at runtime. Values are never returned via the API.
-  See [Secrets API](../reference/api/secrets.md).
+Model Context Protocol server. The `ivcap` CLI includes a built-in MCP server
+(`ivcap mcp serve`) that exposes IVCAP's capabilities as MCP tools, allowing
+any MCP-compatible AI assistant to list services, submit jobs, and manage
+artifacts directly. See [Using IVCAP via MCP](../guides/integrating/mcp.md).
 
-**Service**
-: A registered analytic capability with a name, typed parameters, and a Docker
-  execution environment. Identified by `urn:ivcap:service:<uuid>`. Users submit
-  [jobs](#job) to services. See [Services and Jobs](../concepts/services-and-jobs.md).
+### Metadata
 
-**Sidecar**
-: A process that runs alongside a service container in the same Pod. The IVCAP
-  sidecar provides the service with access to artifacts, aspects, secrets,
-  queues, and — for AI services — an integrated LLM client. Services communicate
-  with the sidecar via a local HTTP endpoint.
+In IVCAP, metadata is recorded as [Aspects](#aspect) in the Data Fabric.
+The `/1/metadata` API path is an alias for the aspects endpoint.
 
-**SSE (Server-Sent Events)**
-: A streaming protocol used by IVCAP to push live job status updates to clients.
-  Subscribe at `GET /1/services/{serviceId}/jobs/{jobId}/events`.
-  See [Live Events](../reference/api/events.md).
+### Order (CLI legacy)
 
-**TUS**
-: An open protocol for resumable file uploads over HTTP. IVCAP supports TUS
-  for uploading large artifacts (up to 5 GB) via `PATCH /1/artifacts/{id}/blob`.
+The legacy CLI term for a [job](#job). The `ivcap order` command group
+submits and monitors service executions. The REST API exposes jobs under
+`/1/services/{id}/jobs`; the older `/1/orders` path is retained for backward
+compatibility. The canonical term throughout the documentation is **job**.
 
-**URN (Uniform Resource Name)**
-: The identifier format used for all IVCAP entities.
-  Pattern: `urn:ivcap:<type>:<uuid>`.
-  Types: `service`, `job`, `artifact`, `aspect`, `schema`, `account`,
-  `queue`, `policy`, `project`.
-  The CLI accepts short aliases (`@1`, `@2`, …) as convenience references.
-  See [URN Reference](urns.md).
+### Package
 
-**Workflow**
-: A composed pipeline of services where the output of one service feeds the
-  input of the next. Can be expressed as a sequence of job submissions, or
-  using a workflow-engine service that orchestrates multiple steps internally.
+A Docker container image stored in the platform's account-scoped registry.
+Used as the execution environment for a service. See [Packages API](../reference/api/packages.md).
+
+### Policy
+
+An access control rule attached to an entity (service, artifact, aspect, etc.).
+Identified by `urn:ivcap:policy:<name>`. Example: `urn:ivcap:policy:public`.
+
+### Project
+
+A logical grouping of resources (services, artifacts, aspects) within an
+account, used for access control and billing. Corresponds to the
+`/1/project` API resource.
+
+### Provenance
+
+The immutable record of how every result was produced — which service ran,
+with which inputs and parameters, at what time, and who submitted it.
+Recorded automatically as Aspects. See [Aspects and Provenance](../concepts/aspects-and-provenance.md).
+
+### Queue
+
+An async message queue for communication between services or pipeline stages.
+One service enqueues work items; another dequeues and processes them.
+Identified by `urn:ivcap:queue:<uuid>`. See [Queues](../concepts/queues.md).
+
+### Schema
+
+A URN that identifies the type of an [Aspect](#aspect).
+Format: `urn:ivcap:schema:<domain>:<name>.<version>`.
+Example: `urn:ivcap:schema:order-placed.1`.
+Platform schemas (job lifecycle events, artifact provenance) are defined by
+IVCAP; user-defined schemas can be registered for custom metadata.
+
+### Secret
+
+An API key or credential stored securely in IVCAP and injected into service
+containers at runtime. Values are never returned via the API.
+See [Secrets API](../reference/api/secrets.md).
+
+### Service
+
+A registered analytic capability with a name, typed parameters, and a Docker
+execution environment. Identified by `urn:ivcap:service:<uuid>`. Users submit
+[jobs](#job) to services. See [Services and Jobs](../concepts/services-and-jobs.md).
+
+### Sidecar
+
+A process that runs alongside a service container in the same Pod. The IVCAP
+sidecar provides the service with access to artifacts, aspects, secrets,
+queues, and — for AI services — an integrated LLM client. Services communicate
+with the sidecar via a local HTTP endpoint.
+
+### SSE (Server-Sent Events)
+
+A streaming protocol used by IVCAP to push live job status updates to clients.
+Subscribe at `GET /1/services/{serviceId}/jobs/{jobId}/events`.
+See [Live Events](../reference/api/events.md).
+
+### TUS
+
+An open protocol for resumable file uploads over HTTP. IVCAP supports TUS
+for uploading large artifacts (up to 5 GB) via `PATCH /1/artifacts/{id}/blob`.
+
+### URN (Uniform Resource Name)
+
+The identifier format used for all IVCAP entities.
+Pattern: `urn:ivcap:<type>:<uuid>`.
+Types: `service`, `job`, `artifact`, `aspect`, `schema`, `account`,
+`queue`, `policy`, `project`.
+The CLI accepts short aliases (`@1`, `@2`, …) as convenience references.
+See [URN Reference](urns.md).
+
+### Workflow
+
+A composed pipeline of services where the output of one service feeds the
+input of the next. Can be expressed as a sequence of job submissions, or
+using a workflow-engine service that orchestrates multiple steps internally.
 
 
 ## URN Reference
@@ -11784,7 +11822,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 load_dotenv()
 logging_init()
@@ -11819,7 +11857,7 @@ class FactCheckOutput(BaseModel):
     results: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Verify and assess the quality of a list of references.
     Returns an LLM assessment of each reference's credibility and relevance."""
@@ -11847,7 +11885,7 @@ def get_client():
     return OpenAI()
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Key points
@@ -11878,7 +11916,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 load_dotenv()
 logging_init()
@@ -11922,7 +11960,7 @@ class ReportResponse(BaseModel):
     references: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     """Write a report on a topic and fact-check its references using a separate agent."""
     logger.debug(f"Generating report for topic: {request.topic}")
@@ -11991,7 +12029,7 @@ def get_client():
     return OpenAI()
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -12081,13 +12119,13 @@ Each service declares its own dependencies:
 ```bash
 # Fact Checker
 cd fact_checker
-poetry add openai python-dotenv ivcap-ai-tool
+poetry add openai python-dotenv ivcap-lambda
 ```
 
 ```bash
 # Report Writer
 cd report_writer
-poetry add openai python-dotenv ivcap-ai-tool
+poetry add openai python-dotenv ivcap-lambda
 ```
 
 Each has its own `pyproject.toml` configuration:
@@ -12418,7 +12456,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import ClassVar, Optional
 
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -12451,7 +12489,7 @@ class Result(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Markdown Conversion"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Markdown Conversion"]))
 def conversion_service(req: Request, ctxt: JobContext) -> Result:
     """Parse an uploaded document into markdown.
 
@@ -12502,7 +12540,7 @@ def conversion_service(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -12682,7 +12720,7 @@ if cached:
 Dependencies for this service:
 
 ```bash
-poetry add markitdown ivcap-ai-tool
+poetry add markitdown ivcap-lambda
 poetry install --no-root
 ```
 
@@ -12999,13 +13037,13 @@ my_app/
 ## Step 4: Add Dependencies
 
 ```bash
-poetry add httpx pydantic ivcap-ai-tool
+poetry add httpx pydantic ivcap-lambda
 poetry install --no-root
 ```
 
 - **`httpx`** — async HTTP client for calling the QuickGO API
 - **`pydantic`** — data validation and schema definition
-- **`ivcap-ai-tool`** — IVCAP SDK for building lambda services that work as AI tools
+- **`ivcap-lambda`** — IVCAP SDK for building lambda services that work as AI tools
 
 ---
 
@@ -13130,7 +13168,7 @@ from typing import List, Dict, Optional
 import asyncio
 from pydantic import BaseModel, ConfigDict, Field
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, logging_init, ToolOptions, ivcap_ai_tool
+from ivcap_lambda import start_lambda_server, logging_init, ToolOptions, ivcap_lambda
 
 from go_term_fetcher import Annotation, fetch_go_terms, filter_by_category
 
@@ -13177,10 +13215,10 @@ class Result(BaseModel):
 
 ### The service handler
 
-The `@ivcap_ai_tool` decorator registers this function as the HTTP handler and also exposes it as a callable AI tool. The docstring becomes the tool's description for agent frameworks.
+The `@ivcap_lambda` decorator registers this function as the HTTP handler and also exposes it as a callable AI tool. The docstring becomes the tool's description for agent frameworks.
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["GO Term Mapper"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["GO Term Mapper"]))
 async def map_go_terms(req: Request) -> Result:
     """Maps protein or gene identifiers (UniProt IDs) to their GO annotations
     using the QuickGO REST API. Optionally filters by GO category.
@@ -13213,7 +13251,7 @@ async def map_go_terms(req: Request) -> Result:
 
 ```python
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---

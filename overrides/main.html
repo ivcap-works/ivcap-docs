@@ -19,6 +19,16 @@
     background-color: #131e35;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  /* Mobile drawer header (logo + site title area) — match the deep-navy header.
+   * The drawer is a sibling of .md-header, so the variable override above does
+   * not cascade into it; we target the title block directly.
+   * !important is needed to override Material's theme-colour specificity. */
+  .md-nav--primary .md-nav__title,
+  [data-md-component="navigation"] .md-nav__title {
+    background-color: #0f1729 !important;
+    color: #fff !important;
+  }
 </style>
 
 {% extends "base.html" %} {% block content %} {{ super() }}

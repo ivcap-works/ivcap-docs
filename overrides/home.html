@@ -17,6 +17,15 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  /* Mobile drawer header — match the deep-navy used in the main header.
+   * home.html extends base.html directly, so it doesn't inherit the
+   * main.html styles; we must set the drawer colour here too. */
+  .md-nav--primary .md-nav__title,
+  [data-md-component="navigation"] .md-nav__title {
+    background-color: rgba(10, 15, 32, 0.97) !important;
+    color: #fff !important;
+  }
+
   /* Increase top-level navigation tab font size */
   .md-tabs__link {
     font-size: 1rem;

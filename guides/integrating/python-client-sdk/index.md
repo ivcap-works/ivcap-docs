@@ -12,7 +12,7 @@ can focus on your workflow rather than HTTP details.
     | Package | Purpose |
     |---|---|
     | `ivcap-client` | **This page.** For use from *outside* IVCAP — notebooks, scripts, agents |
-    | `ivcap-service` + `ivcap-ai-tool` | For use *inside* a service container — see [Calling Other Services](../building/call-other-services.md) |
+    | `ivcap-service` + `ivcap-lambda` | For use *inside* a service container — see [Calling Other Services](../building/call-other-services.md) |
 
 ---
 

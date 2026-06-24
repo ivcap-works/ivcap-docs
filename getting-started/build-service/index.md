@@ -32,7 +32,7 @@ An IVCAP service is a **containerised HTTP endpoint** that:
 2. Does its work (calling APIs, running models, processing data, …)
 3. Returns a structured JSON result
 
-The [`ivcap-ai-tool`](https://pypi.org/project/ivcap-ai-tool/) Python package
+The [`ivcap-lambda`](https://pypi.org/project/ivcap-lambda/) Python package
 provides the service wrapper that handles the HTTP layer, schema validation, and
 automatic registration with the platform.
 
@@ -57,22 +57,36 @@ locally with plain Python before introducing any IVCAP concepts.
 
 ### 2 — Wrap it as an IVCAP service
 
-Use `ivcap-ai-tool` to declare the service, its input/output schemas, and its
+Use `ivcap-lambda` to declare the service, its input/output schemas, and its
 entrypoint. A minimal wrapper looks like this:
 
 ```python
-from ivcap_ai_tool import service, run
+from pydantic import BaseModel, Field
+from ivcap_service import Service, ServiceContact
+from ivcap_lambda import ivcap_lambda, start_lambda_server, ToolOptions, logging_init
 
-@service(schema="urn:sd:schema.gene-ontology-term-mapper.request.1")
-async def map_go_terms(ids: List[str], category: str = "") -> GOTermResult:
+logging_init()
+
+service = Service(
+    name="GO Term Mapper",
+    contact=ServiceContact(name="Your Name", email="you@example.com"),
+)
+
+@ivcap_lambda("/")
+async def map_go_terms(req: Request) -> GOTermResult:
+    """Map UniProt protein IDs to GO annotations.
+
+    Calls the QuickGO API and returns structured GO term annotations
+    for each supplied UniProt ID.
+    """
     results = {}
-    for uid in ids:
+    for uid in req.ids:
         terms = await fetch_go_terms(uid)
-        results[uid] = filter_by_category(terms, category)
+        results[uid] = filter_by_category(terms, req.category)
     return GOTermResult(results=results)
 
 if __name__ == "__main__":
-    run(map_go_terms)
+    start_lambda_server(service)
 ```
 
 ### 3 — Test locally

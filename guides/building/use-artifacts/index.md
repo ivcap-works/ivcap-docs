@@ -210,7 +210,7 @@ import io
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field, ConfigDict
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -230,7 +230,7 @@ class Result(BaseModel):
     output_urn: str
     model_config = ConfigDict(populate_by_name=True)
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Conversion"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Conversion"]))
 def convert(req: Request, ctxt: JobContext) -> Result:
     """Convert a document artifact to plain text."""
     ivcap = ctxt.ivcap
@@ -260,7 +260,7 @@ def convert(req: Request, ctxt: JobContext) -> Result:
     return Result(id=req.document, output_urn=out_art.urn)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
