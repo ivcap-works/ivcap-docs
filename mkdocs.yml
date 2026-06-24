@@ -97,6 +97,7 @@ markdown_extensions:
     permalink: true
 nav:
 - Home: index.md
+- Roadmap: roadmap.md
 - Concepts:
   - concepts/index.md
   - Services and Jobs: concepts/services-and-jobs.md
@@ -134,6 +135,7 @@ nav:
     - Agent Patterns: guides/agents/agent-patterns.md
     - Multi-Agent Orchestration: guides/agents/multi-agent.md
     - CrewAI on IVCAP: guides/agents/crewai.md
+    - LlamaIndex on IVCAP: guides/agents/llama-index.md
     - Using IVCAP from External Agents: guides/agents/using-ivcap-externally.md
   - Integrating IVCAP:
     - guides/integrating/index.md

@@ -20,24 +20,21 @@ flowchart LR
 ```
 
 ```python
-from ivcap_service import get_llm_client, Service, JobContext
+from ivcap_service import get_llm_client, Service, JobContext, with_schema
 from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 from pydantic import BaseModel, Field
-from typing import ClassVar
 
 logging_init()
 
 service = Service(name="Concept Explainer")
 
+@with_schema("urn:sd:schema.explainer.request.1")
 class Request(BaseModel):
-    SCHEMA: ClassVar[str] = "urn:sd:schema.explainer.request.1"
-    jschema: str = Field(SCHEMA, alias="$schema")
     concept: str = Field(description="Scientific concept to explain")
     audience: str = Field("general public", description="Target audience")
 
+@with_schema("urn:sd:schema.explainer.1")
 class Result(BaseModel):
-    SCHEMA: ClassVar[str] = "urn:sd:schema.explainer.1"
-    jschema: str = Field(SCHEMA, alias="$schema")
     explanation: str
 
 @ivcap_lambda("/", opts=ToolOptions(tags=["Agent", "LLM"]))
