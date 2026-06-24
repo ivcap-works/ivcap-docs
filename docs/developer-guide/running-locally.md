@@ -49,7 +49,7 @@ The light-weigh service development environment includes:
     * [Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
     * [MacOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
     * [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
-- the [`Local Development environment`](#developing-locally-local-dev)
+- the [`Local Development environment`](#local-dev)
   * [conda](https://docs.conda.io/en/latest/) and [pip](https://pypi.org/project/pip/)
   * [sample service](https://github.com/ivcap-works/ivcap-python-service-example)
 

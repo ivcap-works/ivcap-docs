@@ -291,7 +291,7 @@ register_service(SERVICE, service)
 
 ### Testing & Troubleshooting
 
-Please refer to the various `run...` targets in the [Makefile](Makefile)
+Please refer to the various `run...` targets in the [Makefile](https://github.com/ivcap-works/ivcap-python-service-example/blob/main/Makefile)
 
 
 

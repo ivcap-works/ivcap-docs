@@ -1,7 +1,7 @@
 # Agent Patterns on IVCAP
 
 This page describes the common design patterns for building AI agent services on IVCAP.
-All patterns share the same foundation: a Python function wrapped with `@ivcap_ai_tool`,
+All patterns share the same foundation: a Python function wrapped with `@ivcap_lambda`,
 deployed as a container, and called via the platform's job API.
 
 ---
@@ -21,7 +21,7 @@ flowchart LR
 
 ```python
 from ivcap_service import get_llm_client, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 from pydantic import BaseModel, Field
 from typing import ClassVar
 
@@ -40,7 +40,7 @@ class Result(BaseModel):
     jschema: str = Field(SCHEMA, alias="$schema")
     explanation: str
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent", "LLM"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent", "LLM"]))
 def explain(req: Request, ctxt: JobContext) -> Result:
     """Explain a scientific concept using an LLM."""
     llm = get_llm_client()
@@ -55,7 +55,7 @@ def explain(req: Request, ctxt: JobContext) -> Result:
     return Result(explanation=response.choices[0].message.content)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 **When to use:** Any task that maps cleanly to a single LLM call — summarisation,
@@ -82,7 +82,7 @@ The LLM acts as the reasoning engine; IVCAP services act as the tools.
 ```python
 import json
 from ivcap_service import get_llm_client, JobContext
-from ivcap_ai_tool import ivcap_ai_tool, ToolOptions
+from ivcap_lambda import ivcap_lambda, ToolOptions
 
 TOOLS = [
     {
@@ -117,7 +117,7 @@ TOOLS = [
 ]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent", "Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent", "Orchestration"]))
 def risk_agent(req: Request, ctxt: JobContext) -> Result:
     """Agent that decides which risk analyses to run based on a natural language query."""
     llm = get_llm_client()
@@ -189,7 +189,7 @@ via `get_agent()`:
 
 ```python
 # The "callee" service — a standalone fact-checker
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Assess credibility of a list of references."""
     ...
@@ -197,7 +197,7 @@ async def verify_references(input: FactCheckInput) -> FactCheckOutput:
 
 ```python
 # The "caller" service — uses the fact-checker as a tool
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     # Receive the callee's URN as part of the request (not hardcoded)
     agent = ctxt.ivcap.get_agent(request.fact_checker.agent_id)
@@ -242,7 +242,7 @@ flowchart TD
 ```
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Pipeline"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Pipeline"]))
 def run_pipeline(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
 
@@ -300,7 +300,7 @@ flowchart TD
 import time
 from ivcap_client import JobStatus
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Coordinator"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Coordinator"]))
 def analyse_all_regions(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
     svc = ivcap.get_service_by_name("Regional Analyser")
@@ -341,7 +341,7 @@ An orchestrator inspects input (possibly using an LLM classifier) and routes wor
 different downstream services based on what it finds.
 
 ```python
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Router"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Router"]))
 def route_document(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
     llm = get_llm_client()

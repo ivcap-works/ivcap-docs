@@ -23,7 +23,7 @@
   {
     "slug": "python-client",
     "name": "Python Client SDK",
-    "repo": "ivcap-works/ivcap-sdk-python",
+    "repo": "ivcap-works/ivcap-client-sdk-python",
     "branch": "main",
     "github_pages_url": "https://ivcap-works.github.io/ivcap-client-sdk-python/",
     "pull_docs": [

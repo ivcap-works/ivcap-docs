@@ -74,7 +74,7 @@ The Report Writer discovers and calls the Fact Checker at runtime using the
 ### 1 — Each agent is a normal IVCAP service
 
 There is no special "agent" runtime. Each agent is a Python function wrapped with
-`ivcap-ai-tool`, containerised, and deployed exactly as in the
+`ivcap-lambda`, containerised, and deployed exactly as in the
 [Build Your First Service](build-service.md) tutorial. The `@service` decorator
 handles HTTP, schema validation, and platform registration.
 

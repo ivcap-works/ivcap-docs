@@ -426,6 +426,23 @@ All SDK repos are listed in **`config/sdk-registry.json`**. Key fields:
 | `pull_docs` | Paths inside the repo's `docs/` folder to pull as narrative docs |
 | `audience` | `service-author` \| `app-developer` \| `all` |
 
+**Current SDK repos (as of June 2026):**
+
+| Slug | Package | Repo |
+|---|---|---|
+| `python-service` | `ivcap-service` | `ivcap-works/ivcap-service-sdk-python` |
+| `python-client` | `ivcap-client` | `ivcap-works/ivcap-client-sdk-python` |
+| `cli` | `ivcap` CLI | `ivcap-works/ivcap-cli` |
+| `js-client` | `ivcap-client` (JS) | `ivcap-works/ivcap-client-sdk-js` |
+
+!!! note "`ivcap-lambda` is not in the SDK registry"
+    The `ivcap-lambda` package (previously `ivcap-ai-tool`) does not have its own
+    SDK registry entry because it does not publish a `docs/` folder with narrative
+    docs. It is documented directly in the hand-authored pages under
+    `docs/developer-guide/sdk.md` and `docs/sdks/index.md`. The GitHub repo
+    (`ivcap-works/ivcap-python-ai-tool-template`) is listed in the *example*
+    registry as `ai-tool-template`.
+
 ### pull_docs paths
 
 Before adding a new SDK to the registry, clone the repo and inspect its `docs/`
@@ -766,4 +783,4 @@ additional CI steps are required.
 
 ---
 
-*Last updated: May 2026*
+*Last updated: June 2026*

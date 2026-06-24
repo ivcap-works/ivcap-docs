@@ -105,7 +105,7 @@ The tool needs to be packed into a docker container, and the, together with an I
 deployed to an IVCAP platform.
 
 > **Important**: If you adopt this repo template, please make sure to first change the first two variables
-`SERVICE_NAME` and `SERVICE_TITLE` at the top of the [Makefile](./Makefile).
+`SERVICE_NAME` and `SERVICE_TITLE` at the top of the [Makefile](https://github.com/ivcap-works/ivcap-python-ai-tool-template/blob/main/Makefile).
 
 
 > **Note:** Please make sure to have the IVCAP cli tool installed and configured. See the

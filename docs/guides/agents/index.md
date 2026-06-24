@@ -25,9 +25,9 @@ The simplest form is a plain Python function that calls an LLM:
 
 ```python
 from ivcap_service import get_llm_client, JobContext
-from ivcap_ai_tool import ivcap_ai_tool, ToolOptions
+from ivcap_lambda import ivcap_lambda, ToolOptions
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Agent"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Agent"]))
 def analyse(req: Request, ctxt: JobContext) -> Result:
     llm = get_llm_client()   # sidecar-managed, no API key in code
     response = llm.chat.completions.create(

@@ -31,7 +31,7 @@ doesn't keep any state between rounds of questions and therefore perfectly
 matches our constraints.
 
 The actual Eliza implementation is copied from [Wade Brainerd's](http://wadeb.com/)
-['eliza' repo](https://github.com/wadetb/eliza) into [./eliza](./eliza).
+['eliza' repo](https://github.com/wadetb/eliza) into [./eliza](https://github.com/ivcap-works/ivcap-python-lambda-example/tree/main/eliza).
 
 ### [lambda.py](.lambda.py])
 
@@ -107,7 +107,7 @@ This file describes the service as needed for the `ivcap service create ...` com
 > The format is still in flux and we most likely going to reference
 the approprite section in the [IVCAP Docs](https://ivcap-works.github.io/ivcap-docs/).
 
-### [Dockerfile](./Dockerfile)
+### [Dockerfile](https://github.com/ivcap-works/ivcap-python-lambda-example/blob/main/Dockerfile)
 
 This file describes a simple configuration for building a docker image for
 this service. The make target `make docker-build` will build the image, and

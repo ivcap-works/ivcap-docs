@@ -98,12 +98,19 @@ def relative_to_docs(path: Path, docs_root: Path) -> str:
 
 def build_sdk_nav(sdk_dir: Path, docs_root: Path) -> list:
     """
-    Build nav entries for each SDK:
-      - SDK name
-        - Getting Started: sdk/python/getting-started.md
-        - Guides:
-          - ...
-        - Full API Reference: https://...
+    Build nav entries for each SDK, grouping files by their immediate
+    subdirectory so the left-nav stays two levels deep rather than showing
+    every markdown file as a flat list:
+
+      SDK name:
+        Getting Started:          # subdirectory label
+          - Installation: ...
+          - Quick Start: ...
+        Guides:
+          - Authentication: ...
+        Full API Reference ↗: https://...
+
+    Files sitting directly in sdk_out (no subdirectory) are listed first.
     """
     nav = []
     for meta in load_meta(sdk_dir):
@@ -112,16 +119,28 @@ def build_sdk_nav(sdk_dir: Path, docs_root: Path) -> list:
         api_url = meta["github_pages_url"]
         sdk_out = sdk_dir / slug
 
-        entries = []
+        top_files: list = []  # .md files directly in sdk_out
+        sub_dirs: dict = {}  # {dir_path: [nav_entries]}
+
         for md_file in sorted(sdk_out.rglob("*.md")):
             if md_file.name.startswith("_"):
                 continue
             rel = relative_to_docs(md_file, docs_root)
-            # Use the filename (without .md) as the label, title-cased
             label = md_file.stem.replace("-", " ").replace("_", " ").title()
-            entries.append({label: rel})
 
-        entries.append({f"Full API Reference ↗": api_url})
+            if md_file.parent == sdk_out:
+                top_files.append({label: rel})
+            else:
+                # Group by the immediate parent directory only
+                dir_key = md_file.parent
+                sub_dirs.setdefault(dir_key, []).append({label: rel})
+
+        entries: list = list(top_files)
+        for dir_path in sorted(sub_dirs.keys()):
+            dir_label = dir_path.name.replace("-", " ").replace("_", " ").title()
+            entries.append({dir_label: sub_dirs[dir_path]})
+
+        entries.append({"Full API Reference ↗": api_url})
         nav.append({name: entries})
 
     return nav

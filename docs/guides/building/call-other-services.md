@@ -93,7 +93,7 @@ import time
 from typing import ClassVar, Optional
 from pydantic import BaseModel, Field
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ToolOptions, ivcap_ai_tool, logging_init
+from ivcap_lambda import start_lambda_server, ToolOptions, ivcap_lambda, logging_init
 from ivcap_client import JobStatus
 
 logging_init()
@@ -114,7 +114,7 @@ class Result(BaseModel):
     flood_score: float
     combined_risk: str
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Orchestration"]))
 def synthesise(req: Request, ctxt: JobContext) -> Result:
     """Run fire and flood risk analyses and synthesise results.
 
@@ -167,7 +167,7 @@ def synthesise(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---
@@ -240,7 +240,7 @@ For `async` handlers, use the async request API:
 import asyncio
 from ivcap_client import JobStatus
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Orchestration"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Orchestration"]))
 async def orchestrate_async(req: Request, ctxt: JobContext) -> Result:
     ivcap = ctxt.ivcap
 

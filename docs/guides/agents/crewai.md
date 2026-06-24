@@ -26,14 +26,14 @@ as IVCAP artifacts.
 ### How it works
 
 You write a standard IVCAP service — a Python function decorated with
-`@ivcap_ai_tool` — whose body creates and runs a CrewAI `Crew`. The crew's LLM
+`@ivcap_lambda` — whose body creates and runs a CrewAI `Crew`. The crew's LLM
 calls go through the IVCAP sidecar (no API key in your code), and any IVCAP service
 can be wrapped as a CrewAI tool.
 
 ### Minimal example
 
 ```bash
-poetry add crewai ivcap-ai-tool ivcap-service
+poetry add crewai ivcap-lambda ivcap-service
 ```
 
 ```python
@@ -44,7 +44,7 @@ from typing import ClassVar, Optional
 import time
 
 from ivcap_service import getLogger, Service, JobContext, get_llm_client
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -99,7 +99,7 @@ class PDFToMarkdownTool(BaseTool):
 
 # ── CrewAI service handler ──────────────────────────────────────────────────
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["CrewAI", "Research"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["CrewAI", "Research"]))
 def run_research_crew(req: Request, ctxt: JobContext) -> Result:
     """Run a CrewAI research crew on a given topic."""
     import io
@@ -170,7 +170,7 @@ def run_research_crew(req: Request, ctxt: JobContext) -> Result:
 
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ### Using IVCAP services as CrewAI tools
@@ -355,7 +355,7 @@ For developing a custom CrewAI service locally:
 
 ```bash
 # Set up your environment
-poetry add crewai ivcap-ai-tool ivcap-service
+poetry add crewai ivcap-lambda ivcap-service
 export OPENAI_API_KEY="sk-..."   # used instead of the sidecar locally
 
 # Run the service locally

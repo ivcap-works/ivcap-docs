@@ -99,13 +99,13 @@ This agent takes a list of references as input and for every one of them, it ask
   * __system__: You are a critical academic reviewer.
   * __user__: Assess the credibility and relevance of this reference: {ref}
 
-The implementation can be found in the [fact_checker](./fact_checker/) subdirectory.
+The implementation can be found in the [fact_checker](https://github.com/ivcap-works/agent-calling-agent-tutorial/tree/main/fact_checker/) subdirectory.
 
-The [fact_checker.py](./fact_checker/fact_checker.py) implements the agent's functionality as an IVCAP _lambda_ service. The remaining files, [pyproject.toml](./fact_checker/pyproject.toml), [Dockerfile](./fact_checker/Dockerfile) and [Makefile](./fact_checker/Makefile) support the standard IVCAP testing and deployment process with some test files in [fact_checker/tests](./fact_checker/tests/) for local testing.
+The [fact_checker.py](./fact_checker/fact_checker.py) implements the agent's functionality as an IVCAP _lambda_ service. The remaining files, [pyproject.toml](./fact_checker/pyproject.toml), [Dockerfile](https://github.com/ivcap-works/agent-calling-agent-tutorial/blob/main/fact_checker/Dockerfile) and [Makefile](https://github.com/ivcap-works/agent-calling-agent-tutorial/blob/main/fact_checker/Makefile) support the standard IVCAP testing and deployment process with some test files in [fact_checker/tests](https://github.com/ivcap-works/agent-calling-agent-tutorial/tree/main/fact_checker/tests/) for local testing.
 
 ## Report Writer
 
-The report writer in the [report_writer](./report_writer/) subdirectory follows a very similar script with the implementation found in [report_writer.py](./report_writer/report_writer.py).
+The report writer in the [report_writer](https://github.com/ivcap-works/agent-calling-agent-tutorial/tree/main/report_writer/) subdirectory follows a very similar script with the implementation found in [report_writer.py](./report_writer/report_writer.py).
 
 The initial report on a specific topic is sent to an LLM using the
 following prompts:

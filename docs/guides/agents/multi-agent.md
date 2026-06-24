@@ -65,7 +65,7 @@ no knowledge of the Report Writer.
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional, List
 from ivcap_service import getLogger, Service
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -94,7 +94,7 @@ class FactCheckOutput(BaseModel):
     results: List[ReferenceAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Fact Checker"], service_id="/"))
 async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     """Verify and assess the quality of a list of references."""
     from ivcap_service import get_llm_client
@@ -116,7 +116,7 @@ async def verify_references(input: FactCheckInput) -> FactCheckOutput:
     return FactCheckOutput(results=verified)
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 !!! note "`service_id=\"/\"`"
@@ -134,7 +134,7 @@ was passed in the request.
 from pydantic import BaseModel, ConfigDict, Field
 from typing import List, Optional
 from ivcap_service import getLogger, Service, JobContext
-from ivcap_ai_tool import start_tool_server, ivcap_ai_tool, ToolOptions, logging_init
+from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
 logger = getLogger("app")
@@ -173,7 +173,7 @@ class ReportResponse(BaseModel):
     references: List[ReferenceWithAssessment]
 
 
-@ivcap_ai_tool("/", opts=ToolOptions(tags=["Report Writer"]))
+@ivcap_lambda("/", opts=ToolOptions(tags=["Report Writer"]))
 def generate_report(request: ReportRequest, ctxt: JobContext) -> ReportResponse:
     """Write a report on a topic and fact-check its references using a separate agent."""
     from ivcap_service import get_llm_client
@@ -231,7 +231,7 @@ Include at least 2 well-formatted references at the end like:
     )
 
 if __name__ == "__main__":
-    start_tool_server(service)
+    start_lambda_server(service)
 ```
 
 ---

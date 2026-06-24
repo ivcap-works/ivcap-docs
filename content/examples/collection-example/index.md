@@ -97,12 +97,12 @@ urn:Clown_fish_in_the_Andaman_Coral_Reef.wikimedia.jpg--urn:example:schema:image
 
 The `*.png` files are thumbnails of all the images in `./examples`, while the `*.png-meta.json` contains the respective metadata for that thumbnail. The `urn:*.json` file contains some statistics taken from the image.
 
-## Build & Deployment Service <a name="build-deployment"></a>
+## Build & Deployment Service {#build-deployment}
 
 An IVCAP service usually consists of a _service description_ and one or more docker
 containers implementing the computation components of the service.
 
-The included [Makefile](./Makefile) has already defined a few targets for these tasks.
+The included [Makefile](https://github.com/ivcap-works/ivcap-python-service-example-collection/blob/main/Makefile) has already defined a few targets for these tasks.
 
 ### Build the Docker Container
 
@@ -226,7 +226,7 @@ register_service(SERVICE, service)
 
 ### Testing & Troubleshooting
 
-Please refer to the various `run...` targets in the [Makefile](Makefile)
+Please refer to the various `run...` targets in the [Makefile](https://github.com/ivcap-works/ivcap-python-service-example-collection/blob/main/Makefile)
 
 ## Usage: User Perspective
 
