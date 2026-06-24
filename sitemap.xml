@@ -9,26 +9,6 @@
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.ivcap.net/API/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/API/artifact/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/API/orders/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/API/service/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/API/sessions/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
          <loc>https://docs.ivcap.net/capabilities/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
@@ -149,67 +129,11 @@
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.ivcap.net/developer-guide/architecture/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/deploy-services/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/develop-services/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/integration-options/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/running-locally/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/sdk-resources/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/sdk/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/developer-guide/using-ivcap/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
          <loc>https://docs.ivcap.net/examples/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.ivcap.net/examples/agent-calling-agent-tutorial/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/examples/artifact-tutorial/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
          <loc>https://docs.ivcap.net/examples/capability-matrix/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/examples/go-term-mapper-tutorial/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/examples/quick-reference/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/examples/service-modes/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/examples/beginner/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
@@ -225,23 +149,7 @@
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.ivcap.net/getting-started/choosing-starting-point/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
          <loc>https://docs.ivcap.net/getting-started/install/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/getting-started/installing-cli/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/getting-started/platform-overview/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/getting-started/quick-start/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
@@ -361,18 +269,6 @@
          <lastmod>2026-06-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.ivcap.net/operator-manual/architecture/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/operator-manual/installation/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/operator-manual/security/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
          <loc>https://docs.ivcap.net/operators/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
@@ -450,42 +346,6 @@
     </url>
     <url>
          <loc>https://docs.ivcap.net/sdks/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/cli-basics/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/discover-services/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/run-and-monitor-orders/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/troubleshooting/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/work-with-artifacts/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/datafabric/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/datafabric/collections-and-records/</loc>
-         <lastmod>2026-06-24</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.ivcap.net/user-guide/datafabric/datasets-and-queries/</loc>
          <lastmod>2026-06-24</lastmod>
     </url>
 </urlset>

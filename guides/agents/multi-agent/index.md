@@ -62,9 +62,9 @@ references and returns an LLM assessment of each one's credibility. It has
 no knowledge of the Report Writer.
 
 ```python
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 from typing import Optional, List
-from ivcap_service import getLogger, Service
+from ivcap_service import getLogger, Service, with_schema
 from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
@@ -75,10 +75,8 @@ service = Service(
     description="Assesses the credibility and relevance of a list of references.",
 )
 
+@with_schema("urn:sd:schema:a2a-tutorial.fact-checker.request.1")
 class FactCheckInput(BaseModel):
-    jschema: str = Field(
-        "urn:sd:schema:a2a-tutorial.fact-checker.request.1", alias="$schema"
-    )
     references: List[str] = Field(..., description="List of references to check")
     model: Optional[str] = Field("gpt-4o", description="LLM model to use")
     temperature: Optional[float] = Field(0.3)
@@ -87,10 +85,8 @@ class ReferenceAssessment(BaseModel):
     reference: str
     assessment: str
 
+@with_schema("urn:sd:schema:a2a-tutorial.fact-checker.1")
 class FactCheckOutput(BaseModel):
-    jschema: str = Field(
-        "urn:sd:schema:a2a-tutorial.fact-checker.1", alias="$schema"
-    )
     results: List[ReferenceAssessment]
 
 
@@ -131,9 +127,9 @@ LLM output, and delegates fact-checking to whatever Fact Checker service URN
 was passed in the request.
 
 ```python
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 from typing import List, Optional
-from ivcap_service import getLogger, Service, JobContext
+from ivcap_service import getLogger, Service, JobContext, with_schema
 from ivcap_lambda import start_lambda_server, ivcap_lambda, ToolOptions, logging_init
 
 logging_init()
@@ -149,10 +145,8 @@ class FactCheckerConfig(BaseModel):
     model: Optional[str] = Field("gpt-4o")
     temperature: Optional[float] = Field(0.3)
 
+@with_schema("urn:sd:schema:a2a-tutorial.report-writer.request.1")
 class ReportRequest(BaseModel):
-    jschema: str = Field(
-        "urn:sd:schema:a2a-tutorial.report-writer.request.1", alias="$schema"
-    )
     topic: str = Field(..., description="Topic to write about")
     fact_checker: Optional[FactCheckerConfig] = Field(
         None, description="If provided, references are verified by this agent"
@@ -164,10 +158,8 @@ class ReferenceWithAssessment(BaseModel):
     reference: str
     assessment: Optional[str] = None
 
+@with_schema("urn:sd:schema:a2a-tutorial.report-writer.1")
 class ReportResponse(BaseModel):
-    jschema: str = Field(
-        "urn:sd:schema:a2a-tutorial.report-writer.1", alias="$schema"
-    )
     topic: str
     content: str
     references: List[ReferenceWithAssessment]

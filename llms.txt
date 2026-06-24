@@ -19,11 +19,7 @@ IVCAP is a managed, provenance-aware platform for running, building, and orchest
 - [Get Started with IVCAP](https://docs.ivcap.net/getting-started/index.md)
 - [Build Your First AI Agent](https://docs.ivcap.net/getting-started/build-agent/index.md)
 - [Build Your First Service](https://docs.ivcap.net/getting-started/build-service/index.md)
-- [Choosing Your Starting Point](https://docs.ivcap.net/getting-started/choosing-starting-point/index.md)
 - [Install the CLI](https://docs.ivcap.net/getting-started/install/index.md)
-- [IVCAP CLI Tool](https://docs.ivcap.net/getting-started/installing-cli/index.md)
-- [Platform overview](https://docs.ivcap.net/getting-started/platform-overview/index.md)
-- [Quick Start](https://docs.ivcap.net/getting-started/quick-start/index.md)
 - [Run Your First Analysis](https://docs.ivcap.net/getting-started/run-analysis/index.md)
 
 ## Guides — Running Analyses
@@ -84,10 +80,4 @@ IVCAP is a managed, provenance-aware platform for running, building, and orchest
 ## Examples
 
 - [Examples](https://docs.ivcap.net/examples/index.md)
-- [Tutorial: Services Calling Other Services](https://docs.ivcap.net/examples/agent-calling-agent-tutorial/index.md)
-- [Tutorial: Working with Artifacts and the DataFabric](https://docs.ivcap.net/examples/artifact-tutorial/index.md)
 - [Capability Matrix](https://docs.ivcap.net/examples/capability-matrix/index.md)
-- [Tutorial: Building a GO Term Mapper Service](https://docs.ivcap.net/examples/go-term-mapper-tutorial/index.md)
-- [Quick Reference](https://docs.ivcap.net/examples/quick-reference/index.md)
-- [Service Modes: Lambda vs Batch](https://docs.ivcap.net/examples/service-modes/index.md)
-- [Beginner Examples](https://docs.ivcap.net/examples/beginner/index.md)
