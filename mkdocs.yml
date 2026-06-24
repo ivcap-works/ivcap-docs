@@ -32,9 +32,9 @@ theme:
   - search.highlight
   - content.code.copy
   - content.code.annotate
-exclude_docs: 'README.md
-
-  '
+exclude_docs: |
+  README.md
+  operators/*.md
 extra:
   git_commit: !ENV [DOCS_GIT_COMMIT, ""]
 
