@@ -2,658 +2,658 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.ivcap.net/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/roadmap/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/capabilities/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/agentic-patterns/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/artifacts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/aspects-and-provenance/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/data-fabric/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/queues/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/concepts/services-and-jobs/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/agent-calling-agent/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/ai-tool-template/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/argo-example/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/collection-example/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/crewai-service/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/gene-ontology-mapper/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/markdown-conversion/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/python-lambda/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/python-service/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/examples/rnaseq-nextflow/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/getting-started/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_agent-context/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_download/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_tar/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_tar_clean/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_tar_download/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_tar_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_artifact_upload/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_add/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_remove/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_collection_retract/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_login/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_logout/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_context_set/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric_add/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric_query/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric_retract/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_datafabric_update/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_job/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_job_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_job_events/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_job_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_job_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_mcp/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_events/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_job-get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_job-result/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_job-view/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_list-jobs/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_list-pipelines/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_retract/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_run/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_nextflow_update/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_package/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_package_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_package_pull/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_package_push/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_package_remove/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_delete/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_dequeue/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_enqueue/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_queue_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_secret/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_secret_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_secret_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_secret_set/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service_create/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service_get/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service_search/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_service_update/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_skills/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_skills_list/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/ivcap_skills_show/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/cli/overview/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/authentication/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/installation/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/getting-started/quick-start/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/advanced/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/artifacts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/aspects/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/collections/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/error-handling/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/jobs/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/overview/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/pagination/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/content/sdk/js-client/docs/guides/services/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/examples/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/examples/capability-matrix/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/getting-started/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/getting-started/build-agent/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/getting-started/build-service/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/getting-started/install/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/getting-started/run-analysis/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/agent-patterns/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/crewai/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/llama-index/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/multi-agent/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/agents/using-ivcap-externally/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/argo-workflows/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/call-llms/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/call-other-services/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/deploy/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/run-locally/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/service-basics/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/use-artifacts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/building/use-queues/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/integrating/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/integrating/authentication/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/integrating/mcp/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/integrating/python-client-sdk/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/integrating/rest-api-primer/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/nextflow/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/discover-services/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/query-provenance/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/submit-jobs/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/troubleshooting/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/guides/running/work-with-artifacts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/operators/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/operators/architecture/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/operators/installation/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/operators/security/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/cli/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/glossary/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/urns/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/artifacts/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/aspects/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/events/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/orders/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/packages/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/queues/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/search/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/secrets/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/services/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/reference/api/sessions/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://docs.ivcap.net/sdks/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
 </urlset>
